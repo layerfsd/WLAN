@@ -1,0 +1,428 @@
+=======================================================================================================================
+* Wireless SVN 관리 문서
+-----------------------------------------------------------------------------------------------------------------------
+*
+* 관 리 자 : 함동호, 배진영, 박수홍
+* 관리대상 : Bluebird WiFi SW 산출물 릴리즈 (MMC, Summit, USI 무선랜)
+*
+=======================================================================================================================
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-04-13
+작 성 자 : 함동호
+검 색 어 : Network Performance Tool (Iperf, Jperf)
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/UTIL/Performance Tool
+내    역 : 
+ 
+ 1. TCP/UDP 측정용 Tool 
+  - 소스코드 포함됨, Open source 임.
+  - 빌드는 해보지 않음.
+
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-04-13
+작 성 자 : 함동호
+검 색 어 : Project
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/[Project]
+내    역 : 
+
+ 1. 무선랜 관련 프로젝트 관리 폴더 생성
+ 2. 무선랜 개선과제 등록
+  - 4/13일자까지의 결과물과 진행내역 업데이트
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-04-13
+작 성 자 : 함동호
+검 색 어 : BBSWiFiManager
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/UTIL/BBSWiFiManager
+내    역 : 
+
+ 1. WM 용 NetUI (https://192.168.50.5/svn/Module/Wlan/UTIL/NetUI_WM) 을 변경함.
+ 2. 1차 베타 버젼 배포
+  1) Ver : 1.0.1.0
+    - https://192.168.50.5/svn/Module/Wlan/UTIL/BBSWiFiManager/Release/BBSWiFiMgr_1.0.1.0.cab)
+	- https://192.168.50.5/svn/Module/Wlan/UTIL/BBSWiFiManager/Release/BBSWifiManager_Manual.doc
+  2) VOC, WiFi 개선 과제
+    - https://voc.bluebird.co.kr/view.php?id=3177
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-04-11
+작 성 자 : 박수홍
+검 색 어 : USI
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/BCM4329_USI/Release/BBS_USI_R642_001 
+내    역 : 
+
+ 1. USI Wireless LAN 패키지 릴리즈
+	- R642_001 버젼으로 CE5.0, CE6.0, WM 3가지 버젼으로 배포
+	- 상세 내역은 USI 릴리즈 노트 참조.
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-04-09
+작 성 자 : 배진영
+검 색 어 : SUMMIT
+SVN  URL : https://192.168.50.5\Wlan\SUMMIT\Release\Summit\30AG\v3.3.32.187
+
+내역 : 30AG 최신 Package Commit
+파일 : 
+1. SD30AG_WM_ARM_3_3_32.cab
+2. sdcsd30ag3_3_32_187 .zip
+ ->해당 압축파일은 Debug용입니다.
+ 
+ 
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-03-11
+작 성 자 : 배진영
+검 색 어 : SUMMIT
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/SUMMIT
+
+내    역 : 
+
+	공통 : 
+		1. DOC
+			1-1 registry_settings.pdf
+			1-2 Summit Overview_rs.pdf
+			
+	10AG : 
+		1. DOC 
+			1-1. Application Note - SDC-MSD10AG.pdf
+			1-2. Power_test_2_2_24_2_1_70.docx
+			1-3. power_test_report_v_4.docx
+		2. Release
+			2-1. Bluebird
+				2-1-1. V3.3.11 버전의 CAB파일 COMMIT. 현재 양산용 이미지에 포함되는 패치버전.			
+			2-2. Summit
+				2-2-1. v3.3.19.56 버전의 Package
+				
+	30AG :
+		1. DOC
+			1-1. Release Notes_30AG_v3_03_23.pdf
+			1-2. 20110209\SDC-SSD30AG Product Brief 201002.pdf
+			1-3. 20110209\SDC-SSD30AG_HIG_1_10.pdf
+			1-4. 20120111\SDC-SSD30AG_HIG_1_10.pdf
+		2. Release
+			2-1. Bluebird
+				2-1-1. v3.3.11 버전의 CAB파일 COMMIT. 현재 양산용 이미지에 포함되는 패치버전.	
+			2-2 Summit
+				2-2-1. v3.3.21 버전 COMMIT
+				2-2-2. v3.3.23 버전 COMMIT
+				2-2-3. v3.3.25 버전 COMMIT
+				2-2-4. v3.3.31.185 버전 COMMIT	
+			
+	40NBT :
+		1. DOC
+			1-1. [RoadMap]SUMMIT_SDIO.pdf
+			1-2. 4329 datasheet 비번.txt
+			1-3. 4329-datasheeta.pdf
+			1-4. bluetooth_os_design_dev.pdf
+			1-5. bt_appnote_v1_3.pdf
+			1-6. platform_builder_os_design_template_ce6.pdf
+			1-7 Power current report.docx
+			1-8 SDC-MSD40NBT_HIG_rev06.pdf
+			1-9 SDC-SSD40L_HIG_03.pdf
+			1-10 SDC-SSD40NBT_HIG_prelim_11.pdf
+			1-11 SDC-SSD40NBT_HIG_v1_3.pdf
+			
+		2. Release
+			2-1. Bluebird
+				2-1-1. 3.4.0.0 버전 COMMIT
+				2-1-2. 3.4.1.0 버전 COMMIT_현재 양산에 사용되는 버전
+				2-1-3. 3.4.1.2 버전 COMMIT
+				2-1-4. 3.4.1.3 버전 COMMIT
+				2-1-5. 3.4.1.5 버전 COMMIT
+				2-1-6. 3.4.3.5 버전 COMMIT_WPA2/AES Connection, LockUP, A RATE, ScanList, FileDownload 해결(현재 SQA 검증 중)
+			2-2. Summit
+				2-2-1. 3.4.1.5 버전 COMMIT
+				2-2-2. 3.4.1.6 버전 COMMIT
+				2-2-3. 3.4.1.7 버전 COMMIT
+				2-2-4. 3.4.1.10 버전 COMMIT
+				2-2-5. Component
+					2-2-5-1. GINA
+					2-2-5-2. sdcsd40n
+					
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-03-11
+작 성 자 : 함동호
+검 색 어 : MMC
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/AR6K_MMC/Release/Bluebird/BBS_MMC_v54_003
+내    역 : 
+
+	* File Name : BBS_MMC_v54_003.cab / BBS_MMC_v54_003_CE.cab
+
+	1. ScanThreshold : 75
+	2. RoamThreshold : 80
+	3. nodeAge : 15 sec
+	4. WZC
+	  tmTr = 3000 mili-seconds (Scan time out)
+	  tmTp = 15000 mili-seconds (Association time out)
+	  tmTc = 1879048192 mili-seconds (Periodic scan when connected
+	  tmTf = 2000 mili-seconds (Periodic scan when disconnected)
+
+
+	* 주의사항 
+
+	1. VOC : https://voc.bluebird.co.kr/view.php?id=3093
+	 반드시 해당 사이트에서만 사용해야 함.
+	 다른 사이트에 사용시 로밍 안됨으로 이슈가 발생될 소지가 있음. 
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-02-14
+작 성 자 : 함동호
+검 색 어 : OpenSSL
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/UTIL/OpenSSL
+내    역 : 
+
+ 1. OpenSSL 빌드 가능 버전 추가.
+  - 사용버젼 : 1.0.1e / 0.9.8a
+  - 빌드환경 : Windows Embedded Handheld 6.5
+ 
+ 2. 빌드된 바이너리 그대로 추가 함.
+  - 1.0.1e 버젼을 사용하면 됨.
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-02-13
+작 성 자 : 박수홍
+검 색 어 : netui2
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/UTIL/NetUI_CE
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/UTIL/NetUI_WM
+내    역 : CE용과 WM용 따로 있기 때문에, 명확성을 위하여 저장소 이름 변경함
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-02-13
+작 성 자 : 박수홍
+검 색 어 : netui2
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/UTIL/netui2
+내    역 : CE용 NETUI가 아닌, WM용 Netui 소스 커밋
+	- 제공된 소스중 포함되어있지 않은 파일 몇개가 있어, 바로는 사용불가
+	- 빌드 가능하도록 수정후, BSP의 Driver 단에서 바로 dll 뽑아쓸수 있도록 수정후 커밋
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-02-07
+작 성 자 : 함동호
+검 색 어 : MMC
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/AR6K_MMC/Release/Bluebird/BBS_MMC_v54_001
+내    역 : WiFi 대응 프로세스 과제 진행에 따른 MMC v54 릴리즈
+
+ 1. WiFi 대응 프로세스 과제 진행에 따라 자사에서 릴리즈 되는 MMC 무선랜의 cab 을 생성함.
+  - 기본 Base 을 기존 "v54_NoCertificateforEAP" 에서 시작함.
+  - 아래와 같은 릴리즈 규칙을 가지고 있음.
+
+ 2. 릴리즈 규칙
+    1. cab 파일명 생성 규칙
+        "자사명_모듈사명_모듈Ver_SVN 혹은 자체버젼"
+        ex) BBS_MMC_v54_001
+            자사명: BBS
+            모듈사명: MMC, USI, Summit
+            모듈버젼: v54
+            릴리즈버젼: 001 <-- 단순 인덱스
+    2. cab 파일내, _setup.xml 규칙
+         <parm name="AppName" value="자사명_모듈사명_모듈버젼_SVN 혹은 자체버젼" />
+        ex)  <parm name="AppName" value="BBS_MMC_v54_001" />
+            cab 파일 생성규칙과 동일
+    3. 릴리즈된 cab 이력관리
+        Wireless SVN 의 History 관리 문서에서 관리하며,? 
+
+    릴리즈되는 cab 파일에 txt 로 추가 포함하여야 함.
+            ReleaseNote.txt <-- cab 에 포함될 릴리즈노트명
+    예제) 노드 참고하세요
+
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-01-25
+작 성 자 : 함동호
+검 색 어 : UTIL, WZC
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/UTIL/WZCTool
+내    역 : WZCTool 프로그램
+
+ 1. ZeroConfig 을 사용한 무선랜 정보와 설정이 가능한 콘솔 프로그램.
+  - Retail & File 로 로그가 저장이 되도록 수정 됨.
+  - 파일 로그는 Program\System 에 저장 됨.
+
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-01-24
+작 성 자 : 함동호
+검 색 어 : MMC 
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/AR6K_MMC/Release/Bluebird/v54_NoCertificateforEAP
+내    역 : MMC v54 + nodeAge 15s + RADUIS 인증시, 인증서 없이 가능한 패치 생성.
+
+ 1. 모든 MMC 에 최종으로 적용이 되어야 함.
+   SDHC2.dll 은 포함하지 않음, 이건 모델 및 리팩토링에 따라 드라이버가 다르기 때문.
+ 
+ 2. WM MMC 전 모델에 적용이 가능한 패치임.	
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-01-23
+작 성 자 : 함동호
+검 색 어 : MMC 
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/AR6K_MMC/Release/MMC
+내    역 : MMC 에서 릴리즈한 드라이버 v53 ~ v56, Reg 상이한 추가 부분 업데이트.
+  
+  - XML 
+    <parm name="ScanThreshold" value="65" datatype="integer" />
+    <parm name="RoamThreshold" value="70" datatype="integer" />
+    <parm name="RoamFloorThre" value="60" datatype="integer" />
+ 
+  - Reg
+    "ScanThreshold"=dword:41
+    "RoamThreshold"=dword:46
+    "RoamFloorThre"=dword:3C 
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-01-23
+작 성 자 : 박수홍
+검 색 어 : NETUI
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/UTIL/CustomNetUI
+내    역 : WM의 무선관리자를 사용하지 않고, 디버깅이 용이한 NETUI 사용할 수 있도록 기초 작업 진행
+
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-01-22
+작 성 자 : 함동호
+검 색 어 : MMC 
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/AR6K_MMC/Release/MMC
+내    역 : MMC 에서 릴리즈한 드라이버 v53 ~ v56, Reg 상이한 부분 업데이트.
+
+ 1. MMC 드라이버 바이너리 업데이트 
+	- Cab 설치 XML 추가.
+	- xml 과 reg 가 서로 다른 레지스트리 값을 가지고 있는 부분 수정함.
+	- 버젼별 cab 파일 추가함.
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-01-22
+작 성 자 : 함동호
+검 색 어 : USI, 데이터시트  
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/BCM4329_USI/trunk/DOC
+내    역 : USI 무선랜, BT 데이터 시트 추가.
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-01-22
+작 성 자 : 함동호
+검 색 어 : USI 
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/BCM4329_USI/trunk/Release/USI release note.txt
+내    역 : USI 릴리즈 노트 추가.
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-01-22
+작 성 자 : 함동호
+검 색 어 : MMC 
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/AR6K_MMC/Release/Bluebird
+내    역 : MMC 무선랜을 위해 BBS 에서 릴리즈된 NodeAge 변경 패치.
+
+ 1. nodeAge15s.cab
+	- VOC : https://voc.bluebird.co.kr/view.php?id=2781 
+	- nodeAge 레지스트리 값을 기본 4초에서 15초로 설정하는 cab.
+           
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-01-22
+작 성 자 : 함동호
+검 색 어 : MMC 
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/AR6K_MMC/Release/MMC
+내    역 : MMC 에서 릴리즈한 드라이버 v53 ~ v56
+
+ 1. MMC 드라이버 바이너리 버젼으로 커밋
+	- 현재 릴리즈 된 최신은 : v56
+	- 생산에 적용된 최종 버젼은 : v54
+
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-01-22
+작 성 자 : 함동호
+검 색 어 : 공용 UTIL
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/UTIL/Set no Certificate for EAP Authentication/WM_PEAP_Patch.cab
+내    역 :
+
+ 1. WM_PEAP_Patch.cab
+	- RADUIS 서버 인증시 인증서를 확인하지 않도록 하는 레지스트리 설정 cab
+	  Windows Mobile - EAP Authentication Protocols 설정 상태 확인 (WM 에서는 4가지의 프로토콜을 지원)
+	
+	  WM_PEAP_Patch.cab 을 설치하게 되면, "ValidateServerCert"=dword:00000000 이 값이 들어 있으면 정상.
+
+		[HKEY_LOCAL_MACHINE\Comm\EAP]
+
+		[HKEY_LOCAL_MACHINE\Comm\EAP\Extension]
+
+		; Challenge-Handshake Authentication Protocol (CHAP) 
+		[HKEY_LOCAL_MACHINE\Comm\EAP\Extension\4]
+		"ValidateServerCert"=dword:00000000
+
+		; Microsoft Challenge-Handshake Authentication Protocol 2.0 (MS CHAP V2) 
+		[HKEY_LOCAL_MACHINE\Comm\EAP\Extension\26]
+		"ValidateServerCert"=dword:00000000
+		"InteractiveUIPath"="eapchap.dll"
+		"Path"="eapchap.dll"
+		"InvokeUserNameDialog"=dword:00000001
+		"InvokePasswordDialog"=dword:00000001
+		"FriendlyName"="MSV2-Challenge"
+		
+		; Transport Level Security (TLS) 
+		[HKEY_LOCAL_MACHINE\Comm\EAP\Extension\13]
+		"ValidateServerCert"=dword:00000000
+		"FriendlyName"="Smart Card or Certificate"
+		"IdentityPath"="netui.dll"
+		"ConfigUIPath"="netui.dll"
+		"InteractiveUIPath"="netui.dll"
+		"Path"="eaptls.dll"
+
+		; Protected Extensible Authentication Protocol (PEAP) 
+		[HKEY_LOCAL_MACHINE\Comm\EAP\Extension\25]
+		"ValidateServerCert"=dword:00000000
+		"EAPMSCHAPv2Only"=dword:00000001
+		"InteractiveUIPath"="eaptls.dll"
+		"Path"="eaptls.dll"
+		"ConfigUIPath"="eaptls.dll"
+		"InvokePasswordDialog"=dword:00000001
+		"InvokeUserNameDialog"=dword:00000001
+		"FriendlyName"="PEAP"
+
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-01-22
+작 성 자 : 함동호
+검 색 어 : MMC, UTIL
+SVN  URL : https://192.168.50.5/svn/Module/Wlan/AR6K_MMC/UTIL/Control TMTP
+		   https://192.168.50.5/svn/Module/Wlan/AR6K_MMC/UTIL/GetVversion_AR6K	
+내    역 :
+
+ 1. MMC 전용 UTIL 프로그램. 
+	
+	1) TMTP_SET_PRJ.exe
+		- VOC (https://voc.bluebird.co.kr/view.php?id=1785) 에서 설명이 되어 있음.
+		- MSDN (Network Driver Reference > Automatic Configuration Reference > Automatic Configuration Structures > )
+		    tmTp : Timeout value in milliseconds to expect a media connect for a selected configuration. Default value is TMMS_DEFAULT_TP (0x000007d0).
+		- 레지스트리 수정이 아니라, "WZC_CONTEXT" 구조체를 수정하여야 하는 소스레벨 변경방법임.
+		- 해당 프로그램에 대한 관련 설명은 아래와 같습니다.
+		   TMTP값 설정은 Registry로 변경할 수 있는 부분이 아니며, 세팅할 수 있는 별도의 APP를 
+		   통하여 설정 가능하며 솔루션은 이미 만들어져 있습니다.
+		   현재 적용되어 있는 TMTP값 확인과 원하는 값으로 설정할 수 있는 방법을 본 VOC에 등록
+		   하겠습니다.(TMTP_SET_PRJ.zip)
+		   기본적으로 2000으로 설정되어 있으며, 6000(milsec)으로 설정한 후 테스트가 
+		   필요합니다.
+			   A. ComboBox에서 6000으로 선택한 후 SetValue를 터치하여 TMTP 값 적용
+			   B. 화면 상단에 Current value 값을 변경한 값인지 확인
+			   C. AP 인증시도 테스트
+
+		
+	2) getar6kver.exe
+		- MMC 펌웨어와 드라이버 버젼을 확인하는 프로그램
+
+	
+-----------------------------------------------------------------------------------------------------------------------
+작 성 일 : 2013-01-22 
+작 성 자 : 함동호
+검 색 어 : Wireless History.txt
+내    용 : SVN 무선랜 폴더 구조 설명 및 히스토리 문서 생성
+
+ 1. 폴더 설명
+	- AR6K_BBS_DEV	: 자사에서 open 소스 기반으로 AR6K 모듈에서 구동이 가능한 드라이버 개발 소스 
+					  진행은 중단된 상태 임.
+	- AR6K_MMC		: MMC 에서 제공 받은 무선랜 관리 자료.
+	- SUMMIT		: Summit 사에서 공급 받는 무선랜 관리 자료.
+					  10AG, 30AG, 40NBT
+	- BCM4329_USI	: USI 무선랜 관리 자료(자체 개발이 가능하도록 소스가 있음)
+	- BSP			: 추후 삭제 예정. 
+	- doc			: 무선랜 개발을 위한 관련 환경 및 문서.
+	- UTIL			: 무선랜 사용을 위한 유틸리티(필수 패치).
+
+
+ 2. MMC, USI, Summit 관련 SW 산출물은 모두 여기서 이력을 관리함.
+	
+-----------------------------------------------------------------------------------------------------------------------

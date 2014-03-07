@@ -1,0 +1,10 @@
+;
+; Copyright (c) 2007 Atheros Communications Inc.  All rights reserved.
+;
+;
+LIBRARY         ATHBTFILTER
+
+EXPORTS
+AthBtFilter_Create
+AthBtFilter_Destroy
+

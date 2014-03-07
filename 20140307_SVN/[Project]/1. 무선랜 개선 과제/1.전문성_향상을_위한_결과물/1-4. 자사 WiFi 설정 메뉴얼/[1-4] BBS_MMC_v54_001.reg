@@ -1,0 +1,68 @@
+REGEDIT4
+
+;
+; BBS_MMC_v54_001.cab 설치시 적용된 레지스트리 설정값
+;
+[HKEY_LOCAL_MACHINE\Comm\AR6K_SD1\Parms]
+	"currentPowerState"=dword:00000000
+	"dbgFileLog"=dword:00000000
+	"dbgErrorLog"=dword:00000000
+	"dbgBSSList"=dword:00000000
+	"dbgBSSEvent"=dword:00000000
+	"lockSSID"="wavecast"
+	"lockEnable"=dword:00000000
+	"DwellTime"=dword:00000078
+	"tp"=dword:00000000
+	"probeSSIDa"="wavecast"
+	"probeSSID"="wavecast"
+	"probeEnable"=dword:00000000
+	"dbgLogDir"="\\ProgramStore"
+	"RoamFloorThre"=dword:0000003C
+	"RoamThreshold"=dword:00000046
+	"ScanThreshold"=dword:00000041
+	"hostAssistedRoaming"=dword:00000001
+	"RoamEnable"=dword:00000000
+	"nodeAge"=dword:00003A98
+	"bkScanPeriod"=dword:00000003
+	"BusType"=dword:00000000
+	"BusNumber"=dword:00000000
+	"tcmd"=dword:00000000
+	"powerSaveMode"=dword:00000000
+	"discTimeout"=dword:00000004
+	"dbgSetOid"=dword:00000000
+	"dbgQueryOid"=dword:00000000
+	"bkScanEnable"=dword:00000001
+
+
+;
+; 아래키들은 OS 에서 AP 연결 후, 설정된 값이므로 해당사항이 없음
+; 
+[HKEY_LOCAL_MACHINE\Comm\AR6K_SD1\Parms\TCPIP]
+	"LeaseObtainedLow"=dword:E4BFE700
+	"LeaseObtainedHigh"=dword:01C2C72E
+	"DhcpSubnetMask"=hex(7):\
+	      32,35,35,2E,32,35,35,2E,32,35,35,2E,30,00,00
+	"DhcpIPAddress"=hex(7):\
+	      31,39,32,2E,31,36,38,2E,31,2E,31,30,33,00,00
+	"T2"=dword:00012750
+	"T1"=dword:0000A8C0
+	"Lease"=dword:00015180
+	"DhcpDNS"=hex(7):\
+	      32,31,31,2E,36,33,2E,36,34,2E,31,31,00,31,39,32,2E,31,36,38,2E,30,2E,31,\
+	      00,00
+	"DhcpServer"=hex(7):\
+	      31,39,32,2E,31,36,38,2E,31,2E,31,00,00
+	"AutoIP"=hex(7):\
+	      31,36,39,2E,32,35,34,2E,31,35,33,2E,32,32,33,00,00
+	"AutoSeed"=dword:5E07BE77
+	"Domain"="local.tld"
+	"AutoInterval"=dword:0000012C
+	"AutoMask"=hex(7):\
+	      32,35,35,2E,32,35,35,2E,30,2E,30,00,00
+	"AutoSubnet"=hex(7):\
+	      31,36,39,2E,32,35,34,2E,30,2E,30,00,00
+	"PrevReqOptions"=hex:\
+	      07,01,03,06,0F,2C,2E,2F
+	"AutoCfg"=dword:00000001
+	"EnableDHCP"=dword:00000001
+

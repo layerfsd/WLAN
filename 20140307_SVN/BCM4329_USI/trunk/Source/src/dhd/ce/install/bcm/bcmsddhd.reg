@@ -1,0 +1,357 @@
+; Copyright (c) 2006 BROADCOM Corporation.  All rights reserved.
+;
+;
+; This is UNPUBLISHED PROPRIETARY SOURCE CODE of Broadcom Corporation;
+; the contents of this file may not be disclosed to third parties, copied or
+; duplicated in any form, in whole or in part, without the prior written
+; permission of Broadcom Corporation.
+
+    ; registry keys for the NDIS driver
+[HKEY_LOCAL_MACHINE\Comm\BCMSD]
+   "DisplayName"="Broadcom 802.11 Network Adapter"
+   "Group"="NDIS"
+   "ImagePath"="bcmsdio.dll"
+
+[HKEY_LOCAL_MACHINE\Comm\BCMSD\Linkage]
+   "Route"=multi_sz:"BCMSD1"
+
+    ; instance 1 information
+[HKEY_LOCAL_MACHINE\Comm\BCMSD1]
+   "DisplayName"="Broadcom 802.11 Network Adapter"
+   "Group"="NDIS"
+   "ImagePath"="bcmsdio.dll"
+	
+    ; instance 1 parameters
+[HKEY_LOCAL_MACHINE\Comm\BCMSD1\Parms]
+   "BusNumber"=dword:0
+   "BusType"=dword:0
+
+   "antdiv"="-1"
+   "BadFramePreempt"="0"
+   "BTCoexist"="0"
+   "Channel"="11"
+   "Country"="US"
+   "DriverDesc"="Broadcom 802.11 Network Adapter"
+   "EnableAutoConnect"="0"
+   "EnableLeap"="0"
+   "EnableSoftAP"="0"
+   "frag"="2346"
+   "FrameBursting"="1"
+   "gpio0"="-1"
+   "gpio1"="-1"
+   "gpio2"="-1"
+   "gpio3"="-1"
+   "IBSSMode"="0"
+   "IBSSGProtection"="2"
+   "Interference_Mode"="3"
+   "NetworkType"="-1"
+   "PLCPHeader"="0"
+   "PowerSaveMode"="0"
+   "PwrOut"="100"
+   "RadioState"="0"
+   "Rate"="0"
+   "RoamTrigger"="-70"
+   "rts"="2347"
+   "scan_channel_time"="-1"
+   "scan_home_time"="-1"
+   "scan_passes"="-1"
+   "scan_unassoc_time"="-1"
+   "SSID"=""
+   "WEP"=""
+
+    ; default TCPIP settings for this instance
+[HKEY_LOCAL_MACHINE\Comm\BCMSD1\Parms\TcpIp]
+   "EnableDHCP"=dword:1
+   "UseZeroBroadcast"=dword:0
+
+    ; TCPIP linkage to instance 1 adapter
+[HKEY_LOCAL_MACHINE\Comm\Tcpip\Linkage]
+   "Bind"=multi_sz:"ppp","BCMSD1"
+    
+
+[HKEY_LOCAL_MACHINE\Drivers\SDCARD\ClientDrivers\Custom\MANF-0092-CARDID-0004-FUNC-1]
+   "Dll"="bcmsdio.dll" 
+   "Prefix"="NDL"
+	; a dd instance key for each instance that can be added
+	; "InstanceX" = "<Miniport Name>:<Miniport Instance>"
+   ; first instance - must match \comm\BCMSD1 
+   "Instance0"="BCMSD:BCMSD1" 
+   ; second instance - must match \comm\BCMSD2
+   "Instance1"="BCMSD:BCMSD2"
+
+[HKEY_LOCAL_MACHINE\Drivers\SDCARD\ClientDrivers\Custom\MANF-02D0-CARDID-0443-FUNC-1]
+   "Dll"="bcmsdio.dll" 
+   "Prefix"="NDL"
+	; a dd instance key for each instance that can be added
+	; "InstanceX" = "<Miniport Name>:<Miniport Instance>"
+   ; first instance - must match \comm\BCMSD1 
+   "Instance0"="BCMSD:BCMSD1" 
+   ; second instance - must match \comm\BCMSD2
+   "Instance1"="BCMSD:BCMSD2"
+
+[HKEY_LOCAL_MACHINE\Drivers\SDCARD\ClientDrivers\Custom\MANF-02D0-CARDID-044B-FUNC-1]
+   "Dll"="bcmsdio.dll" 
+   "Prefix"="NDL"
+	; a dd instance key for each instance that can be added
+	; "InstanceX" = "<Miniport Name>:<Miniport Instance>"
+   ; first instance - must match \comm\BCMSD1 
+   "Instance0"="BCMSD:BCMSD1" 
+   ; second instance - must match \comm\BCMSD2
+   "Instance1"="BCMSD:BCMSD2"
+
+[HKEY_LOCAL_MACHINE\Drivers\SDCARD\ClientDrivers\Custom\MANF-02D0-CARDID-0495-FUNC-1]
+   "Dll"="bcmsdio.dll" 
+   "Prefix"="NDL"
+	; a dd instance key for each instance that can be added
+	; "InstanceX" = "<Miniport Name>:<Miniport Instance>"
+   ; first instance - must match \comm\BCMSD1 
+   "Instance0"="BCMSD:BCMSD1" 
+   ; second instance - must match \comm\BCMSD2
+   "Instance1"="BCMSD:BCMSD2"
+
+;[HKEY_LOCAL_MACHINE\Drivers\SDCARD\ClientDrivers\Custom\MANF-02D0-CARDID-0481-FUNC-1]
+;   "Dll"="bcmsdio.dll" 
+;   "Prefix"="NDL"
+;	; a dd instance key for each instance that can be added
+;	; "InstanceX" = "<Miniport Name>:<Miniport Instance>"
+;   ; first instance - must match \comm\BCMSD1 
+;   "Instance0"="BCMSD:BCMSD1" 
+;   ; second instance - must match \comm\BCMSD2
+;   "Instance1"="BCMSD:BCMSD2"
+
+;[HKEY_LOCAL_MACHINE\Drivers\SDCARD\ClientDrivers\Custom\MANF-02D0-CARDID-0483-FUNC-1]
+;   "Dll"="bcmsdio.dll" 
+;   "Prefix"="NDL"
+;	; a dd instance key for each instance that can be added
+;	; "InstanceX" = "<Miniport Name>:<Miniport Instance>"
+;   ; first instance - must match \comm\BCMSD1 
+;   "Instance0"="BCMSD:BCMSD1" 
+;   ; second instance - must match \comm\BCMSD2
+;   "Instance1"="BCMSD:BCMSD2"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 4328 DHD setting ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ; registry keys for the NDIS driver
+[HKEY_LOCAL_MACHINE\Comm\BCMSDDHD]
+   "DisplayName"="Broadcom 802.11 DHD Network Adapter"
+   "Group"="NDIS"
+   "ImagePath"="bcmsddhd.dll"
+
+[HKEY_LOCAL_MACHINE\Comm\BCMSDDHD\Linkage]
+   "Route"=multi_sz:"BCMSDDHD1"
+
+    ; instance 1 information
+[HKEY_LOCAL_MACHINE\Comm\BCMSDDHD1]
+   "DisplayName"="Broadcom 802.11 DHD Network Adapter"
+   "Group"="NDIS"
+   "ImagePath"="bcmsddhd.dll"
+	
+    ; instance 1 parameters
+[HKEY_LOCAL_MACHINE\Comm\BCMSDDHD1\Parms]
+   "BusNumber"=dword:0
+   "BusType"=dword:0
+
+   "antdiv"="-1"
+   "BadFramePreempt"="0"
+   "BTCoexist"="0"
+   "Channel"="11"
+   "Country"="US"
+   "DriverDesc"="Broadcom 802.11 DHD Network Adapter"
+   "EnableAutoConnect"="0"
+   "EnableLeap"="0"
+   "EnableSoftAP"="0"
+   "frag"="2346"
+   "FrameBursting"="0"
+   "gpio0"="-1"
+   "gpio1"="-1"
+   "gpio2"="-1"
+   "gpio3"="-1"
+   "IBSSMode"="1"
+   "IBSSGProtection"="2"
+   "Interference_Mode"="3"
+   "NetworkType"="-1"
+   "PLCPHeader"="0"
+   "PowerSaveMode"="0"
+   "PwrOut"="100"
+   "RadioState"="0"
+   "Rate"="0"
+   "RoamTrigger"="-70"
+   "rts"="2347"
+   "scan_channel_time"="-1"
+   "scan_home_time"="-1"
+   "scan_passes"="-1"
+   "scan_unassoc_time"="-1"
+   "SSID"=""
+   "WEP"=""
+   "vlan_mode"="0"
+   "DongleImagePath"="\\Release\\rtecdc.bin"
+   "SROMImagePath"="\\Release\\nvram.txt"
+   "AdvPsPoll"="1"
+   
+   ; 2625A0 = 2.5MHz, 4C4B40 = 5MHz, 989680 = 10MHz, 1312D00 = 20MHz
+   ; 2FAF08 = 3.125MHz, 5F5E10 = 6.25MHz, BEBC20 = 12.5MHz, 17D7840 = 25MHz
+;  "SDClock"=dword:1312D00
+;  "SDBusWidth"=dword:4
+;  "SDForceHighSpeed"=dword:0
+;  "SDFastPath"=dword:1
+;  "SDSoftBlock"=dword:0
+;  "AllowIntfUp"=dword:0
+
+;   Possible values are 2-12 (in mA)
+;   Use the following value for ARM(PXA) or x86(CEPC) with A1
+;  "DriveStrength"=dword:2
+;   Use the following value for x86(CEPC) with C0
+;  "DriveStrength"=dword:6  
+
+;
+; Default values for our misc threads priorities
+; For LTK, these values should be changed based on the platform used.
+; Comment out the following default values and uncomment the ones of 
+; the needed platform listed below.
+;
+   "DPCPriority"=dword:fb
+   "RxDPCPriority"=dword:82
+   "RXThreadPriority"=dword:fb
+   "RxflowRxDPCPriority"=dword:fc
+   "RxflowRXThreadPriority"=dword:65
+   "RxflowMode"=dword:1
+   "RxflowHi"=dword:80
+   "RxflowLow"=dword:50
+
+; LTK Values for the Moto Q (qphone)
+;   "DPCPriority"=dword:fb
+;   "RxDPCPriority"=dword:82
+;   "RXThreadPriority"=dword:fb
+;   "IOCTLDPCPriority"=dword:f7
+;   "RxflowRxDPCPriority"=dword:fc
+;   "RxflowRXThreadPriority"=dword:65
+;   "RxflowMode"=dword:0
+;   "RxflowHi"=dword:80
+;   "RxflowLow"=dword:50
+
+; LTK Values for the LG phone (Atos)
+;   "DPCPriority"=dword:fb
+;   "RxDPCPriority"=dword:82
+;   "RXThreadPriority"=dword:fb
+;   "IOCTLDPCPriority"=dword:f7
+;   "RxflowRxDPCPriority"=dword:fc
+;   "RxflowRXThreadPriority"=dword:65
+;   "RxflowMode"=dword:1
+;   "RxflowHi"=dword:80
+;   "RxflowLow"=dword:50
+
+; LTK Values for the 2153
+;   "DPCPriority"=dword:fb
+;   "RxDPCPriority"=dword:82
+;   "RXThreadPriority"=dword:fb
+;   "IOCTLDPCPriority"=dword:f7
+;   "RxflowRxDPCPriority"=dword:fc
+;   "RxflowRXThreadPriority"=dword:65
+;   "RxflowMode"=dword:0
+;   "RxflowHi"=dword:80
+;   "RxflowLow"=dword:50
+
+; LTK Values for the PXA
+;   "DPCPriority"=dword:fb
+;   "RxDPCPriority"=dword:fc
+;   "RXThreadPriority"=dword:65
+;   "IOCTLDPCPriority"=dword:f7
+;   "RxflowRxDPCPriority"=dword:fc
+;   "RxflowRXThreadPriority"=dword:65
+;   "RxflowMode"=dword:0
+;   "RxflowHi"=dword:80
+;   "RxflowLow"=dword:50
+
+; LTK Values for the CEPC
+;   "DPCPriority"=dword:fb
+;   "RxDPCPriority"=dword:82
+;   "RXThreadPriority"=dword:76
+;   "IOCTLDPCPriority"=dword:f7
+;   "RxflowRxDPCPriority"=dword:fc
+;   "RxflowRXThreadPriority"=dword:65
+;   "RxflowMode"=dword:0
+;   "RxflowHi"=dword:80
+;   "RxflowLow"=dword:50
+
+    ; default TCPIP settings for this instance
+[HKEY_LOCAL_MACHINE\Comm\BCMSDDHD1\Parms\TcpIp]
+   "EnableDHCP"=dword:1
+   "UseZeroBroadcast"=dword:0
+
+    ; TCPIP linkage to instance 1 adapter
+[HKEY_LOCAL_MACHINE\Comm\Tcpip\Linkage]
+   "Bind"=multi_sz:"ppp","BCMSDDHD1"
+
+;BCM4328 BU board
+[HKEY_LOCAL_MACHINE\Drivers\SDCARD\ClientDrivers\Custom\MANF-02D0-CARDID-0481-FUNC-1]
+   "Dll"="bcmsddhd.dll" 
+   "Prefix"="NDL"
+	; a dd instance key for each instance that can be added
+	; "InstanceX" = "<Miniport Name>:<Miniport Instance>"
+   ; first instance - must match \comm\BCMSDDHD1 
+   "Instance0"="BCMSDDHD:BCMSDDHD1" 
+   ; second instance - must match \comm\BCMSDDHD2
+   "Instance1"="BCMSDDHD:BCMSDDHD2"
+
+;BCM4328
+[HKEY_LOCAL_MACHINE\Drivers\SDCARD\ClientDrivers\Custom\MANF-02D0-CARDID-0483-FUNC-1]
+   "Dll"="bcmsddhd.dll" 
+   "Prefix"="NDL"
+	; a dd instance key for each instance that can be added
+	; "InstanceX" = "<Miniport Name>:<Miniport Instance>"
+   ; first instance - must match \comm\BCMSDDHD1 
+   "Instance0"="BCMSDDHD:BCMSDDHD1" 
+   ; second instance - must match \comm\BCMSDDHD2
+   "Instance1"="BCMSDDHD:BCMSDDHD2"
+
+;BCM4325
+[HKEY_LOCAL_MACHINE\Drivers\SDCARD\ClientDrivers\Custom\MANF-02D0-CARDID-0492-FUNC-1]
+   "Dll"="bcmsddhd.dll" 
+   "Prefix"="NDL"
+	; a dd instance key for each instance that can be added
+	; "InstanceX" = "<Miniport Name>:<Miniport Instance>"
+   ; first instance - must match \comm\BCMSDDHD1 
+   "Instance0"="BCMSDDHD:BCMSDDHD1" 
+   ; second instance - must match \comm\BCMSDDHD2
+   "Instance1"="BCMSDDHD:BCMSDDHD2"
+
+;BCM4325
+[HKEY_LOCAL_MACHINE\Drivers\SDCARD\ClientDrivers\Custom\MANF-02D0-CARDID-0493-FUNC-1]
+   "Dll"="bcmsddhd.dll" 
+   "Prefix"="NDL"
+	; a dd instance key for each instance that can be added
+	; "InstanceX" = "<Miniport Name>:<Miniport Instance>"
+   ; first instance - must match \comm\BCMSDDHD1 
+   "Instance0"="BCMSDDHD:BCMSDDHD1" 
+   ; second instance - must match \comm\BCMSDDHD2
+   "Instance1"="BCMSDDHD:BCMSDDHD2"
+
+[HKEY_LOCAL_MACHINE\Drivers\SDCARD\ClientDrivers\Custom\MANF-02D0-CARDID-4325-FUNC-1]
+   "Dll"="bcmsddhd.dll" 
+   "Prefix"="NDL"
+	; a dd instance key for each instance that can be added
+	; "InstanceX" = "<Miniport Name>:<Miniport Instance>"
+   ; first instance - must match \comm\BCMSDDHD1 
+   "Instance0"="BCMSDDHD:BCMSDDHD1" 
+   ; second instance - must match \comm\BCMSDDHD2
+   "Instance1"="BCMSDDHD:BCMSDDHD2"
+
+[HKEY_LOCAL_MACHINE\Drivers\SDCARD\ClientDrivers\Custom\MANF-02D0-CARDID-4329-FUNC-1]
+   "Dll"="bcmsddhd.dll" 
+   "Prefix"="NDL"
+	; a dd instance key for each instance that can be added
+	; "InstanceX" = "<Miniport Name>:<Miniport Instance>"
+   ; first instance - must match \comm\BCMSDDHD1 
+   "Instance0"="BCMSDDHD:BCMSDDHD1" 
+   ; second instance - must match \comm\BCMSDDHD2
+   "Instance1"="BCMSDDHD:BCMSDDHD2"
+
+;
+; BCMWLNPF Driver Registry Entry
+;
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\BCMWLNPF]
+	"Prefix"="PKT"
+	"Dll"="bcmwlnpf.dll"
+	"Index"=dword:0   ; open with PKT0
+	"Order"=dword:4   ; let NDISUIO loaded first

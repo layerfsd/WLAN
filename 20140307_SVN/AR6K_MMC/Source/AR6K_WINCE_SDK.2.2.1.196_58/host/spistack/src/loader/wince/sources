@@ -1,0 +1,17 @@
+
+TARGETNAME=cedeviceloader
+TARGETTYPE=PROGRAM
+EXEENTRY=mainWCRTStartup
+TARGETLIBS=                                           \
+    $(_SYSGENSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib  
+
+RELEASETYPE=PLATFORM
+
+CDEFINES=$(CDEFINES)
+
+INCLUDES=$(INCLUDES) \
+         $(_SYSGENSDKROOT)\inc; \
+         $(_SYSGENDDKROOT)\inc; 
+         
+SOURCES= main.c
+  

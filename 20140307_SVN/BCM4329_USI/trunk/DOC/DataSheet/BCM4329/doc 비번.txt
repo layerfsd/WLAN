@@ -1,0 +1,3 @@
+
+BCM4329 Advance Data Sheet 								--> 비번 : docs17186
+BCM4329 WLAN Dongle Architecture and Porting Guide		--> 비번 : docs17186

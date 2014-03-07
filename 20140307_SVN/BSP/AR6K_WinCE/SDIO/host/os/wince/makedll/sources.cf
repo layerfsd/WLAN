@@ -1,0 +1,79 @@
+!if 0
+------------------------------------------------------------------------------
+ <copyright file="sources" company="Atheros and Microsoft">
+    Copyright (c) 2006 Microsoft Corporation.  All rights reserved.
+    Copyright (c) 2006 Atheros Corporation.  All rights reserved.
+
+    The use and distribution terms for this software are covered by the
+    Microsoft Limited Permissive License (Ms-LPL) 
+    http://www.microsoft.com/resources/sharedsource/licensingbasics/limitedpermissivelicense.mspx 
+    which can be found in the file MS-LPL.txt at the root of this distribution.
+    By using this software in any fashion, you are agreeing to be bound by
+    the terms of this license.
+
+    You must not remove this notice, or any other, from this software.
+ </copyright>
+ 
+ <summary>
+    Windows CE Wifi Driver for AR-6000
+ </summary>
+------------------------------------------------------------------------------
+==============================================================================
+ Windows CE Wifi Driver for AR-6000
+
+ Author(s): ="Atheros and Microsoft"
+==============================================================================
+!endif
+
+AR6K_PROJ_ROOT=..\..\..\..
+
+!INCLUDE $(AR6K_PROJ_ROOT)\sources.inc
+
+!IF ("$(AR6K_BUS_TYPE)" == "SDIO")
+TARGETDEFNAME=AR6K_NDIS_SDIO
+
+TARGETLIBS= \
+  $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\coredll.lib \
+  $(_PROJECTROOT)\cesysgen\oak\lib\$(_CPUINDPATH)\ceosutil.lib \
+  $(_PROJECTROOT)\cesysgen\oak\lib\$(_CPUINDPATH)\ceddk.lib \
+  $(_PROJECTROOT)\cesysgen\oak\lib\$(_CPUINDPATH)\sdbus.lib \
+  $(_PROJECTROOT)\cesysgen\oak\lib\$(_CPUINDPATH)\sdcardlib.lib \
+  $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\ndis.lib \
+  $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\mmtimer.lib \
+  $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\ws2.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_bmi.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_htc_sdio.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_hif_sdio.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_wlan.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_ndis_sdio_l.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_wince_utils.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_wmi.lib \
+
+
+!ELSE
+TARGETDEFNAME=AR6K_NDIS_CF
+
+TARGETLIBS= \
+  $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\coredll.lib \
+  $(_PROJECTROOT)\cesysgen\oak\lib\$(_CPUINDPATH)\ceosutil.lib \
+  $(_PROJECTROOT)\cesysgen\oak\lib\$(_CPUINDPATH)\ceddk.lib \
+  $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\ndis.lib \
+  $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\mmtimer.lib \
+  $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\ws2.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_bmi.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_htc_cf.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_hif_cf.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_wlan.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_ndis_cf_l.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_wince_utils.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_wmi.lib \
+
+!ENDIF
+
+DEFFILE=$(TARGETDEFNAME).def
+TARGETNAME=$(TARGETDEFNAME)
+TARGETTYPE=DYNLINK
+
+SOURCES= \
+
+DLLENTRY=DllEntry

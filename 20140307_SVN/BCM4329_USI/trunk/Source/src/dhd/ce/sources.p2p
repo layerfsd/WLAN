@@ -1,0 +1,22 @@
+#
+# Internal sources file (do not release)
+#
+# Copyright (C) 2001 Broadcom Corporation
+#
+# $Id: sources.p2p,v 1.1.4.1 2009/06/03 00:04:19 Exp $
+#
+
+TARGETNAME        := bcmsddhd
+TARGETTYPE        := DYNLINK
+TARGETPATHSFX     := p2p
+DNGL_IMAGE_NAME   := 4325b0/sdio-g-cdc-ndis-reclaim-idauth-idsup-p2p-wme-rwl
+override WINCEVER := 500
+override PROCESSOR:= ARM
+
+#ifdef P2P
+  C_DEFINES     += -DP2P
+#endif # P2P
+
+include sources.common
+
+TARGETPATH      := obj/$(TARGETNAME)$(TARGETPATHSFX)/$(WINCEVER)/$(PROCESSOR)

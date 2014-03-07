@@ -1,0 +1,32 @@
+TARGETNAME=athspi_sample
+TARGETTYPE=DYNLINK
+DEFFILE=ath_spi_sample.def
+DLLENTRY=DllEntry
+
+CDEFINES=$(CDEFINES)
+         
+TARGETLIBS=                                                          \
+    $(_SYSGENSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib                 \
+    $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\athspi_buslib.lib          \
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\athspi_buscore.lib         \
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\athspi_hcd_common.lib      \
+	
+CDEFINES=$(CDEFINES)
+
+AR6K_SPI_ROOT=..\..\..\..\
+
+INCLUDES=$(INCLUDES) \
+         $(_SYSGENSDKROOT)\inc; \
+         $(_SYSGENOAKROOT)\inc; \
+         $(_SYSGENDDKROOT)\inc; \
+         $(AR6K_SPI_ROOT)\src\include; \
+         $(AR6K_SPI_ROOT)\src\hcd\athspi_common; \
+         $(AR6K_SPI_ROOT)\src\hcd\athspi_common\wince; \
+
+RELEASETYPE=PLATFORM
+WINCEOEM=1
+
+SOURCES= ath_spi_hw_drv.c \
+         ath_spi_stream.c
+
+ 

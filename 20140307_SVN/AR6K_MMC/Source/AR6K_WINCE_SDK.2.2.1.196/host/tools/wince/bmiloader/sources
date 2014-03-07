@@ -1,0 +1,30 @@
+
+RELEASETYPE=PLATFORM
+TARGETNAME=Bmiloader
+
+FILE_VIEW_RESOURCE_FOLDER= \
+
+FILE_VIEW_INCLUDES_FOLDER= \
+
+SOURCES= \
+  bmiloader.cpp \
+
+TARGETTYPE=PROGRAM
+EXEENTRY=WinMain
+TARGETLIBS= \
+  $(_SYSGENSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib \
+
+AR6K_PROJ_ROOT=..\..\..\..
+
+!INCLUDE $(AR6K_PROJ_ROOT)\sources.inc
+
+
+INCLUDES= \
+  $(AR6K_PROJ_ROOT)\host\include; \
+  $(AR6K_PROJ_ROOT)\host\wlan\include; \
+  $(AR6K_PROJ_ROOT)\include; \
+    $(_SYSGENSDKROOT)\inc\; \
+    $(_SYSGENOAKROOT)\inc\; \
+    $(_SYSGENDDKROOT)\inc\;
+    
+       

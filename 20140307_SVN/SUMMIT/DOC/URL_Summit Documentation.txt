@@ -1,0 +1,3 @@
+http://www.summitdata.com/Documents/Glossary/SummitDocumentation.html
+-> 관련용어들을 찾아 볼 수 있는 SUMMIT 홈페이지.
+ex) Roaming, DFS mode, RSSI, 암호화, 인증방법

@@ -1,0 +1,38 @@
+#
+# Internal sources file (do not release)
+#
+# Copyright (C) 2001 Broadcom Corporation
+#
+# $Id: sources.btamp,v 1.1.2.1 2009/06/03 00:04:20 Exp $
+#
+
+TARGETNAME        := bcmsddhd
+TARGETTYPE        := DYNLINK
+TARGETPATHSFX     := btamp
+DNGL_IMAGE_NAME   := 4329b1/sdio-g-cdc-roml-ndis-reclaim-btamplow-idsup-idauth
+override WINCEVER := 500
+override PROCESSOR:= ARM
+
+#ifdef WLBTAMP
+ifndef WLBTAMP
+	WLBTAMP=1
+	SOURCES += dhd_bta.c
+	C_DEFINES += -DWLBTAMP
+endif
+ifndef WLBTCEAMP11
+	WLBTCEAMP11=1
+	SOURCES += btceamp11.c
+	C_DEFINES += -DWLBTCEAMP11
+endif
+WLBTAMP_HIGH=1
+ifdef WLBTAMP_HIGH
+	SOURCES += wlc_bta.c
+	C_DEFINES += -DWLBTAMP_HIGH -DWLBTAMP_HIGH_ONLY -DWL_OIDS
+else
+	C_DEFINES += -DWLBTAMP_HIGH -DWLBTAMP_LOW
+endif
+#endif
+
+include sources.common
+
+TARGETPATH      := obj/$(TARGETNAME)$(TARGETPATHSFX)/$(WINCEVER)/$(PROCESSOR)

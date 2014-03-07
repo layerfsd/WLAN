@@ -1,0 +1,30 @@
+//
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+//
+//
+// Use of this sample source code is subject to the terms of the Microsoft
+// license agreement under which you licensed this sample source code. If
+// you did not accept the terms of the license agreement, you are not
+// authorized to use this sample source code. For the terms of the license,
+// please see the license agreement between you and Microsoft or, if applicable,
+// see the LICENSE.RTF on your install media or the root of your tools installation.
+// THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES OR INDEMNITIES.
+//
+/***
+*use_ansi.h - pragmas for ANSI Standard C++ libraries
+*
+*
+*Purpose:
+*       Does nothing. Placeholder for compatibility with VC++.
+*       [Public]
+*
+****/
+
+
+#if     _MSC_VER > 1000
+#pragma once
+#endif
+
+#ifndef _USE_ANSI_CPP
+#define _USE_ANSI_CPP
+#endif	// _USE_ANSI_CPP

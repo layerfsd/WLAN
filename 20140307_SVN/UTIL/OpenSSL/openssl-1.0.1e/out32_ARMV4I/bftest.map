@@ -1,0 +1,159 @@
+ bftest
+
+ Timestamp is 511c9ae4 (Thu Feb 14 17:05:56 2013)
+
+ Preferred load address is 00010000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00002c58H .text                   CODE
+ 0002:00000000 00001420H .rdata                  DATA
+ 0002:00001420 00000014H .xdata                  DATA
+ 0002:00001434 00000014H .idata$2                DATA
+ 0002:00001448 00000014H .idata$3                DATA
+ 0002:0000145c 0000005cH .idata$4                DATA
+ 0002:000014b8 0000000cH .idata$6                DATA
+ 0002:000014c4 00000000H .edata                  DATA
+ 0003:00000000 0000005cH .idata$5                DATA
+ 0003:0000005c 00000004H .CRT$XCA                DATA
+ 0003:00000060 00000004H .CRT$XCZ                DATA
+ 0003:00000064 00000004H .CRT$XIA                DATA
+ 0003:00000068 00000004H .CRT$XIZ                DATA
+ 0003:0000006c 00000004H .CRT$XPA                DATA
+ 0003:00000070 00000004H .CRT$XPZ                DATA
+ 0003:00000074 00000004H .CRT$XTA                DATA
+ 0003:00000078 00000004H .CRT$XTZ                DATA
+ 0003:00000080 000004e8H .data                   DATA
+ 0003:00000568 00000009H .bss                    DATA
+ 0004:00000000 000000b0H .pdata                  DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0001:00000be4       main                       00011be4 f   bftest.obj
+ 0001:00000c0c       BF_ofb64_encrypt           00011c0c f   libeay32:bf_ofb64.obj
+ 0001:00000dc0       BF_cfb64_encrypt           00011dc0 f   libeay32:bf_cfb64.obj
+ 0001:00000fc8       BF_encrypt                 00011fc8 f   libeay32:bf_enc.obj
+ 0001:000014bc       BF_decrypt                 000124bc f   libeay32:bf_enc.obj
+ 0001:000019b0       BF_cbc_encrypt             000129b0 f   libeay32:bf_enc.obj
+ 0001:00001e10       BF_ecb_encrypt             00012e10 f   libeay32:bf_ecb.obj
+ 0001:00001ecc       BF_set_key                 00012ecc f   libeay32:bf_skey.obj
+ 0001:00001fd8       printf                     00012fd8 f   coredll:COREDLL.dll
+ 0001:00001fe8       strlen                     00012fe8 f   coredll:COREDLL.dll
+ 0001:00001ff8       memset                     00012ff8 f   coredll:COREDLL.dll
+ 0001:00002008       memcmp                     00013008 f   coredll:COREDLL.dll
+ 0001:00002018       memcpy                     00013018 f   coredll:COREDLL.dll
+ 0001:00002028       _cinit                     00013028 f   corelibc:crt0dat.obj
+ 0001:00002198       exit                       00013198 f   corelibc:crt0dat.obj
+ 0001:000021b8       WinMainCRTStartup          000131b8 f   corelibc:pegwmain.obj
+ 0001:0000222c       WinMain                    0001322c f   wcecompatex:winmain.obj
+ 0001:00002588       ?processCmdLine@@YAHPA_WPAPAPAD@Z 00013588 f   wcecompatex:args.obj
+ 0001:000029c4       ?unicode2ascii@@YAXPB_WPAD@Z 000139c4 f   wcecompatex:ts_string.obj
+ 0001:00002a18       ?ascii2unicode@@YAXPBDPA_WH@Z 00013a18 f   wcecompatex:ts_string.obj
+ 0001:00002ab8       ?unicode2ascii@@YAXPB_WPADH@Z 00013ab8 f   wcecompatex:ts_string.obj
+ 0001:00002b48       LocalFree                  00013b48 f   coredll:COREDLL.dll
+ 0001:00002b58       _XcptFilter                00013b58 f   coredll:COREDLL.dll
+ 0001:00002b68       __C_specific_handler       00013b68 f   coredll:COREDLL.dll
+ 0001:00002b78       _isctype                   00013b78 f   coredll:COREDLL.dll
+ 0001:00002b88       malloc                     00013b88 f   coredll:COREDLL.dll
+ 0001:00002b98       FindFirstFileW             00013b98 f   coredll:COREDLL.dll
+ 0001:00002ba8       FindClose                  00013ba8 f   coredll:COREDLL.dll
+ 0001:00002bb8       FindNextFileW              00013bb8 f   coredll:COREDLL.dll
+ 0001:00002bc8       _stricmp                   00013bc8 f   coredll:COREDLL.dll
+ 0001:00002bd8       free                       00013bd8 f   coredll:COREDLL.dll
+ 0001:00002be8       qsort                      00013be8 f   coredll:COREDLL.dll
+ 0001:00002bf8       strrchr                    00013bf8 f   coredll:COREDLL.dll
+ 0001:00002c08       strchr                     00013c08 f   coredll:COREDLL.dll
+ 0001:00002c18       realloc                    00013c18 f   coredll:COREDLL.dll
+ 0001:00002c28       GetModuleFileNameW         00013c28 f   coredll:COREDLL.dll
+ 0001:00002c38       strncpy                    00013c38 f   coredll:COREDLL.dll
+ 0001:00002c48       strcpy                     00013c48 f   coredll:COREDLL.dll
+ 0002:00000000       ??_C@_0BC@EPEOBBNL@Who?5is?5John?5Galt?$DP?$AA@ 00014000     bftest.obj
+ 0002:00000014       ??_C@_0BL@JIGBPIBD@abcdefghijklmnopqrstuvwxyz?$AA@ 00014014     bftest.obj
+ 0002:00000030       ??_C@_0BD@KBKNJDGI@ofb64?5cipher?5text?6?$AA@ 00014030     bftest.obj
+ 0002:00000044       ??_C@_0BD@EBGEIDAP@cfb64?5cipher?5text?6?$AA@ 00014044     bftest.obj
+ 0002:00000058       ??_C@_0BB@PNLIHHBF@cbc?5cipher?5text?6?$AA@ 00014058     bftest.obj
+ 0002:0000006c       ??_C@_0N@KIILGAFO@cipher?$FL?$CFd?$FN?$DN?5?$AA@ 0001406c     bftest.obj
+ 0002:0000007c       ??_C@_0BC@JPIBGNCH@?6data?$FL?$CFd?$FN?5?5?$DN?5?8?$CFs?8?$AA@ 0001407c     bftest.obj
+ 0002:00000090       ??_C@_0O@KHKMJACO@?6data?$FL?$CFd?$FN?5?5?$DN?5?$AA@ 00014090     bftest.obj
+ 0002:000000a0       ??_C@_0O@PEGHBKCL@?6iv?$FL8?$FN?5?5?5?5?5?$DN?5?$AA@ 000140a0     bftest.obj
+ 0002:000000b0       ??_C@_0BK@GLJLFENG@?6chaining?5mode?5test?5data?6?$AA@ 000140b0     bftest.obj
+ 0002:000000cc       ??_C@_0N@IKFJAHCA@key?$FL16?$FN?5?5?5?$DN?5?$AA@ 000140cc     bftest.obj
+ 0002:000000dc       ??_C@_08OJLJLCMC@?5k?$FL?$CF2u?$FN?$DN?$AA@ 000140dc     bftest.obj
+ 0002:000000e8       ??_C@_02CAMHBLCK@c?$DN?$AA@ 000140e8     bftest.obj
+ 0002:000000ec       ??_C@_0BD@CKJJILND@set_key?5test?5data?6?$AA@ 000140ec     bftest.obj
+ 0002:00000100       ??_C@_09PNPCPADC@data?$FL8?$FN?$DN?5?$AA@ 00014100     bftest.obj
+ 0002:0000010c       ??_C@_01EEMJAFIK@?6?$AA@   0001410c     bftest.obj
+ 0002:00000110       ??_C@_01GPOEFGEJ@?7?$AA@   00014110     bftest.obj
+ 0002:00000114       ??_C@_04JFFKLGJF@?$CF02X?$AA@ 00014114     bftest.obj
+ 0002:0000011c       ??_C@_0P@OIJLMDCL@ecb?5test?5data?6?$AA@ 0001411c     bftest.obj
+ 0002:0000012c       ??_C@_0CG@JBEMBKPB@key?5bytes?7?7clear?5bytes?7?7cipher?5b@ 0001412c     bftest.obj
+ 0002:00000154       ??_C@_0CA@JMCCKPDK@BF_ofb64_encrypt?5decrypt?5error?6?$AA@ 00014154     bftest.obj
+ 0002:00000174       ??_C@_0CA@GKOBEPDP@BF_ofb64_encrypt?5encrypt?5error?6?$AA@ 00014174     bftest.obj
+ 0002:00000194       ??_C@_0BL@HNFOJOBN@testing?5blowfish?5in?5ofb64?6?$AA@ 00014194     bftest.obj
+ 0002:000001b0       ??_C@_0CA@GFJAAIEJ@BF_cfb64_encrypt?5decrypt?5error?6?$AA@ 000141b0     bftest.obj
+ 0002:000001d0       ??_C@_0CA@JDFDOIEM@BF_cfb64_encrypt?5encrypt?5error?6?$AA@ 000141d0     bftest.obj
+ 0002:000001f0       ??_C@_0CA@PICEJHPL@testing?5blowfish?5in?5cfb64?5mode?6?$AA@ 000141f0     bftest.obj
+ 0002:00000210       ??_C@_0BO@FJIGODCP@BF_cbc_encrypt?5decrypt?5error?6?$AA@ 00014210     bftest.obj
+ 0002:00000230       ??_C@_07DHGLOFCI@0x?$CF02X?0?$AA@ 00014230     bftest.obj
+ 0002:00000238       ??_C@_0BO@KPEFADCK@BF_cbc_encrypt?5encrypt?5error?6?$AA@ 00014238     bftest.obj
+ 0002:00000258       ??_C@_0BO@ICHPNDMG@testing?5blowfish?5in?5cbc?5mode?6?$AA@ 00014258     bftest.obj
+ 0002:00000278       ??_C@_0BH@EMDELIGP@blowfish?5setkey?5error?6?$AA@ 00014278     bftest.obj
+ 0002:00000290       ??_C@_0BK@FBPFHGKJ@testing?5blowfish?5set_key?6?$AA@ 00014290     bftest.obj
+ 0002:000002ac       ??_C@_0CB@MJMJHHEI@BF_ecb_encrypt?5error?5decrypting?6@ 000142ac     bftest.obj
+ 0002:000002d0       ??_C@_05BFHEBJNP@?$CF02X?5?$AA@ 000142d0     bftest.obj
+ 0002:000002d8       ??_C@_0CK@PAINIMOB@BF_ecb_encrypt?5blowfish?5error?5en@ 000142d8     bftest.obj
+ 0002:00000304       ??_C@_0BO@FELALHFM@testing?5blowfish?5in?5ecb?5mode?6?$AA@ 00014304     bftest.obj
+ 0002:00000324       ??_C@_0BN@DHHLBNGH@BF_encrypt?5error?5decrypting?6?$AA@ 00014324     bftest.obj
+ 0002:00000344       ??_C@_09PBKDEKON@expected?3?$AA@ 00014344     bftest.obj
+ 0002:00000350       ??_C@_06OMOGNBEB@?$CF08lX?5?$AA@ 00014350     bftest.obj
+ 0002:00000358       ??_C@_0BN@IPPPNGEM@BF_encrypt?5error?5encrypting?6?$AA@ 00014358     bftest.obj
+ 0002:00000378       ??_C@_09DAIIHNJG@got?5?5?5?5?5?3?$AA@ 00014378     bftest.obj
+ 0002:00000384       ??_C@_0CC@BFAKGEAD@testing?5blowfish?5in?5raw?5ecb?5mode@ 00014384     bftest.obj
+ 0002:000003a8       BF_version                 000143a8     libeay32:bf_ecb.obj
+ 0002:00001434       __IMPORT_DESCRIPTOR_COREDLL 00015434     coredll:COREDLL.dll
+ 0002:00001448       __NULL_IMPORT_DESCRIPTOR   00015448     coredll:COREDLL.dll
+ 0003:00000000       __imp_printf               00016000     coredll:COREDLL.dll
+ 0003:00000004       __imp_strlen               00016004     coredll:COREDLL.dll
+ 0003:00000008       __imp_memset               00016008     coredll:COREDLL.dll
+ 0003:0000000c       __imp_memcmp               0001600c     coredll:COREDLL.dll
+ 0003:00000010       __imp_memcpy               00016010     coredll:COREDLL.dll
+ 0003:00000014       __imp_LocalFree            00016014     coredll:COREDLL.dll
+ 0003:00000018       __imp__XcptFilter          00016018     coredll:COREDLL.dll
+ 0003:0000001c       __imp___C_specific_handler 0001601c     coredll:COREDLL.dll
+ 0003:00000020       __imp__isctype             00016020     coredll:COREDLL.dll
+ 0003:00000024       __imp_malloc               00016024     coredll:COREDLL.dll
+ 0003:00000028       __imp_FindFirstFileW       00016028     coredll:COREDLL.dll
+ 0003:0000002c       __imp_FindClose            0001602c     coredll:COREDLL.dll
+ 0003:00000030       __imp_FindNextFileW        00016030     coredll:COREDLL.dll
+ 0003:00000034       __imp__stricmp             00016034     coredll:COREDLL.dll
+ 0003:00000038       __imp_free                 00016038     coredll:COREDLL.dll
+ 0003:0000003c       __imp_qsort                0001603c     coredll:COREDLL.dll
+ 0003:00000040       __imp_strrchr              00016040     coredll:COREDLL.dll
+ 0003:00000044       __imp_strchr               00016044     coredll:COREDLL.dll
+ 0003:00000048       __imp_realloc              00016048     coredll:COREDLL.dll
+ 0003:0000004c       __imp_GetModuleFileNameW   0001604c     coredll:COREDLL.dll
+ 0003:00000050       __imp_strncpy              00016050     coredll:COREDLL.dll
+ 0003:00000054       __imp_strcpy               00016054     coredll:COREDLL.dll
+ 0003:00000058       \177COREDLL_NULL_THUNK_DATA 00016058     coredll:COREDLL.dll
+ 0003:0000005c       __xc_a                     0001605c     corelibc:crt0init.obj
+ 0003:00000060       __xc_z                     00016060     corelibc:crt0init.obj
+ 0003:00000064       __xi_a                     00016064     corelibc:crt0init.obj
+ 0003:00000068       __xi_z                     00016068     corelibc:crt0init.obj
+ 0003:0000006c       __xp_a                     0001606c     corelibc:crt0init.obj
+ 0003:00000070       __xp_z                     00016070     corelibc:crt0init.obj
+ 0003:00000074       __xt_a                     00016074     corelibc:crt0init.obj
+ 0003:00000078       __xt_z                     00016078     corelibc:crt0init.obj
+ 0003:00000568       __onexitend                00016568     <common>
+ 0003:0000056c       __onexitbegin              0001656c     <common>
+ 0003:00000570       _exitflag                  00016570     <common>
+
+ entry point at        0001:000021b8
+
+ Static symbols
+
+ 0001:00000000       print_test_data            00011000 f   bftest.obj
+ 0001:0000037c       test                       0001137c f   bftest.obj
+ 0001:00002094       doexit                     00013094 f   corelibc:crt0dat.obj
+ 0001:00002250       ?getCmdLineArg@@YA?AW4ArgType@@PAPA_WPA_WHPAURedirArg@@PA_N@Z 00013250 f   wcecompatex:args.obj
+ 0001:0000257c       ?qsort_stricmp@@YAHPBX0@Z  0001357c f   wcecompatex:args.obj

@@ -1,0 +1,135 @@
+ casttest
+
+ Timestamp is 511c9ae5 (Thu Feb 14 17:05:57 2013)
+
+ Preferred load address is 00010000
+
+ Start         Length     Name                   Class
+ 0001:00000000 0000349cH .text                   CODE
+ 0002:00000000 00002120H .rdata                  DATA
+ 0002:00002120 00000014H .xdata                  DATA
+ 0002:00002134 00000014H .idata$2                DATA
+ 0002:00002148 00000014H .idata$3                DATA
+ 0002:0000215c 0000005cH .idata$4                DATA
+ 0002:000021b8 0000000cH .idata$6                DATA
+ 0002:000021c4 00000000H .edata                  DATA
+ 0003:00000000 0000005cH .idata$5                DATA
+ 0003:0000005c 00000004H .CRT$XCA                DATA
+ 0003:00000060 00000004H .CRT$XCZ                DATA
+ 0003:00000064 00000004H .CRT$XIA                DATA
+ 0003:00000068 00000004H .CRT$XIZ                DATA
+ 0003:0000006c 00000004H .CRT$XPA                DATA
+ 0003:00000070 00000004H .CRT$XPZ                DATA
+ 0003:00000074 00000004H .CRT$XTA                DATA
+ 0003:00000078 00000004H .CRT$XTZ                DATA
+ 0003:0000007c 00000080H .data                   DATA
+ 0003:00000100 00000059H .bss                    DATA
+ 0004:00000000 00000088H .pdata                  DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0001:00000000       main                       00011000 f   casttest.obj
+ 0001:000003e4       CAST_ecb_encrypt           000113e4 f   libeay32:c_ecb.obj
+ 0001:000004a0       CAST_set_key               000114a0 f   libeay32:c_skey.obj
+ 0001:00001d18       CAST_encrypt               00012d18 f   libeay32:c_enc.obj
+ 0001:00002290       CAST_decrypt               00013290 f   libeay32:c_enc.obj
+ 0001:0000281c       fflush                     0001381c f   coredll:COREDLL.dll
+ 0001:0000282c       _getstdfilex               0001382c f   coredll:COREDLL.dll
+ 0001:0000283c       printf                     0001383c f   coredll:COREDLL.dll
+ 0001:0000284c       memcmp                     0001384c f   coredll:COREDLL.dll
+ 0001:0000285c       _cinit                     0001385c f   corelibc:crt0dat.obj
+ 0001:000029cc       exit                       000139cc f   corelibc:crt0dat.obj
+ 0001:000029ec       WinMainCRTStartup          000139ec f   corelibc:pegwmain.obj
+ 0001:00002a60       WinMain                    00013a60 f   wcecompatex:winmain.obj
+ 0001:00002dbc       ?processCmdLine@@YAHPA_WPAPAPAD@Z 00013dbc f   wcecompatex:args.obj
+ 0001:000031f8       ?unicode2ascii@@YAXPB_WPAD@Z 000141f8 f   wcecompatex:ts_string.obj
+ 0001:0000324c       ?ascii2unicode@@YAXPBDPA_WH@Z 0001424c f   wcecompatex:ts_string.obj
+ 0001:000032ec       ?unicode2ascii@@YAXPB_WPADH@Z 000142ec f   wcecompatex:ts_string.obj
+ 0001:0000337c       LocalFree                  0001437c f   coredll:COREDLL.dll
+ 0001:0000338c       _XcptFilter                0001438c f   coredll:COREDLL.dll
+ 0001:0000339c       __C_specific_handler       0001439c f   coredll:COREDLL.dll
+ 0001:000033ac       _isctype                   000143ac f   coredll:COREDLL.dll
+ 0001:000033bc       malloc                     000143bc f   coredll:COREDLL.dll
+ 0001:000033cc       FindFirstFileW             000143cc f   coredll:COREDLL.dll
+ 0001:000033dc       FindClose                  000143dc f   coredll:COREDLL.dll
+ 0001:000033ec       FindNextFileW              000143ec f   coredll:COREDLL.dll
+ 0001:000033fc       _stricmp                   000143fc f   coredll:COREDLL.dll
+ 0001:0000340c       free                       0001440c f   coredll:COREDLL.dll
+ 0001:0000341c       qsort                      0001441c f   coredll:COREDLL.dll
+ 0001:0000342c       strrchr                    0001442c f   coredll:COREDLL.dll
+ 0001:0000343c       strchr                     0001443c f   coredll:COREDLL.dll
+ 0001:0000344c       realloc                    0001444c f   coredll:COREDLL.dll
+ 0001:0000345c       GetModuleFileNameW         0001445c f   coredll:COREDLL.dll
+ 0001:0000346c       strncpy                    0001446c f   coredll:COREDLL.dll
+ 0001:0000347c       strcpy                     0001447c f   coredll:COREDLL.dll
+ 0001:0000348c       strlen                     0001448c f   coredll:COREDLL.dll
+ 0002:00000000       ??_C@_0BB@JGGOGLEG@0123456789ABCDEF?$AA@ 00015000     casttest.obj
+ 0002:00000014       ??_C@_07EALADHDP@B?5out?5?$DN?$AA@ 00015014     casttest.obj
+ 0002:0000001c       ??_C@_08CDPJFNGG@?6actual?$DN?$AA@ 0001501c     casttest.obj
+ 0002:00000028       ??_C@_06HPIHNGNL@Error?6?$AA@ 00015028     casttest.obj
+ 0002:00000030       ??_C@_07MODPDANM@A?5out?5?$DN?$AA@ 00015030     casttest.obj
+ 0002:00000038       ??_C@_04CFDEAMPI@?5ok?6?$AA@ 00015038     casttest.obj
+ 0002:00000040       ??_C@_02HAOIJKIC@?$CFc?$AA@ 00015040     casttest.obj
+ 0002:00000044       ??_C@_0CC@GBBHNIAA@This?5test?5will?5take?5some?5time?4?4?4@ 00015044     casttest.obj
+ 0002:00000068       ??_C@_0O@NEJIHGHH@ecb?5cast5?5ok?6?$AA@ 00015068     casttest.obj
+ 0002:00000078       ??_C@_0CK@LCEDIHFM@ecb?5cast?5error?5decrypting?5for?5ke@ 00015078     casttest.obj
+ 0002:000000a4       ??_C@_01EEMJAFIK@?6?$AA@   000150a4     casttest.obj
+ 0002:000000a8       ??_C@_09PBKDEKON@expected?3?$AA@ 000150a8     casttest.obj
+ 0002:000000b4       ??_C@_05BFHEBJNP@?$CF02X?5?$AA@ 000150b4     casttest.obj
+ 0002:000000bc       ??_C@_0CK@HLLBFMFJ@ecb?5cast?5error?5encrypting?5for?5ke@ 000150bc     casttest.obj
+ 0002:000000e8       ??_C@_09DAIIHNJG@got?5?5?5?5?5?3?$AA@ 000150e8     casttest.obj
+ 0002:000000f4       CAST_version               000150f4     libeay32:c_ecb.obj
+ 0002:00000120       CAST_S_table7              00015120     libeay32:c_skey.obj
+ 0002:00000520       CAST_S_table6              00015520     libeay32:c_skey.obj
+ 0002:00000920       CAST_S_table5              00015920     libeay32:c_skey.obj
+ 0002:00000d20       CAST_S_table4              00015d20     libeay32:c_skey.obj
+ 0002:00001120       CAST_S_table3              00016120     libeay32:c_skey.obj
+ 0002:00001520       CAST_S_table2              00016520     libeay32:c_skey.obj
+ 0002:00001920       CAST_S_table1              00016920     libeay32:c_skey.obj
+ 0002:00001d20       CAST_S_table0              00016d20     libeay32:c_skey.obj
+ 0002:00002134       __IMPORT_DESCRIPTOR_COREDLL 00017134     coredll:COREDLL.dll
+ 0002:00002148       __NULL_IMPORT_DESCRIPTOR   00017148     coredll:COREDLL.dll
+ 0003:00000000       __imp_fflush               00018000     coredll:COREDLL.dll
+ 0003:00000004       __imp__getstdfilex         00018004     coredll:COREDLL.dll
+ 0003:00000008       __imp_printf               00018008     coredll:COREDLL.dll
+ 0003:0000000c       __imp_memcmp               0001800c     coredll:COREDLL.dll
+ 0003:00000010       __imp_LocalFree            00018010     coredll:COREDLL.dll
+ 0003:00000014       __imp__XcptFilter          00018014     coredll:COREDLL.dll
+ 0003:00000018       __imp___C_specific_handler 00018018     coredll:COREDLL.dll
+ 0003:0000001c       __imp__isctype             0001801c     coredll:COREDLL.dll
+ 0003:00000020       __imp_malloc               00018020     coredll:COREDLL.dll
+ 0003:00000024       __imp_FindFirstFileW       00018024     coredll:COREDLL.dll
+ 0003:00000028       __imp_FindClose            00018028     coredll:COREDLL.dll
+ 0003:0000002c       __imp_FindNextFileW        0001802c     coredll:COREDLL.dll
+ 0003:00000030       __imp__stricmp             00018030     coredll:COREDLL.dll
+ 0003:00000034       __imp_free                 00018034     coredll:COREDLL.dll
+ 0003:00000038       __imp_qsort                00018038     coredll:COREDLL.dll
+ 0003:0000003c       __imp_strrchr              0001803c     coredll:COREDLL.dll
+ 0003:00000040       __imp_strchr               00018040     coredll:COREDLL.dll
+ 0003:00000044       __imp_realloc              00018044     coredll:COREDLL.dll
+ 0003:00000048       __imp_GetModuleFileNameW   00018048     coredll:COREDLL.dll
+ 0003:0000004c       __imp_strncpy              0001804c     coredll:COREDLL.dll
+ 0003:00000050       __imp_strcpy               00018050     coredll:COREDLL.dll
+ 0003:00000054       __imp_strlen               00018054     coredll:COREDLL.dll
+ 0003:00000058       \177COREDLL_NULL_THUNK_DATA 00018058     coredll:COREDLL.dll
+ 0003:0000005c       __xc_a                     0001805c     corelibc:crt0init.obj
+ 0003:00000060       __xc_z                     00018060     corelibc:crt0init.obj
+ 0003:00000064       __xi_a                     00018064     corelibc:crt0init.obj
+ 0003:00000068       __xi_z                     00018068     corelibc:crt0init.obj
+ 0003:0000006c       __xp_a                     0001806c     corelibc:crt0init.obj
+ 0003:00000070       __xp_z                     00018070     corelibc:crt0init.obj
+ 0003:00000074       __xt_a                     00018074     corelibc:crt0init.obj
+ 0003:00000078       __xt_z                     00018078     corelibc:crt0init.obj
+ 0003:00000150       __onexitend                00018150     <common>
+ 0003:00000154       __onexitbegin              00018154     <common>
+ 0003:00000158       _exitflag                  00018158     <common>
+
+ entry point at        0001:000029ec
+
+ Static symbols
+
+ 0001:000028c8       doexit                     000138c8 f   corelibc:crt0dat.obj
+ 0001:00002a84       ?getCmdLineArg@@YA?AW4ArgType@@PAPA_WPA_WHPAURedirArg@@PA_N@Z 00013a84 f   wcecompatex:args.obj
+ 0001:00002db0       ?qsort_stricmp@@YAHPBX0@Z  00013db0 f   wcecompatex:args.obj

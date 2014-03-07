@@ -1,0 +1,32 @@
+TARGETNAME=ar6k_mte_core
+RELEASETYPE=PLATFORM
+
+TARGETTYPE=LIBRARY
+
+SOURCES= u_bmi.c      \
+         u_wmi.c      \
+         u_htc.c      \
+         u_htc_io.c   \
+         wifitest.c   \
+         u_hif_sdio.c  \
+         u_config.c   \
+         u_eeprom.c   \
+         dhcp.c       \
+          
+AR6K_PROJ_ROOT=..\..\..\..\..
+
+!INCLUDE $(AR6K_PROJ_ROOT)\sources.inc
+CDEFINES = $(CDEFINES) -DTODO_COMPILE_USE_SINGLE_CREDIT
+
+INCLUDES= \
+  ..\inc\;       \
+  $(AR6K_PROJ_ROOT)\host\include; \
+  $(AR6K_PROJ_ROOT)\include; \
+  $(AR6K_PROJ_ROOT)\include\AR6002; \
+  $(_SYSGENSDKROOT)\inc\; \
+  $(_SYSGENOAKROOT)\inc\; \
+  $(_SYSGENDDKROOT)\inc\; \
+    
+       
+
+    

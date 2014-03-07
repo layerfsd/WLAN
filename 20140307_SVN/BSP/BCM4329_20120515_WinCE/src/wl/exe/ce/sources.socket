@@ -1,0 +1,17 @@
+#
+# Internal sources file (do not release)
+#
+# Copyright (C) 2001 Broadcom Corporation
+#
+# $Id: sources.socket,v 1.1.6.2 2008/06/06 17:57:00 Exp $
+#
+
+TARGETNAME=wl_server_socket
+SERVER=server/socket
+
+C_DEFINES += -DWIN32 -DRWL_SOCKET -DRWLASD
+
+include sources.common
+
+SOURCES=wlu_server_ce.c ir_ce.c wlu_server_shared.c wlu_pipe.c wlu_pipe_win32.c shellproc_ce.c 
+

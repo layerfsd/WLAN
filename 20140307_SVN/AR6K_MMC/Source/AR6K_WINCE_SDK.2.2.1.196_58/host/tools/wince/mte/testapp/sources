@@ -1,0 +1,24 @@
+
+TARGETNAME=mte_test
+TARGETTYPE=PROGRAM
+EXEENTRY=mainWCRTStartup
+TARGETLIBS=                                                 \
+    $(_SYSGENSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib        \
+    $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_mte_core.lib \
+
+CDEFINES=$(CDEFINES) -DAR6K_MTE_DRV_TEST -DMTE_EMULATE
+
+AR6K_PROJ_ROOT=..\..\..\..\..\
+
+!INCLUDE $(AR6K_PROJ_ROOT)\sources.inc
+
+INCLUDES= \
+		 ..\inc\;   \
+         $(_SYSGENSDKROOT)\inc; \
+         $(_SYSGENDDKROOT)\inc;  \
+         $(AR6K_PROJ_ROOT)\host\include; \
+         $(AR6K_PROJ_ROOT)\include; \
+         $(AR6K_PROJ_ROOT)\include\AR6002; \
+         
+SOURCES= main.c
+  

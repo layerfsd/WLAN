@@ -1,0 +1,59 @@
+# Copyright (c) 2007 Atheros Communications Inc.
+# All rights reserved.
+
+!IF "$(ATH_BTFILT_DYN)"=="1"
+
+# BT Service/Filter as DLL
+
+TARGETNAME=athbtfilter
+TARGETTYPE=DYNLINK
+DLLENTRY=DllEntry
+TARGETDEFNAME=$(TARGETNAME)
+DEFFILE=$(TARGETNAME).def
+TARGETLIBS= \
+  $(_SYSGENSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib  \
+  $(_SYSGENSDKROOT)\lib\$(_CPUINDPATH)\iphlpapi.lib \
+  $(_SYSGENOAKROOT)\lib\$(_CPUINDPATH)\btdrt.lib    \
+  $(_SYSGENSDKROOT)\lib\$(_CPUINDPATH)\btd.lib      \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_btfilt.lib \
+  
+!ELSE
+
+# BT Service/Filter as static library instead
+TARGETNAME=athbtfilter_static
+TARGETTYPE=LIBRARY 
+CDEFINES=$(CDEFINES) -DATHFILT_STATIC_LIB
+
+SOURCELIBS= \
+  $(_SYSGENSDKROOT)\lib\$(_CPUINDPATH)\iphlpapi.lib 		 \
+  $(_SYSGENOAKROOT)\lib\$(_CPUINDPATH)\btdrt.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_btfilt.lib      \
+  $(_SYSGENSDKROOT)\lib\$(_CPUINDPATH)\btd.lib               \
+  
+!ENDIF
+
+RELEASETYPE=PLATFORM
+
+SOURCES= 				 \
+    btfilter_wince.c     \
+    ndis_if.c
+
+AR6K_PROJ_ROOT=..\..\..\..\..\
+
+!INCLUDE $(AR6K_PROJ_ROOT)\sources.inc
+
+# compile in Microsoft BT Stack support
+SOURCES=$(SOURCES) btfilter_msbt.c   \
+                   btfilter_msbt_hciext.cpp
+
+INCLUDES= \
+	$(AR6K_PROJ_ROOT)\host\include; \
+    $(AR6K_PROJ_ROOT)\host\os\wince\include; \
+    $(AR6K_PROJ_ROOT)\host\btfilter; \
+    $(AR6K_PROJ_ROOT)\include; \
+    $(_SYSGENSDKROOT)\inc; \
+    $(_SYSGENOAKROOT)\inc; \
+    $(_SYSGENDDKROOT)\inc; \
+    $(AR6K_PROJ_ROOT)\host\tools\wince\drvlogviewer\inc; \
+ 
+      

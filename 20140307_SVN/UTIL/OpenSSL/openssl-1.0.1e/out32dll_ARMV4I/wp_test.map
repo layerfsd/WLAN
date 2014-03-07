@@ -1,0 +1,147 @@
+ wp_test
+
+ Timestamp is 511c9986 (Thu Feb 14 17:00:06 2013)
+
+ Preferred load address is 00010000
+
+ Start         Length     Name                   Class
+ 0001:00000000 000010d4H .text                   CODE
+ 0002:00000000 00000310H .rdata                  DATA
+ 0002:00000310 00000014H .xdata                  DATA
+ 0002:00000324 00000028H .idata$2                DATA
+ 0002:0000034c 00000014H .idata$3                DATA
+ 0002:00000360 00000070H .idata$4                DATA
+ 0002:000003d0 0000001aH .idata$6                DATA
+ 0002:000003ea 00000000H .edata                  DATA
+ 0003:00000000 00000070H .idata$5                DATA
+ 0003:00000070 00000004H .CRT$XCA                DATA
+ 0003:00000074 00000004H .CRT$XCZ                DATA
+ 0003:00000078 00000004H .CRT$XIA                DATA
+ 0003:0000007c 00000004H .CRT$XIZ                DATA
+ 0003:00000080 00000004H .CRT$XPA                DATA
+ 0003:00000084 00000004H .CRT$XPZ                DATA
+ 0003:00000088 00000004H .CRT$XTA                DATA
+ 0003:0000008c 00000004H .CRT$XTZ                DATA
+ 0003:00000090 00000240H .data                   DATA
+ 0003:000002d0 00000009H .bss                    DATA
+ 0004:00000000 00000068H .pdata                  DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0001:00000000       main                       00011000 f   wp_test.obj
+ 0001:00000414       WHIRLPOOL_Final            00011414 f   libeay32:LIBEAY32.dll
+ 0001:00000424       WHIRLPOOL_Update           00011424 f   libeay32:LIBEAY32.dll
+ 0001:00000434       WHIRLPOOL_Init             00011434 f   libeay32:LIBEAY32.dll
+ 0001:00000444       WHIRLPOOL                  00011444 f   libeay32:LIBEAY32.dll
+ 0001:00000454       fflush                     00011454 f   coredll:COREDLL.dll
+ 0001:00000464       fprintf                    00011464 f   coredll:COREDLL.dll
+ 0001:00000474       _getstdfilex               00011474 f   coredll:COREDLL.dll
+ 0001:00000484       memcmp                     00011484 f   coredll:COREDLL.dll
+ 0001:0000049c       WinMainCRTStartup          0001149c f   corelibc:pegwmain.obj
+ 0001:00000510       _cinit                     00011510 f   corelibc:crt0dat.obj
+ 0001:00000680       exit                       00011680 f   corelibc:crt0dat.obj
+ 0001:00000698       WinMain                    00011698 f   wcecompatex:winmain.obj
+ 0001:000009f4       ?processCmdLine@@YAHPA_WPAPAPAD@Z 000119f4 f   wcecompatex:args.obj
+ 0001:00000e30       ?unicode2ascii@@YAXPB_WPAD@Z 00011e30 f   wcecompatex:ts_string.obj
+ 0001:00000e84       ?ascii2unicode@@YAXPBDPA_WH@Z 00011e84 f   wcecompatex:ts_string.obj
+ 0001:00000f24       ?unicode2ascii@@YAXPB_WPADH@Z 00011f24 f   wcecompatex:ts_string.obj
+ 0001:00000fb4       _XcptFilter                00011fb4 f   coredll:COREDLL.dll
+ 0001:00000fc4       __C_specific_handler       00011fc4 f   coredll:COREDLL.dll
+ 0001:00000fd4       LocalFree                  00011fd4 f   coredll:COREDLL.dll
+ 0001:00000fe4       _isctype                   00011fe4 f   coredll:COREDLL.dll
+ 0001:00000ff4       malloc                     00011ff4 f   coredll:COREDLL.dll
+ 0001:00001004       FindFirstFileW             00012004 f   coredll:COREDLL.dll
+ 0001:00001014       FindClose                  00012014 f   coredll:COREDLL.dll
+ 0001:00001024       FindNextFileW              00012024 f   coredll:COREDLL.dll
+ 0001:00001034       _stricmp                   00012034 f   coredll:COREDLL.dll
+ 0001:00001044       free                       00012044 f   coredll:COREDLL.dll
+ 0001:00001054       qsort                      00012054 f   coredll:COREDLL.dll
+ 0001:00001064       strrchr                    00012064 f   coredll:COREDLL.dll
+ 0001:00001074       strchr                     00012074 f   coredll:COREDLL.dll
+ 0001:00001084       realloc                    00012084 f   coredll:COREDLL.dll
+ 0001:00001094       GetModuleFileNameW         00012094 f   coredll:COREDLL.dll
+ 0001:000010a4       strncpy                    000120a4 f   coredll:COREDLL.dll
+ 0001:000010b4       strcpy                     000120b4 f   coredll:COREDLL.dll
+ 0001:000010c4       strlen                     000120c4 f   coredll:COREDLL.dll
+ 0002:00000000       ??_C@_09MCFGFJHJ@?5passed?4?6?$AA@ 00013000     wp_test.obj
+ 0002:0000000c       ??_C@_0BG@JEEKHBGE@?6TEST?59?5of?59?5failed?4?6?$AA@ 0001300c     wp_test.obj
+ 0002:00000028       ??_C@_0BCB@NLPKPNBG@aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@ 00013028     wp_test.obj
+ 0002:0000014c       ??_C@_0BG@DKCCOAPF@?6TEST?58?5of?59?5failed?4?6?$AA@ 0001314c     wp_test.obj
+ 0002:00000164       ??_C@_0CB@BAPJCFDG@abcdbcdecdefdefgefghfghighijhijk@ 00013164     wp_test.obj
+ 0002:00000188       ??_C@_0BG@LEMIIHMP@?6TEST?57?5of?59?5failed?4?6?$AA@ 00013188     wp_test.obj
+ 0002:000001a0       ??_C@_0FB@JDIKKJCI@12345678901234567890123456789012@ 000131a0     wp_test.obj
+ 0002:000001f4       ??_C@_0BG@BKKABGFO@?6TEST?56?5of?59?5failed?4?6?$AA@ 000131f4     wp_test.obj
+ 0002:0000020c       ??_C@_0DP@EFDPGBGM@ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef@ 0001320c     wp_test.obj
+ 0002:0000024c       ??_C@_0BG@DDGIKCKM@?6TEST?55?5of?59?5failed?4?6?$AA@ 0001324c     wp_test.obj
+ 0002:00000264       ??_C@_0BL@JIGBPIBD@abcdefghijklmnopqrstuvwxyz?$AA@ 00013264     wp_test.obj
+ 0002:00000280       ??_C@_0BG@JNAADDDN@?6TEST?54?5of?59?5failed?4?6?$AA@ 00013280     wp_test.obj
+ 0002:00000298       ??_C@_0P@ONGHGJEC@message?5digest?$AA@ 00013298     wp_test.obj
+ 0002:000002a8       ??_C@_0BG@GAPJMLEI@?6TEST?53?5of?59?5failed?4?6?$AA@ 000132a8     wp_test.obj
+ 0002:000002c0       ??_C@_03FIKCJHKP@abc?$AA@  000132c0     wp_test.obj
+ 0002:000002c4       ??_C@_0BG@MOJBFKNJ@?6TEST?52?5of?59?5failed?4?6?$AA@ 000132c4     wp_test.obj
+ 0002:000002dc       ??_C@_01LFCBOECM@?4?$AA@   000132dc     wp_test.obj
+ 0002:000002e0       ??_C@_01MCMALHOG@a?$AA@    000132e0     wp_test.obj
+ 0002:000002e4       ??_C@_0BG@OHFJOOCL@?6TEST?51?5of?59?5failed?4?6?$AA@ 000132e4     wp_test.obj
+ 0002:000002fc       ??_C@_0BD@NDHMLHBL@Testing?5Whirlpool?5?$AA@ 000132fc     wp_test.obj
+ 0002:0000030f       ??_C@_00CNPNBAHC@?$AA@     0001330f     wp_test.obj
+ 0002:00000324       __IMPORT_DESCRIPTOR_LIBEAY32 00013324     libeay32:LIBEAY32.dll
+ 0002:00000338       __IMPORT_DESCRIPTOR_COREDLL 00013338     coredll:COREDLL.dll
+ 0002:0000034c       __NULL_IMPORT_DESCRIPTOR   0001334c     libeay32:LIBEAY32.dll
+ 0003:00000000       __imp_FindFirstFileW       00014000     coredll:COREDLL.dll
+ 0003:00000004       __imp_strlen               00014004     coredll:COREDLL.dll
+ 0003:00000008       __imp_strcpy               00014008     coredll:COREDLL.dll
+ 0003:0000000c       __imp_strncpy              0001400c     coredll:COREDLL.dll
+ 0003:00000010       __imp_fflush               00014010     coredll:COREDLL.dll
+ 0003:00000014       __imp_fprintf              00014014     coredll:COREDLL.dll
+ 0003:00000018       __imp__getstdfilex         00014018     coredll:COREDLL.dll
+ 0003:0000001c       __imp_memcmp               0001401c     coredll:COREDLL.dll
+ 0003:00000020       __imp__XcptFilter          00014020     coredll:COREDLL.dll
+ 0003:00000024       __imp___C_specific_handler 00014024     coredll:COREDLL.dll
+ 0003:00000028       __imp_LocalFree            00014028     coredll:COREDLL.dll
+ 0003:0000002c       __imp__isctype             0001402c     coredll:COREDLL.dll
+ 0003:00000030       __imp_malloc               00014030     coredll:COREDLL.dll
+ 0003:00000034       __imp_FindClose            00014034     coredll:COREDLL.dll
+ 0003:00000038       __imp_FindNextFileW        00014038     coredll:COREDLL.dll
+ 0003:0000003c       __imp__stricmp             0001403c     coredll:COREDLL.dll
+ 0003:00000040       __imp_free                 00014040     coredll:COREDLL.dll
+ 0003:00000044       __imp_qsort                00014044     coredll:COREDLL.dll
+ 0003:00000048       __imp_strrchr              00014048     coredll:COREDLL.dll
+ 0003:0000004c       __imp_strchr               0001404c     coredll:COREDLL.dll
+ 0003:00000050       __imp_realloc              00014050     coredll:COREDLL.dll
+ 0003:00000054       __imp_GetModuleFileNameW   00014054     coredll:COREDLL.dll
+ 0003:00000058       \177COREDLL_NULL_THUNK_DATA 00014058     coredll:COREDLL.dll
+ 0003:0000005c       __imp_WHIRLPOOL            0001405c     libeay32:LIBEAY32.dll
+ 0003:00000060       __imp_WHIRLPOOL_Init       00014060     libeay32:LIBEAY32.dll
+ 0003:00000064       __imp_WHIRLPOOL_Update     00014064     libeay32:LIBEAY32.dll
+ 0003:00000068       __imp_WHIRLPOOL_Final      00014068     libeay32:LIBEAY32.dll
+ 0003:0000006c       \177LIBEAY32_NULL_THUNK_DATA 0001406c     libeay32:LIBEAY32.dll
+ 0003:00000070       __xc_a                     00014070     corelibc:crt0init.obj
+ 0003:00000074       __xc_z                     00014074     corelibc:crt0init.obj
+ 0003:00000078       __xi_a                     00014078     corelibc:crt0init.obj
+ 0003:0000007c       __xi_z                     0001407c     corelibc:crt0init.obj
+ 0003:00000080       __xp_a                     00014080     corelibc:crt0init.obj
+ 0003:00000084       __xp_z                     00014084     corelibc:crt0init.obj
+ 0003:00000088       __xt_a                     00014088     corelibc:crt0init.obj
+ 0003:0000008c       __xt_z                     0001408c     corelibc:crt0init.obj
+ 0003:00000090       iso_test_9                 00014090     wp_test.obj
+ 0003:000000d0       iso_test_8                 000140d0     wp_test.obj
+ 0003:00000110       iso_test_7                 00014110     wp_test.obj
+ 0003:00000150       iso_test_6                 00014150     wp_test.obj
+ 0003:00000190       iso_test_5                 00014190     wp_test.obj
+ 0003:000001d0       iso_test_4                 000141d0     wp_test.obj
+ 0003:00000210       iso_test_3                 00014210     wp_test.obj
+ 0003:00000250       iso_test_2                 00014250     wp_test.obj
+ 0003:00000290       iso_test_1                 00014290     wp_test.obj
+ 0003:000002d0       __onexitend                000142d0     <common>
+ 0003:000002d4       __onexitbegin              000142d4     <common>
+ 0003:000002d8       _exitflag                  000142d8     <common>
+
+ entry point at        0001:0000049c
+
+ Static symbols
+
+ 0001:0000057c       doexit                     0001157c f   corelibc:crt0dat.obj
+ 0001:000006bc       ?getCmdLineArg@@YA?AW4ArgType@@PAPA_WPA_WHPAURedirArg@@PA_N@Z 000116bc f   wcecompatex:args.obj
+ 0001:000009e8       ?qsort_stricmp@@YAHPBX0@Z  000119e8 f   wcecompatex:args.obj

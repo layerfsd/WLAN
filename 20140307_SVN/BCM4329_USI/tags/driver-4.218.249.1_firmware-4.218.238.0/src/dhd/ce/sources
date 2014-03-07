@@ -1,0 +1,28 @@
+#
+# Internal sources file (do not release)
+#
+# Copyright (C) 2006 Broadcom Corporation
+#
+# $Id: sources,v 1.5.154.3 2010/04/14 12:12:11 Exp $
+#
+
+# for generating $(OUTDIR_$(TTYPE))/wlconf.h in GNUmakefile.inc
+#CONFIG_WL_CONF := wlconfig_ce_sdio
+
+#WLCONF_GEN := true
+#export 	WLCONF_GEN
+#WLCFGDIR	:= $(SRCBASE)/wl/config
+
+#WLNDIS=1
+#OSLNDIS=1
+#include	$(WLCFGDIR)/$(CONFIG_WL_CONF)
+#include	$(WLCFGDIR)/wl.mk
+
+#HOST_OID=1
+#WLBTAMP=1
+#WLBTCEAMP11=1
+
+include sources.common
+
+# OTHER_SOURCES=sources.p2p sources.wlm
+# OTHER_SOURCES=sources.btamp

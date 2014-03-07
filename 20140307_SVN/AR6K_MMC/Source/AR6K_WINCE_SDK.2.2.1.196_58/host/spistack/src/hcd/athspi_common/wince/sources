@@ -1,0 +1,20 @@
+TARGETNAME=athspi_hcd_common
+TARGETTYPE=LIBRARY
+
+CDEFINES=$(CDEFINES)
+
+AR6K_SPI_ROOT=..\..\..\..\
+
+INCLUDES=$(INCLUDES) \
+         $(_SYSGENSDKROOT)\inc; \
+         $(_SYSGENOAKROOT)\inc; \
+         $(_SYSGENDDKROOT)\inc; \
+         $(AR6K_SPI_ROOT)\src\include;
+
+RELEASETYPE=PLATFORM
+WINCEOEM=1
+
+SOURCES=..\ath_spi_hcd.c \
+		ath_spi_wince.c
+
+ 

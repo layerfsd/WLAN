@@ -1,0 +1,2306 @@
+//
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+//
+//
+// Use of this source code is subject to the terms of the Microsoft
+// premium shared source license agreement under which you licensed
+// this source code. If you did not accept the terms of the license
+// agreement, you are not authorized to use this source code.
+// For the terms of the license, please see the license agreement
+// signed by you and Microsoft.
+// THE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES OR INDEMNITIES.
+//
+/////////////////////////////////////////////////////////////////////////////
+//
+//  WEBVW.IDL
+//
+//  Description:
+//      IDL source for public interfaces in webview.dll
+//
+//
+/////////////////////////////////////////////////////////////////////////////
+#include <olectl.h>
+#include <wvdispid.h>
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "dispex.idl";
+import "urlmon.idl";
+
+// forward declarations
+interface IPIEHTMLBodyElement;
+
+/////////////////////////////////////////////////////////////////////////////
+// Pocket IE HTML Control Object
+/////////////////////////////////////////////////////////////////////////////
+[
+    uuid(698E3FBD-70C3-11D0-81E8-00A0C90AD21A), // LIBID_WEBVIEWLib
+    version(2.0)
+]
+library WEBVIEWLib
+{
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEOmNavigator
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE2100),
+        dual,
+        helpstring("PocketIE OmNavigator Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEOmNavigator : IDispatchEx
+    {
+        // Properties
+        [propget, id(DISPID_VALUE), hidden]
+        HRESULT toString([out, retval] BSTR * pbstrString);
+
+        [propget]
+        HRESULT appCodeName([out, retval] BSTR * pbstrCodeName);
+
+        [propget]
+        HRESULT appName([out, retval] BSTR * pbstrName);
+
+        [propget]
+        HRESULT appVersion([out, retval] BSTR * pbstrVersion);
+
+        [propget]
+        HRESULT userAgent([out, retval] BSTR * pbstrUserAgent);
+
+        [propget]
+        HRESULT platform([out, retval] BSTR * pbstrPlatform);
+
+        // Methods
+        HRESULT javaEnabled([out, retval] VARIANT_BOOL * pvbJavaEnabled);
+        HRESULT taintEnabled([out, retval] VARIANT_BOOL *pvbTaintEnabled);
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEOmNavigator2
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(e208f803-5a65-4ee0-8f8c-6c14f28a071b),
+        dual,
+        helpstring("PocketIE OmNavigator2 Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEOmNavigator2 : IPIEOmNavigator
+    {
+        // Properties
+        [propget]
+        HRESULT appMinorVersion([out, retval] BSTR * pbstrMinorVersion);
+
+        [propget]
+        HRESULT cpuClass([out, retval] BSTR * pbstrCpuClass); 
+
+        [propget]
+        HRESULT userAgentOS([out, retval] BSTR * pbstrOS);  
+
+        [propget]
+        HRESULT systemLanguage([out, retval] BSTR * pbstrLang); 
+
+        [propget]
+        HRESULT userLanguage([out, retval] BSTR * pbstrLang); 
+
+        [propget]
+        HRESULT cookieEnabled([out, retval] VARIANT_BOOL * pvbCookieEnabled);
+    };
+
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEOmHistory
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE2104),
+        dual,
+        helpstring("PocketIE OmHistory Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEOmHistory : IDispatchEx
+    {
+        // Properties
+        [propget, id(DISPID_VALUE), hidden]
+        HRESULT toString([out, retval] BSTR * pbstrString);
+
+        [propget]
+        HRESULT length([out, retval] long * plLength);
+
+        // Methods
+        HRESULT back([in, optional] VARIANT * pvtDistance);
+        HRESULT forward([in, optional] VARIANT * pvtDistance);
+        HRESULT go([in, optional] VARIANT * pvtDistance);
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLElementCollection
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE2105),
+        dual,
+        helpstring("PocketIE HTMLElementCollection Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLElementCollection : IDispatchEx
+    {
+        // Properties
+        [propget]
+        HRESULT length([out, retval] long * plLength);
+
+        [id(DISPID_VALUE)]
+        HRESULT item([in, optional] VARIANT vtName, [in, optional] VARIANT vtIndex, [out, retval] IDispatch ** ppdispItem);
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLLocation
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE2109),
+        dual,
+        helpstring("PocketIE HTMLLocation Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLLocation: IDispatchEx
+    {
+        // Properties
+        [propput, id(DISPID_VALUE)]
+        HRESULT href([in] BSTR bstrHREF);
+        [propget, id(DISPID_VALUE)]
+        HRESULT href([out, retval] BSTR * pbstrHREF);
+
+        [propput]
+        HRESULT protocol([in] BSTR bstrProtocol);
+        [propget]
+        HRESULT protocol([out, retval] BSTR * pbstrProtocol);
+        [propput]
+
+        HRESULT host([in] BSTR bstrHost);
+        [propget]
+        HRESULT host([out, retval] BSTR * pbstrHost);
+
+        [propput]
+        HRESULT hostname([in] BSTR bstrHostName);
+        [propget]
+        HRESULT hostname([out, retval] BSTR * pbstrHostName);
+
+        [propput]
+        HRESULT port([in] BSTR bstrPort);
+        [propget]
+        HRESULT port([out, retval] BSTR * pbstrPort);
+
+        [propput]
+        HRESULT pathname([in] BSTR bstrPathName);
+        [propget]
+        HRESULT pathname([out, retval] BSTR * pbstrPathName);
+
+        [propput]
+        HRESULT search([in] BSTR bstrSearch);
+        [propget]
+        HRESULT search([out, retval] BSTR * pbstrSearch);
+
+        [propput]
+        HRESULT hash([in] BSTR bstrHash);
+        [propget]
+        HRESULT hash([out, retval] BSTR * pbstrHash);
+
+        // Methods
+        HRESULT reload([in, defaultvalue(0)] VARIANT_BOOL vbReloadSource);
+        HRESULT replace([in] BSTR bstrURL);
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLDocument
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE2101),
+        dual,
+        helpstring("PocketIE HTLMDocument Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLDocument : IDispatchEx
+    {
+        // Properties
+        [propget, id(DISPID_VALUE), hidden]
+        HRESULT toString([out, retval] BSTR * pbstrString);
+
+        [propget, id(DISPID_HTMLDOCUMENT_BASE)]
+        HRESULT links([out, retval] IPIEHTMLElementCollection ** ppElemCollection);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 1)]
+        HRESULT forms([out, retval] IPIEHTMLElementCollection ** ppElemCollection);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 2)]
+        HRESULT anchors([out, retval] IPIEHTMLElementCollection ** ppElemCollection);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 3)]
+        HRESULT frames([out, retval] IPIEHTMLElementCollection ** ppElemCollection);
+
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 4)]
+        HRESULT lastModified([out, retval] BSTR * pbstrLastModified);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 5)]
+        HRESULT referrer([out, retval] BSTR * pbstrReferrer);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 6)]
+        HRESULT location([out, retval] IPIEHTMLLocation ** ppLocation);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 7)]
+        HRESULT title([out, retval] BSTR * pbstrTitle);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 8)]
+        HRESULT URL([out, retval] BSTR * pbstrURL);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 9)]
+        HRESULT bgColor([in] VARIANT vtBGColor);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 9)]
+        HRESULT bgColor([out, retval] VARIANT * pvtBGColor);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 10)]
+        HRESULT fgColor([in] VARIANT vtFGColor);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 10)]
+        HRESULT fgColor([out, retval] VARIANT * pvtFGColor);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 11)]
+        HRESULT linkColor([in] VARIANT vtLinkColor);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 11)]
+        HRESULT linkColor([out, retval] VARIANT * pvtLinkColor);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 12)]
+        HRESULT alinkColor([in] VARIANT vtALinkColor);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 12)]
+        HRESULT alinkColor([out, retval] VARIANT * pvtALinkColor);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 13)]
+        HRESULT vlinkColor([in] VARIANT vtVLinkColor);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 13)]
+        HRESULT vlinkColor([out, retval] VARIANT * pvtVLinkColor);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 14)]
+        HRESULT cookie([in] BSTR bstrCookie);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 14)]
+        HRESULT cookie([out, retval] BSTR * bstrCookie);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 15)]
+        HRESULT domain([in] BSTR bstrDomain);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 15)]
+        HRESULT domain([out, retval] BSTR * pbstrDomain);
+
+        // Methods
+        [id(DISPID_HTMLDOCUMENT_BASE + 16)]
+        HRESULT open([in, defaultvalue("text/html")] BSTR bstrMimeType, [in, optional] VARIANT vtReplace);
+
+        [id(DISPID_HTMLDOCUMENT_BASE + 17)]
+        HRESULT close();
+
+        [id(DISPID_HTMLDOCUMENT_BASE + 18)]
+        HRESULT clear();
+
+        [vararg, id(DISPID_HTMLDOCUMENT_BASE + 19)]
+        HRESULT write([in] SAFEARRAY(VARIANT) psaWrite);
+
+        [vararg, id(DISPID_HTMLDOCUMENT_BASE + 20)]
+        HRESULT writeln([in] SAFEARRAY(VARIANT) psaWrite);
+    };
+
+    interface IPIEHTMLWindow;
+    interface IPIEHTMLWindow2;
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLDocument2
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE21F1),
+        dual,
+        helpstring("PocketIE HTLMDocument2 Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLDocument2 : IPIEHTMLDocument
+    {
+        // Properties
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 100)]
+        HRESULT images([out, retval] IPIEHTMLElementCollection ** ppElemCollection);
+
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 101)]
+        HRESULT all([out, retval] IPIEHTMLElementCollection ** ppElemCollection);
+
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 102)]
+        HRESULT parentWindow([out, retval] IPIEHTMLWindow2 ** ppWindow);
+    }
+
+    interface IPIEHTMLElement;
+    interface IPIEHTMLImgElement;
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLDocument3
+    //
+    // This interface is meant to be compatible with the 
+    // mshtml IHTMLDocument3 interface.  All of the properties/methods may
+    // not be supported. Unsupported props/methods are marked 'restricted'
+    //
+    /////////////////////////////////////////////////////////////////////////
+    
+    // IPIEHTMLDOMNode currently unimplemented,
+    // needed for IHTMLDocument3 compilation
+    [ uuid(680b64f4-48d1-42c3-8fa7-7bf4a83a115c) ]
+    interface IPIEHTMLDOMNode : IDispatch {};
+
+    [
+        object,
+        uuid(f1210a64-e50f-49e7-9e3b-81a25415a583),
+        dual,
+        helpstring("PocketIE HTMLDocument3 Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLDocument3 : IPIEHTMLDocument2
+    {
+        // Properties
+
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 110) ]
+        HRESULT documentElement([retval, out] IPIEHTMLElement* * p);
+
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 111), restricted]
+        HRESULT uniqueID([retval, out] BSTR * p);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 112), restricted]
+        HRESULT onrowsdelete([in] VARIANT v);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 112), restricted]
+        HRESULT onrowsdelete([retval, out] VARIANT * p);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 113), restricted]
+        HRESULT onrowsinserted([in] VARIANT v);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 113), restricted]
+        HRESULT onrowsinserted([retval, out] VARIANT * p);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 114), restricted]
+        HRESULT oncellchange([in] VARIANT v);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 114), restricted]
+        HRESULT oncellchange([retval, out] VARIANT * p);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 115), restricted]
+        HRESULT ondatasetchanged([in] VARIANT v);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 115), restricted]
+        HRESULT ondatasetchanged([retval, out] VARIANT * p);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 116), restricted]
+        HRESULT ondataavailable([in] VARIANT v);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 116), restricted]
+        HRESULT ondataavailable([retval, out] VARIANT * p);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 117), restricted]
+        HRESULT ondatasetcomplete([in] VARIANT v);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 117), restricted]
+        HRESULT ondatasetcomplete([retval, out] VARIANT * p);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 118), restricted]
+        HRESULT onpropertychange([in] VARIANT v);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 118), restricted]
+        HRESULT onpropertychange([retval, out] VARIANT * p);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 119), restricted]
+        HRESULT dir([in] BSTR v);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 119), restricted]
+        HRESULT dir([retval, out] BSTR * p);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 120), restricted]
+        HRESULT oncontextmenu([in] VARIANT v);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 120), restricted]
+        HRESULT oncontextmenu([retval, out] VARIANT * p);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 121), restricted]
+        HRESULT onstop([in] VARIANT v);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 121), restricted]
+        HRESULT onstop([retval, out] VARIANT * p);
+
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 122), restricted]
+        HRESULT parentDocument([retval, out] IPIEHTMLDocument2* * p);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 123), restricted]
+        HRESULT enableDownload([in] VARIANT_BOOL v);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 123), restricted]
+        HRESULT enableDownload([retval, out] VARIANT_BOOL * p);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 124), restricted]
+        HRESULT baseUrl([in] BSTR v);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 124), restricted]
+        HRESULT baseUrl([retval, out] BSTR * p);
+
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 125), restricted]
+        HRESULT childNodes([retval, out] IDispatch* * p);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 126), restricted]
+        HRESULT inheritStyleSheets([in] VARIANT_BOOL v);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 126), restricted]
+        HRESULT inheritStyleSheets([retval, out] VARIANT_BOOL * p);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 127), restricted]
+        HRESULT onbeforeeditfocus([in] VARIANT v);
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 127), restricted]
+        HRESULT onbeforeeditfocus([retval, out] VARIANT * p);
+
+
+        // Methods
+        [id(DISPID_HTMLDOCUMENT_BASE + 128), restricted]
+        HRESULT releaseCapture();
+
+        [id(DISPID_HTMLDOCUMENT_BASE + 129), restricted]
+        HRESULT recalc([defaultvalue(0), in] VARIANT_BOOL fForce);
+
+        [id(DISPID_HTMLDOCUMENT_BASE + 130), restricted]
+        HRESULT createTextNode([in] BSTR text,[retval, out] IPIEHTMLDOMNode** newTextNode);
+
+        [id(DISPID_HTMLDOCUMENT_BASE + 131), restricted]
+        HRESULT attachEvent([in] BSTR event,[in] IDispatch* pDisp,[retval, out] VARIANT_BOOL* pfResult);
+
+        [id(DISPID_HTMLDOCUMENT_BASE + 132), restricted]
+        HRESULT detachEvent([in] BSTR event,[in] IDispatch* pDisp);
+
+        [id(DISPID_HTMLDOCUMENT_BASE + 133), restricted]
+        HRESULT createDocumentFragment([retval, out] IPIEHTMLDocument2** pNewDoc);
+
+        [id(DISPID_HTMLDOCUMENT_BASE + 134), restricted]
+        HRESULT getElementsByName([in] BSTR v,[retval, out] IPIEHTMLElementCollection** pelColl);
+
+        [id(DISPID_HTMLDOCUMENT_BASE + 135)]
+        HRESULT getElementById([in] BSTR v,[retval, out] IPIEHTMLElement** pel);
+
+        [id(DISPID_HTMLDOCUMENT_BASE + 136) ]
+        HRESULT getElementsByTagName([in] BSTR v,[retval, out] IPIEHTMLElementCollection** pelColl);
+    };
+
+    
+    [
+        object,
+        uuid(6CD4C067-D25B-4558-86FB-0BE801001007),
+        dual,
+        helpstring("PocketIE HTMLDocument4 Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLDocument4 : IPIEHTMLDocument3
+    {
+        [propget, id(DISPID_HTMLDOCUMENT_BASE + 140)]
+        HRESULT body([out, retval] IPIEHTMLElement ** ppBody);  
+
+        [id(DISPID_HTMLDOCUMENT_BASE + 141)]
+        HRESULT createElement([in] BSTR bstrTag, [retval, out] IPIEHTMLElement** pel);
+
+        [propput, id(DISPID_HTMLDOCUMENT_BASE + 142 )]
+        HRESULT title([in] BSTR bstrTitle);
+
+    };
+
+    
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLScreen
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE2120),
+        dual,
+        helpstring("PocketIE HTMLScreen Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLScreen : IDispatchEx
+    {
+        // Properties
+        [propget, id(DISPID_HTML_SCREEN_BASE + 1)]
+        HRESULT colorDepth([out, retval] long * plColorDepth);
+
+        [propget, id(DISPID_HTML_SCREEN_BASE + 2)]
+        HRESULT width([out, retval] long * plWidth);
+
+        [propget, id(DISPID_HTML_SCREEN_BASE + 3)]
+        HRESULT height([out, retval] long * plHeight);
+
+        [propget, id(DISPID_HTML_SCREEN_BASE + 4)]
+        HRESULT availWidth([out, retval] long * plAvailWidth);
+
+        [propget, id(DISPID_HTML_SCREEN_BASE + 5)]
+        HRESULT availHeight([out, retval] long * plAvailHeight);    
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLScreen2
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(400EADB2-B21E-4933-8A99-E852927AE620),
+        dual,
+        helpstring("PocketIE HTMLScreen2 Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLScreen2 : IPIEHTMLScreen
+    {
+        // Properties
+        [propget, id(DISPID_HTML_SCREEN_BASE + 6)]
+        HRESULT deviceXDPI([out, retval] long * plDeviceXDPI);
+
+        [propget, id(DISPID_HTML_SCREEN_BASE + 7)]
+        HRESULT deviceYDPI([out, retval] long * plDeviceYDPI);
+
+        [propget, id(DISPID_HTML_SCREEN_BASE + 8)]
+        HRESULT logicalXDPI([out, retval] long * plLogicalXDPI);
+
+        [propget, id(DISPID_HTML_SCREEN_BASE + 9)]
+        HRESULT logicalYDPI([out, retval] long * plLogicalYDPI);          
+    };    
+
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLImageElementFactory
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE22F4),
+        dual,
+        helpstring("PocketIE HTMLImgElement Factory Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLImageElementFactory : IDispatchEx
+    {
+        [id(DISPID_VALUE)]
+        HRESULT create([optional, in] VARIANT vtWidth, [optional, in] VARIANT vtHeight, [out, retval] IPIEHTMLImgElement ** ppImgElement);
+    };
+
+    interface IPIEHTMLOptionElement;
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLOptionElementFactory
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE21FB),
+        dual,
+        helpstring("PocketIE HTMLOptionElement Factory Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLOptionElementFactory : IDispatchEx
+    {
+        [id(DISPID_VALUE)]
+        HRESULT create([optional, in] VARIANT vtText, [optional, in] VARIANT vtValue, [optional, in] VARIANT vtDefaultSelected, [optional, in] VARIANT vtSelected, [out, retval] IPIEHTMLOptionElement ** ppOptionElement);
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLWindow
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE2102),
+        dual,
+        helpstring("PocketIE HTMLWindow Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLWindow : IDispatchEx
+    {
+        // Properties
+        [propget, id(DISPID_VALUE), hidden]
+        HRESULT toString([out, retval] BSTR * pbstrString);
+
+        [propget, id(DISPID_HTMLWINDOW_BASE)]
+        HRESULT location([out, retval] IPIEHTMLLocation ** ppLocation);
+
+        [propget, id(DISPID_HTMLWINDOW_BASE + 1)]
+        HRESULT history([out, retval] IPIEOMHistory ** ppOmHistory);
+
+        [propget, id(DISPID_HTMLWINDOW_BASE + 2)]
+        HRESULT navigator([out, retval] IPIEOmNavigator ** ppOmNavigator);
+
+        [propget, id(DISPID_HTMLWINDOW_BASE + 3)]
+        HRESULT document([out, retval] IPIEHTMLDocument ** ppDocument);
+
+        [propget, id(DISPID_HTMLWINDOW_BASE + 4)]
+        HRESULT parent([out, retval] IPIEHTMLWindow ** ppWindowParent);
+
+        [propget, id(DISPID_HTMLWINDOW_BASE + 5)]
+        HRESULT self([out, retval] IPIEHTMLWindow ** ppWindowSelf);
+
+        [propget, id(DISPID_HTMLWINDOW_BASE + 6)]
+        HRESULT top([out, retval] IPIEHTMLWindow ** ppWindowTop);
+
+        [propget, id(DISPID_HTMLWINDOW_BASE + 7)]
+        HRESULT window([out, retval] IPIEHTMLWindow ** ppWindow);
+
+        [propget, id(DISPID_HTMLWINDOW_BASE + 8)]
+        HRESULT frames([out, retval] IPIEHTMLElementCollection ** ppElemCollection);
+        
+        [propget, id(DISPID_HTMLWINDOW_BASE + 9)]
+        HRESULT screen([out, retval] IPIEHTMLScreen ** ppScreen);
+
+        [propget, id(DISPID_HTMLWINDOW_BASE + 10)]
+        HRESULT length([out, retval] long * plLength);
+
+        [propput, id(DISPID_HTMLWINDOW_BASE + 11)]
+        HRESULT name([in] BSTR bstrName);
+        [propget, id(DISPID_HTMLWINDOW_BASE + 11)]
+        HRESULT name([out, retval] BSTR * pbstrName);
+
+        // Methods
+        [id(DISPID_HTMLWINDOW_BASE + 12)]
+        HRESULT setTimeout([in] BSTR bstrExpression, [in] long lMS, [in][optional] VARIANT * pvtLanguage, [out, retval] long * plTimerID);
+
+        [id(DISPID_HTMLWINDOW_BASE + 13)]
+        HRESULT clearTimeout([in] long lTimerID);
+
+        [id(DISPID_HTMLWINDOW_BASE + 14)]
+        HRESULT alert([in, defaultvalue("")] BSTR bstrMessage);
+
+        [id(DISPID_HTMLWINDOW_BASE + 15)]
+        HRESULT confirm([in, defaultvalue("")] BSTR bstrMessage, [out, retval] VARIANT_BOOL * pvbConfirmed);
+
+        [id(DISPID_HTMLWINDOW_BASE + 16)]
+        HRESULT prompt([in, defaultvalue("")] BSTR bstrMessage, [in, defaultvalue("undefined")] BSTR bstrDefaultValue, [out, retval] VARIANT * pvtText);
+
+        [id(DISPID_HTMLWINDOW_BASE + 17)]
+        HRESULT close();
+
+        [id(DISPID_HTMLWINDOW_BASE + 18)]
+        HRESULT focus();
+
+        [id(DISPID_HTMLWINDOW_BASE + 19)]
+        HRESULT blur();
+
+        [id(DISPID_HTMLWINDOW_BASE + 20)]
+        HRESULT navigate([in] BSTR bstrURL);
+
+        [id(DISPID_HTMLWINDOW_BASE + 21)]
+        HRESULT open([in, defaultvalue("")] BSTR bstrURL, [in, optional] VARIANT * pvtName, [in, optional] VARIANT * pvtFeatures, [in, optional] VARIANT * pvtReplace, [out, retval] IPIEHTMLWindow ** ppWindowResult);
+
+        [id(DISPID_HTMLWINDOW_BASE + 22)]
+        HRESULT scroll([in] long lX, [in] long lY);
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLWindow2
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE21F2),
+        dual,
+        helpstring("PocketIE HTMLWindow2 Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLWindow2 : IPIEHTMLWindow
+    {
+        // Properties
+        [propput, id(DISPID_HTMLWINDOW_BASE + 23)]
+        HRESULT onload([in] VARIANT vtOnLoad);
+        [propget, id(DISPID_HTMLWINDOW_BASE + 23)]
+        HRESULT onload([out, retval] VARIANT * pvtOnLoad);
+
+        [propput, id(DISPID_HTMLWINDOW_BASE + 24)]
+        HRESULT onunload([in] VARIANT vtOnUnload);
+        [propget, id(DISPID_HTMLWINDOW_BASE + 24)]
+        HRESULT onunload([out, retval] VARIANT * pvOnUnload);
+
+        [propput, id(DISPID_HTMLWINDOW_BASE + 25)]
+        HRESULT onerror([in] VARIANT vtOnError);
+        [propget, id(DISPID_HTMLWINDOW_BASE + 25)]
+        HRESULT onerror([out, retval] VARIANT * pvtOnError);
+
+        [propget, id(DISPID_HTMLWINDOW_BASE + 26)]
+        HRESULT Image([out, retval] IPIEHTMLImageElementFactory ** ppImageFactory);
+
+        [propget, id(DISPID_HTMLWINDOW_BASE + 27)]
+        HRESULT Option([out, retval] IPIEHTMLOptionElementFactory ** ppOptionFactory);
+
+        // Methods
+        [id(DISPID_HTMLWINDOW_BASE + 28)]
+        HRESULT setTimeout([in] VARIANT * pvtExpression, [in] long lMS, [in][optional] VARIANT * pvtLanguage, [out, retval] long * plTimerID);
+        [id(DISPID_HTMLWINDOW_BASE + 29)]
+        HRESULT scrollTo([in] long lX, [in] long lY);
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLWindow3
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(1d6aedd8-5b4f-4dd7-966c-55d36f048aa7),
+        dual,
+        helpstring("PocketIE HTMLWindow3 Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLWindow3 : IPIEHTMLWindow2
+    {
+        [propget, id(DISPID_HTMLWINDOW_BASE +30)]
+        HRESULT external([out, retval] IDispatch ** ppExternalDispatch);
+    };
+
+    [
+        hidden,
+        uuid(CDD75622-07D9-11D3-9309-10C04FAE2102),
+    ]
+    dispinterface PIEHTMLWindowEvents
+    {
+    properties:
+    methods:
+        [id(DISPID_HTMLWINDOWEVENTS_ONLOAD)] void onload();
+        [id(DISPID_HTMLWINDOWEVENTS_ONUNLOAD)] void onunload();
+        [id(DISPID_HTMLWINDOWEVENTS_ONERROR)] void onerror([in] BSTR bstrDescription, [in] BSTR bstrURL, [in] long lLine);
+    };
+
+    [
+        uuid(CDD75622-07D9-11D3-9309-20C04FAE2102),
+    ]
+    coclass PIEHTMLWindow
+    {
+        [default]        interface IPIEHTMLWindow3;
+                    interface IPIEHTMLWindow2;
+                            interface IPIEHTMLWindow;
+        [default, source]   dispinterface PIEHTMLWindowEvents;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLElement
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE2201),
+        dual,
+        helpstring("PocketIE HTMLElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLElement : IDispatchEx
+    {
+        // Properties
+        [propget, id(DISPID_VALUE), hidden]
+        HRESULT toString([out, retval] BSTR * pbstrString);
+
+        [propget, id(DISPID_HTMLELEMENT_BASE)]
+        HRESULT id([out, retval] BSTR * pbstrID);
+
+        [propget, id(DISPID_HTMLELEMENT_BASE + 1)]
+        HRESULT document([out, retval] IPIEHTMLDocument ** ppDocument);
+
+        [propput, id(DISPID_HTMLELEMENT_BASE + 2)]
+        HRESULT innerHTML([in] BSTR bstrInnerHTML);
+        [propget, id(DISPID_HTMLELEMENT_BASE + 2)]
+        HRESULT innerHTML([out, retval] BSTR * pbstrInnerHTML);
+
+        [propput, id(DISPID_HTMLELEMENT_BASE + 3)]
+        HRESULT innerText([in] BSTR bstrInnerText);
+        [propget, id(DISPID_HTMLELEMENT_BASE + 3)]
+        HRESULT innerText([out, retval] BSTR * pbstrInnerText);
+
+        [propget, id(DISPID_HTMLELEMENT_BASE + 4)]
+        HRESULT parentElement([out, retval] IPIEHTMLElement ** ppParent);
+
+        [propget, id(DISPID_HTMLELEMENT_BASE + 5)]
+        HRESULT children([out, retval] IPIEHTMLElementCollection ** ppChildren);
+
+        [propget, id(DISPID_HTMLELEMENT_BASE + 6)]
+        HRESULT style([out, retval] IDispatchEx ** ppStyle);
+
+        [propget, id(DISPID_HTMLELEMENT_BASE + 7)]
+        HRESULT currentStyle([out, retval] IDispatchEx ** ppStyle);
+
+        // Methods
+        [id(DISPID_HTMLELEMENT_BASE + 8)]
+        HRESULT addBehavior([in] BSTR bstrURL, [optional, in] VARIANT *pvarFactory, [out, retval] long * plID);
+
+        [id(DISPID_HTMLELEMENT_BASE + 9)]
+        HRESULT removeBehavior([in] long lID, [out, retval] VARIANT_BOOL * vbSuccess);
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLElement2
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(1173fff4-5e35-442b-97dc-687f5cb1e89f),
+        dual,
+        helpstring("PocketIE HTMLElement2 Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLElement2 : IDispatchEx
+    {
+        // Properties
+        [propget, id(DISPID_HTMLELEMENT2_BASE)]
+        HRESULT offsetLeft([retval, out] long * p);
+
+        [propget, id(DISPID_HTMLELEMENT2_BASE + 1)]
+        HRESULT offsetTop([retval, out] long * p);
+        
+        [propget, id(DISPID_HTMLELEMENT2_BASE + 2)]
+        HRESULT offsetWidth([retval, out] long * p);
+
+        [propget, id(DISPID_HTMLELEMENT2_BASE + 3)]
+        HRESULT offsetHeight([retval, out] long * p);
+
+        [propget, id(DISPID_HTMLELEMENT2_BASE + 4)]
+        HRESULT offsetParent([retval, out] IPIEHTMLElement* * p);
+
+        [propget, id(DISPID_HTMLELEMENT2_BASE + 5)]
+        HRESULT tagName([retval, out] BSTR * p);
+
+        // Methods
+        [id(DISPID_HTMLELEMENT2_BASE + 6)]
+        HRESULT getAttribute([in] BSTR bstrAttributeName,[defaultvalue(0), in] LONG lFlags,[retval, out] VARIANT* pvarAttributeValue);
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLElement3
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(f6ceb128-db5e-450b-a730-b18aa18b8322),
+        dual,
+        helpstring("PocketIE HTMLElement3 Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLElement3 : IPIEHTMLElement2
+    {
+        [id(DISPID_HTMLELEMENT3_BASE)]
+        HRESULT insertBefore([in] IDispatch* pdispNewChild,
+                             [optional, in] VARIANT refChild,
+                             [retval, out] IDispatch** ppdispNewChild);
+
+        [id(DISPID_HTMLELEMENT3_BASE+1)]
+        HRESULT removeChild([in] IDispatch* pdispOldChild, 
+                            [retval, out] IDispatch** ppdispOldChild);
+
+        [id(DISPID_HTMLELEMENT3_BASE+2)] 
+        HRESULT replaceChild([in] IDispatch* pdispNewChild,
+                             [in] IDispatch* pdispOldChild,
+                             [retval, out] IDispatch** ppdispOldChild);
+
+        [id(DISPID_HTMLELEMENT3_BASE+3)] 
+        HRESULT appendChild([in] IDispatch* pdispNewChild,
+                            [retval, out] IDispatch** ppdispNewChild);
+
+        [propget, id(DISPID_HTMLELEMENT3_BASE + 4)]
+        HRESULT parentNode([out, retval] IPIEHTMLElement** ppParent);
+
+        [propget, id(DISPID_HTMLELEMENT3_BASE + 5)]
+        HRESULT childNodes([out, retval] IPIEHTMLElementCollection** ppChildren);
+
+        [propput, id(DISPID_HTMLELEMENT3_BASE + 6)]
+        HRESULT id([in] BSTR bstrID);
+
+        [propput, id(DISPID_HTMLELEMENT3_BASE + 7)]
+        HRESULT className([in] BSTR bstrClassName);
+        [propget, id(DISPID_HTMLELEMENT3_BASE + 7)]
+        HRESULT className([retval, out] BSTR* pbstrClassName);
+    };
+
+
+    [
+        hidden,
+        uuid(2268F6CE-EFF0-4226-BD0A-762B6C4F2769),
+    ]
+    dispinterface PIEHTMLElementEvents
+    {
+    properties:
+    methods:
+        [id(DISPID_HTMLELEMENTEVENTS_ONCLICK)]  VARIANT_BOOL onclick();
+    };
+
+    [
+        uuid(28405462-5A46-453a-83DB-9E928855225C),
+    ]
+    coclass PIEHTMLElement
+    {
+        [default]           interface IPIEHTMLElement3;
+        [default, source]   dispinterface PIEHTMLElementEvents;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLFrameSetElement
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE2122),
+        dual,
+        helpstring("PocketIE HTMLFrameSetElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLFrameSetElement : IPIEHTMLElement
+    {
+        // Properties
+        [propget]
+        HRESULT rows([out, retval] BSTR * pbstrRows);
+
+        [propget]
+        HRESULT cols([out, retval] BSTR * pbstrCols);
+
+        [propget]
+        HRESULT border([out, retval] VARIANT * pvtBorder);
+
+        [propget]
+        HRESULT borderColor([out, retval] VARIANT * pvtBorderColor);
+
+        [propget]
+        HRESULT name([out, retval] BSTR * pbstrName);
+    }
+
+    [
+        hidden,
+        uuid(CDD75622-07D9-11D3-9309-10C04FAE2122),
+    ]
+    dispinterface PIEHTMLFrameSetElementEvents
+    {
+    properties:
+    methods:
+        [id(DISPID_HTMLFRAMESETEVENTS_ONLOAD)] void onload();
+        [id(DISPID_HTMLFRAMESETEVENTS_ONUNLOAD)] void onunload();
+    };
+
+    [
+        uuid(CDD75622-07D9-11D3-9309-20C04FAE2122),
+    ]
+    coclass PIEHTMLFrameSetElement
+    {
+        [default]           interface IPIEHTMLFrameSetElement;
+        [default, source]   dispinterface PIEHTMLFrameSetElementEvents;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLFrameElement
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE2121),
+        dual,
+        helpstring("PocketIE HTMLFrameElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLFrameElement : IPIEHTMLElement
+    {
+        // Properties
+        [propget, id(DISPID_HTMLFRAMEELEMENT_BASE + 1)]
+        HRESULT src([out, retval] BSTR * pbstrSRC);
+
+        [propget, id(DISPID_HTMLFRAMEELEMENT_BASE + 2)]
+        HRESULT name([out, retval] BSTR * pbstrName);
+
+        [propget, id(DISPID_HTMLFRAMEELEMENT_BASE + 3)]
+        HRESULT marginWidth([out, retval] VARIANT * pvtMarginWidth);
+
+        [propget, id(DISPID_HTMLFRAMEELEMENT_BASE + 4)]
+        HRESULT marginHeight([out, retval] VARIANT * pvtMarginHeight);
+
+        [propget, id(DISPID_HTMLFRAMEELEMENT_BASE + 5)]
+        HRESULT noResize([out, retval] VARIANT_BOOL * pvbNoResize);
+
+        [propget, id(DISPID_HTMLFRAMEELEMENT_BASE + 6)]
+        HRESULT scrolling([out, retval] BSTR * pbstrScrolling);
+    };
+
+    [
+        uuid(CDD75622-07D9-11D3-9309-20C04FAE2121),
+    ]
+    coclass PIEHTMLFrameElement
+    {
+        [default] interface IPIEHTMLFrameElement;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLIFrameElement 
+    //
+    // Matches desktop IHTMLIFrameElement interface. 
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(4A7DAB00-3210-4602-B13B-998E06CA8752),
+        dual,
+        helpstring("PocketIE HTMLIFrameElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLIFrameElement : IPIEHTMLElement
+    {
+        // Properties
+        [propput, id(DISPID_HTMLIFRAMEELEMENT_BASE + 1)] 
+        HRESULT vspace([in] long v);
+        
+        [propget, id(DISPID_HTMLIFRAMEELEMENT_BASE + 1)] 
+        HRESULT vspace([retval, out] long * p);
+        
+        [propput, id(DISPID_HTMLIFRAMEELEMENT_BASE + 2)] 
+        HRESULT hspace([in] long v);
+        
+        [propget, id(DISPID_HTMLIFRAMEELEMENT_BASE + 2)] 
+        HRESULT hspace([retval, out] long * p);
+        
+        [propput, id(DISPID_HTMLIFRAMEELEMENT_BASE + 3)] 
+        HRESULT align([in] BSTR v);
+        
+        [propget, id(DISPID_HTMLIFRAMEELEMENT_BASE + 3)] 
+        HRESULT align([retval, out] BSTR * p);
+       
+    };
+
+    [
+        uuid(D3725B0B-1403-47df-9C8B-AB033B7D3E64),
+    ]
+    coclass PIEHTMLIFrameElement
+    {
+        [default] interface IPIEHTMLIFrameElement;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLImgElement
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE2204),
+        dual,
+        helpstring("PocketIE HTMLImgElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLImgElement : IPIEHTMLElement
+    {
+        // Properties
+        [propput]
+        HRESULT border([in] VARIANT vtBorder);
+        [propget]
+        HRESULT border([out, retval] VARIANT * pvtBorder);
+
+        [propget]
+        HRESULT vspace([out, retval] long * plVSpace);
+
+        [propget]
+        HRESULT hspace([out, retval] long * plHSpace);
+
+        [propget]
+        HRESULT alt([out, retval] BSTR * pbstrAlt);
+
+        [propput]
+        HRESULT src([in] BSTR bstrSrc);
+        [propget]
+        HRESULT src([out, retval] BSTR * pbstrSrc);
+
+        [propput]
+        HRESULT width([in] long lWidth);
+        [propget]
+        HRESULT width([out, retval] long * plWidth);
+
+        [propput]
+        HRESULT height([in] long lHeight);
+        [propget]
+        HRESULT height([out, retval] long * plHeight);
+
+        [propput]
+        HRESULT onload([in] VARIANT vtOnLoad);
+        [propget]
+        HRESULT onload([out, retval] VARIANT * pvtOnLoad);
+    };
+
+    [
+        hidden,
+        uuid(CDD75622-07D9-11D3-9309-10C04FAE2204),
+    ]
+    dispinterface PIEHTMLImgElementEvents
+    {
+    properties:
+    methods:
+        [id(DISPID_HTMLIMGELEMENTEVENTS_ONLOAD)] void onload();
+    };
+
+    [
+        uuid(CDD75622-07D9-11D3-9309-20C04FAE2204),
+    ]
+    coclass PIEHTMLImgElement
+    {
+        [default]           interface IPIEHTMLImgElement;
+        [default, source]   dispinterface PIEHTMLImgElementEvents;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLAnchorElement
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE210A),
+        dual,
+        helpstring("PocketIE HTMLAnchorElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLAnchorElement : IPIEHTMLElement
+    {
+        // Properties
+        [propput]
+        HRESULT href([in] BSTR bstrHREF);
+        [propget]
+        HRESULT href([out, retval] BSTR * pbstrHREF);
+
+        [propput]
+        HRESULT target([in] BSTR bstrTarget);
+        [propget]
+        HRESULT target([out, retval] BSTR * pbstrTarget);
+
+        [propput]
+        HRESULT name([in] BSTR bstrTarget);
+        [propget]
+        HRESULT name([out, retval] BSTR * pbstrTarget);
+
+        [propput]
+        HRESULT accessKey([in] BSTR bstrTarget);
+        [propget]
+        HRESULT accessKey([out, retval] BSTR * pbstrTarget);
+
+        [propput]
+        HRESULT protocol([in] BSTR bstrProtocol);
+        [propget]
+        HRESULT protocol([out, retval] BSTR * pbstrProtocol);
+        [propput]
+
+        HRESULT host([in] BSTR bstrHost);
+        [propget]
+        HRESULT host([out, retval] BSTR * pbstrHost);
+
+        [propput]
+        HRESULT hostname([in] BSTR bstrHostName);
+        [propget]
+        HRESULT hostname([out, retval] BSTR * pbstrHostName);
+
+        [propput]
+        HRESULT port([in] BSTR bstrPort);
+        [propget]
+        HRESULT port([out, retval] BSTR * pbstrPort);
+
+        [propput]
+        HRESULT pathname([in] BSTR bstrPathName);
+        [propget]
+        HRESULT pathname([out, retval] BSTR * pbstrPathName);
+
+        [propput]
+        HRESULT search([in] BSTR bstrSearch);
+        [propget]
+        HRESULT search([out, retval] BSTR * pbstrSearch);
+
+        [propput]
+        HRESULT hash([in] BSTR bstrHash);
+        [propget]
+        HRESULT hash([out, retval] BSTR * pbstrHash);
+
+        // Methods
+        HRESULT focus();
+        HRESULT blur();
+        HRESULT click();
+    };
+
+    [
+        hidden,
+        uuid(CDD75622-07D9-11D3-9309-10C04FAE210A),
+    ]
+    dispinterface PIEHTMLAnchorElementEvents
+    {
+    properties:
+    methods:
+        [id(DISPID_HTMLANCHORELEMENTEVENTS_ONCLICK)]  VARIANT_BOOL onclick();
+        [id(DISPID_HTMLANCHORELEMENTEVENTS_ONFOCUS)]  void onfocus();
+        [id(DISPID_HTMLANCHORELEMENTEVENTS_ONBLUR)]   void onblur();
+    };
+
+    [
+        uuid(CDD75622-07D9-11D3-9309-20C04FAE210A),
+    ]
+    coclass PIEHTMLAnchorElement
+    {
+        [default]           interface IPIEHTMLAnchorElement;
+        [default, source]   dispinterface PIEHTMLAnchorElementEvents;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLFormElement
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE210C),
+        dual,
+        helpstring("PocketIE HTMLFormElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLFormElement : IPIEHTMLElement
+    {
+        // Properties
+        [propget]
+        HRESULT name([out, retval] BSTR * pbstrName);
+
+        [propput]
+        HRESULT action([in] BSTR bstrAction);
+        [propget]
+        HRESULT action([out, retval] BSTR * pbstrAction);
+
+        [propput]
+        HRESULT encoding([in] BSTR bstrEncoding);
+        [propget]
+        HRESULT encoding([out, retval] BSTR * pbstrEncoding);
+
+        [propput]
+        HRESULT method([in] BSTR bstrMethod);
+        [propget]
+        HRESULT method([out, retval] BSTR * pbstrMethod);
+
+        [propput]
+        HRESULT target([in] BSTR bstrTarget);
+        [propget]
+        HRESULT target([out, retval] BSTR * pbstrTarget);
+
+        [propget]
+        HRESULT elements([out, retval] IPIEHTMLElementCollection ** ppElemCollection);
+
+        [propget]
+        HRESULT length([out, retval] long * plLength);
+
+        // Methods
+        HRESULT submit();
+        HRESULT reset();
+    };
+
+    [
+        hidden,
+        uuid(CDD75622-07D9-11D3-9309-10C04FAE210C),
+    ]
+    dispinterface PIEHTMLFormElementEvents
+    {
+    properties:
+    methods:
+        [id(DISPID_HTMLFORMELEMENTEVENTS_ONSUBMIT)]  VARIANT_BOOL onsubmit();
+        [id(DISPID_HTMLFORMELEMENTEVENTS_ONRESET)]  VARIANT_BOOL onreset();
+    };
+
+    [
+        uuid(CDD75622-07D9-11D3-9309-20C04FAE210C),
+    ]
+    coclass PIEHTMLFormElement
+    {
+        [default]           interface IPIEHTMLFormElement;
+        [default, source]   dispinterface PIEHTMLFormElementEvents;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLControlElement
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE2106),
+        dual,
+        helpstring("PocketIE HTMLFormElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLControlElement : IPIEHTMLElement
+    {
+        // Properties
+        [propget]
+        HRESULT type([out, retval] BSTR * pbstrType);
+
+        [propput]
+        HRESULT value([in] BSTR bstrValue);
+        [propget]
+        HRESULT value([out, retval] BSTR * pbstrValue);
+
+        [propget]
+        HRESULT name([out, retval] BSTR * pbstrName);
+
+        [propput]
+        HRESULT accessKey([in] BSTR bstrAccesskey);
+        [propget]
+        HRESULT accessKey([out, retval] BSTR * pbstrAccesskey);
+
+        // Methods
+        HRESULT focus();
+        HRESULT blur();
+    };
+
+    [
+        uuid(555C7786-BA95-11D0-81F1-00A0C90AD21A),
+    ]
+    coclass PIEHTMLControlElement
+    {
+        [default] interface IPIEHTMLControlElement;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // PIEHTMLInputButtonElement
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE2108),
+        dual,
+        helpstring("PocketIE HTMLInputButtonElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLInputButtonElement: IPIEHTMLControlElement
+    {
+        // Properties
+        [propput]
+        HRESULT disabled([in] VARIANT_BOOL vbDisabled);
+        [propget]
+        HRESULT disabled([out, retval] VARIANT_BOOL * pvbDisabled);
+
+        [propget]
+        HRESULT form([out, retval] IPIEHTMLFormElement ** ppForm);
+
+        // Methods
+        HRESULT click();
+    };
+
+    [
+        hidden,
+        uuid(CDD75622-07D9-11D3-9309-10C04FAE2108),
+    ]
+    dispinterface PIEHTMLInputButtonElementEvents
+    {
+    properties:
+    methods:
+        [id(DISPID_HTMLINPUTELEMENTEVENTS_ONCLICK)]  VARIANT_BOOL onclick();
+        [id(DISPID_HTMLINPUTELEMENTEVENTS_ONFOCUS)]  void onfocus();
+        [id(DISPID_HTMLINPUTELEMENTEVENTS_ONBLUR)]   void onblur();
+    };
+
+    [
+        uuid(CDD75622-07D9-11D3-9309-20C04FAE2108),
+    ]
+    coclass PIEHTMLInputButtonElement
+    {
+        [default]           interface IPIEHTMLInputButtonElement;
+                            interface IPIEHTMLControlElement;
+        [default, source]   dispinterface PIEHTMLInputButtonElementEvents;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // PIEHTMLOptionButtonElement
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE2110),
+        dual,
+        helpstring("PocketIE HTMLOptionButtonElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLOptionButtonElement : IPIEHTMLControlElement
+    {
+        // Properties
+        [propput]
+        HRESULT disabled([in] VARIANT_BOOL vbDisabled);
+        [propget]
+        HRESULT disabled([out, retval] VARIANT_BOOL * pvbDisabled);
+
+        [propget]
+        HRESULT form([out, retval] IPIEHTMLFormElement ** ppForm);
+
+        [propput]
+        HRESULT checked([in] VARIANT_BOOL vbChecked);
+        [propget]
+        HRESULT checked([out, retval] VARIANT_BOOL * pvbChecked);
+
+        [propput]
+        HRESULT defaultChecked([in] VARIANT_BOOL vbDefaultChecked);
+        [propget]
+        HRESULT defaultChecked([out, retval] VARIANT_BOOL * pvbDefaultChecked);
+
+        [propput]
+        HRESULT indeterminate([in] VARIANT_BOOL vbIndeterminate);
+        [propget]
+        HRESULT indeterminate([out, retval] VARIANT_BOOL * pvbIndeterminate);
+
+        // Methods
+        HRESULT click();
+    };
+
+    [
+        hidden,
+        uuid(E0E269F3-87A7-45f8-9200-DDAA2940F78D),
+    ]
+    dispinterface PIEHTMLOptionButtonElementEvents
+    {
+    properties:
+    methods:
+        [id(DISPID_HTMLINPUTELEMENTEVENTS_ONCLICK)]  VARIANT_BOOL onclick();
+        [id(DISPID_HTMLINPUTELEMENTEVENTS_ONFOCUS)]  void onfocus();
+        [id(DISPID_HTMLINPUTELEMENTEVENTS_ONBLUR)]   void onblur();
+    };
+
+    [
+        uuid(CDD75622-07D9-11D3-9309-20C04FAE2110),
+    ]
+    coclass PIEHTMLOptionButtonElement
+    {
+        [default]           interface IPIEHTMLOptionButtonElement;
+                            interface IPIEHTMLControlElement;
+        [default, source]   dispinterface PIEHTMLOptionButtonElementEvents;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // PIEHTMLSelectElement
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE210F),
+        dual,
+        helpstring("PocketIE HTMLSelectElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLSelectElement : IPIEHTMLControlElement
+    {
+        // Properties
+        [propput]
+        HRESULT disabled([in] VARIANT_BOOL vbDisabled);
+        [propget]
+        HRESULT disabled([out, retval] VARIANT_BOOL * pvbDisabled);
+
+        [propget]
+        HRESULT form([out, retval] IPIEHTMLFormElement ** ppForm);
+
+        [propget]
+        HRESULT size([out, retval] long * plSize);
+
+        [propget]
+        HRESULT multiple([out, retval] VARIANT_BOOL * pvbMultiple);
+
+        [propget]
+        HRESULT options([out, retval] IDispatch ** ppdispOptions);
+
+        [propput]
+        HRESULT selectedIndex([in] long lSelectedIndex);
+        [propget]
+        HRESULT selectedIndex([out, retval] long * plSelectedIndex);
+
+        [propput]
+        HRESULT length([in] long lLength);
+        [propget]
+        HRESULT length([out, retval] long * plLength);
+
+        // Methods
+        HRESULT add([in] IPIEHTMLOptionElement* element, [optional, in] VARIANT before);
+        HRESULT remove([defaultvalue(-1), in] long index);
+    };
+
+    [
+        hidden,
+        uuid(CDD75622-07D9-11D3-9309-10C04FAE210F),
+    ]
+    dispinterface PIEHTMLSelectElementEvents
+    {
+    properties:
+    methods:
+        [id(DISPID_HTMLSELECTELEMENTEVENTS_ONCHANGE)] void onchange();
+        [id(DISPID_HTMLSELECTELEMENTEVENTS_ONFOCUS)] void onfocus();
+        [id(DISPID_HTMLSELECTELEMENTEVENTS_ONBLUR)] void onblur();
+    };
+
+    [
+        uuid(CDD75622-07D9-11D3-9309-20C04FAE210F),
+    ]
+    coclass PIEHTMLSelectElement
+    {
+        [default]           interface IPIEHTMLSelectElement;
+                            interface IPIEHTMLControlElement;
+        [default, source]   dispinterface PIEHTMLSelectElementEvents;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // PIEHTMLOptionElement
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE210B),
+        dual,
+        helpstring("PocketIE HTMLOptionElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLOptionElement : IPIEHTMLElement
+    {
+        // Properties
+        [propput]
+        HRESULT selected([in] VARIANT_BOOL vbSelected);
+        [propget]
+        HRESULT selected([out, retval] VARIANT_BOOL * pvbSelected);
+
+        [propput]
+        HRESULT value([in] BSTR bstrValue);
+        [propget]
+        HRESULT value([out, retval] BSTR * pbstrValue);
+
+        [propput]
+        HRESULT defaultSelected([in] VARIANT_BOOL vbDefaultSelected);
+        [propget]
+        HRESULT defaultSelected([out, retval] VARIANT_BOOL * pvbDefaultSelected);
+
+        [propget]
+        HRESULT index([out, retval] long * plIndex);
+
+        [propput]
+        HRESULT text([in] BSTR bstrText);
+        [propget]
+        HRESULT text([out, retval] BSTR * pbstrText);
+    };
+
+    [
+        uuid(CDD75622-07D9-11D3-9309-20C04FAE210B),
+    ]
+    coclass PIEHTMLOptionElement
+    {
+        [default] interface IPIEHTMLOptionElement;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLInputTextElement
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE210D),
+        dual,
+        helpstring("PocketIE HTMLInputTextElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLInputTextElement : IPIEHTMLControlElement
+    {
+        // Properties
+        [propput]
+        HRESULT disabled([in] VARIANT_BOOL vbDisabled);
+        [propget]
+        HRESULT disabled([out, retval] VARIANT_BOOL * pvbDisabled); 
+
+        [propget]
+        HRESULT form([out, retval] IPIEHTMLFormElement ** ppForm);
+
+        [propput]
+        HRESULT defaultValue([in] BSTR bstrDefaultValue);
+        [propget]
+        HRESULT defaultValue([out, retval] BSTR * pbstrDefaultValue);
+
+        [propget]
+        HRESULT size([out, retval] long * plSize);
+
+        [propput]
+        HRESULT maxLength([in] long lMaxLength);
+        [propget]
+        HRESULT maxLength([out, retval] long * plMaxLength);
+
+        [propput]
+        HRESULT readOnly([in] VARIANT_BOOL vbReadOnly);
+        [propget]
+        HRESULT readOnly([out, retval] VARIANT_BOOL * pvbReadOnly);
+
+        // Methods
+        HRESULT select();
+    };
+
+    [
+        hidden,
+        uuid(CDD75622-07D9-11D3-9309-10C04FAE210D),
+    ]
+    dispinterface PIEHTMLInputTextElementEvents
+    {
+    properties:
+    methods:
+        [id(DISPID_HTMLINPUTTEXTELEMENTEVENTS_ONCHANGE)] void onchange();
+        [id(DISPID_HTMLINPUTELEMENTEVENTS_ONCLICK)] VARIANT_BOOL onclick();
+        [id(DISPID_HTMLINPUTELEMENTEVENTS_ONFOCUS)] void onfocus();
+        [id(DISPID_HTMLINPUTELEMENTEVENTS_ONBLUR)] void onblur();
+    };
+
+    [
+        uuid(CDD75622-07D9-11D3-9309-20C04FAE210D),
+    ]
+    coclass PIEHTMLInputTextElement
+    {
+        [default]           interface IPIEHTMLInputTextElement;
+                            interface IPIEHTMLControlElement;
+        [default, source]   dispinterface PIEHTMLInputTextElementEvents;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLTextAreaElement
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE210E),
+        dual,
+        helpstring("PocketIE HTMLTextAreaElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLTextAreaElement : IPIEHTMLInputTextElement
+    {
+        // Properties
+        [propget]
+        HRESULT rows([out, retval] long * plRows);
+
+        [propget]
+        HRESULT cols([out, retval] long * plCols);
+    }
+
+    [
+        hidden,
+        uuid(CDD75622-07D9-11D3-9309-10C04FAE210E),
+    ]
+    dispinterface PIEHTMLTextAreaElementEvents
+    {
+    properties:
+    methods:
+        [id(DISPID_HTMLTEXTAREAELEMENTEVENTS_ONCHANGE)] void onchange();
+        [id(DISPID_HTMLTEXTAREAELEMENTEVENTS_ONFOCUS)] void onfocus();
+        [id(DISPID_HTMLTEXTAREAELEMENTEVENTS_ONBLUR)] void onblur();
+    };
+
+    [
+        uuid(CDD75622-07D9-11D3-9309-20C04FAE210E),
+    ]
+    coclass PIEHTMLTextAreaElement
+    {
+        [default]           interface IPIEHTMLTextAreaElement;
+                            interface IPIEHTMLInputTextElement;
+                            interface IPIEHTMLControlElement;
+        [default, source]   dispinterface PIEHTMLTextAreaElementEvents;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLInputHidden
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE2111),
+        dual,
+        helpstring("PocketIE HTMLInputHiddenElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLInputHiddenElement : IPIEHTMLControlElement
+    {
+        // Properties
+        [propput]
+        HRESULT disabled([in] VARIANT_BOOL vbDisabled);
+        [propget]
+        HRESULT disabled([out, retval] VARIANT_BOOL * pvbDisabled);
+
+        [propput]
+        HRESULT defaultValue([in] BSTR bstrDefaultValue);
+        [propget]
+        HRESULT defaultValue([out, retval] BSTR * pbstrDefaultValue);
+
+        [propget]
+        HRESULT form([out, retval] IPIEHTMLFormElement ** ppForm);
+    };
+
+    [
+        uuid(CDD75622-07D9-11D3-9309-20C04FAE2111),
+    ]
+    coclass PIEHTMLInputHiddenElement
+    {
+        [default]   interface IPIEHTMLInputHiddenElement;
+                    interface IPIEHTMLControlElement;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLBodyElement
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(FE63F2C0-8F8A-408e-A000-0985F0E266FB),
+        dual,
+        helpstring("PocketIE HTMLBodyElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLBodyElement : IPIEHTMLElement
+    {
+        [propput, id(DISPID_HTMLBODYELEMENT_BASE + 1)] 
+        HRESULT background([in] BSTR bstrBackground);
+        [propget, id(DISPID_HTMLBODYELEMENT_BASE + 1)] 
+        HRESULT background([retval, out] BSTR * pbstrBackground);
+        
+        [propput, id(DISPID_HTMLBODYELEMENT_BASE + 2)] 
+        HRESULT bgProperties([in] BSTR bstrBgProperties);
+        [propget, id(DISPID_HTMLBODYELEMENT_BASE + 2)] 
+        HRESULT bgProperties([retval, out] BSTR * pbstrBgProperties);
+        
+        [propput, id(DISPID_HTMLBODYELEMENT_BASE + 3)] 
+        HRESULT leftMargin([in] VARIANT vLeftMargin);
+        [propget, id(DISPID_HTMLBODYELEMENT_BASE + 3)] 
+        HRESULT leftMargin([retval, out] VARIANT * pLeftMargin);
+        
+        [propput, id(DISPID_HTMLBODYELEMENT_BASE + 4)] 
+        HRESULT topMargin([in] VARIANT vTopMargin);
+        [propget, id(DISPID_HTMLBODYELEMENT_BASE + 4)] 
+        HRESULT topMargin([retval, out] VARIANT * pTopMargin);
+        
+        [propput, id(DISPID_HTMLBODYELEMENT_BASE + 5)] 
+        HRESULT rightMargin([in] VARIANT vRightMargin);
+        [propget, id(DISPID_HTMLBODYELEMENT_BASE + 5)] 
+        HRESULT rightMargin([retval, out] VARIANT * pRightMargin);
+        
+        [propput, id(DISPID_HTMLBODYELEMENT_BASE + 6)] 
+        HRESULT bottomMargin([in] VARIANT vBottomMargin);
+        [propget, id(DISPID_HTMLBODYELEMENT_BASE + 6)] 
+        HRESULT bottomMargin([retval, out] VARIANT * pBottomMargin);
+        
+        [propput, id(DISPID_HTMLBODYELEMENT_BASE + 7)] 
+        HRESULT noWrap([in] VARIANT_BOOL fNoWrap);
+        [propget, id(DISPID_HTMLBODYELEMENT_BASE + 7)] 
+        HRESULT noWrap([retval, out] VARIANT_BOOL * pfNoWrap);
+        
+        [propput, id(DISPID_HTMLBODYELEMENT_BASE + 8)] 
+        HRESULT bgColor([in] VARIANT vBgColor);
+        [propget, id(DISPID_HTMLBODYELEMENT_BASE + 8)] 
+        HRESULT bgColor([retval, out] VARIANT * pBgColor);
+        
+        [propput, id(DISPID_HTMLBODYELEMENT_BASE + 9)] 
+        HRESULT text([in] VARIANT vText);
+        [propget, id(DISPID_HTMLBODYELEMENT_BASE + 9)] 
+        HRESULT text([retval, out] VARIANT * pText);
+        
+        [propput, id(DISPID_HTMLBODYELEMENT_BASE + 10)] 
+        HRESULT link([in] VARIANT vLink);
+        [propget, id(DISPID_HTMLBODYELEMENT_BASE + 10)] 
+        HRESULT link([retval, out] VARIANT * pLink);
+        
+        [propput, id(DISPID_HTMLBODYELEMENT_BASE + 11)] 
+        HRESULT vLink([in] VARIANT vvLink);
+        [propget, id(DISPID_HTMLBODYELEMENT_BASE + 11)] 
+        HRESULT vLink([retval, out] VARIANT * pvLink);
+        
+        [propput, id(DISPID_HTMLBODYELEMENT_BASE + 12)] 
+        HRESULT aLink([in] VARIANT vaLink);
+        [propget, id(DISPID_HTMLBODYELEMENT_BASE + 12)] 
+        HRESULT aLink([retval, out] VARIANT * paLink);
+        
+        [propput, id(DISPID_HTMLBODYELEMENT_BASE + 13)] 
+        HRESULT onload([in] VARIANT vOnload);
+        [propget, id(DISPID_HTMLBODYELEMENT_BASE + 13)] 
+        HRESULT onload([retval, out] VARIANT * pOnload);
+        
+        [propput, id(DISPID_HTMLBODYELEMENT_BASE + 14)] 
+        HRESULT onunload([in] VARIANT vOnunload);
+        [propget, id(DISPID_HTMLBODYELEMENT_BASE + 14)] 
+        HRESULT onunload([retval, out] VARIANT * pOnunload);
+        
+        [propput, id(DISPID_HTMLBODYELEMENT_BASE + 15)] 
+        HRESULT scroll([in] BSTR bstrScroll);
+        [propget, id(DISPID_HTMLBODYELEMENT_BASE + 15)] 
+        HRESULT scroll([retval, out] BSTR * pbstrScroll);
+        
+        [propput, id(DISPID_HTMLBODYELEMENT_BASE + 16)] 
+        HRESULT onselect([in] VARIANT vOnselect);
+        [propget, id(DISPID_HTMLBODYELEMENT_BASE + 16)] 
+        HRESULT onselect([retval, out] VARIANT * pOnselect);
+        
+        [propput, id(DISPID_HTMLBODYELEMENT_BASE + 17)] 
+        HRESULT onbeforeunload([in] VARIANT vOnbeforeunload);
+        [propget, id(DISPID_HTMLBODYELEMENT_BASE + 17)] 
+        HRESULT onbeforeunload([retval, out] VARIANT * pOnbeforeunload);
+    };
+    [
+        uuid(47E821F2-2F4A-4af5-9914-DFF3768220F1),
+    ]
+    coclass PIEHTMLBodyElement
+    {
+        [default] interface IPIEHTMLBodyElement;
+        interface IPIEHTMLElement;
+    };
+
+    
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLDivElement
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(CDD75622-07D9-11D3-9309-00C04FAE2202),
+        dual,
+        helpstring("PocketIE HTMLDivElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLDivElement : IPIEHTMLElement
+    {
+        // Properties
+        [propput]
+        HRESULT align([in] BSTR bstrAlign);
+        [propget]
+        HRESULT align([out, retval] BSTR * pbstrAlign);
+    };
+
+    [
+        uuid(CDD75622-07D9-11D3-9309-20C04FAE2202),
+    ]
+    coclass PIEHTMLDivElement
+    {
+        [default] interface IPIEHTMLDivElement;
+        interface IPIEHTMLElement;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLXmlElement
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(D9EFB0B9-68E1-456f-8ACC-9EA9CE88E1E7),
+        dual,
+        helpstring("PocketIE HTMLXmlElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLXmlElement : IPIEHTMLElement
+    {
+        // Properties
+        [propget]
+        HRESULT XMLDocument([out, retval] IDispatch ** ppXMLDoc);
+    }
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLObjectElement
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(3050f24f-98b5-11cf-bb82-00aa00bdce0b),
+        dual,
+        helpstring("PocketIE HTMLObjectElement Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLObjectElement : IPIEHTMLElement
+    {
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 1)] 
+           HRESULT object([retval, out] IDispatch* * p);
+
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 2)] 
+           HRESULT classid([retval, out] BSTR * p);
+
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 3)] 
+           HRESULT data([retval, out] BSTR * p);
+
+        [propputref, id(DISPID_HTMLOBJECTELEMENT_BASE + 4)] 
+           HRESULT recordset([in] IDispatch* v);
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 4)] 
+           HRESULT recordset([retval, out] IDispatch* * p);
+
+        [propput, id(DISPID_HTMLOBJECTELEMENT_BASE + 5)] 
+           HRESULT align([in] BSTR v);
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 5)] 
+           HRESULT align([retval, out] BSTR * p);
+
+        [propput, id(DISPID_HTMLOBJECTELEMENT_BASE + 6)] 
+           HRESULT name([in] BSTR v);
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 6)] 
+           HRESULT name([retval, out] BSTR * p);
+
+        [propput, id(DISPID_HTMLOBJECTELEMENT_BASE + 7)] 
+           HRESULT codeBase([in] BSTR v);
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 7)] 
+           HRESULT codeBase([retval, out] BSTR * p);
+
+        [propput, id(DISPID_HTMLOBJECTELEMENT_BASE + 8)] 
+           HRESULT codeType([in] BSTR v);
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 8)] 
+           HRESULT codeType([retval, out] BSTR * p);
+
+        [propput, id(DISPID_HTMLOBJECTELEMENT_BASE + 9)] 
+           HRESULT code([in] BSTR v);
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 9)] 
+           HRESULT code([retval, out] BSTR * p);
+
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 10)] 
+           HRESULT BaseHref([retval, out] BSTR * p);
+
+        [propput, id(DISPID_HTMLOBJECTELEMENT_BASE + 11)] 
+           HRESULT type([in] BSTR v);
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 11)] 
+           HRESULT type([retval, out] BSTR * p);
+
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 12)] 
+           HRESULT form([retval, out] IPIEHTMLFormElement* * p);
+
+        [propput, id(DISPID_HTMLOBJECTELEMENT_BASE + 13)] 
+           HRESULT width([in] VARIANT v);
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 13)] 
+           HRESULT width([retval, out] VARIANT * p);
+
+        [propput, id(DISPID_HTMLOBJECTELEMENT_BASE + 14)] 
+           HRESULT height([in] VARIANT v);
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 14)] 
+           HRESULT height([retval, out] VARIANT * p);
+
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 15)] 
+           HRESULT readyState([retval, out] long * p);
+
+        [propput, id(DISPID_HTMLOBJECTELEMENT_BASE + 16)] 
+           HRESULT onreadystatechange([in] VARIANT v);
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 16)] 
+           HRESULT onreadystatechange([retval, out] VARIANT * p);
+
+        [propput, id(DISPID_HTMLOBJECTELEMENT_BASE + 17)] 
+           HRESULT onerror([in] VARIANT v);
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 17)] 
+           HRESULT onerror([retval, out] VARIANT * p);
+
+        [propput, id(DISPID_HTMLOBJECTELEMENT_BASE + 18)] 
+           HRESULT altHtml([in] BSTR v);
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 18)] 
+           HRESULT altHtml([retval, out] BSTR * p);
+
+        [propput, id(DISPID_HTMLOBJECTELEMENT_BASE + 19)] 
+           HRESULT vspace([in] long v);
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 19)] 
+           HRESULT vspace([retval, out] long * p);
+
+        [propput, id(DISPID_HTMLOBJECTELEMENT_BASE + 20)] 
+           HRESULT hspace([in] long v);
+        [propget, id(DISPID_HTMLOBJECTELEMENT_BASE + 20)] 
+           HRESULT hspace([retval, out] long * p);
+    };
+
+
+    /////////////////////////////////////////////////////////////////////////
+    // IPIEHTMLStyle
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        uuid(56A11E38-2502-4a26-8F74-3B2D50F6D044),
+        helpstring("PocketIE HTML Style Object"),
+        pointer_default(unique)
+    ]
+    interface IPIEHTMLStyle : IDispatchEx
+    {
+        [propget, id(DISPID_VALUE), hidden]
+        HRESULT toString([out, retval] BSTR * pbstrString);
+
+        [propput, id(DISPID_IHTMLSTYLE_CSSTEXT)]
+        HRESULT cssText([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_CSSTEXT)]
+        HRESULT cssText([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BACKGROUNDATTACHMENT)]
+        HRESULT backgroundAttachment([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BACKGROUNDATTACHMENT)]
+        HRESULT backgroundAttachment([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BACKGROUNDIMAGE)]
+        HRESULT backgroundImage([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BACKGROUNDIMAGE)]
+        HRESULT backgroundImage([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BACKGROUNDCOLOR)]
+        HRESULT backgroundColor([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BACKGROUNDCOLOR)]
+        HRESULT backgroundColor([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BACKGROUNDPOSITION)]
+        HRESULT backgroundPosition([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BACKGROUNDPOSITION)]
+        HRESULT backgroundPosition([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BACKGROUNDREPEAT)]
+        HRESULT backgroundRepeat([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BACKGROUNDREPEAT)]
+        HRESULT backgroundRepeat([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BEHAVIOR)]
+        HRESULT behavior([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BEHAVIOR)]
+        HRESULT behavior([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BORDERBOTTOMCOLOR)]
+        HRESULT borderBottomColor([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BORDERBOTTOMCOLOR)]
+        HRESULT borderBottomColor([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BORDERBOTTOMSTYLE)]
+        HRESULT borderBottomStyle([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BORDERBOTTOMSTYLE)]
+        HRESULT borderBottomStyle([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BORDERBOTTOMWIDTH)]
+        HRESULT borderBottomWidth([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BORDERBOTTOMWIDTH)]
+        HRESULT borderBottomWidth([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BORDERLEFTCOLOR)]
+        HRESULT borderLeftColor([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BORDERLEFTCOLOR)]
+        HRESULT borderLeftColor([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BORDERLEFTSTYLE)]
+        HRESULT borderLeftStyle([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BORDERLEFTSTYLE)]
+        HRESULT borderLeftStyle([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BORDERLEFTWIDTH)]
+        HRESULT borderLeftWidth([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BORDERLEFTWIDTH)]
+        HRESULT borderLeftWidth([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BORDERRIGHTCOLOR)]
+        HRESULT borderRightColor([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BORDERRIGHTCOLOR)]
+        HRESULT borderRightColor([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BORDERRIGHTSTYLE)]
+        HRESULT borderRightStyle([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BORDERRIGHTSTYLE)]
+        HRESULT borderRightStyle([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BORDERRIGHTWIDTH)]
+        HRESULT borderRightWidth([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BORDERRIGHTWIDTH)]
+        HRESULT borderRightWidth([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BORDERTOPCOLOR)]
+        HRESULT borderTopColor([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BORDERTOPCOLOR)]
+        HRESULT borderTopColor([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BORDERTOPSTYLE)]
+        HRESULT borderTopStyle([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BORDERTOPSTYLE)]
+        HRESULT borderTopStyle([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BORDERTOPWIDTH)]
+        HRESULT borderTopWidth([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BORDERTOPWIDTH)]
+        HRESULT borderTopWidth([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_CLEAR)]
+        HRESULT clear([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_CLEAR)]
+        HRESULT clear([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_COLOR)]
+        HRESULT color([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_COLOR)]
+        HRESULT color([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_DISPLAY)]
+        HRESULT display([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_DISPLAY)]
+        HRESULT display([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_STYLEFLOAT)]
+        HRESULT styleFloat([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_STYLEFLOAT)]
+        HRESULT styleFloat([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_FONTFAMILY)]
+        HRESULT fontFamily([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_FONTFAMILY)]
+        HRESULT fontFamily([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_FONTSIZE)]
+        HRESULT fontSize([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_FONTSIZE)]
+        HRESULT fontSize([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_FONTSTYLE)]
+        HRESULT fontStyle([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_FONTSTYLE)]
+        HRESULT fontStyle([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_FONTVARIANT)]
+        HRESULT fontVariant([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_FONTVARIANT)]
+        HRESULT fontVariant([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_FONTWEIGHT)]
+        HRESULT fontWeight([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_FONTWEIGHT)]
+        HRESULT fontWeight([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_HEIGHT)]
+        HRESULT height([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_HEIGHT)]
+        HRESULT height([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_LISTSTYLEIMAGE)]
+        HRESULT listStyleImage([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_LISTSTYLEIMAGE)]
+        HRESULT listStyleImage([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_LISTSTYLEPOSITION)]
+        HRESULT listStylePosition([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_LISTSTYLEPOSITION)]
+        HRESULT listStylePosition([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_LISTSTYLETYPE)]
+        HRESULT listStyleType([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_LISTSTYLETYPE)]
+        HRESULT listStyleType([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_MARGINBOTTOM)]
+        HRESULT marginBottom([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_MARGINBOTTOM)]
+        HRESULT marginBottom([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_MARGINLEFT)]
+        HRESULT marginLeft([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_MARGINLEFT)]
+        HRESULT marginLeft([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_MARGINRIGHT)]
+        HRESULT marginRight([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_MARGINRIGHT)]
+        HRESULT marginRight([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_MARGINTOP)]
+        HRESULT marginTop([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_MARGINTOP)]
+        HRESULT marginTop([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_OVERFLOW)]
+        HRESULT overflow([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_OVERFLOW)]
+        HRESULT overflow([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_PADDINGBOTTOM)]
+        HRESULT paddingBottom([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_PADDINGBOTTOM)]
+        HRESULT paddingBottom([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_PADDINGLEFT)]
+        HRESULT paddingLeft([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_PADDINGLEFT)]
+        HRESULT paddingLeft([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_PADDINGRIGHT)]
+        HRESULT paddingRight([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_PADDINGRIGHT)]
+        HRESULT paddingRight([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_PADDINGTOP)]
+        HRESULT paddingTop([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_PADDINGTOP)]
+        HRESULT paddingTop([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_TEXTALIGN)]
+        HRESULT textAlign([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_TEXTALIGN)]
+        HRESULT textAlign([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_TEXTDECORATION)]
+        HRESULT textDecoration([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_TEXTDECORATION)]
+        HRESULT textDecoration([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_TEXTINDENT)]
+        HRESULT textIndent([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_TEXTINDENT)]
+        HRESULT textIndent([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_TEXTOVERFLOW)]
+        HRESULT textOverflow([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_TEXTOVERFLOW)]
+        HRESULT textOverflow([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_TEXTTRANSFORM)]
+        HRESULT textTransform([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_TEXTTRANSFORM)]
+        HRESULT textTransform([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_VERTICALALIGN)]
+        HRESULT verticalAlign([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_VERTICALALIGN)]
+        HRESULT verticalAlign([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_VISIBILITY)]
+        HRESULT visibility([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_VISIBILITY)]
+        HRESULT visibility([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_WHITESPACE)]
+        HRESULT whiteSpace([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_WHITESPACE)]
+        HRESULT whiteSpace([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_WIDTH)]
+        HRESULT width([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_WIDTH)]
+        HRESULT width([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_WAPACCESSKEY)]
+        HRESULT wapAccessKey([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_WAPACCESSKEY)]
+        HRESULT wapAccessKey([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_WAPINPUTFORMAT)]
+        HRESULT wapInputFormat([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_WAPINPUTFORMAT)]
+        HRESULT wapInputFormat([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_WAPINPUTREQUIRED)]
+        HRESULT wapInputRequired([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_WAPINPUTREQUIRED)]
+        HRESULT wapInputRequired([out, retval] VARIANT * pv); 
+
+        [propput, id(DISPID_IHTMLSTYLE_WAPMARQUEEDIR)]
+        HRESULT wapMarqueeDir([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_WAPMARQUEEDIR)]
+        HRESULT wapMarqueeDir([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_WAPMARQUEELOOP)]
+        HRESULT wapMarqueeLoop([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_WAPMARQUEELOOP)]
+        HRESULT wapMarqueeLoop([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_WAPMARQUEESTYLE)]
+        HRESULT wapMarqueeStyle([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_WAPMARQUEESTYLE)]
+        HRESULT wapMarqueeStyle([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_LINEHEIGHT)]
+        HRESULT lineHeight([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_LINEHEIGHT)]
+        HRESULT lineHeight([out, retval] VARIANT * pv);        
+
+        [propput, id(DISPID_IHTMLSTYLE_LEFTPOS)]
+        HRESULT left([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_LEFTPOS)]
+        HRESULT left([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_RIGHTPOS)]
+        HRESULT right([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_RIGHTPOS)]
+        HRESULT right([out, retval] VARIANT * pv);        
+
+        [propput, id(DISPID_IHTMLSTYLE_TOPPOS)]
+        HRESULT top([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_TOPPOS)]
+        HRESULT top([out, retval] VARIANT * pv);
+
+        [propput, id(DISPID_IHTMLSTYLE_BOTTOMPOS)]
+        HRESULT bottom([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_BOTTOMPOS)]
+        HRESULT bottom([out, retval] VARIANT * pv);        
+
+        [propput, id(DISPID_IHTMLSTYLE_ZINDEX)]
+        HRESULT zIndex([in] VARIANT v);
+        [propget, id(DISPID_IHTMLSTYLE_ZINDEX)]
+        HRESULT zIndex([out, retval] VARIANT * pv);        
+    };
+
+    [
+        uuid(B7C8D6E0-C417-4974-8963-748ACDADA4D7),
+    ]
+    
+    coclass PIEHTMLStyle
+    {
+        [default] interface IPIEHTMLStyle;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // DEFAULT BEHAVIORS
+    /////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////
+    // IHomePage
+    /////////////////////////////////////////////////////////////////////////
+    [
+        object,
+        local,
+        dual,
+        uuid(503f3a42-3267-4a79-96fc-f3b3e422e00a),
+        pointer_default(unique)
+    ]
+    interface IHomePage : IDispatch
+    {
+        // Methods
+        HRESULT isHomePage([in] BSTR bstrPageURL, [out, retval] VARIANT_BOOL *vbReturn);
+        HRESULT navigateHomePage();
+        HRESULT setHomePage([in] BSTR bstrPageURL);
+    };
+    [
+        uuid(81383c81-ef9a-41e7-ba52-5ec9bfc52ff6),
+        helpstring("homePage Default Behavior class")
+    ]
+    coclass CHomePage
+    {
+        [default] interface IHomePage;
+    };
+};
+
+cpp_quote("/* For backward compatibility (CLSID name was changed from 'Browser' to 'PIEHTML')*/")
+cpp_quote("#define CLSID_Browser            CLSID_PIEHTML")
+
+// SID_ExternalHostDispatch
+// Service ID for getting the IDispatch of the host for window.external
+// f940e0cd-358c-4c7c-bc45-2bbd9c4ebd0f
+cpp_quote("EXTERN_C const GUID SID_ExternalHostDispatch;")

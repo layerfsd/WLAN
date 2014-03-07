@@ -1,0 +1,3230 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// ÇÑ±¹¾î resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_NETSETTINGPAGE_ADAPTERS DIALOG  0, 0, 156, 129
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION
+CAPTION "Dialog"
+FONT 8, "Tahoma"
+BEGIN
+END
+
+IDD_NETSETTINGPAGE_INFO DIALOG  0, 0, 160, 149
+STYLE DS_SETFONT | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION " Info"
+FONT 8, "Tahoma"
+BEGIN
+    LTEXT           "Adapter :",IDC_STATIC_ADAPTER,3,3,32,8,SS_CENTERIMAGE
+    LTEXT           "BCMSDDHD1 / FF:FF:FF:FF:FF:FF",IDC_STATIC_ADAPTERNAME,36,3,120,8,SS_CENTERIMAGE
+    RTEXT           "SSID : ",IDC_STATIC,3,57,23,8,SS_CENTERIMAGE
+    RTEXT           "BSSID : ",IDC_STATIC,3,66,27,8,SS_CENTERIMAGE
+    RTEXT           "Privacy :",IDC_STATIC,99,66,29,8,SS_CENTERIMAGE
+    LTEXT           "XXXXXXXXXXXXXXX",IDC_STATIC_SSID,32,57,67,8,SS_CENTERIMAGE
+    LTEXT           "XX:XX:XX:XX:XX:XX",IDC_STATIC_BSSID,32,66,63,8,SS_CENTERIMAGE
+    LTEXT           " OPEN ",IDC_STATIC_PRIVACY,132,66,23,8,SS_CENTERIMAGE
+    RTEXT           "Infra : ",IDC_STATIC,99,84,24,8,SS_CENTERIMAGE
+    LTEXT           " AP ",IDC_STATIC_INFRA,126,84,18,8,SS_CENTERIMAGE
+    RTEXT           "IP : ",IDC_STATIC,3,18,14,8,SS_CENTERIMAGE
+    RTEXT           "DNS : ",IDC_STATIC,3,43,21,8,SS_CENTERIMAGE
+    LTEXT           "000.000.000.000",IDC_STATIC_IPADDRESS,41,18,57,8,SS_CENTERIMAGE
+    LTEXT           "000.000.000.000",IDC_STATIC_GATEWAY,41,35,57,8,SS_CENTERIMAGE
+    LTEXT           "000.000.000.000",IDC_STATIC_DNS_SERVER,41,43,68,8,SS_CENTERIMAGE
+    RTEXT           "Gateway : ",IDC_STATIC,3,35,36,8,SS_CENTERIMAGE
+    LTEXT           "000.000.000.000",IDC_STATIC_SUBNETMASK,41,27,57,8,SS_CENTERIMAGE
+    RTEXT           "Subnet : ",IDC_STATIC,3,27,30,8,SS_CENTERIMAGE
+    RTEXT           "DHCP : ",IDC_STATIC,106,30,26,8,SS_CENTERIMAGE
+    LTEXT           " Y ",IDC_STATIC_DHCP_ENABLED,134,30,10,8,SS_CENTERIMAGE
+    RTEXT           "RSSI : ",IDC_STATIC,99,57,23,8,SS_CENTERIMAGE
+    RTEXT           "-99",IDC_STATIC_RSSI,124,57,12,8,SS_CENTERIMAGE
+    RTEXT           "NetType : ",IDC_STATIC,3,84,35,8,SS_CENTERIMAGE
+    LTEXT           " Automode ",IDC_STATIC_NETWORK_TYPE,41,84,45,8,SS_CENTERIMAGE
+    RTEXT           "Channel : ",IDC_STATIC,3,75,34,8,SS_CENTERIMAGE
+    LTEXT           " 8 (2440MHz) ",IDC_STATIC_CHANNEL,38,75,46,8,SS_CENTERIMAGE
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,14,320,1
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,54,320,1
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,112,320,1
+    LTEXT           "Firmware : ",IDC_STATIC,3,113,37,8
+    LTEXT           "0000. 0000. 0000. 0000",IDC_STATIC_WIFIMGR_VERSION,48,140,93,8
+    LTEXT           "Driver : ",IDC_STATIC,3,122,27,8
+    LTEXT           "0000. 0000. 0000. 0000",IDC_STATIC_DRV_VERSION,40,122,119,8
+    LTEXT           "BBWiFiMgr : ",IDC_STATIC,3,140,44,8
+    LTEXT           "0000. 0000. 0000. 0000",IDC_STATIC_FIRMWARE_VERSION,40,113,107,8
+    RTEXT           "BeaconPrd : ",IDC_STATIC,99,75,42,8,SS_CENTERIMAGE
+    LTEXT           "100 ",IDC_STATIC_BEACON,140,75,14,8,SS_CENTERIMAGE
+    RTEXT           "LinkSpeed : ",IDC_STATIC,3,93,40,8,SS_CENTERIMAGE
+    LTEXT           " 54.0 (Mbit/s) ",IDC_STATIC_LINKSPEED,46,93,45,8,SS_CENTERIMAGE
+    RTEXT           "PcksSent : ",IDC_STATIC,4,102,36,8,SS_CENTERIMAGE
+    RTEXT           "PcksRecv : ",IDC_STATIC,85,102,38,8,SS_CENTERIMAGE
+    LTEXT           "1532 MB",IDC_STATIC_PACKETS_SENT,43,102,28,8
+    LTEXT           "1532 MB",IDC_STATIC_PACKETS_RECEIVED,123,102,28,8
+    LTEXT           "",IDC_STATIC_BK,0,0,160,14
+    LTEXT           "0000. 0000. 0000. 0000",IDC_STATIC_SDIODRV_VERSION,48,131,93,8
+    LTEXT           "SDIODrv : ",IDC_STATIC,3,131,36,8
+END
+
+IDD_NETSETTINGPAGE_SETTING DIALOG  0, 0, 160, 150
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION
+CAPTION "Settings"
+FONT 8, "Tahoma"
+BEGIN
+    CONTROL         "",IDC_TAB_SETTING_MAIN,"SysTabControl32",0x0,0,0,159,150
+END
+
+IDD_NETSETTINGPAGE_TOOLS DIALOG  0, 0, 160, 150
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION
+CAPTION "Tools"
+FONT 8, "Tahoma"
+BEGIN
+    CONTROL         "",IDC_TAB_TOOLS_MAIN,"SysTabControl32",0x0,0,0,159,150
+END
+
+IDD_NETSETTINGPAGE_PROFILE DIALOG  0, 0, 156, 129
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION
+CAPTION "Profile"
+FONT 8, "Tahoma"
+BEGIN
+END
+
+IDD_NETSETTINGPAGE_TOOLS_PINGVIEW DIALOG  0, 0, 141, 231
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "Tahoma"
+BEGIN
+    EDITTEXT        IDC_EDIT_PING_DEST_ADDRESS,7,18,97,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Start",IDC_BUTTON_PING,105,18,28,14
+    EDITTEXT        IDC_EDIT_PING_STATUS,7,34,125,93,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL
+    RTEXT           "Send Size : ",IDC_STATIC,7,152,38,8
+    RTEXT           "TTL : ",IDC_STATIC,87,152,19,8
+    RTEXT           "TOS : ",IDC_STATIC,86,167,21,8
+    EDITTEXT        IDC_EDIT_PING_SENDSIZE,45,151,26,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_PING_TTL,107,151,25,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_PING_TOS,107,166,25,12,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "TimeOut : ",IDC_STATIC,11,167,34,8
+    EDITTEXT        IDC_EDIT_PING_TIMEOUT,45,166,25,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "ms",IDC_STATIC,70,167,10,8
+    LTEXT           "Byte",IDC_STATIC,71,152,16,8
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,146,320,1
+    LTEXT           "Option",IDC_STATIC,7,136,22,8
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,133,320,1
+    LTEXT           "RSSI : ",IDC_STATIC,86,7,23,8
+    LTEXT           "",IDC_STATIC_RSSI,113,7,22,8
+    LTEXT           "SSID : ",IDC_STATIC,7,7,23,8
+    LTEXT           "",IDC_STATIC_SSID,34,7,44,8
+    PUSHBUTTON      "Export To File",IDC_BUTTON_PING_FILELOG,35,209,63,15
+    LTEXT           "FileLogPath",IDC_STATIC,7,191,38,8
+    EDITTEXT        IDC_EDIT_PING_FILELOG_PATH,47,189,88,14,ES_AUTOHSCROLL
+END
+
+IDD_NETSETTINGPAGE_TOOLS_LOGVIEW DIALOG  0, 0, 141, 226
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "Tahoma"
+BEGIN
+    LTEXT           "LogBufferSize",IDC_STATIC,7,167,52,8
+    EDITTEXT        IDC_EDIT_LOG_SIZE,71,165,39,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_LOG,7,25,128,106,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,20,320,1
+    LTEXT           "Log",IDC_STATIC,7,10,12,8
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,7,320,1
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,159,320,1
+    LTEXT           "Option",IDC_STATIC,7,148,22,8
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,145,320,1
+    PUSHBUTTON      "Export To File",IDC_BUTTON_DUMP,35,200,67,19
+    LTEXT           "KByte",IDC_STATIC,112,167,20,8
+    LTEXT           "FileLogPath",IDC_STATIC,7,183,38,8
+    EDITTEXT        IDC_EDIT_FILELOG_PATH,47,181,88,14,ES_AUTOHSCROLL
+END
+
+IDD_NETSETTINGPAGE_SETTING_USIVIEW DIALOG  0, 0, 141, 142
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "Tahoma"
+BEGIN
+    RTEXT           "RoamTrigger",IDC_STATIC,15,39,58,8
+    RTEXT           "RoamDelta",IDC_STATIC,14,55,59,8
+    CONTROL         "Roam Enable",IDC_CHECK_ROAM_ENABLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,26,122,10
+    EDITTEXT        IDC_EDIT_ROAM_SCANFREQ,75,67,60,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "RoamScanFreq",IDC_STATIC,13,70,60,8
+    EDITTEXT        IDC_EDIT_ROAM_FULLROAMSCNITV,75,83,60,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "FullRoamScnPrd",IDC_STATIC,7,86,64,8
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,20,320,1
+    LTEXT           "Roaming",IDC_STATIC,7,10,28,8
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,6,320,1
+    RTEXT           "PowerSaveMode ",IDC_STATIC,9,120,63,8
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,115,320,1
+    LTEXT           "Power",IDC_STATIC,7,104,21,8
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,101,320,1
+    COMBOBOX        IDC_COMBO_ROAM_TRIGGER,75,38,60,45,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_POWERSAVEMODE,75,118,60,42,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_ROAMDELTA,75,53,60,54,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_NETSETTINGPAGE_SETTING_MMCVIEW DIALOG  0, 0, 141, 176
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "Tahoma"
+BEGIN
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,95,320,1
+    LTEXT           "Roaming",IDC_STATIC,7,85,28,8
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,81,320,1
+    CONTROL         "Roam Enable",IDC_CHECK_ROAM_ENABLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,102,122,10
+    RTEXT           "Scan Start",IDC_STATIC,11,115,58,8
+    COMBOBOX        IDC_COMBO_ROAM_SCANSTART,75,113,60,45,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Roam Start",IDC_STATIC,11,130,58,8
+    COMBOBOX        IDC_COMBO_ROAM_ROAMSTART,75,128,60,45,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Target RSSI",IDC_STATIC,11,145,58,8
+    COMBOBOX        IDC_COMBO_ROAM_TARGETRSSI,75,143,60,45,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,21,320,1
+    LTEXT           "Scan",IDC_STATIC,7,11,16,8
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,7,320,1
+    CONTROL         "Background Scan Enable",IDC_CHECK_SCAN_BKSCANENABLE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,27,122,10
+    RTEXT           "BK Scan Period",IDC_STATIC,11,39,58,8
+    COMBOBOX        IDC_COMBO_SCAN_BKSCANPRD,75,37,60,45,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Node Age",IDC_STATIC,11,58,58,8
+    COMBOBOX        IDC_COMBO_SCAN_NODEAGE,75,57,60,45,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_NETSETTINGPAGE_SETTING_OPTIONVIEW DIALOG  0, 0, 141, 292
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "Tahoma"
+BEGIN
+    EDITTEXT        IDC_EDIT_CONTEXT_TMTF,31,157,33,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "TMTF",IDC_STATIC_TMTF,10,159,18,8
+    EDITTEXT        IDC_EDIT_CONTEXT_TMTP,31,140,33,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "TMTP",IDC_STATIC_TMTP,10,142,18,8
+    EDITTEXT        IDC_EDIT_CONTEXT_TMTC,97,157,33,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "TMTC",IDC_STATIC_TMTC,75,159,19,8
+    EDITTEXT        IDC_EDIT_CONTEXT_TMTR,97,140,33,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "TMTR",IDC_STATIC_TMTR,75,142,19,8
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,207,320,1
+    LTEXT           "Ping Checker",IDC_STATIC,7,196,46,8
+    CONTROL         "Enable operation in background",IDC_CHECK_FORCE_RESTORE_ENABLE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,211,117,10
+    LTEXT           "Break Interval",IDC_STATIC,9,226,56,8
+    EDITTEXT        IDC_EDIT_SET_PING_BREAKITV,76,223,42,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Sec",IDC_STATIC,120,226,12,8
+    LTEXT           "Ping Interval",IDC_STATIC,9,241,51,8
+    EDITTEXT        IDC_EDIT_SET_PING_PINGITV,76,238,42,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Sec",IDC_STATIC,120,241,12,8
+    LTEXT           "Max Check Count",IDC_STATIC,9,256,59,8
+    EDITTEXT        IDC_EDIT_SET_PING_CHECKMAXCNT,76,253,42,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Custom Dest Addr",IDC_STATIC,9,271,64,8
+    EDITTEXT        IDC_EDIT_SET_PING_CHECK_DESTADDR,76,268,59,14,ES_AUTOHSCROLL
+    LTEXT           "Scan Option",IDC_STATIC,7,9,40,8
+    LTEXT           "WZC Context Timer (MiliSecond)",IDC_STATIC,7,124,104,8
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,193,320,1
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,20,320,1
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,6,320,1
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,135,320,1
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,121,320,1
+    LTEXT           "NetToAccess",IDC_STATIC,7,53,45,8
+    COMBOBOX        IDC_COMBO_NETWORKTOACCESS,61,51,74,44,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Description of TMTx",IDC_BUTTON_HELP_TMTX,26,173,85,13
+    LTEXT           "ScanThreshold",IDC_STATIC,7,37,59,8
+    COMBOBOX        IDC_COMBO_SCANTHRESHOLD,69,36,66,53,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Lock SSID",IDC_STATIC,7,68,45,8
+    EDITTEXT        IDC_EDIT_LOCK_SSID,61,65,74,14,ES_AUTOHSCROLL
+    CONTROL         "Turn on available net notification",IDC_CHECK_AVA_NET_NOTI,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,25,128,10
+    LTEXT           "Power Management",IDC_STATIC,7,87,64,8
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,98,320,1
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,84,320,1
+    CONTROL         "Allow to enter in suspend mode",IDC_CHECK_ALLOW_SUSPEND,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,103,121,10
+END
+
+IDD_NETSETTINGPAGE_SETTING_DEFPREFERAPVIEW DIALOG  0, 0, 141, 200
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "Tahoma"
+BEGIN
+    CONTROL         "Enable force add to Preferred List",IDC_CHECK_FORCE_ADDTOLIST,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,14,124,10
+    LTEXT           "IP Addr",IDC_STATIC,7,140,25,8
+    EDITTEXT        IDC_EDIT_IPADDR,48,138,87,12,ES_AUTOHSCROLL
+    LTEXT           "Subnet",IDC_STATIC,7,154,24,8
+    EDITTEXT        IDC_EDIT_SUBNETMASK,48,152,87,12,ES_AUTOHSCROLL
+    LTEXT           "GateWay",IDC_STATIC,7,167,31,8
+    EDITTEXT        IDC_EDIT_GATEWAY,48,165,87,12,ES_AUTOHSCROLL
+    LTEXT           "DNS",IDC_STATIC,7,180,14,8
+    EDITTEXT        IDC_EDIT_DNS,48,178,87,12,ES_AUTOHSCROLL
+    CONTROL         "DHCP",IDC_CHECK_DHCP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,127,34,10
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,121,320,1
+    LTEXT           "Authentication",IDC_STATIC,7,55,48,8
+    LTEXT           "Encription",IDC_STATIC,7,71,32,8
+    COMBOBOX        IDC_COMBO_AUTH,57,53,78,55,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_ENCR,57,69,78,49,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Network Key",IDC_STATIC,7,86,42,8
+    EDITTEXT        IDC_EDIT_NETWORK_KEY,57,85,78,12,ES_AUTOHSCROLL
+    LTEXT           "Key Index",IDC_STATIC,20,102,34,8
+    COMBOBOX        IDC_COMBO_KEYINDEX,57,101,25,40,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Hex(16)",IDC_CHECK_HEX,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,90,101,42,10
+    LTEXT           "SSID",IDC_STATIC,7,28,19,8
+    EDITTEXT        IDC_EDIT_SSID,57,27,78,12,ES_AUTOHSCROLL
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,7,320,1
+    CONTROL         "This is a hidden network",IDC_CHECK_HIDDEN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,41,93,10
+END
+
+IDD_NETSETTINGPAGE_TOOLS_SCANVIEW DIALOG  0, 0, 141, 185
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "Tahoma"
+BEGIN
+    LTEXT           "Option",IDC_STATIC,4,147,22,8
+    CONTROL         "",IDC_LIST_APSCAN,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,2,7,136,123
+    LTEXT           "Scan Period",IDC_STATIC,3,164,46,8
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,144,320,1
+    CONTROL         106,IDC_STATIC,"Static",SS_BITMAP,0,157,320,1
+    COMBOBOX        IDC_COMBO_SCANNER_PERIOD,59,162,55,50,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Sec",IDC_STATIC,119,165,12,8
+END
+
+IDD_DESCRIPTIONTMTXDIALOG DIALOG  0, 0, 156, 160
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION
+FONT 8, "Tahoma"
+BEGIN
+    LTEXT           "[TMTP]",IDC_STATIC,7,2,24,8
+    LTEXT           "Timeout value in milliseconds to expect a media connect for a selected configuration",IDC_STATIC,7,12,142,28
+    LTEXT           "[TMTF]",IDC_STATIC,7,40,24,8
+    LTEXT           "Timeout value in milliseconds to recover from a failed configuration",IDC_STATIC,7,50,142,25
+    LTEXT           "[TMTR]",IDC_STATIC,7,79,24,8
+    LTEXT           "Timeout value in milliseconds until a rescan operation completes",IDC_STATIC,7,89,142,25
+    LTEXT           "[TMTC]",IDC_STATIC,7,118,24,8
+    LTEXT           "Timeout value in milliseconds to retry a valid configuration",IDC_STATIC,7,128,142,25
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_NETSETTINGPAGE_ADAPTERS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 149
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+
+    IDD_NETSETTINGPAGE_PROFILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 149
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+
+    IDD_NETSETTINGPAGE_TOOLS_PINGVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 135
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 224
+    END
+
+    IDD_NETSETTINGPAGE_TOOLS_LOGVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 135
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 219
+    END
+
+    IDD_NETSETTINGPAGE_SETTING_USIVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 135
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 135
+    END
+
+    IDD_NETSETTINGPAGE_SETTING_MMCVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 135
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_NETSETTINGPAGE_SETTING_OPTIONVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 135
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 285
+    END
+
+    IDD_NETSETTINGPAGE_SETTING_DEFPREFERAPVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 135
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_NETSETTINGPAGE_TOOLS_SCANVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 138
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_DESCRIPTIONTMTXDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 149
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 153
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,4,0
+ PRODUCTVERSION 1,1,4,0
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "CompanyName", "Bluebird"
+            VALUE "FileVersion", "1, 1, 4, 0"
+            VALUE "InternalName", "BBWifiManager"
+            VALUE "LegalCopyright", "Copyright (c) Bluebird. All rights reserved."
+            VALUE "OriginalFilename", "BBWifiManager"
+            VALUE "ProductName", "BBWifiManager"
+            VALUE "ProductVersion", "1, 1, 4, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // ÇÑ±¹¾î resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// ¿µ¾î(¹Ì±¹) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+1591 DIALOG  0, 0, 0, 0
+STYLE WS_VISIBLE
+BEGIN
+    LTEXT           "",100,2,0,97,10
+END
+
+16430 DIALOG  0, 0, 0, 0
+STYLE DS_SETFOREGROUND | WS_POPUP | WS_VISIBLE | 0x8000L
+EXSTYLE 0x20000000L
+BEGIN
+    LTEXT           "Verify the number is correct:",16433,2,25,220,20
+    EDITTEXT        16432,2,55,220,25,ES_AUTOHSCROLL
+    LTEXT           "Include the country code or area code if needed.",16434,2,91,220,80
+    CONTROL         "",-1,"SIPPREF",NOT WS_VISIBLE,-10,-10,5,5
+END
+
+16140 DIALOG  0, 0, 0, 0
+STYLE WS_POPUP | WS_CAPTION | WS_VSCROLL | WS_SYSMENU
+EXSTYLE 0x80000000L
+BEGIN
+    LTEXT           "",100,0,0,0,0,SS_NOPREFIX | SS_SUNKEN | NOT WS_GROUP
+END
+
+16141 DIALOG  0, 0, 110, 72
+STYLE WS_POPUP
+BEGIN
+    CONTROL         "",100,"MS_VIRTUAL_LIST_VIEW_CE_1.0",0x0,0,0,109,20
+END
+
+16130 DIALOG  0, 0, 0, 0
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE 0x20000000L
+CAPTION "Password"
+BEGIN
+    LTEXT           "This device is locked. Enter your device password and press the unlock softkey.",16131,2,2,95,33
+    EDITTEXT        16132,2,40,95,12,ES_PASSWORD | ES_AUTOHSCROLL | ES_NUMBER | NOT WS_BORDER
+    EDITTEXT        16133,2,40,95,12,ES_AUTOHSCROLL | ES_NUMBER | NOT WS_BORDER
+    LTEXT           "",16134,2,53,95,60
+END
+
+16138 DIALOG  0, 0, 0, 0
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE 0x20000000L
+CAPTION "Emergency"
+BEGIN
+    RTEXT           "",16133,2,2,95,30
+    LTEXT           "An emergency phone number was entered. Press TALK to call. Or press the Cancel key to cancel.",-1,2,33,95,39
+END
+
+16142 DIALOG  0, 0, 0, 0
+STYLE WS_MAXIMIZEBOX | WS_POPUP
+EXSTYLE WS_EX_TOOLWINDOW
+BEGIN
+END
+
+16120 DIALOG  0, 0, 240, 320
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION | 0x8000L
+EXSTYLE 0x80000000L
+BEGIN
+    CONTROL         "",16123,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SHAREIMAGELISTS | LVS_NOCOLUMNHEADER | WS_BORDER | WS_GROUP | WS_TABSTOP,6,42,228,116
+    EDITTEXT        16125,6,162,228,20,ES_AUTOHSCROLL
+    LTEXT           "My Text",16121,6,4,230,14
+    LTEXT           "Tap a message, then edit below.",16122,6,25,210,14
+    CONTROL         "",-1,"SIPPREF",NOT WS_VISIBLE,-10,-10,5,5
+END
+
+16420 DIALOG  0, 0, 190, 140
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION | 0x8000L
+CAPTION "Training Voice Tag"
+BEGIN
+    LTEXT           "After the audio prompt, please speak the new word.",16122,5,5,180,95
+    DEFPUSHBUTTON   "Yes",1,31,108,59,28
+    PUSHBUTTON      "No",2,97,108,59,28
+END
+
+16210 DIALOG  0, 0, 136, 150
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Save As"
+BEGIN
+    LTEXT           "Name:",16211,3,22,32,8
+    EDITTEXT        16212,38,21,94,12,ES_AUTOHSCROLL
+    LTEXT           "Folder:",16213,3,39,32,8
+    COMBOBOX        16214,38,38,94,87,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Type:",16215,3,56,32,8
+    COMBOBOX        16216,38,55,94,60,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Location:",16217,3,73,32,8
+    COMBOBOX        16218,38,72,94,60,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Save",1,53,89,38,14
+    PUSHBUTTON      "Cancel",2,94,89,38,14
+    CONTROL         "",-1,"SIPPREF",NOT WS_VISIBLE,-10,-10,5,5
+END
+
+16454 DIALOG  0, 0, 0, 0
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE 0x20000000L
+CAPTION "Unlock"
+BEGIN
+    LTEXT           "",-1,0,0,0,0,NOT WS_GROUP
+END
+
+10220 DIALOG  0, 0, 176, 220
+STYLE WS_POPUP | WS_VISIBLE | 0x8000L
+BEGIN
+    CONTROL         "",10280,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_NOCOLUMNHEADER | WS_HSCROLL | WS_TABSTOP,2,2,172,216
+    CONTROL         "",10286,"Static",SS_BITMAP,300,45,16,16
+END
+
+10222 DIALOG  0, 0, 176, 220
+STYLE WS_POPUP | WS_VISIBLE | 0x8000L
+BEGIN
+    LTEXT           "",10281,2,2,172,200,SS_NOPREFIX | NOT WS_GROUP
+    CONTROL         "",10286,"Static",SS_BITMAP,300,45,16,16
+END
+
+10223 DIALOG  0, 0, 176, 220
+STYLE WS_POPUP | WS_VISIBLE | 0x8000L
+BEGIN
+    LTEXT           "",10281,4,2,168,12,SS_NOPREFIX | NOT WS_GROUP
+    EDITTEXT        600,4,18,168,20,ES_AUTOHSCROLL
+    CONTROL         "",10286,"Static",SS_BITMAP,300,45,16,16
+END
+
+10225 DIALOG  0, 0, 176, 220
+STYLE WS_POPUP | WS_VISIBLE | 0x8000L
+BEGIN
+    LTEXT           "",10281,4,2,168,12,SS_NOPREFIX | NOT WS_GROUP
+    EDITTEXT        600,4,18,168,20,ES_PASSWORD | ES_AUTOHSCROLL
+    CONTROL         "",10286,"Static",SS_BITMAP,300,45,16,16
+END
+
+9050 DIALOG  0, 0, 232, 142
+STYLE DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | 0x8000L
+CAPTION "Trouble Connecting"
+BEGIN
+    LTEXT           "",9051,4,4,224,104
+    PUSHBUTTON      "Settings...",1,148,118,80,20
+    PUSHBUTTON      "OK",2,64,118,80,20
+END
+
+12168 DIALOG  0, 0, 130, 95
+STYLE DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "User Logon"
+BEGIN
+    LTEXT           "Network Log On",12050,4,3,126,8,SS_NOPREFIX
+    LTEXT           "Enter network information to log on.",12048,4,17,152,8,SS_NOPREFIX
+    RTEXT           "User name:",12159,4,32,34,8
+    EDITTEXT        12162,39,30,72,12,ES_AUTOHSCROLL
+    RTEXT           "Password:",12160,4,47,34,8
+    CONTROL         "",12163,"sbedit",WS_BORDER | WS_TABSTOP | 0xa0,39,45,72,12
+    RTEXT           "Domain:",12161,4,62,34,8
+    CONTROL         "",12164,"sbedit",WS_BORDER | WS_TABSTOP | 0x80,39,60,72,12
+    CONTROL         "Save password",12165,"TTBUTTON",WS_TABSTOP | 0x2003,39,75,72,12
+    CONTROL         "",-1,"SIPPREF",NOT WS_VISIBLE,-10,-10,5,5
+END
+
+12177 DIALOG  0, 0, 130, 95
+STYLE DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Enter Network Password"
+BEGIN
+    LTEXT           "Network Log On",12050,4,3,126,8,SS_NOPREFIX
+    LTEXT           "",12180,4,17,34,8
+    LTEXT           "",12181,39,17,72,8
+    RTEXT           "User name:",12159,4,32,34,8
+    EDITTEXT        12162,39,30,72,12,ES_AUTOHSCROLL
+    RTEXT           "Password:",12160,4,47,34,8
+    CONTROL         "",12163,"sbedit",WS_BORDER | WS_TABSTOP | 0xa0,39,45,72,12
+    RTEXT           "Domain:",12161,4,62,34,8
+    CONTROL         "",12164,"sbedit",WS_BORDER | WS_TABSTOP | 0x80,39,60,72,12
+    CONTROL         "Save password",12165,"TTBUTTON",WS_TABSTOP | 0x2003,30,75,100,12
+    CONTROL         "",-1,"SIPPREF",NOT WS_VISIBLE,-10,-10,5,5
+END
+
+12172 DIALOG  0, 0, 264, 95
+STYLE DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Enter Network Password"
+BEGIN
+    LTEXT           "Network Log On",12050,4,3,126,8,SS_NOPREFIX
+    LTEXT           "Please type your user name and password.",12048,4,17,152,8
+    LTEXT           "",12180,4,25,34,8
+    LTEXT           "",12181,39,25,90,8
+    LTEXT           "Realm:",12182,4,35,34,8
+    CONTROL         "__Realm__",12183,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,39,35,90,8
+    LTEXT           "User Name:",12159,4,49,34,8
+    EDITTEXT        12162,39,47,72,12,ES_AUTOHSCROLL
+    LTEXT           "Password:",12160,4,64,34,8
+    EDITTEXT        12163,39,62,72,12,ES_PASSWORD | ES_AUTOHSCROLL
+    CONTROL         "Save password",12165,"TTBUTTON",WS_TABSTOP | 0x2003,39,77,72,12
+    CONTROL         "",-1,"SIPPREF",NOT WS_VISIBLE,-10,-10,5,5
+END
+
+12191 DIALOG  0, 0, 130, 95
+STYLE DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Details"
+BEGIN
+    LTEXT           "",12050,4,3,126,8,SS_NOPREFIX
+    LTEXT           "",12181,4,25,126,60,SS_NOPREFIX | SS_SUNKEN | NOT WS_GROUP
+END
+
+12171 DIALOG  0, 0, 130, 95
+STYLE DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "User Logon"
+BEGIN
+    LTEXT           "Network Log On",12050,4,3,126,8,SS_NOPREFIX
+    LTEXT           "Enter network information to log on.",12048,4,17,152,8
+    RTEXT           "User name:",12159,4,32,34,8
+    EDITTEXT        12162,39,30,72,12,ES_AUTOHSCROLL
+    RTEXT           "Domain:",12161,4,47,34,8
+    CONTROL         "",12164,"sbedit",WS_BORDER | WS_TABSTOP | 0x80,39,45,72,12
+    CONTROL         "",-1,"SIPPREF",NOT WS_VISIBLE,-10,-10,5,5
+END
+
+12040 DIALOG  0, 0, 130, 63
+STYLE DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION
+EXSTYLE 0x80000000L
+CAPTION "Enter Network Password"
+BEGIN
+    LTEXT           "Resource: ",12048,6,7,112,8
+    LTEXT           "Password:",-1,6,27,37,8
+    EDITTEXT        12163,56,25,70,12,ES_PASSWORD | ES_AUTOHSCROLL
+    PUSHBUTTON      "Cancel",2,80,42,37,16
+    CONTROL         "",-1,"SIPPREF",NOT WS_VISIBLE,-10,-10,5,5
+END
+
+12033 DIALOG  0, 0, 130, 45
+STYLE DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "IP Address"
+BEGIN
+    LTEXT           "IP address:",12046,4,6,35,8
+    CONTROL         "",12047,"RNA_IPAddress",WS_TABSTOP | 0x4,40,5,75,12
+    PUSHBUTTON      "OK",1,27,25,35,12
+    PUSHBUTTON      "Cancel",2,67,25,35,12
+END
+
+12035 DIALOG  0, 0, 130, 136
+STYLE DS_CONTROL | WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS
+BEGIN
+    LTEXT           "Connection Properties",12059,4,3,126,8
+    RTEXT           "Baud rate:",12060,4,20,38,8
+    COMBOBOX        12054,43,19,43,75,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Data bits:",12061,4,34,38,8
+    COMBOBOX        12055,43,33,43,65,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Parity:",12062,4,48,38,8
+    COMBOBOX        12056,43,47,43,85,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Stop bits:",12063,4,62,38,8
+    COMBOBOX        12057,43,61,43,40,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Flow control:",12064,"TTSTATIC",0x2,4,76,38,8
+    COMBOBOX        12058,43,75,43,65,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Use terminal window before dialing~~Displays the dialing process.",12052,
+                    "TTBUTTON",WS_TABSTOP | 0x3,4,93,130,10
+    CONTROL         "Use terminal window after dialing~~Opens the window after connecting.",12053,
+                    "TTBUTTON",WS_TABSTOP | 0x3,4,105,130,10
+    CONTROL         "Enter dialing commands manually~~Lets you enter dialing commands manually.",12051,
+                    "TTBUTTON",WS_TABSTOP | 0x3,4,117,130,10
+END
+
+12037 DIALOG  0, 0, 130, 136
+STYLE DS_CONTROL | WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS
+BEGIN
+    LTEXT           "Connection Properties",12071,4,3,126,8
+    CONTROL         "Cancel call if not connected within",12065,"TTBUTTON",WS_TABSTOP | 0x403,4,17,125,10
+    EDITTEXT        12067,16,27,20,12,ES_AUTOHSCROLL
+    LTEXT           "seconds",12066,39,29,50,8
+    CONTROL         "Wait for dial tone before dialing~~Prevents dialing until modem receives a dial tone.",12068,
+                    "TTBUTTON",WS_TABSTOP | 0x3,4,41,119,10
+    LTEXT           "Wait for credit card tone",12072,4,54,70,8
+    EDITTEXT        12069,75,52,20,12,ES_AUTOHSCROLL
+    LTEXT           "seconds",12073,96,54,42,8
+    LTEXT           "Extra dial-string modem commands:",12074,4,66,120,10
+    EDITTEXT        12070,4,76,127,12,ES_AUTOHSCROLL
+END
+
+12038 DIALOG  0, 0, 130, 60
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Map Network Connection"
+BEGIN
+    RTEXT           "Remote path:",12077,4,7,39,8
+    EDITTEXT        12076,45,5,81,12,ES_AUTOHSCROLL
+    RTEXT           "Local name:",12145,4,22,39,8
+    EDITTEXT        12075,45,20,81,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",1,25,40,35,12
+    PUSHBUTTON      "Cancel",2,68,40,35,12
+    CONTROL         "",-1,"SIPPREF",NOT WS_VISIBLE,-10,-10,5,5
+END
+
+12039 DIALOG  0, 0, 130, 96
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Disconnect Network Connection"
+BEGIN
+    LTEXT           "Network connection:",12079,4,5,80,8
+    LISTBOX         12078,4,14,122,62,LBS_SORT | LBS_USETABSTOPS | LBS_DISABLENOSCROLL | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Cancel",2,20,75,35,12
+    PUSHBUTTON      "Disconnect",1,60,75,50,12
+END
+
+12044 DIALOG  0, 0, 130, 136
+STYLE WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS
+BEGIN
+    LTEXT           "",12095,4,3,126,8,SS_NOPREFIX
+    CONTROL         "Use server-assigned IP address",12081,"TTBUTTON",0x9,5,20,140,10
+    CONTROL         "Use specific IP address",12082,"TTBUTTON",0x9,5,34,140,10
+    RTEXT           "IP address:",12046,4,48,55,10
+    CONTROL         "",12047,"RNA_IPAddress",WS_TABSTOP | 0x4,60,47,64,11
+    EDITTEXT        14000,60,47,64,11,ES_READONLY | NOT WS_VISIBLE
+    RTEXT           "Subnet mask:",12083,4,62,55,10
+    CONTROL         "",12084,"RNA_IPAddress",WS_TABSTOP | 0x4,60,61,64,11
+    RTEXT           "Default gateway:",12085,4,76,55,10
+    CONTROL         "",12086,"RNA_IPAddress",WS_TABSTOP | 0x4,60,75,64,11
+END
+
+12045 DIALOG  0, 0, 130, 136
+STYLE WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | WS_TABSTOP
+BEGIN
+    LTEXT           "",12096,4,3,126,8,SS_NOPREFIX
+    LTEXT           "Name server addresses may be automatically assigned if DHCP is enabled on this adapter.",12097,5,19,132,16
+    RTEXT           "DNS:",12087,4,40,40,8
+    CONTROL         "",12088,"RNA_IPAddress",WS_TABSTOP | 0x4,45,39,64,11
+    RTEXT           "Alt DNS:",12089,4,54,40,8
+    CONTROL         "",12090,"RNA_IPAddress",WS_TABSTOP | 0x4,45,53,64,11
+    RTEXT           "WINS:",12091,4,68,40,8
+    CONTROL         "",12092,"RNA_IPAddress",WS_TABSTOP | 0x4,45,67,64,11
+    RTEXT           "Alt WINS:",12093,4,82,40,8
+    CONTROL         "",12094,"RNA_IPAddress",WS_TABSTOP | 0x4,45,81,64,11
+END
+
+12043 DIALOG  0, 0, 120, 75
+STYLE DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Unrecognized Card"
+BEGIN
+    LTEXT           "Enter the name of the device driver for this card. For information, see the card manufacturer's documentation.",12048,4,4,110,32
+    EDITTEXT        12049,4,40,110,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "OK",1,20,58,35,12
+    PUSHBUTTON      "Cancel",2,60,58,35,12
+    CONTROL         "",-1,"SIPPREF",NOT WS_VISIBLE,-10,-10,5,5
+END
+
+IDD_NETUI_ADAPTERS DIALOG  0, 0, 240, 245
+STYLE DS_SETFONT | WS_POPUP | WS_VISIBLE | WS_CAPTION | 0x8000L
+CAPTION "Adapters"
+FONT 8, "Tahoma"
+BEGIN
+    LTEXT           "My network card connects to:",12256,8,6,226,16
+    COMBOBOX        12252,8,24,224,88,CBS_DROPDOWNLIST | WS_TABSTOP
+    LTEXT           "Tap an adapter to modify settings:",12255,8,48,226,16
+    CONTROL         "",12253,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSCROLL | LVS_NOCOLUMNHEADER | WS_BORDER | WS_VSCROLL | WS_TABSTOP,8,64,224,169
+END
+
+12260 DIALOG  0, 0, 1, 1
+STYLE 0x0L
+BEGIN
+END
+
+IDD_WZC_WLAN_NETWORK DIALOG  0, 0, 240, 245
+STYLE DS_SETFONT | WS_POPUP | WS_VISIBLE | WS_CAPTION | 0x8000L
+CAPTION "WiFi"
+FONT 8, "Tahoma"
+BEGIN
+    LTEXT           "",IDC_WZC_HEADING,8,4,170,18,SS_NOPREFIX
+    CONTROL         "",IDC_WZC_LIST_NETWORKS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOCOLUMNHEADER | WS_BORDER | WS_VSCROLL | WS_TABSTOP,8,26,224,215
+    LTEXT           "To configure your wireless network, please enable your wireless network card.",IDC_WZC_STATIC_NO_WIRELESS_CARD_PRESEND,8,26,224,172,WS_BORDER
+    PUSHBUTTON      "ReScan",IDC_BUTTON_RESCAN,182,3,50,20
+END
+
+12320 DIALOG  0, 0, 240, 245
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 0x8000L
+CAPTION "Configure Wireless Network"
+FONT 8, "Tahoma"
+BEGIN
+    LTEXT           "Network name:",12325,8,32,80,16
+    EDITTEXT        12322,90,30,122,20,ES_AUTOHSCROLL
+    LTEXT           "Connects to:",12326,8,58,80,16
+    COMBOBOX        12323,90,56,122,88,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "This is a hidden network",12328,"TTBUTTON",WS_TABSTOP | 0x403,8,84,204,20
+    CONTROL         "This is a device-to-device (ad-hoc) connection",12324,
+                    "TTBUTTON",WS_TABSTOP | 0x2403,8,110,204,40
+END
+
+12330 DIALOG  0, 0, 240, 245
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 0x8000L
+CAPTION "Configure Network Authentication"
+BEGIN
+    LTEXT           "Authentication:",12345,8,30,100,16
+    COMBOBOX        12346,110,30,102,180,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Data Encryption:",12347,8,55,100,16
+    COMBOBOX        12348,110,55,102,88,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "The key is automatically provided",12334,"TTBUTTON",WS_TABSTOP | 0x403,8,80,204,20
+    LTEXT           "Network key:",12335,16,105,70,16
+    EDITTEXT        12336,90,105,122,20,ES_AUTOHSCROLL
+    LTEXT           "Key index:",12337,16,130,70,16
+    COMBOBOX        12338,90,130,50,88,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+12344 DIALOG  0, 0, 240, 245
+STYLE WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 0x8000L
+CAPTION "Configure Network Authentication"
+BEGIN
+    CONTROL         "Use IEEE 802.1x network access control",12340,"TTBUTTON",WS_TABSTOP | 0x2403,8,30,224,16
+    LTEXT           "EAP type:",12341,10,52,58,16
+    COMBOBOX        12339,70,49,162,88,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Properties",12342,150,74,82,20
+END
+
+12405 DIALOG  0, 0, 240, 245
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION | 0x8000L
+CAPTION "Wi-Fi Advanced Settings"
+BEGIN
+    LTEXT           "",12263,8,5,224,18,SS_NOPREFIX
+    CONTROL         "Turn on available network notification",12408,"TTBUTTON",WS_TABSTOP | 0x2403,8,30,224,16
+    LTEXT           "Turn off Wi-Fi if not connected in:",12406,8,52,220,16
+    COMBOBOX        12407,8,72,220,90,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+12350 DIALOG  0, 0, 138, 140
+STYLE DS_CONTROL | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Client Authentication"
+BEGIN
+    ICON            12417,-1,4,5,21,20
+    LTEXT           "The Web site you want to view requests identification. Select the certificate to use when connecting.",-1,30,5,97,34,SS_NOPREFIX
+    CONTROL         "List1",12351,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,30,42,97,60
+END
+
+12360 DIALOG  0, 0, 240, 245
+STYLE DS_SETFOREGROUND | WS_POPUP | WS_VISIBLE | WS_CAPTION | 0x8000L
+CAPTION "Certificate Details"
+BEGIN
+    LTEXT           "Issued to:",12367,8,28,126,16
+    LTEXT           "",12361,8,49,210,16
+    LTEXT           "Issued by:",12368,8,74,126,16
+    LTEXT           "",12362,8,95,210,16
+    LTEXT           "Valid from:",12369,8,120,126,16
+    LTEXT           "",12363,8,141,60,16
+    LTEXT           "to",12370,70,141,20,16
+    LTEXT           "",12364,96,141,60,16
+    LTEXT           "Intended Purpose(s):",12371,8,166,126,16
+    LTEXT           "",12365,8,187,210,48
+END
+
+12407 DIALOG  0, 0, 138, 121
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Security Alert"
+BEGIN
+    ICON            12416,-1,6,6,21,20
+    LTEXT           "You are about to leave a secure Internet connection.  It will be possible for others to view information you send.",-1,32,6,95,36
+    LTEXT           "Do you want to continue?",-1,32,48,95,8
+    CONTROL         "&In the future, do not show this warning",12405,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,28,64,100,21
+END
+
+12411 DIALOG  0, 0, 142, 160
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Security Alert"
+BEGIN
+    ICON            12416,-1,5,5,20,20
+    LTEXT           "Information you exchange with this site cannot be viewed or changed by others. However, there is a problem with the site's security certificate.",-1,28,5,104,41
+    LTEXT           "The certificate was issued by a company you have not chosen to trust.",12419,40,48,92,26
+    LTEXT           "The certificate has expired or is not yet valid.",12421,40,74,92,20
+    LTEXT           "The name on the certificate is not valid or does not match the name of the site.",12423,40,94,92,33
+    ICON            "",12418,28,49,20,20,SS_REALSIZEIMAGE
+    ICON            "",12420,28,75,20,20,SS_REALSIZEIMAGE
+    ICON            "",12422,28,95,20,20,SS_REALSIZEIMAGE
+    LTEXT           "Do you want to proceed?",-1,28,127,104,8
+END
+
+12408 DIALOG  0, 0, 140, 140
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Internet Redirection"
+BEGIN
+    ICON            12415,-1,6,6,21,20
+    LTEXT           "You are about to be redirected to a new internet site.",-1,32,6,102,20
+    LTEXT           "Any information you exchanged with the current site could be retransmitted to the new internet site you are about to connect with.  Do you wish to continue?",-1,32,28,102,60
+    CONTROL         "&In the future, do not show this warning",12405,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,28,85,100,21
+END
+
+12409 DIALOG  0, 0, 140, 140
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Security Alert"
+BEGIN
+    ICON            12417,-1,6,6,21,20
+    LTEXT           "You are about to send information over the Internet. It might be possible for other people to see what you are sending.",-1,32,6,99,50
+    CONTROL         "&In the future, do not show this warning",12405,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,28,68,100,21
+END
+
+12410 DIALOG  0, 0, 140, 140
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Security Alert"
+BEGIN
+    ICON            12416,-1,7,8,21,20
+    LTEXT           "You are about to be redirected to a connection that is not secure.",-1,34,8,99,40
+    LTEXT           "The information you are sending to the current site might be retransmitted to a nonsecure site. Do you wish to continue?",-1,34,50,99,50
+END
+
+12428 DIALOG  0, 0, 140, 140
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Security Information"
+BEGIN
+    ICON            12416,-1,7,8,21,20
+    LTEXT           "This page contains both secure and nonsecure items.",-1,34,8,99,40
+    LTEXT           "Do you want to continue?",-1,34,50,99,50
+END
+
+12406 DIALOG  0, 0, 140, 140
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Security Alert"
+BEGIN
+    ICON            12416,-1,6,6,21,20
+    LTEXT           "Revocation information for the security certificate for this site is not available. Do you want to proceed?",-1,32,8,102,40
+END
+
+12427 DIALOG  0, 0, 140, 140
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Security Alert"
+BEGIN
+    ICON            12417,-1,6,6,21,20
+    LTEXT           "",101,32,6,99,50
+    CONTROL         "&In the future, do not show this message",12405,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,28,68,100,21
+END
+
+7013 DIALOG  0, 0, 160, 167
+STYLE WS_POPUP | WS_CAPTION
+BEGIN
+    LTEXT           "",7015,5,24,144,50
+END
+
+7012 DIALOG  0, 0, 240, 320
+STYLE DS_SETFOREGROUND | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 0x8000L
+CAPTION "SIM Card"
+BEGIN
+    EDITTEXT        7017,16,80,180,20,ES_PASSWORD | ES_READONLY,0x8000000L
+    LTEXT           "",7015,10,24,180,56
+    LTEXT           "",7020,10,24,180,36
+    LTEXT           "",7016,10,24,180,56
+    RTEXT           "",7021,16,80,180,20
+    RTEXT           "",7023,16,80,180,20
+    CONTROL         "",7024,"Dialer",0x10a,156,104,84,84
+    CONTROL         "",7019,"Dialer",0x10e,0,104,156,84
+END
+
+7014 DIALOG  0, 0, 160, 30
+STYLE DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | 0x8000L
+EXSTYLE 0x80000000L
+CAPTION "SIM Card"
+BEGIN
+    LTEXT           "",7022,16,24,130,30
+END
+
+7060 DIALOG  0, 24, 201, 236
+STYLE WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 0x8000L
+CAPTION "PIN2"
+BEGIN
+    LTEXT           "Enter PIN2 and tap 'Done'.",7016,8,28,140,15
+    CONTROL         "",7023,"sbedit",WS_BORDER | WS_TABSTOP | 0xa0,20,47,140,20
+END
+
+7061 DIALOG  0, 24, 201, 236
+STYLE WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 0x8000L
+CAPTION "PUK2 Required"
+BEGIN
+    LTEXT           "The SIM is currently blocked. Contact your customer service center for the unblock (PUK2) code.",7015,8,28,224,45
+    LTEXT           "Unblock code:",7016,8,75,100,15
+    CONTROL         "",7023,"sbedit",WS_BORDER | WS_TABSTOP | 0xa0,8,92,140,15
+    LTEXT           "New PIN:",7020,8,110,100,15
+    CONTROL         "",7021,"sbedit",WS_BORDER | WS_TABSTOP | 0xa0,8,127,140,15
+    LTEXT           "Confirm new PIN:",7018,8,145,100,15
+    CONTROL         "",7017,"sbedit",WS_BORDER | WS_TABSTOP | 0xa0,8,162,140,15
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_WZC_STATE           BITMAP                  "res/res96/wzcui.bmp"
+IDB_WIRELESS_BARS_1     BITMAP                  "res/res96/WIRELESS1.BMP"
+IDB_WIRELESS_BARS_2     BITMAP                  "res/res96/WIRELESS2.BMP"
+IDB_WIRELESS_BARS_3     BITMAP                  "res/res96/WIRELESS3.BMP"
+IDB_WIRELESS_BARS_4     BITMAP                  "res/res96/WIRELESS4.BMP"
+IDB_NETUI_HELPICON      BITMAP                  "res/res96/wizardhelp.bmp"
+IDB_DOTTED              BITMAP                  "res/res96/dotted.bmp"
+IDB_BLUETOOTH_ON        BITMAP                  "res/res96/bthon.bmp"
+IDB_BLUETOOTH_DISCOV    BITMAP                  "res/res96/bthdiscv.bmp"
+IDB_DIVIDING_LINE       BITMAP                  "res\\sepa.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_WZC_CONNECTION_BUBBLE ICON                    "res/res96/wzcbubble.ico"
+IDI_BUBBLE_ARROW_LEFT   ICON                    "res/res96/left_arrow.ico"
+IDI_BUBBLE_ARROW_RIGHT  ICON                    "res/res96/right_arrow.ico"
+IDI_LOCK_ICON           ICON                    "res/res96/lock.ico"
+IDI_UNLOCK_ICON         ICON                    "res/res96/unlock.ico"
+IDI_WC                  ICON                    "res/res96/wc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RCDATA
+//
+
+1304 RCDATA 
+BEGIN
+    0x0000, 0x0002, 0xfffe, 0x051a, 0x0004, 0x0010, 0x0515, 0x0000, 0xffff, 
+    0xfffe, 0x051b, 0x0004, 0x0010, 0x0516, 0x0000, 0xffff
+END
+
+1305 RCDATA 
+BEGIN
+    0x0000, 0x0002, 0xfffe, 0x051c, 0x0004, 0x0010, 0x0517, 0x0000, 0xffff, 
+    0xfffe, 0x051b, 0x0004, 0x0010, 0x0516, 0x0000, 0xffff
+END
+
+1590 RCDATA 
+BEGIN
+    0x0000, 0x0001, 0xfffe, 0x0001, 0x0004, 0x0010, 0x01f5, 0x0000, 0xffff
+
+END
+
+16431 RCDATA 
+BEGIN
+    0x402f, 0x0002, 0xfffe, 0x4033, 0x0004, 0x0010, 0x4043, 0x0000, 0xffff, 
+    0xfffe, 0x4034, 0x0004, 0x0018, 0x4044, 0x0000, 0x0001
+END
+
+16135 RCDATA 
+BEGIN
+    0x0000, 0x0002, 0xfffe, 0x0001, 0x0004, 0x0010, 0x3fac, 0x0000, 0xffff, 
+    0xfffe, 0x0002, 0x0004, 0x0010, 0x01f6, 0x0000, 0xffff
+END
+
+16139 RCDATA 
+BEGIN
+    0x0000, 0x0001, 0xfffe, 0x0002, 0x0004, 0x0010, 0x01f6, 0x0000, 0xffff
+
+END
+
+16172 RCDATA 
+BEGIN
+    0x3f31, 0x0002, 0xfffe, 0x3f2f, 0x0004, 0x0010, 0x3f30, 0x0000, 0xffff, 
+    0xfffe, 0x0000, 0x0004, 0x0018, 0x0009, 0x0000, 0x0000
+END
+
+16455 RCDATA 
+BEGIN
+    0x0000, 0x0001, 0xfffe, 0x0002, 0x0004, 0x0010, 0x01f6, 0x0000, 0xffff
+
+END
+
+10200 RCDATA 
+BEGIN
+    0x0000, 0x0002, 0xfffe, 0x281e, 0x0004, 0x0010, 0x2814, 0x0000, 0xffff, 
+    0xfffe, 0x2820, 0x0004, 0x0010, 0x280a, 0x0000, 0xffff
+END
+
+10201 RCDATA 
+BEGIN
+    0x0000, 0x0001, 0xfffe, 0x2821, 0x0004, 0x0010, 0x280e, 0x0000, 0xffff
+
+END
+
+10204 RCDATA 
+BEGIN
+    0x0000, 0x0002, 0xfffe, 0x2824, 0x0004, 0x0010, 0x280b, 0x0000, 0xffff, 
+    0xfffe, 0x2825, 0x0004, 0x0010, 0x280c, 0x0000, 0xffff
+END
+
+10202 RCDATA 
+BEGIN
+    0x0000, 0x0002, 0xfffe, 0x2821, 0x0004, 0x0010, 0x280e, 0x0000, 0xffff, 
+    0xfffe, 0x2820, 0x0004, 0x0010, 0x280a, 0x0000, 0xffff
+END
+
+12169 RCDATA 
+BEGIN
+    0x0000, 0x0002, 0xfffe, 0x2f87, 0x0004, 0x0010, 0x01f9, 0x0000, 0xffff, 
+    0xfffe, 0x2f86, 0x0004, 0x0010, 0x01f6, 0x0000, 0xffff
+END
+
+12185 RCDATA 
+BEGIN
+    0x2f98, 0x0002, 0xfffe, 0x2f87, 0x0004, 0x0010, 0x01f9, 0x0000, 0xffff, 
+    0xfffe, 0x0000, 0x0004, 0x0018, 0x2f9e, 0x0000, 0x0000
+END
+
+12192 RCDATA 
+BEGIN
+    0x0000, 0x0001, 0xfffe, 0x01f4, 0x0004, 0x0010, 0x01f5, 0x0000, 0xffff
+
+END
+
+12193 RCDATA 
+BEGIN
+    0x0000, 0x0001, 0xfffe, 0x0002, 0x0004, 0x0010, 0x01f6, 0x0000, 0xffff
+
+END
+
+12178 RCDATA 
+BEGIN
+    0x0000, 0x0002, 0xfffe, 0x0001, 0x0004, 0x0010, 0x01f9, 0x0000, 0xffff, 
+    0xfffe, 0x0002, 0x0004, 0x0010, 0x01f6, 0x0000, 0xffff
+END
+
+12412 RCDATA 
+BEGIN
+    0x0000, 0x0002, 0xfffe, 0x0001, 0x0004, 0x0010, 0x01f7, 0x0000, 0xffff, 
+    0xfffe, 0x0002, 0x0004, 0x0010, 0x01f8, 0x0000, 0xffff
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+16431 MENU 
+BEGIN
+    MENUITEM "Call",                        16435
+    POPUP "Menu"
+    BEGIN
+        MENUITEM "Send SMS",                    16437
+        MENUITEM "Save to Contacts",            16438
+        MENUITEM "Cancel",                      16439
+    END
+END
+
+16202 MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Customize...",                3000
+    END
+END
+
+16201 MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Undo",                        772
+        MENUITEM SEPARATOR
+        MENUITEM "Cut",                         768
+        MENUITEM "Copy",                        769
+        MENUITEM "Paste",                       770
+        MENUITEM "Clear",                       771
+        MENUITEM SEPARATOR
+        MENUITEM "Select All",                  177
+    END
+END
+
+16177 MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Edit My Text",                16149
+        MENUITEM "Cancel",                      1010
+    END
+END
+
+IDM_WIZARD_FIRST MENU 
+BEGIN
+    MENUITEM "Cancel",                      ID_CANCEL
+    MENUITEM "Next",                        ID_NEXT
+END
+
+IDM_WIZARD_MID MENU 
+BEGIN
+    MENUITEM "Back",                        ID_BACK
+    MENUITEM "Next",                        ID_NEXT
+END
+
+IDM_WIZARD_LAST MENU 
+BEGIN
+    MENUITEM "Back",                        ID_BACK
+    MENUITEM "Finish",                      ID_FINISH
+END
+
+IDM_CANCEL_RETRY MENU 
+BEGIN
+    MENUITEM "Cancel",                      ID_CANCEL
+    MENUITEM "Retry",                       ID_NEXT
+END
+
+IDM_CANCEL_SAVE MENU 
+BEGIN
+    MENUITEM "Cancel",                      ID_CANCEL
+    MENUITEM "Save",                        IDOK
+END
+
+IDR_WZC_MENU_NETWORK MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Connect",                     IDM_WZC_NETWORK_CONNECT
+        MENUITEM "Add New...",                  IDS_WZC_ADD_NEW_SETTINGS
+        MENUITEM "Remove Settings",             IDM_WZC_NETWORK_REMOVE
+        MENUITEM "Edit",                        IDM_WZC_NETWORK_PROPERTIES
+    END
+END
+
+IDR_WZC_SKBAR_NETWORK MENU 
+BEGIN
+    MENUITEM "Connect",                     IDM_WZC_NETWORK_CONNECT
+    POPUP "Menu"
+    BEGIN
+        MENUITEM "Add New...",                  IDS_WZC_ADD_NEW_SETTINGS
+        MENUITEM "Remove Settings",             IDM_WZC_NETWORK_REMOVE
+        MENUITEM "Edit",                        IDM_WZC_NETWORK_PROPERTIES
+        MENUITEM SEPARATOR
+    END
+END
+
+12510 MENU 
+BEGIN
+    MENUITEM "Edit",                        12511
+END
+
+12654 MENU 
+BEGIN
+    MENUITEM "Connect",                     12658
+    POPUP "Menu"
+    BEGIN
+        MENUITEM "Dismiss",                     12656
+        MENUITEM "Don’t show this message again", 12657
+    END
+END
+
+12655 MENU 
+BEGIN
+    MENUITEM "OK",                          12659
+    POPUP "Menu"
+    BEGIN
+        MENUITEM "Dismiss",                     12656
+        MENUITEM "Don’t show this message again", 12657
+    END
+END
+
+12184 MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Details",                     12186
+        MENUITEM "Cancel",                      12166
+    END
+END
+
+7063 MENU 
+BEGIN
+    MENUITEM "Done",                        1
+    MENUITEM "Cancel",                      2
+END
+
+18452 MENU 
+BEGIN
+    MENUITEM "Renew",                       1
+    POPUP "Menu"
+    BEGIN
+        MENUITEM "Remind me in 2 hours",        18453
+        MENUITEM "Remind me in 4 hours",        18454
+        MENUITEM "Remind me in 6 hours",        18455
+        MENUITEM "Remind me in 24 hours",       18456
+        MENUITEM "Don't remind me",             18457
+    END
+END
+
+IDR_MENU_APPLY_DEFAULT MENU 
+BEGIN
+    MENUITEM "Default",                     ID_DEFAULT
+    MENUITEM "Apply",                       ID_APPLY
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// HTML
+//
+
+EMERGENCY.HTM HTML 
+BEGIN
+    0x003c, 0x0042, 0x004f, 0x0044, 0x0059, 0x003e, 0x003c, 0x0070, 0x0020, 
+    0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x0072, 0x0069, 0x0067, 
+    0x0068, 0x0074, 0x003e, 0x003c, 0x0062, 0x003e, 0x0025, 0x0031, 0x003c, 
+    0x002f, 0x0062, 0x003e, 0x003c, 0x0062, 0x0072, 0x0020, 0x002f, 0x003e, 
+    0x0041, 0x006e, 0x0020, 0x0065, 0x006d, 0x0065, 0x0072, 0x0067, 0x0065, 
+    0x006e, 0x0063, 0x0079, 0x0020, 0x0070, 0x0068, 0x006f, 0x006e, 0x0065, 
+    0x0020, 0x006e, 0x0075, 0x006d, 0x0062, 0x0065, 0x0072, 0x0020, 0x0077, 
+    0x0061, 0x0073, 0x0020, 0x0065, 0x006e, 0x0074, 0x0065, 0x0072, 0x0065, 
+    0x0064, 0x002e, 0x0020, 0x0050, 0x0072, 0x0065, 0x0073, 0x0073, 0x0020, 
+    0x0054, 0x0041, 0x004c, 0x004b, 0x0020, 0x0074, 0x006f, 0x0020, 0x0063, 
+    0x0061, 0x006c, 0x006c, 0x002e, 0x003c, 0x002f, 0x0070, 0x003e, 0x003c, 
+    0x002f, 0x0042, 0x004f, 0x0044, 0x0059, 0x003e, 0x0000
+END
+
+MAKECALLHTML.HTM HTML 
+BEGIN
+    0x003c, 0x0042, 0x004f, 0x0044, 0x0059, 0x003e, 0x0044, 0x0069, 0x0061, 
+    0x006c, 0x0020, 0x0025, 0x0031, 0x003f, 0x003c, 0x0042, 0x0052, 0x003e, 
+    0x003c, 0x0070, 0x0020, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 
+    0x0072, 0x0069, 0x0067, 0x0068, 0x0074, 0x003e, 0x003c, 0x0069, 0x006e, 
+    0x0070, 0x0075, 0x0074, 0x0020, 0x0074, 0x0079, 0x0070, 0x0065, 0x003d, 
+    0x0062, 0x0075, 0x0074, 0x0074, 0x006f, 0x006e, 0x0020, 0x006e, 0x0061, 
+    0x006d, 0x0065, 0x003d, 0x0027, 0x0063, 0x006d, 0x0064, 0x003a, 0x0031, 
+    0x0027, 0x0020, 0x0076, 0x0061, 0x006c, 0x0075, 0x0065, 0x003d, 0x0027, 
+    0x0059, 0x0065, 0x0073, 0x0027, 0x003e, 0x0026, 0x006e, 0x0062, 0x0073, 
+    0x0070, 0x003b, 0x003c, 0x0069, 0x006e, 0x0070, 0x0075, 0x0074, 0x0020, 
+    0x0074, 0x0079, 0x0070, 0x0065, 0x003d, 0x0062, 0x0075, 0x0074, 0x0074, 
+    0x006f, 0x006e, 0x0020, 0x006e, 0x0061, 0x006d, 0x0065, 0x003d, 0x0027, 
+    0x0063, 0x006d, 0x0064, 0x003a, 0x0032, 0x0027, 0x0020, 0x0076, 0x0061, 
+    0x006c, 0x0075, 0x0065, 0x003d, 0x0027, 0x004e, 0x006f, 0x0027, 0x003e, 
+    0x003c, 0x002f, 0x0070, 0x003e, 0x003c, 0x002f, 0x0042, 0x004f, 0x0044, 
+    0x0059, 0x003e, 0x0000
+END
+
+MB_RADIOOFF.HTM HTML 
+BEGIN
+    0x003c, 0x0062, 0x006f, 0x0064, 0x0079, 0x003e, 0x0025, 0x0031, 0x003c, 
+    0x0062, 0x0072, 0x003e, 0x003c, 0x0070, 0x0020, 0x0061, 0x006c, 0x0069, 
+    0x0067, 0x006e, 0x003d, 0x0072, 0x0069, 0x0067, 0x0068, 0x0074, 0x003e, 
+    0x003c, 0x0069, 0x006e, 0x0070, 0x0075, 0x0074, 0x0020, 0x0074, 0x0079, 
+    0x0070, 0x0065, 0x003d, 0x0062, 0x0075, 0x0074, 0x0074, 0x006f, 0x006e, 
+    0x0020, 0x006e, 0x0061, 0x006d, 0x0065, 0x003d, 0x0027, 0x0063, 0x006d, 
+    0x0064, 0x003a, 0x0033, 0x0027, 0x0020, 0x0076, 0x0061, 0x006c, 0x0075, 
+    0x0065, 0x003d, 0x0027, 0x0059, 0x0065, 0x0073, 0x0027, 0x003e, 0x0026, 
+    0x006e, 0x0062, 0x0073, 0x0070, 0x003b, 0x003c, 0x0069, 0x006e, 0x0070, 
+    0x0075, 0x0074, 0x0020, 0x0074, 0x0079, 0x0070, 0x0065, 0x003d, 0x0062, 
+    0x0075, 0x0074, 0x0074, 0x006f, 0x006e, 0x0020, 0x006e, 0x0061, 0x006d, 
+    0x0065, 0x003d, 0x0027, 0x0063, 0x006d, 0x0064, 0x003a, 0x0032, 0x0027, 
+    0x0020, 0x0076, 0x0061, 0x006c, 0x0075, 0x0065, 0x003d, 0x0027, 0x004e, 
+    0x006f, 0x0027, 0x003e, 0x003c, 0x002f, 0x0070, 0x003e, 0x003c, 0x002f, 
+    0x0062, 0x006f, 0x0064, 0x0079, 0x003e, 0x0000
+END
+
+MB_NORADIO.HTM HTML 
+BEGIN
+    0x003c, 0x0062, 0x006f, 0x0064, 0x0079, 0x003e, 0x0025, 0x0031, 0x003c, 
+    0x0062, 0x0072, 0x003e, 0x003c, 0x0070, 0x0020, 0x0061, 0x006c, 0x0069, 
+    0x0067, 0x006e, 0x003d, 0x0072, 0x0069, 0x0067, 0x0068, 0x0074, 0x003e, 
+    0x003c, 0x0069, 0x006e, 0x0070, 0x0075, 0x0074, 0x0020, 0x0074, 0x0079, 
+    0x0070, 0x0065, 0x003d, 0x0062, 0x0075, 0x0074, 0x0074, 0x006f, 0x006e, 
+    0x0020, 0x006e, 0x0061, 0x006d, 0x0065, 0x003d, 0x0027, 0x0063, 0x006d, 
+    0x0064, 0x003a, 0x0031, 0x0027, 0x0020, 0x0076, 0x0061, 0x006c, 0x0075, 
+    0x0065, 0x003d, 0x0027, 0x004f, 0x004b, 0x0027, 0x003e, 0x003c, 0x002f, 
+    0x0070, 0x003e, 0x003c, 0x002f, 0x0062, 0x006f, 0x0064, 0x0079, 0x003e, 
+    0x0000
+END
+
+VOICETAG_FORMAT.HTM HTML 
+BEGIN
+    0x003c, 0x0062, 0x006f, 0x0064, 0x0079, 0x003e, 0x0025, 0x0031, 0x003c, 
+    0x0070, 0x0020, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x0072, 
+    0x0069, 0x0067, 0x0068, 0x0074, 0x003e, 0x003c, 0x0069, 0x006e, 0x0070, 
+    0x0075, 0x0074, 0x0020, 0x0074, 0x0079, 0x0070, 0x0065, 0x003d, 0x0062, 
+    0x0075, 0x0074, 0x0074, 0x006f, 0x006e, 0x0020, 0x006e, 0x0061, 0x006d, 
+    0x0065, 0x003d, 0x0027, 0x0063, 0x006d, 0x0064, 0x003a, 0x0036, 0x0027, 
+    0x0020, 0x0076, 0x0061, 0x006c, 0x0075, 0x0065, 0x003d, 0x0027, 0x0059, 
+    0x0065, 0x0073, 0x0027, 0x003e, 0x003c, 0x0069, 0x006e, 0x0070, 0x0075, 
+    0x0074, 0x0020, 0x0074, 0x0079, 0x0070, 0x0065, 0x003d, 0x0062, 0x0075, 
+    0x0074, 0x0074, 0x006f, 0x006e, 0x0020, 0x006e, 0x0061, 0x006d, 0x0065, 
+    0x003d, 0x0027, 0x0063, 0x006d, 0x0064, 0x003a, 0x0037, 0x0027, 0x0020, 
+    0x0076, 0x0061, 0x006c, 0x0075, 0x0065, 0x003d, 0x0027, 0x004e, 0x006f, 
+    0x0027, 0x003e, 0x003c, 0x002f, 0x0070, 0x003e, 0x003c, 0x002f, 0x0062, 
+    0x006f, 0x0064, 0x0079, 0x003e, 0x0000
+END
+
+RAS_ERROR_FORMAT.HTM HTML 
+BEGIN
+    0x003c, 0x0048, 0x0054, 0x004d, 0x004c, 0x003e, 0x003c, 0x0042, 0x004f, 
+    0x0044, 0x0059, 0x003e, 0x003c, 0x0074, 0x0061, 0x0062, 0x006c, 0x0065, 
+    0x0020, 0x0062, 0x006f, 0x0072, 0x0064, 0x0065, 0x0072, 0x003d, 0x0030, 
+    0x0020, 0x0077, 0x0069, 0x0064, 0x0074, 0x0068, 0x003d, 0x0031, 0x0030, 
+    0x0030, 0x0025, 0x0025, 0x0020, 0x0063, 0x0065, 0x006c, 0x006c, 0x0073, 
+    0x0070, 0x0061, 0x0063, 0x0069, 0x006e, 0x0067, 0x003d, 0x0030, 0x0020, 
+    0x0063, 0x0065, 0x006c, 0x006c, 0x0070, 0x0061, 0x0064, 0x0064, 0x0069, 
+    0x006e, 0x0067, 0x003d, 0x0030, 0x003e, 0x003c, 0x0074, 0x0072, 0x003e, 
+    0x003c, 0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 0x003d, 0x0052, 0x0061, 
+    0x0073, 0x0066, 0x006d, 0x0074, 0x005f, 0x0074, 0x0064, 0x0031, 0x0020, 
+    0x0063, 0x006f, 0x006c, 0x0073, 0x0070, 0x0061, 0x006e, 0x003d, 0x0032, 
+    0x0020, 0x0076, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x0074, 
+    0x006f, 0x0070, 0x0020, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 
+    0x006c, 0x0065, 0x0066, 0x0074, 0x003e, 0x003c, 0x0042, 0x003e, 0x0025, 
+    0x0031, 0x003a, 0x0020, 0x0025, 0x0032, 0x003c, 0x002f, 0x0042, 0x003e, 
+    0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0072, 0x003e, 
+    0x003c, 0x0074, 0x0064, 0x0020, 0x0063, 0x006f, 0x006c, 0x0073, 0x0070, 
+    0x0061, 0x006e, 0x003d, 0x0032, 0x003e, 0x003c, 0x0068, 0x0072, 0x0020, 
+    0x0073, 0x0074, 0x0079, 0x006c, 0x0065, 0x003d, 0x0027, 0x0062, 0x006f, 
+    0x0072, 0x0064, 0x0065, 0x0072, 0x002d, 0x0077, 0x0069, 0x0064, 0x0074, 
+    0x0068, 0x003a, 0x0020, 0x0030, 0x002e, 0x0030, 0x0031, 0x0031, 0x0069, 
+    0x006e, 0x0020, 0x0030, 0x0020, 0x0030, 0x0020, 0x0030, 0x003b, 0x0020, 
+    0x006d, 0x0061, 0x0072, 0x0067, 0x0069, 0x006e, 0x002d, 0x0074, 0x006f, 
+    0x0070, 0x003a, 0x0020, 0x0030, 0x002e, 0x0031, 0x0037, 0x0065, 0x006d, 
+    0x003b, 0x0020, 0x006d, 0x0061, 0x0072, 0x0067, 0x0069, 0x006e, 0x002d, 
+    0x0062, 0x006f, 0x0074, 0x0074, 0x006f, 0x006d, 0x003a, 0x0020, 0x0030, 
+    0x002e, 0x0031, 0x0037, 0x0065, 0x006d, 0x0027, 0x003e, 0x003c, 0x002f, 
+    0x0074, 0x0064, 0x003e, 0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 
+    0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 
+    0x003d, 0x0052, 0x0061, 0x0073, 0x0066, 0x006d, 0x0074, 0x005f, 0x0074, 
+    0x0064, 0x0032, 0x0020, 0x0063, 0x006f, 0x006c, 0x0073, 0x0070, 0x0061, 
+    0x006e, 0x003d, 0x0032, 0x0020, 0x0076, 0x0061, 0x006c, 0x0069, 0x0067, 
+    0x006e, 0x003d, 0x0074, 0x006f, 0x0070, 0x0020, 0x0061, 0x006c, 0x0069, 
+    0x0067, 0x006e, 0x003d, 0x006c, 0x0065, 0x0066, 0x0074, 0x003e, 0x0025, 
+    0x0033, 0x003c, 0x002f, 0x0074, 0x0064, 0x003e, 0x003c, 0x002f, 0x0074, 
+    0x0072, 0x003e, 0x003c, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0064, 
+    0x0020, 0x0069, 0x0064, 0x003d, 0x0052, 0x0061, 0x0073, 0x0066, 0x006d, 
+    0x0074, 0x005f, 0x0074, 0x0064, 0x0033, 0x0020, 0x0073, 0x0074, 0x0079, 
+    0x006c, 0x0065, 0x003d, 0x0027, 0x0068, 0x0065, 0x0069, 0x0067, 0x0068, 
+    0x0074, 0x003a, 0x0020, 0x0031, 0x002e, 0x0033, 0x0034, 0x0065, 0x006d, 
+    0x0027, 0x0020, 0x0077, 0x0069, 0x0064, 0x0074, 0x0068, 0x003d, 0x0035, 
+    0x0030, 0x0025, 0x0025, 0x0020, 0x0076, 0x0061, 0x006c, 0x0069, 0x0067, 
+    0x006e, 0x003d, 0x006d, 0x0069, 0x0064, 0x0064, 0x006c, 0x0065, 0x003e, 
+    0x003c, 0x0061, 0x0020, 0x0068, 0x0072, 0x0065, 0x0066, 0x003d, 0x0027, 
+    0x0063, 0x006d, 0x0064, 0x003a, 0x0035, 0x0027, 0x003e, 0x0053, 0x0065, 
+    0x0074, 0x0074, 0x0069, 0x006e, 0x0067, 0x0073, 0x003c, 0x002f, 0x0061, 
+    0x003e, 0x003c, 0x002f, 0x0074, 0x0064, 0x003e, 0x003c, 0x0074, 0x0064, 
+    0x0020, 0x0069, 0x0064, 0x003d, 0x0052, 0x0061, 0x0073, 0x0066, 0x006d, 
+    0x0074, 0x005f, 0x0074, 0x0064, 0x0034, 0x0020, 0x0073, 0x0074, 0x0079, 
+    0x006c, 0x0065, 0x003d, 0x0027, 0x0068, 0x0065, 0x0069, 0x0067, 0x0068, 
+    0x0074, 0x003a, 0x0020, 0x0031, 0x002e, 0x0033, 0x0034, 0x0065, 0x006d, 
+    0x0027, 0x0020, 0x0077, 0x0069, 0x0064, 0x0074, 0x0068, 0x003d, 0x0035, 
+    0x0030, 0x0025, 0x0025, 0x0020, 0x0076, 0x0061, 0x006c, 0x0069, 0x0067, 
+    0x006e, 0x003d, 0x006d, 0x0069, 0x0064, 0x0064, 0x006c, 0x0065, 0x0020, 
+    0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x0072, 0x0069, 0x0067, 
+    0x0068, 0x0074, 0x003e, 0x003c, 0x0069, 0x006e, 0x0070, 0x0075, 0x0074, 
+    0x0020, 0x0069, 0x0064, 0x003d, 0x0052, 0x0061, 0x0073, 0x0066, 0x006d, 
+    0x0074, 0x005f, 0x0062, 0x0074, 0x006e, 0x0031, 0x0020, 0x0074, 0x0079, 
+    0x0070, 0x0065, 0x003d, 0x0062, 0x0075, 0x0074, 0x0074, 0x006f, 0x006e, 
+    0x0020, 0x006e, 0x0061, 0x006d, 0x0065, 0x003d, 0x0027, 0x0063, 0x006d, 
+    0x0064, 0x003a, 0x0031, 0x0027, 0x0020, 0x0076, 0x0061, 0x006c, 0x0075, 
+    0x0065, 0x003d, 0x0027, 0x0044, 0x0069, 0x0073, 0x006d, 0x0069, 0x0073, 
+    0x0073, 0x0027, 0x003e, 0x003c, 0x002f, 0x0074, 0x0064, 0x003e, 0x003c, 
+    0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 0x002f, 0x0074, 0x0061, 0x0062, 
+    0x006c, 0x0065, 0x003e, 0x003c, 0x002f, 0x0042, 0x004f, 0x0044, 0x0059, 
+    0x003e, 0x003c, 0x002f, 0x0048, 0x0054, 0x004d, 0x004c, 0x003e, 0x0000
+
+END
+
+RAS_ERROR_FORMAT_DL.HTM HTML 
+BEGIN
+    0x003c, 0x0048, 0x0054, 0x004d, 0x004c, 0x003e, 0x003c, 0x0042, 0x004f, 
+    0x0044, 0x0059, 0x003e, 0x003c, 0x0074, 0x0061, 0x0062, 0x006c, 0x0065, 
+    0x0020, 0x0062, 0x006f, 0x0072, 0x0064, 0x0065, 0x0072, 0x003d, 0x0030, 
+    0x0020, 0x0077, 0x0069, 0x0064, 0x0074, 0x0068, 0x003d, 0x0031, 0x0030, 
+    0x0030, 0x0025, 0x0025, 0x0020, 0x0063, 0x0065, 0x006c, 0x006c, 0x0073, 
+    0x0070, 0x0061, 0x0063, 0x0069, 0x006e, 0x0067, 0x003d, 0x0030, 0x0020, 
+    0x0063, 0x0065, 0x006c, 0x006c, 0x0070, 0x0061, 0x0064, 0x0064, 0x0069, 
+    0x006e, 0x0067, 0x003d, 0x0030, 0x003e, 0x003c, 0x0074, 0x0072, 0x003e, 
+    0x003c, 0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 0x003d, 0x0052, 0x0061, 
+    0x0073, 0x0064, 0x006c, 0x005f, 0x0074, 0x0064, 0x0031, 0x0020, 0x0063, 
+    0x006f, 0x006c, 0x0073, 0x0070, 0x0061, 0x006e, 0x003d, 0x0032, 0x0020, 
+    0x0076, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x0074, 0x006f, 
+    0x0070, 0x0020, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x006c, 
+    0x0065, 0x0066, 0x0074, 0x003e, 0x003c, 0x0042, 0x003e, 0x0025, 0x0031, 
+    0x003a, 0x0020, 0x0025, 0x0032, 0x003c, 0x002f, 0x0042, 0x003e, 0x003c, 
+    0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0072, 0x003e, 0x003c, 
+    0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 0x003d, 0x0052, 0x0061, 0x0073, 
+    0x0064, 0x006c, 0x005f, 0x0074, 0x0064, 0x0032, 0x0020, 0x0063, 0x006f, 
+    0x006c, 0x0073, 0x0070, 0x0061, 0x006e, 0x003d, 0x0032, 0x0020, 0x0076, 
+    0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x0074, 0x006f, 0x0070, 
+    0x0020, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x006c, 0x0065, 
+    0x0066, 0x0074, 0x003e, 0x003c, 0x0042, 0x003e, 0x0025, 0x0034, 0x003c, 
+    0x002f, 0x0042, 0x003e, 0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 
+    0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 
+    0x003d, 0x0052, 0x0061, 0x0073, 0x0064, 0x006c, 0x005f, 0x0074, 0x0064, 
+    0x0033, 0x0020, 0x0063, 0x006f, 0x006c, 0x0073, 0x0070, 0x0061, 0x006e, 
+    0x003d, 0x0032, 0x003e, 0x003c, 0x0068, 0x0072, 0x0020, 0x0073, 0x0074, 
+    0x0079, 0x006c, 0x0065, 0x003d, 0x0027, 0x0062, 0x006f, 0x0072, 0x0064, 
+    0x0065, 0x0072, 0x002d, 0x0077, 0x0069, 0x0064, 0x0074, 0x0068, 0x003a, 
+    0x0020, 0x0030, 0x002e, 0x0030, 0x0031, 0x0031, 0x0069, 0x006e, 0x0020, 
+    0x0030, 0x0020, 0x0030, 0x0020, 0x0030, 0x003b, 0x0020, 0x006d, 0x0061, 
+    0x0072, 0x0067, 0x0069, 0x006e, 0x002d, 0x0074, 0x006f, 0x0070, 0x003a, 
+    0x0020, 0x0030, 0x002e, 0x0031, 0x0037, 0x0065, 0x006d, 0x003b, 0x0020, 
+    0x006d, 0x0061, 0x0072, 0x0067, 0x0069, 0x006e, 0x002d, 0x0062, 0x006f, 
+    0x0074, 0x0074, 0x006f, 0x006d, 0x003a, 0x0020, 0x0030, 0x002e, 0x0031, 
+    0x0037, 0x0065, 0x006d, 0x0027, 0x003e, 0x003c, 0x002f, 0x0074, 0x0064, 
+    0x003e, 0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0072, 
+    0x003e, 0x003c, 0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 0x003d, 0x0052, 
+    0x0061, 0x0073, 0x0064, 0x006c, 0x005f, 0x0074, 0x0064, 0x0034, 0x0020, 
+    0x0063, 0x006f, 0x006c, 0x0073, 0x0070, 0x0061, 0x006e, 0x003d, 0x0032, 
+    0x0020, 0x0076, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x0074, 
+    0x006f, 0x0070, 0x0020, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 
+    0x006c, 0x0065, 0x0066, 0x0074, 0x003e, 0x0025, 0x0033, 0x003c, 0x002f, 
+    0x0074, 0x0064, 0x003e, 0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 
+    0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 
+    0x003d, 0x0052, 0x0061, 0x0073, 0x0064, 0x006c, 0x005f, 0x0074, 0x0064, 
+    0x0035, 0x0020, 0x0073, 0x0074, 0x0079, 0x006c, 0x0065, 0x003d, 0x0027, 
+    0x0068, 0x0065, 0x0069, 0x0067, 0x0068, 0x0074, 0x003a, 0x0020, 0x0031, 
+    0x002e, 0x0033, 0x0034, 0x0065, 0x006d, 0x0027, 0x0020, 0x0077, 0x0069, 
+    0x0064, 0x0074, 0x0068, 0x003d, 0x0035, 0x0030, 0x0025, 0x0025, 0x0020, 
+    0x0076, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x006d, 0x0069, 
+    0x0064, 0x0064, 0x006c, 0x0065, 0x003e, 0x003c, 0x0061, 0x0020, 0x0068, 
+    0x0072, 0x0065, 0x0066, 0x003d, 0x0027, 0x0063, 0x006d, 0x0064, 0x003a, 
+    0x0035, 0x0027, 0x003e, 0x0053, 0x0065, 0x0074, 0x0074, 0x0069, 0x006e, 
+    0x0067, 0x0073, 0x003c, 0x002f, 0x0061, 0x003e, 0x003c, 0x002f, 0x0074, 
+    0x0064, 0x003e, 0x003c, 0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 0x003d, 
+    0x0052, 0x0061, 0x0073, 0x0064, 0x006c, 0x005f, 0x0074, 0x0064, 0x0036, 
+    0x0020, 0x0073, 0x0074, 0x0079, 0x006c, 0x0065, 0x003d, 0x0027, 0x0068, 
+    0x0065, 0x0069, 0x0067, 0x0068, 0x0074, 0x003a, 0x0020, 0x0031, 0x002e, 
+    0x0033, 0x0034, 0x0065, 0x006d, 0x0027, 0x0020, 0x0020, 0x0077, 0x0069, 
+    0x0064, 0x0074, 0x0068, 0x003d, 0x0035, 0x0030, 0x0025, 0x0025, 0x0020, 
+    0x0076, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x006d, 0x0069, 
+    0x0064, 0x0064, 0x006c, 0x0065, 0x0020, 0x0061, 0x006c, 0x0069, 0x0067, 
+    0x006e, 0x003d, 0x0072, 0x0069, 0x0067, 0x0068, 0x0074, 0x003e, 0x003c, 
+    0x0069, 0x006e, 0x0070, 0x0075, 0x0074, 0x0020, 0x0069, 0x0064, 0x003d, 
+    0x0052, 0x0061, 0x0073, 0x0064, 0x006c, 0x005f, 0x0062, 0x0074, 0x006e, 
+    0x0031, 0x0020, 0x0074, 0x0079, 0x0070, 0x0065, 0x003d, 0x0062, 0x0075, 
+    0x0074, 0x0074, 0x006f, 0x006e, 0x0020, 0x006e, 0x0061, 0x006d, 0x0065, 
+    0x003d, 0x0027, 0x0063, 0x006d, 0x0064, 0x003a, 0x0031, 0x0027, 0x0020, 
+    0x0076, 0x0061, 0x006c, 0x0075, 0x0065, 0x003d, 0x0027, 0x0044, 0x0069, 
+    0x0073, 0x006d, 0x0069, 0x0073, 0x0073, 0x0027, 0x003e, 0x003c, 0x002f, 
+    0x0074, 0x0064, 0x003e, 0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 
+    0x002f, 0x0074, 0x0061, 0x0062, 0x006c, 0x0065, 0x003e, 0x003c, 0x002f, 
+    0x0042, 0x004f, 0x0044, 0x0059, 0x003e, 0x003c, 0x002f, 0x0048, 0x0054, 
+    0x004d, 0x004c, 0x003e, 0x0000
+END
+
+VPN_ERROR_FORMAT.HTM HTML 
+BEGIN
+    0x003c, 0x0048, 0x0054, 0x004d, 0x004c, 0x003e, 0x003c, 0x0042, 0x004f, 
+    0x0044, 0x0059, 0x003e, 0x003c, 0x0074, 0x0061, 0x0062, 0x006c, 0x0065, 
+    0x0020, 0x0062, 0x006f, 0x0072, 0x0064, 0x0065, 0x0072, 0x003d, 0x0030, 
+    0x0020, 0x0077, 0x0069, 0x0064, 0x0074, 0x0068, 0x003d, 0x0031, 0x0030, 
+    0x0030, 0x0025, 0x0025, 0x0020, 0x0063, 0x0065, 0x006c, 0x006c, 0x0073, 
+    0x0070, 0x0061, 0x0063, 0x0069, 0x006e, 0x0067, 0x003d, 0x0030, 0x0020, 
+    0x0063, 0x0065, 0x006c, 0x006c, 0x0070, 0x0061, 0x0064, 0x0064, 0x0069, 
+    0x006e, 0x0067, 0x003d, 0x0030, 0x003e, 0x003c, 0x0074, 0x0072, 0x003e, 
+    0x003c, 0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 0x003d, 0x0056, 0x0070, 
+    0x006e, 0x0066, 0x006d, 0x0074, 0x005f, 0x0074, 0x0064, 0x0031, 0x0020, 
+    0x0063, 0x006f, 0x006c, 0x0073, 0x0070, 0x0061, 0x006e, 0x003d, 0x0032, 
+    0x0020, 0x0076, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x0074, 
+    0x006f, 0x0070, 0x0020, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 
+    0x006c, 0x0065, 0x0066, 0x0074, 0x003e, 0x003c, 0x0042, 0x003e, 0x0025, 
+    0x0031, 0x003a, 0x0020, 0x0025, 0x0032, 0x003c, 0x002f, 0x0042, 0x003e, 
+    0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0072, 0x003e, 
+    0x003c, 0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 0x003d, 0x0056, 0x0070, 
+    0x006e, 0x0066, 0x006d, 0x0074, 0x005f, 0x0074, 0x0064, 0x0032, 0x0020, 
+    0x0063, 0x006f, 0x006c, 0x0073, 0x0070, 0x0061, 0x006e, 0x003d, 0x0032, 
+    0x003e, 0x003c, 0x0068, 0x0072, 0x0020, 0x0073, 0x0074, 0x0079, 0x006c, 
+    0x0065, 0x003d, 0x0027, 0x0062, 0x006f, 0x0072, 0x0064, 0x0065, 0x0072, 
+    0x002d, 0x0077, 0x0069, 0x0064, 0x0074, 0x0068, 0x003a, 0x0020, 0x0030, 
+    0x002e, 0x0030, 0x0031, 0x0031, 0x0069, 0x006e, 0x0020, 0x0030, 0x0020, 
+    0x0030, 0x0020, 0x0030, 0x003b, 0x0020, 0x006d, 0x0061, 0x0072, 0x0067, 
+    0x0069, 0x006e, 0x002d, 0x0074, 0x006f, 0x0070, 0x003a, 0x0020, 0x0030, 
+    0x002e, 0x0031, 0x0037, 0x0065, 0x006d, 0x003b, 0x0020, 0x006d, 0x0061, 
+    0x0072, 0x0067, 0x0069, 0x006e, 0x002d, 0x0062, 0x006f, 0x0074, 0x0074, 
+    0x006f, 0x006d, 0x003a, 0x0020, 0x0030, 0x002e, 0x0031, 0x0037, 0x0065, 
+    0x006d, 0x0027, 0x003e, 0x003c, 0x002f, 0x0074, 0x0064, 0x003e, 0x003c, 
+    0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0072, 0x003e, 0x003c, 
+    0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 0x003d, 0x0056, 0x0070, 0x006e, 
+    0x0066, 0x006d, 0x0074, 0x005f, 0x0074, 0x0064, 0x0033, 0x0020, 0x0063, 
+    0x006f, 0x006c, 0x0073, 0x0070, 0x0061, 0x006e, 0x003d, 0x0032, 0x0020, 
+    0x0076, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x0074, 0x006f, 
+    0x0070, 0x0020, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x006c, 
+    0x0065, 0x0066, 0x0074, 0x003e, 0x0025, 0x0033, 0x003c, 0x002f, 0x0074, 
+    0x0064, 0x003e, 0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 
+    0x0072, 0x003e, 0x003c, 0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 0x003d, 
+    0x0056, 0x0070, 0x006e, 0x0066, 0x006d, 0x0074, 0x005f, 0x0074, 0x0064, 
+    0x0034, 0x0020, 0x0073, 0x0074, 0x0079, 0x006c, 0x0065, 0x003d, 0x0027, 
+    0x0068, 0x0065, 0x0069, 0x0067, 0x0068, 0x0074, 0x003a, 0x0020, 0x0031, 
+    0x002e, 0x0033, 0x0034, 0x0065, 0x006d, 0x0027, 0x0020, 0x0077, 0x0069, 
+    0x0064, 0x0074, 0x0068, 0x003d, 0x0035, 0x0030, 0x0025, 0x0025, 0x0020, 
+    0x0076, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x006d, 0x0069, 
+    0x0064, 0x0064, 0x006c, 0x0065, 0x003e, 0x003c, 0x0061, 0x0020, 0x0068, 
+    0x0072, 0x0065, 0x0066, 0x003d, 0x0027, 0x0063, 0x006d, 0x0064, 0x003a, 
+    0x0035, 0x0027, 0x003e, 0x0053, 0x0065, 0x0074, 0x0074, 0x0069, 0x006e, 
+    0x0067, 0x0073, 0x003c, 0x002f, 0x0061, 0x003e, 0x003c, 0x002f, 0x0074, 
+    0x0064, 0x003e, 0x003c, 0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 0x003d, 
+    0x0056, 0x0070, 0x006e, 0x0066, 0x006d, 0x0074, 0x005f, 0x0074, 0x0064, 
+    0x0035, 0x0020, 0x0073, 0x0074, 0x0079, 0x006c, 0x0065, 0x003d, 0x0027, 
+    0x0068, 0x0065, 0x0069, 0x0067, 0x0068, 0x0074, 0x003a, 0x0020, 0x0031, 
+    0x002e, 0x0033, 0x0034, 0x0065, 0x006d, 0x0027, 0x0020, 0x0077, 0x0069, 
+    0x0064, 0x0074, 0x0068, 0x003d, 0x0035, 0x0030, 0x0025, 0x0025, 0x0020, 
+    0x0076, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x006d, 0x0069, 
+    0x0064, 0x0064, 0x006c, 0x0065, 0x0020, 0x0061, 0x006c, 0x0069, 0x0067, 
+    0x006e, 0x003d, 0x0072, 0x0069, 0x0067, 0x0068, 0x0074, 0x003e, 0x003c, 
+    0x0069, 0x006e, 0x0070, 0x0075, 0x0074, 0x0020, 0x0069, 0x0064, 0x003d, 
+    0x0056, 0x0070, 0x006e, 0x0066, 0x006d, 0x0074, 0x005f, 0x0062, 0x0074, 
+    0x006e, 0x0031, 0x0020, 0x0074, 0x0079, 0x0070, 0x0065, 0x003d, 0x0062, 
+    0x0075, 0x0074, 0x0074, 0x006f, 0x006e, 0x0020, 0x006e, 0x0061, 0x006d, 
+    0x0065, 0x003d, 0x0027, 0x0063, 0x006d, 0x0064, 0x003a, 0x0031, 0x0027, 
+    0x0020, 0x0076, 0x0061, 0x006c, 0x0075, 0x0065, 0x003d, 0x0027, 0x0044, 
+    0x0069, 0x0073, 0x006d, 0x0069, 0x0073, 0x0073, 0x0027, 0x003e, 0x003c, 
+    0x002f, 0x0074, 0x0064, 0x003e, 0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 
+    0x003c, 0x002f, 0x0074, 0x0061, 0x0062, 0x006c, 0x0065, 0x003e, 0x003c, 
+    0x002f, 0x0042, 0x004f, 0x0044, 0x0059, 0x003e, 0x003c, 0x002f, 0x0048, 
+    0x0054, 0x004d, 0x004c, 0x003e, 0x0000
+END
+
+CM_ERROR_FORMAT.HTM HTML 
+BEGIN
+    0x003c, 0x0048, 0x0054, 0x004d, 0x004c, 0x003e, 0x003c, 0x0042, 0x004f, 
+    0x0044, 0x0059, 0x003e, 0x003c, 0x0074, 0x0061, 0x0062, 0x006c, 0x0065, 
+    0x0020, 0x0062, 0x006f, 0x0072, 0x0064, 0x0065, 0x0072, 0x003d, 0x0030, 
+    0x0020, 0x0077, 0x0069, 0x0064, 0x0074, 0x0068, 0x003d, 0x0031, 0x0030, 
+    0x0030, 0x0025, 0x0025, 0x0020, 0x0063, 0x0065, 0x006c, 0x006c, 0x0073, 
+    0x0070, 0x0061, 0x0063, 0x0069, 0x006e, 0x0067, 0x003d, 0x0030, 0x0020, 
+    0x0063, 0x0065, 0x006c, 0x006c, 0x0070, 0x0061, 0x0064, 0x0064, 0x0069, 
+    0x006e, 0x0067, 0x003d, 0x0030, 0x003e, 0x003c, 0x0074, 0x0072, 0x003e, 
+    0x003c, 0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 0x003d, 0x0043, 0x006d, 
+    0x0066, 0x006d, 0x0074, 0x005f, 0x0074, 0x0064, 0x0031, 0x0020, 0x0063, 
+    0x006f, 0x006c, 0x0073, 0x0070, 0x0061, 0x006e, 0x003d, 0x0032, 0x0020, 
+    0x0076, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x0074, 0x006f, 
+    0x0070, 0x0020, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x006c, 
+    0x0065, 0x0066, 0x0074, 0x003e, 0x0025, 0x0033, 0x003c, 0x002f, 0x0074, 
+    0x0064, 0x003e, 0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 
+    0x0072, 0x003e, 0x003c, 0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 0x003d, 
+    0x0043, 0x006d, 0x0066, 0x006d, 0x0074, 0x005f, 0x0074, 0x0064, 0x0032, 
+    0x0020, 0x0073, 0x0074, 0x0079, 0x006c, 0x0065, 0x003d, 0x0027, 0x0068, 
+    0x0065, 0x0069, 0x0067, 0x0068, 0x0074, 0x003a, 0x0020, 0x0031, 0x002e, 
+    0x0033, 0x0034, 0x0065, 0x006d, 0x0027, 0x0020, 0x0077, 0x0069, 0x0064, 
+    0x0074, 0x0068, 0x003d, 0x0035, 0x0030, 0x0025, 0x0025, 0x0020, 0x0076, 
+    0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x006d, 0x0069, 0x0064, 
+    0x0064, 0x006c, 0x0065, 0x003e, 0x003c, 0x0061, 0x0020, 0x0068, 0x0072, 
+    0x0065, 0x0066, 0x003d, 0x0027, 0x0063, 0x006d, 0x0064, 0x003a, 0x0035, 
+    0x0027, 0x003e, 0x0053, 0x0065, 0x0074, 0x0074, 0x0069, 0x006e, 0x0067, 
+    0x0073, 0x003c, 0x002f, 0x0061, 0x003e, 0x003c, 0x002f, 0x0074, 0x0064, 
+    0x003e, 0x003c, 0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 0x003d, 0x0043, 
+    0x006d, 0x0066, 0x006d, 0x0074, 0x005f, 0x0074, 0x0064, 0x0033, 0x0020, 
+    0x0073, 0x0074, 0x0079, 0x006c, 0x0065, 0x003d, 0x0027, 0x0068, 0x0065, 
+    0x0069, 0x0067, 0x0068, 0x0074, 0x003a, 0x0020, 0x0031, 0x002e, 0x0033, 
+    0x0034, 0x0065, 0x006d, 0x0027, 0x0020, 0x0077, 0x0069, 0x0064, 0x0074, 
+    0x0068, 0x003d, 0x0035, 0x0030, 0x0025, 0x0025, 0x0020, 0x0076, 0x0061, 
+    0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x006d, 0x0069, 0x0064, 0x0064, 
+    0x006c, 0x0065, 0x0020, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 
+    0x0072, 0x0069, 0x0067, 0x0068, 0x0074, 0x003e, 0x003c, 0x0069, 0x006e, 
+    0x0070, 0x0075, 0x0074, 0x0020, 0x0069, 0x0064, 0x003d, 0x0043, 0x006d, 
+    0x0066, 0x006d, 0x0074, 0x005f, 0x0062, 0x0074, 0x006e, 0x0031, 0x0020, 
+    0x0074, 0x0079, 0x0070, 0x0065, 0x003d, 0x0062, 0x0075, 0x0074, 0x0074, 
+    0x006f, 0x006e, 0x0020, 0x006e, 0x0061, 0x006d, 0x0065, 0x003d, 0x0027, 
+    0x0063, 0x006d, 0x0064, 0x003a, 0x0031, 0x0027, 0x0020, 0x0076, 0x0061, 
+    0x006c, 0x0075, 0x0065, 0x003d, 0x0027, 0x0044, 0x0069, 0x0073, 0x006d, 
+    0x0069, 0x0073, 0x0073, 0x0027, 0x003e, 0x003c, 0x002f, 0x0074, 0x0064, 
+    0x003e, 0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 0x002f, 0x0074, 
+    0x0061, 0x0062, 0x006c, 0x0065, 0x003e, 0x003c, 0x002f, 0x0042, 0x004f, 
+    0x0044, 0x0059, 0x003e, 0x003c, 0x002f, 0x0048, 0x0054, 0x004d, 0x004c, 
+    0x003e, 0x0000
+END
+
+PROXY_ERROR_FORMAT.HTM HTML 
+BEGIN
+    0x003c, 0x0048, 0x0054, 0x004d, 0x004c, 0x003e, 0x003c, 0x0042, 0x004f, 
+    0x0044, 0x0059, 0x003e, 0x003c, 0x0074, 0x0061, 0x0062, 0x006c, 0x0065, 
+    0x0020, 0x0062, 0x006f, 0x0072, 0x0064, 0x0065, 0x0072, 0x003d, 0x0030, 
+    0x0020, 0x0077, 0x0069, 0x0064, 0x0074, 0x0068, 0x003d, 0x0031, 0x0030, 
+    0x0030, 0x0025, 0x0025, 0x0020, 0x0063, 0x0065, 0x006c, 0x006c, 0x0073, 
+    0x0070, 0x0061, 0x0063, 0x0069, 0x006e, 0x0067, 0x003d, 0x0030, 0x0020, 
+    0x0063, 0x0065, 0x006c, 0x006c, 0x0070, 0x0061, 0x0064, 0x0064, 0x0069, 
+    0x006e, 0x0067, 0x003d, 0x0030, 0x003e, 0x003c, 0x0074, 0x0072, 0x003e, 
+    0x003c, 0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 0x003d, 0x0050, 0x0072, 
+    0x0078, 0x0079, 0x0066, 0x006d, 0x0074, 0x005f, 0x0074, 0x0064, 0x0031, 
+    0x0020, 0x0063, 0x006f, 0x006c, 0x0073, 0x0070, 0x0061, 0x006e, 0x003d, 
+    0x0032, 0x0020, 0x0076, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 
+    0x0074, 0x006f, 0x0070, 0x0020, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 
+    0x003d, 0x006c, 0x0065, 0x0066, 0x0074, 0x003e, 0x003c, 0x0042, 0x003e, 
+    0x0050, 0x0072, 0x006f, 0x0078, 0x0079, 0x0020, 0x0045, 0x0072, 0x0072, 
+    0x006f, 0x0072, 0x003c, 0x002f, 0x0042, 0x003e, 0x003c, 0x002f, 0x0074, 
+    0x0072, 0x003e, 0x003c, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0064, 
+    0x0020, 0x0063, 0x006f, 0x006c, 0x0073, 0x0070, 0x0061, 0x006e, 0x003d, 
+    0x0032, 0x003e, 0x003c, 0x0068, 0x0072, 0x0020, 0x0073, 0x0074, 0x0079, 
+    0x006c, 0x0065, 0x003d, 0x0027, 0x0062, 0x006f, 0x0072, 0x0064, 0x0065, 
+    0x0072, 0x002d, 0x0077, 0x0069, 0x0064, 0x0074, 0x0068, 0x003a, 0x0020, 
+    0x0030, 0x002e, 0x0030, 0x0031, 0x0031, 0x0069, 0x006e, 0x0020, 0x0030, 
+    0x0020, 0x0030, 0x0020, 0x0030, 0x003b, 0x0020, 0x006d, 0x0061, 0x0072, 
+    0x0067, 0x0069, 0x006e, 0x002d, 0x0074, 0x006f, 0x0070, 0x003a, 0x0020, 
+    0x0030, 0x002e, 0x0031, 0x0037, 0x0065, 0x006d, 0x003b, 0x0020, 0x006d, 
+    0x0061, 0x0072, 0x0067, 0x0069, 0x006e, 0x002d, 0x0062, 0x006f, 0x0074, 
+    0x0074, 0x006f, 0x006d, 0x003a, 0x0020, 0x0030, 0x002e, 0x0031, 0x0037, 
+    0x0065, 0x006d, 0x0027, 0x003e, 0x003c, 0x002f, 0x0074, 0x0064, 0x003e, 
+    0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0072, 0x003e, 
+    0x003c, 0x0074, 0x0064, 0x0020, 0x0069, 0x0064, 0x003d, 0x0050, 0x0072, 
+    0x0078, 0x0079, 0x0066, 0x006d, 0x0074, 0x005f, 0x0074, 0x0064, 0x0032, 
+    0x0020, 0x0063, 0x006f, 0x006c, 0x0073, 0x0070, 0x0061, 0x006e, 0x003d, 
+    0x0032, 0x0020, 0x0076, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 
+    0x0074, 0x006f, 0x0070, 0x0020, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 
+    0x003d, 0x006c, 0x0065, 0x0066, 0x0074, 0x003e, 0x0025, 0x0033, 0x003c, 
+    0x002f, 0x0074, 0x0064, 0x003e, 0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 
+    0x003c, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0064, 0x0020, 0x0069, 
+    0x0064, 0x003d, 0x0050, 0x0072, 0x0078, 0x0079, 0x0066, 0x006d, 0x0074, 
+    0x005f, 0x0074, 0x0064, 0x0033, 0x0020, 0x0073, 0x0074, 0x0079, 0x006c, 
+    0x0065, 0x003d, 0x0027, 0x0068, 0x0065, 0x0069, 0x0067, 0x0068, 0x0074, 
+    0x003a, 0x0020, 0x0031, 0x002e, 0x0033, 0x0034, 0x0065, 0x006d, 0x0027, 
+    0x0020, 0x0077, 0x0069, 0x0064, 0x0074, 0x0068, 0x003d, 0x0035, 0x0030, 
+    0x0025, 0x0025, 0x0020, 0x0076, 0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 
+    0x003d, 0x006d, 0x0069, 0x0064, 0x0064, 0x006c, 0x0065, 0x003e, 0x003c, 
+    0x0061, 0x0020, 0x0068, 0x0072, 0x0065, 0x0066, 0x003d, 0x0027, 0x0063, 
+    0x006d, 0x0064, 0x003a, 0x0035, 0x0027, 0x003e, 0x0053, 0x0065, 0x0074, 
+    0x0074, 0x0069, 0x006e, 0x0067, 0x0073, 0x003c, 0x002f, 0x0061, 0x003e, 
+    0x003c, 0x002f, 0x0074, 0x0064, 0x003e, 0x003c, 0x0074, 0x0064, 0x0020, 
+    0x0069, 0x0064, 0x003d, 0x0050, 0x0072, 0x0078, 0x0079, 0x0066, 0x006d, 
+    0x0074, 0x005f, 0x0074, 0x0064, 0x0034, 0x0020, 0x0073, 0x0074, 0x0079, 
+    0x006c, 0x0065, 0x003d, 0x0027, 0x0068, 0x0065, 0x0069, 0x0067, 0x0068, 
+    0x0074, 0x003a, 0x0020, 0x0031, 0x002e, 0x0033, 0x0034, 0x0065, 0x006d, 
+    0x0027, 0x0020, 0x0077, 0x0069, 0x0064, 0x0074, 0x0068, 0x003d, 0x0035, 
+    0x0030, 0x0025, 0x0025, 0x0020, 0x0076, 0x0061, 0x006c, 0x0069, 0x0067, 
+    0x006e, 0x003d, 0x006d, 0x0069, 0x0064, 0x0064, 0x006c, 0x0065, 0x0020, 
+    0x0061, 0x006c, 0x0069, 0x0067, 0x006e, 0x003d, 0x0072, 0x0069, 0x0067, 
+    0x0068, 0x0074, 0x003e, 0x003c, 0x0069, 0x006e, 0x0070, 0x0075, 0x0074, 
+    0x0020, 0x0069, 0x0064, 0x003d, 0x0050, 0x0072, 0x0078, 0x0079, 0x0066, 
+    0x006d, 0x0074, 0x005f, 0x0062, 0x0074, 0x006e, 0x0031, 0x0020, 0x0074, 
+    0x0079, 0x0070, 0x0065, 0x003d, 0x0062, 0x0075, 0x0074, 0x0074, 0x006f, 
+    0x006e, 0x0020, 0x006e, 0x0061, 0x006d, 0x0065, 0x003d, 0x0027, 0x0063, 
+    0x006d, 0x0064, 0x003a, 0x0031, 0x0027, 0x0020, 0x0076, 0x0061, 0x006c, 
+    0x0075, 0x0065, 0x003d, 0x0027, 0x0044, 0x0069, 0x0073, 0x006d, 0x0069, 
+    0x0073, 0x0073, 0x0027, 0x003e, 0x003c, 0x002f, 0x0074, 0x0064, 0x003e, 
+    0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 0x002f, 0x0074, 0x0061, 
+    0x0062, 0x006c, 0x0065, 0x003e, 0x003c, 0x002f, 0x0042, 0x004f, 0x0044, 
+    0x0059, 0x003e, 0x003c, 0x002f, 0x0048, 0x0054, 0x004d, 0x004c, 0x003e, 
+    0x0000
+END
+
+WZC_HTML_HEADER.HTM HTML 
+BEGIN
+    0x003c, 0x0068, 0x0074, 0x006d, 0x006c, 0x003e, 0x003c, 0x0062, 0x006f, 
+    0x0064, 0x0079, 0x003e, 0x003c, 0x0073, 0x0074, 0x0079, 0x006c, 0x0065, 
+    0x003e, 0x0049, 0x004e, 0x0050, 0x0055, 0x0054, 0x005b, 0x0074, 0x0079, 
+    0x0070, 0x0065, 0x003d, 0x0027, 0x0072, 0x0061, 0x0064, 0x0069, 0x006f, 
+    0x0027, 0x005d, 0x0020, 0x007b, 0x0020, 0x0076, 0x0065, 0x0072, 0x0074, 
+    0x0069, 0x0063, 0x0061, 0x006c, 0x002d, 0x0061, 0x006c, 0x0069, 0x0067, 
+    0x006e, 0x003a, 0x0020, 0x006d, 0x0069, 0x0064, 0x0064, 0x006c, 0x0065, 
+    0x0020, 0x007d, 0x003c, 0x002f, 0x0073, 0x0074, 0x0079, 0x006c, 0x0065, 
+    0x003e, 0x003c, 0x0066, 0x006f, 0x0072, 0x006d, 0x0020, 0x0073, 0x0074, 
+    0x0079, 0x006c, 0x0065, 0x003d, 0x0027, 0x006d, 0x0061, 0x0072, 0x0067, 
+    0x0069, 0x006e, 0x003a, 0x0030, 0x0027, 0x0020, 0x006d, 0x0065, 0x0074, 
+    0x0068, 0x006f, 0x0064, 0x003d, 0x0027, 0x0067, 0x0065, 0x0074, 0x0027, 
+    0x0020, 0x0061, 0x0063, 0x0074, 0x0069, 0x006f, 0x006e, 0x003d, 0x0027, 
+    0x0025, 0x0031, 0x0027, 0x003e, 0x003c, 0x0074, 0x0061, 0x0062, 0x006c, 
+    0x0065, 0x0020, 0x0077, 0x0069, 0x0064, 0x0074, 0x0068, 0x003d, 0x0031, 
+    0x0030, 0x0030, 0x0025, 0x0025, 0x0020, 0x0063, 0x0065, 0x006c, 0x006c, 
+    0x0073, 0x0070, 0x0061, 0x0063, 0x0069, 0x006e, 0x0067, 0x003d, 0x0030, 
+    0x0020, 0x0063, 0x0065, 0x006c, 0x006c, 0x0070, 0x0061, 0x0064, 0x0064, 
+    0x0069, 0x006e, 0x0067, 0x003d, 0x0027, 0x0032, 0x0065, 0x006d, 0x0027, 
+    0x003e, 0x0000
+END
+
+WZC_HTML_MULTIPART_HEADER.HTM HTML 
+BEGIN
+    0x003c, 0x0068, 0x0074, 0x006d, 0x006c, 0x003e, 0x003c, 0x0062, 0x006f, 
+    0x0064, 0x0079, 0x003e, 0x003c, 0x0073, 0x0074, 0x0079, 0x006c, 0x0065, 
+    0x003e, 0x0049, 0x004e, 0x0050, 0x0055, 0x0054, 0x005b, 0x0074, 0x0079, 
+    0x0070, 0x0065, 0x003d, 0x0027, 0x0072, 0x0061, 0x0064, 0x0069, 0x006f, 
+    0x0027, 0x005d, 0x0020, 0x007b, 0x0020, 0x0076, 0x0065, 0x0072, 0x0074, 
+    0x0069, 0x0063, 0x0061, 0x006c, 0x002d, 0x0061, 0x006c, 0x0069, 0x0067, 
+    0x006e, 0x003a, 0x0020, 0x006d, 0x0069, 0x0064, 0x0064, 0x006c, 0x0065, 
+    0x0020, 0x007d, 0x003c, 0x002f, 0x0073, 0x0074, 0x0079, 0x006c, 0x0065, 
+    0x003e, 0x003c, 0x0066, 0x006f, 0x0072, 0x006d, 0x0020, 0x0073, 0x0074, 
+    0x0079, 0x006c, 0x0065, 0x003d, 0x0027, 0x006d, 0x0061, 0x0072, 0x0067, 
+    0x0069, 0x006e, 0x003a, 0x0030, 0x0027, 0x0020, 0x0065, 0x006e, 0x0063, 
+    0x0074, 0x0079, 0x0070, 0x0065, 0x003d, 0x0027, 0x006d, 0x0075, 0x006c, 
+    0x0074, 0x0069, 0x0070, 0x0061, 0x0072, 0x0074, 0x002f, 0x0066, 0x006f, 
+    0x0072, 0x006d, 0x002d, 0x0064, 0x0061, 0x0074, 0x0061, 0x0027, 0x0020, 
+    0x006d, 0x0065, 0x0074, 0x0068, 0x006f, 0x0064, 0x003d, 0x0027, 0x0070, 
+    0x006f, 0x0073, 0x0074, 0x0027, 0x0020, 0x0061, 0x0063, 0x0074, 0x0069, 
+    0x006f, 0x006e, 0x003d, 0x0027, 0x0025, 0x0031, 0x0027, 0x003e, 0x003c, 
+    0x0074, 0x0061, 0x0062, 0x006c, 0x0065, 0x0020, 0x0077, 0x0069, 0x0064, 
+    0x0074, 0x0068, 0x003d, 0x0031, 0x0030, 0x0030, 0x0025, 0x0025, 0x0020, 
+    0x0063, 0x0065, 0x006c, 0x006c, 0x0073, 0x0070, 0x0061, 0x0063, 0x0069, 
+    0x006e, 0x0067, 0x003d, 0x0030, 0x0020, 0x0063, 0x0065, 0x006c, 0x006c, 
+    0x0070, 0x0061, 0x0064, 0x0064, 0x0069, 0x006e, 0x0067, 0x003d, 0x0027, 
+    0x0032, 0x0065, 0x006d, 0x0027, 0x003e, 0x0000
+END
+
+WZC_HTML_TAIL.HTM HTML 
+BEGIN
+    0x003c, 0x002f, 0x0074, 0x0061, 0x0062, 0x006c, 0x0065, 0x003e, 0x003c, 
+    0x002f, 0x0066, 0x006f, 0x0072, 0x006d, 0x003e, 0x003c, 0x002f, 0x0062, 
+    0x006f, 0x0064, 0x0079, 0x003e, 0x003c, 0x002f, 0x0068, 0x0074, 0x006d, 
+    0x006c, 0x003e, 0x0000
+END
+
+WZC_CONNECTION_BUBBLE_SINGLENET.HTM HTML 
+BEGIN
+    0x003c, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0064, 0x003e, 0x003c, 
+    0x0069, 0x006e, 0x0070, 0x0075, 0x0074, 0x0020, 0x0074, 0x0079, 0x0070, 
+    0x0065, 0x003d, 0x0027, 0x0072, 0x0061, 0x0064, 0x0069, 0x006f, 0x0027, 
+    0x0020, 0x0076, 0x0061, 0x006c, 0x0075, 0x0065, 0x003d, 0x0027, 0x0030, 
+    0x0027, 0x0020, 0x0069, 0x0064, 0x003d, 0x0027, 0x004e, 0x0065, 0x0074, 
+    0x0030, 0x0027, 0x0020, 0x0063, 0x0068, 0x0065, 0x0063, 0x006b, 0x0065, 
+    0x0064, 0x0020, 0x006e, 0x0061, 0x006d, 0x0065, 0x003d, 0x0027, 0x004d, 
+    0x0065, 0x0074, 0x0061, 0x004e, 0x0065, 0x0074, 0x0077, 0x006f, 0x0072, 
+    0x006b, 0x0027, 0x003e, 0x003c, 0x006c, 0x0061, 0x0062, 0x0065, 0x006c, 
+    0x0020, 0x0066, 0x006f, 0x0072, 0x003d, 0x0027, 0x004e, 0x0065, 0x0074, 
+    0x0030, 0x0027, 0x003e, 0x0025, 0x0031, 0x003c, 0x002f, 0x006c, 0x0061, 
+    0x0062, 0x0065, 0x006c, 0x003e, 0x003c, 0x0062, 0x0072, 0x003e, 0x003c, 
+    0x0069, 0x006e, 0x0070, 0x0075, 0x0074, 0x0020, 0x0074, 0x0079, 0x0070, 
+    0x0065, 0x003d, 0x0027, 0x0072, 0x0061, 0x0064, 0x0069, 0x006f, 0x0027, 
+    0x0020, 0x0076, 0x0061, 0x006c, 0x0075, 0x0065, 0x003d, 0x0027, 0x0031, 
+    0x0027, 0x0020, 0x0069, 0x0064, 0x003d, 0x0027, 0x004e, 0x0065, 0x0074, 
+    0x0031, 0x0027, 0x0020, 0x006e, 0x0061, 0x006d, 0x0065, 0x003d, 0x0027, 
+    0x004d, 0x0065, 0x0074, 0x0061, 0x004e, 0x0065, 0x0074, 0x0077, 0x006f, 
+    0x0072, 0x006b, 0x0027, 0x003e, 0x003c, 0x006c, 0x0061, 0x0062, 0x0065, 
+    0x006c, 0x0020, 0x0066, 0x006f, 0x0072, 0x003d, 0x0027, 0x004e, 0x0065, 
+    0x0074, 0x0031, 0x0027, 0x003e, 0x0025, 0x0032, 0x003c, 0x002f, 0x006c, 
+    0x0061, 0x0062, 0x0065, 0x006c, 0x003e, 0x003c, 0x002f, 0x0074, 0x0064, 
+    0x003e, 0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0072, 
+    0x003e, 0x003c, 0x0074, 0x0064, 0x003e, 0x003c, 0x0061, 0x0020, 0x0068, 
+    0x0072, 0x0065, 0x0066, 0x003d, 0x0027, 0x0063, 0x006d, 0x0064, 0x003a, 
+    0x0031, 0x0032, 0x0032, 0x0038, 0x0038, 0x0027, 0x003e, 0x0053, 0x0065, 
+    0x0074, 0x0074, 0x0069, 0x006e, 0x0067, 0x0073, 0x003c, 0x002f, 0x0061, 
+    0x003e, 0x003c, 0x002f, 0x0074, 0x0064, 0x003e, 0x003c, 0x002f, 0x0074, 
+    0x0072, 0x003e, 0x0000
+END
+
+WZC_CONNECTION_BUBBLE_WIRED.HTM HTML 
+BEGIN
+    0x003c, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0064, 0x003e, 0x0054, 
+    0x0068, 0x0069, 0x0073, 0x0020, 0x006e, 0x0065, 0x0074, 0x0077, 0x006f, 
+    0x0072, 0x006b, 0x0020, 0x0063, 0x0061, 0x0072, 0x0064, 0x0020, 0x0063, 
+    0x006f, 0x006e, 0x006e, 0x0065, 0x0063, 0x0074, 0x0073, 0x0020, 0x006d, 
+    0x0065, 0x0020, 0x0074, 0x006f, 0x003a, 0x003c, 0x002f, 0x0074, 0x0064, 
+    0x003e, 0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 0x0000
+END
+
+WZC_CONNECTION_BUBBLE_WIRELESS.HTM HTML 
+BEGIN
+    0x003c, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0064, 0x003e, 0x0026, 
+    0x0071, 0x0075, 0x006f, 0x0074, 0x003b, 0x0025, 0x0031, 0x0026, 0x0071, 
+    0x0075, 0x006f, 0x0074, 0x003b, 0x0020, 0x006e, 0x0065, 0x0074, 0x0077, 
+    0x006f, 0x0072, 0x006b, 0x0020, 0x0063, 0x006f, 0x006e, 0x006e, 0x0065, 
+    0x0063, 0x0074, 0x0073, 0x0020, 0x006d, 0x0065, 0x0020, 0x0074, 0x006f, 
+    0x003a, 0x003c, 0x002f, 0x0074, 0x0064, 0x003e, 0x003c, 0x002f, 0x0074, 
+    0x0072, 0x003e, 0x0000
+END
+
+WZC_CONNECTION_BUBBLE_MULTIPLENET.HTM HTML 
+BEGIN
+    0x003c, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0064, 0x003e, 0x0053, 
+    0x0065, 0x006c, 0x0065, 0x0063, 0x0074, 0x0020, 0x0061, 0x0020, 0x006e, 
+    0x0065, 0x0074, 0x0077, 0x006f, 0x0072, 0x006b, 0x0020, 0x0074, 0x006f, 
+    0x0020, 0x0063, 0x006f, 0x006e, 0x006e, 0x0065, 0x0063, 0x0074, 0x0020, 
+    0x0074, 0x006f, 0x003a, 0x003c, 0x002f, 0x0074, 0x0064, 0x003e, 0x003c, 
+    0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0072, 0x003e, 0x003c, 
+    0x0074, 0x0064, 0x003e, 0x0025, 0x0031, 0x003c, 0x002f, 0x0074, 0x0064, 
+    0x003e, 0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 0x0000
+END
+
+WZC_CONNECTION_BUBBLE_MULTIPLENET_OVER.HTM HTML 
+BEGIN
+    0x003c, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0064, 0x003e, 0x003c, 
+    0x0061, 0x0020, 0x0068, 0x0072, 0x0065, 0x0066, 0x003d, 0x0027, 0x0063, 
+    0x006d, 0x0064, 0x003a, 0x0031, 0x0032, 0x0032, 0x0038, 0x0038, 0x0027, 
+    0x003e, 0x0053, 0x0068, 0x006f, 0x0077, 0x0020, 0x0061, 0x006c, 0x006c, 
+    0x0020, 0x006e, 0x0065, 0x0074, 0x0077, 0x006f, 0x0072, 0x006b, 0x0073, 
+    0x003c, 0x002f, 0x0061, 0x003e, 0x003c, 0x002f, 0x0074, 0x0064, 0x003e, 
+    0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 0x0000
+END
+
+WZC_SSID_NETWORK_DEFAULT_RADIO_BUTTON.HTM HTML 
+BEGIN
+    0x003c, 0x0069, 0x006e, 0x0070, 0x0075, 0x0074, 0x0020, 0x0074, 0x0079, 
+    0x0070, 0x0065, 0x003d, 0x0027, 0x0072, 0x0061, 0x0064, 0x0069, 0x006f, 
+    0x0027, 0x0020, 0x006e, 0x0061, 0x006d, 0x0065, 0x003d, 0x0027, 0x0053, 
+    0x0053, 0x0049, 0x0044, 0x0027, 0x0020, 0x0069, 0x0064, 0x003d, 0x0027, 
+    0x0053, 0x0053, 0x0049, 0x0044, 0x0025, 0x0031, 0x0027, 0x0020, 0x0076, 
+    0x0061, 0x006c, 0x0075, 0x0065, 0x003d, 0x0027, 0x0025, 0x0031, 0x0027, 
+    0x0020, 0x0063, 0x0068, 0x0065, 0x0063, 0x006b, 0x0065, 0x0064, 0x003e, 
+    0x003c, 0x006c, 0x0061, 0x0062, 0x0065, 0x006c, 0x0020, 0x0066, 0x006f, 
+    0x0072, 0x003d, 0x0027, 0x0053, 0x0053, 0x0049, 0x0044, 0x0025, 0x0031, 
+    0x0027, 0x003e, 0x0025, 0x0032, 0x003c, 0x002f, 0x006c, 0x0061, 0x0062, 
+    0x0065, 0x006c, 0x003e, 0x0000
+END
+
+WZC_SSID_NETWORK_RADIO_BUTTON.HTM HTML 
+BEGIN
+    0x003c, 0x0062, 0x0072, 0x003e, 0x003c, 0x0069, 0x006e, 0x0070, 0x0075, 
+    0x0074, 0x0020, 0x0074, 0x0079, 0x0070, 0x0065, 0x003d, 0x0027, 0x0072, 
+    0x0061, 0x0064, 0x0069, 0x006f, 0x0027, 0x0020, 0x006e, 0x0061, 0x006d, 
+    0x0065, 0x003d, 0x0027, 0x0053, 0x0053, 0x0049, 0x0044, 0x0027, 0x0020, 
+    0x0069, 0x0064, 0x003d, 0x0027, 0x0053, 0x0053, 0x0049, 0x0044, 0x0025, 
+    0x0031, 0x0027, 0x0020, 0x0076, 0x0061, 0x006c, 0x0075, 0x0065, 0x003d, 
+    0x0027, 0x0025, 0x0031, 0x0027, 0x003e, 0x003c, 0x006c, 0x0061, 0x0062, 
+    0x0065, 0x006c, 0x0020, 0x0066, 0x006f, 0x0072, 0x003d, 0x0027, 0x0053, 
+    0x0053, 0x0049, 0x0044, 0x0025, 0x0031, 0x0027, 0x003e, 0x0025, 0x0032, 
+    0x003c, 0x002f, 0x006c, 0x0061, 0x0062, 0x0065, 0x006c, 0x003e, 0x0000
+
+END
+
+WZC_NETKEY_BUBBLE_HEAD.HTM HTML 
+BEGIN
+    0x003c, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0064, 0x003e, 0x0000
+
+END
+
+WZC_NETKEY_BUBBLE_TAIL.HTM HTML 
+BEGIN
+    0x003c, 0x0062, 0x0072, 0x003e, 0x003c, 0x0062, 0x0072, 0x003e, 0x004b, 
+    0x0065, 0x0079, 0x003a, 0x0020, 0x003c, 0x0069, 0x006e, 0x0070, 0x0075, 
+    0x0074, 0x0020, 0x0074, 0x0079, 0x0070, 0x0065, 0x003d, 0x0027, 0x0074, 
+    0x0065, 0x0078, 0x0074, 0x0027, 0x0020, 0x006e, 0x0061, 0x006d, 0x0065, 
+    0x003d, 0x0027, 0x0057, 0x0045, 0x0050, 0x004b, 0x0065, 0x0079, 0x0027, 
+    0x0020, 0x0073, 0x0069, 0x007a, 0x0065, 0x003d, 0x0027, 0x0031, 0x0039, 
+    0x0027, 0x0020, 0x006d, 0x0061, 0x0078, 0x006c, 0x0065, 0x006e, 0x0067, 
+    0x0074, 0x0068, 0x003d, 0x0027, 0x0036, 0x0034, 0x0027, 0x003e, 0x003c, 
+    0x0062, 0x0072, 0x003e, 0x0020, 0x003c, 0x002f, 0x0074, 0x0064, 0x003e, 
+    0x003c, 0x002f, 0x0074, 0x0072, 0x003e, 0x003c, 0x0074, 0x0072, 0x003e, 
+    0x003c, 0x0074, 0x0064, 0x003e, 0x003c, 0x0061, 0x0020, 0x0068, 0x0072, 
+    0x0065, 0x0066, 0x003d, 0x0027, 0x0063, 0x006d, 0x0064, 0x003a, 0x0031, 
+    0x0032, 0x0032, 0x0038, 0x0038, 0x0027, 0x003e, 0x0053, 0x0065, 0x0074, 
+    0x0074, 0x0069, 0x006e, 0x0067, 0x0073, 0x003c, 0x002f, 0x0061, 0x003e, 
+    0x003c, 0x002f, 0x0074, 0x0064, 0x003e, 0x003c, 0x002f, 0x0074, 0x0072, 
+    0x003e, 0x0000
+END
+
+ENABLERADIO_FAILED.HTM HTML 
+BEGIN
+    0x003c, 0x0062, 0x006f, 0x0064, 0x0079, 0x003e, 0x0025, 0x0031, 0x003c, 
+    0x0062, 0x0072, 0x003e, 0x003c, 0x0070, 0x0020, 0x0061, 0x006c, 0x0069, 
+    0x0067, 0x006e, 0x003d, 0x0072, 0x0069, 0x0067, 0x0068, 0x0074, 0x003e, 
+    0x003c, 0x0069, 0x006e, 0x0070, 0x0075, 0x0074, 0x0020, 0x0074, 0x0079, 
+    0x0070, 0x0065, 0x003d, 0x0062, 0x0075, 0x0074, 0x0074, 0x006f, 0x006e, 
+    0x0020, 0x006e, 0x0061, 0x006d, 0x0065, 0x003d, 0x0027, 0x0063, 0x006d, 
+    0x0064, 0x003a, 0x0031, 0x0027, 0x0020, 0x0076, 0x0061, 0x006c, 0x0075, 
+    0x0065, 0x003d, 0x0027, 0x004f, 0x004b, 0x0027, 0x003e, 0x003c, 0x002f, 
+    0x0070, 0x003e, 0x003c, 0x002f, 0x0062, 0x006f, 0x0064, 0x0079, 0x003e, 
+    0x0000
+END
+
+LSM_UNSIGNED_EXE_PROMPT.HTM HTML 
+BEGIN
+    0x003c, 0x0048, 0x0054, 0x004d, 0x004c, 0x003e, 0x003c, 0x0042, 0x004f, 
+    0x0044, 0x0059, 0x003e, 0x0054, 0x0068, 0x0065, 0x0020, 0x0070, 0x0072, 
+    0x006f, 0x0067, 0x0072, 0x0061, 0x006d, 0x0020, 0x0069, 0x0073, 0x0020, 
+    0x0066, 0x0072, 0x006f, 0x006d, 0x0020, 0x0061, 0x006e, 0x0020, 0x0075, 
+    0x006e, 0x006b, 0x006e, 0x006f, 0x0077, 0x006e, 0x0020, 0x0070, 0x0075, 
+    0x0062, 0x006c, 0x0069, 0x0073, 0x0068, 0x0065, 0x0072, 0x002e, 0x0020, 
+    0x0052, 0x0075, 0x006e, 0x006e, 0x0069, 0x006e, 0x0067, 0x0020, 0x0069, 
+    0x0074, 0x0020, 0x0063, 0x0061, 0x006e, 0x0020, 0x0070, 0x006f, 0x0073, 
+    0x0073, 0x0069, 0x0062, 0x006c, 0x0079, 0x0020, 0x0068, 0x0061, 0x0072, 
+    0x006d, 0x0020, 0x0079, 0x006f, 0x0075, 0x0072, 0x0020, 0x0064, 0x0065, 
+    0x0076, 0x0069, 0x0063, 0x0065, 0x002e, 0x0020, 0x0044, 0x006f, 0x0020, 
+    0x0079, 0x006f, 0x0075, 0x0020, 0x0077, 0x0061, 0x006e, 0x0074, 0x0020, 
+    0x0074, 0x006f, 0x0020, 0x0063, 0x006f, 0x006e, 0x0074, 0x0069, 0x006e, 
+    0x0075, 0x0065, 0x003f, 0x003c, 0x0042, 0x0052, 0x003e, 0x003c, 0x0042, 
+    0x0052, 0x003e, 0x004e, 0x0061, 0x006d, 0x0065, 0x003a, 0x0020, 0x0025, 
+    0x0031, 0x003c, 0x0042, 0x0052, 0x003e, 0x004c, 0x006f, 0x0063, 0x0061, 
+    0x0074, 0x0069, 0x006f, 0x006e, 0x003a, 0x0020, 0x0025, 0x0032, 0x003c, 
+    0x0042, 0x0052, 0x003e, 0x003c, 0x002f, 0x0042, 0x004f, 0x0044, 0x0059, 
+    0x003e, 0x003c, 0x002f, 0x0048, 0x0054, 0x004d, 0x004c, 0x003e, 0x0000
+
+END
+
+LSM_UNSIGNED_DLL_PROMPT.HTM HTML 
+BEGIN
+    0x003c, 0x0048, 0x0054, 0x004d, 0x004c, 0x003e, 0x003c, 0x0042, 0x004f, 
+    0x0044, 0x0059, 0x003e, 0x0053, 0x0074, 0x0061, 0x0072, 0x0074, 0x0069, 
+    0x006e, 0x0067, 0x0020, 0x0074, 0x0068, 0x0069, 0x0073, 0x0020, 0x0070, 
+    0x0072, 0x006f, 0x0067, 0x0072, 0x0061, 0x006d, 0x0020, 0x0072, 0x0065, 
+    0x0071, 0x0075, 0x0069, 0x0072, 0x0065, 0x0073, 0x0020, 0x0061, 0x0020, 
+    0x0063, 0x006f, 0x006d, 0x0070, 0x006f, 0x006e, 0x0065, 0x006e, 0x0074, 
+    0x0020, 0x0066, 0x0072, 0x006f, 0x006d, 0x0020, 0x0061, 0x006e, 0x0020, 
+    0x0075, 0x006e, 0x006b, 0x006e, 0x006f, 0x0077, 0x006e, 0x0020, 0x0070, 
+    0x0075, 0x0062, 0x006c, 0x0069, 0x0073, 0x0068, 0x0065, 0x0072, 0x002e, 
+    0x0020, 0x0059, 0x006f, 0x0075, 0x0020, 0x0073, 0x0068, 0x006f, 0x0075, 
+    0x006c, 0x0064, 0x0020, 0x0073, 0x0074, 0x0061, 0x0072, 0x0074, 0x0020, 
+    0x0074, 0x0068, 0x0065, 0x0020, 0x0070, 0x0072, 0x006f, 0x0067, 0x0072, 
+    0x0061, 0x006d, 0x0020, 0x006f, 0x006e, 0x006c, 0x0079, 0x0020, 0x0069, 
+    0x0066, 0x0020, 0x0079, 0x006f, 0x0075, 0x0020, 0x0074, 0x0072, 0x0075, 
+    0x0073, 0x0074, 0x0020, 0x0074, 0x0068, 0x0065, 0x0020, 0x0063, 0x006f, 
+    0x006d, 0x0070, 0x006f, 0x006e, 0x0065, 0x006e, 0x0074, 0x2019, 0x0073, 
+    0x0020, 0x0070, 0x0075, 0x0062, 0x006c, 0x0069, 0x0073, 0x0068, 0x0065, 
+    0x0072, 0x002e, 0x0020, 0x0044, 0x006f, 0x0020, 0x0079, 0x006f, 0x0075, 
+    0x0020, 0x0077, 0x0061, 0x006e, 0x0074, 0x0020, 0x0074, 0x006f, 0x0020, 
+    0x0063, 0x006f, 0x006e, 0x0074, 0x0069, 0x006e, 0x0075, 0x0065, 0x003f, 
+    0x003c, 0x0042, 0x0052, 0x003e, 0x003c, 0x0042, 0x0052, 0x003e, 0x004e, 
+    0x0061, 0x006d, 0x0065, 0x003a, 0x0020, 0x0025, 0x0031, 0x003c, 0x0042, 
+    0x0052, 0x003e, 0x004c, 0x006f, 0x0063, 0x0061, 0x0074, 0x0069, 0x006f, 
+    0x006e, 0x003a, 0x0020, 0x0025, 0x0032, 0x003c, 0x0042, 0x0052, 0x003e, 
+    0x003c, 0x002f, 0x0042, 0x004f, 0x0044, 0x0059, 0x003e, 0x003c, 0x002f, 
+    0x0048, 0x0054, 0x004d, 0x004c, 0x003e, 0x0000
+END
+
+LSM_UNSIGNED_CAB_PROMPT.HTM HTML 
+BEGIN
+    0x003c, 0x0048, 0x0054, 0x004d, 0x004c, 0x003e, 0x003c, 0x0042, 0x004f, 
+    0x0044, 0x0059, 0x003e, 0x0054, 0x0068, 0x0065, 0x0020, 0x0070, 0x0072, 
+    0x006f, 0x0067, 0x0072, 0x0061, 0x006d, 0x0020, 0x0069, 0x0073, 0x0020, 
+    0x0066, 0x0072, 0x006f, 0x006d, 0x0020, 0x0061, 0x006e, 0x0020, 0x0075, 
+    0x006e, 0x006b, 0x006e, 0x006f, 0x0077, 0x006e, 0x0020, 0x0070, 0x0075, 
+    0x0062, 0x006c, 0x0069, 0x0073, 0x0068, 0x0065, 0x0072, 0x002e, 0x0020, 
+    0x0059, 0x006f, 0x0075, 0x0020, 0x0073, 0x0068, 0x006f, 0x0075, 0x006c, 
+    0x0064, 0x0020, 0x0069, 0x006e, 0x0073, 0x0074, 0x0061, 0x006c, 0x006c, 
+    0x0020, 0x0069, 0x0074, 0x0020, 0x006f, 0x006e, 0x006c, 0x0079, 0x0020, 
+    0x0069, 0x0066, 0x0020, 0x0079, 0x006f, 0x0075, 0x0020, 0x0074, 0x0072, 
+    0x0075, 0x0073, 0x0074, 0x0020, 0x0069, 0x0074, 0x0073, 0x0020, 0x0070, 
+    0x0075, 0x0062, 0x006c, 0x0069, 0x0073, 0x0068, 0x0065, 0x0072, 0x002e, 
+    0x0020, 0x0044, 0x006f, 0x0020, 0x0079, 0x006f, 0x0075, 0x0020, 0x0077, 
+    0x0061, 0x006e, 0x0074, 0x0020, 0x0074, 0x006f, 0x0020, 0x0063, 0x006f, 
+    0x006e, 0x0074, 0x0069, 0x006e, 0x0075, 0x0065, 0x003f, 0x003c, 0x0042, 
+    0x0052, 0x003e, 0x003c, 0x0042, 0x0052, 0x003e, 0x004e, 0x0061, 0x006d, 
+    0x0065, 0x003a, 0x0020, 0x0025, 0x0031, 0x003c, 0x0042, 0x0052, 0x003e, 
+    0x004c, 0x006f, 0x0063, 0x0061, 0x0074, 0x0069, 0x006f, 0x006e, 0x003a, 
+    0x0020, 0x0025, 0x0032, 0x003c, 0x0042, 0x0052, 0x003e, 0x003c, 0x002f, 
+    0x0042, 0x004f, 0x0044, 0x0059, 0x003e, 0x003c, 0x002f, 0x0048, 0x0054, 
+    0x004d, 0x004c, 0x003e, 0x0000
+END
+
+RCACERTPROMPT1.HTM HTML 
+BEGIN
+    0x003c, 0x0068, 0x0074, 0x006d, 0x006c, 0x003e, 0x003c, 0x0062, 0x006f, 
+    0x0064, 0x0079, 0x003e, 0x0059, 0x006f, 0x0075, 0x0072, 0x0020, 0x0064, 
+    0x0065, 0x0076, 0x0069, 0x0063, 0x0065, 0x0020, 0x0069, 0x0073, 0x0020, 
+    0x0062, 0x0065, 0x0069, 0x006e, 0x0067, 0x0020, 0x0061, 0x0073, 0x006b, 
+    0x0065, 0x0064, 0x0020, 0x0074, 0x006f, 0x0020, 0x0069, 0x006e, 0x0073, 
+    0x0074, 0x0061, 0x006c, 0x006c, 0x0020, 0x0061, 0x0020, 0x0073, 0x0065, 
+    0x0063, 0x0075, 0x0072, 0x0069, 0x0074, 0x0079, 0x0020, 0x0063, 0x0065, 
+    0x0072, 0x0074, 0x0069, 0x0066, 0x0069, 0x0063, 0x0061, 0x0074, 0x0065, 
+    0x002e, 0x0020, 0x0059, 0x006f, 0x0075, 0x0020, 0x0073, 0x0068, 0x006f, 
+    0x0075, 0x006c, 0x0064, 0x0020, 0x0062, 0x006c, 0x006f, 0x0063, 0x006b, 
+    0x0020, 0x0075, 0x006e, 0x006c, 0x0065, 0x0073, 0x0073, 0x0020, 0x0079, 
+    0x006f, 0x0075, 0x0020, 0x0072, 0x0065, 0x0071, 0x0075, 0x0069, 0x0072, 
+    0x0065, 0x0020, 0x0063, 0x0065, 0x0072, 0x0074, 0x0069, 0x0066, 0x0069, 
+    0x0063, 0x0061, 0x0074, 0x0065, 0x0073, 0x0020, 0x0066, 0x006f, 0x0072, 
+    0x0020, 0x0070, 0x0072, 0x006f, 0x0063, 0x0065, 0x0073, 0x0073, 0x0065, 
+    0x0073, 0x0020, 0x0073, 0x0075, 0x0063, 0x0068, 0x0020, 0x0061, 0x0073, 
+    0x0020, 0x0073, 0x0079, 0x006e, 0x0063, 0x0068, 0x0072, 0x006f, 0x006e, 
+    0x0069, 0x007a, 0x0069, 0x006e, 0x0067, 0x0020, 0x0077, 0x0069, 0x0074, 
+    0x0068, 0x0020, 0x0045, 0x0078, 0x0063, 0x0068, 0x0061, 0x006e, 0x0067, 
+    0x0065, 0x0020, 0x0053, 0x0065, 0x0072, 0x0076, 0x0065, 0x0072, 0x0020, 
+    0x006f, 0x0072, 0x0020, 0x0063, 0x006f, 0x006e, 0x006e, 0x0065, 0x0063, 
+    0x0074, 0x0069, 0x006e, 0x0067, 0x0020, 0x0074, 0x006f, 0x0020, 0x0061, 
+    0x0020, 0x0077, 0x0069, 0x0072, 0x0065, 0x006c, 0x0065, 0x0073, 0x0073, 
+    0x0020, 0x006e, 0x0065, 0x0074, 0x0077, 0x006f, 0x0072, 0x006b, 0x002e, 
+    0x003c, 0x002f, 0x0062, 0x006f, 0x0064, 0x0079, 0x003e, 0x003c, 0x002f, 
+    0x0068, 0x0074, 0x006d, 0x006c, 0x003e, 0x0000
+END
+
+RCACERTPROMPT2.HTM HTML 
+BEGIN
+    0x003c, 0x0068, 0x0074, 0x006d, 0x006c, 0x003e, 0x003c, 0x0062, 0x006f, 
+    0x0064, 0x0079, 0x003e, 0x0049, 0x006e, 0x0073, 0x0074, 0x0061, 0x006c, 
+    0x006c, 0x0069, 0x006e, 0x0067, 0x0020, 0x0074, 0x0068, 0x0065, 0x0020, 
+    0x0063, 0x0065, 0x0072, 0x0074, 0x0069, 0x0066, 0x0069, 0x0063, 0x0061, 
+    0x0074, 0x0065, 0x0020, 0x0077, 0x0069, 0x006c, 0x006c, 0x0020, 0x0063, 
+    0x0061, 0x0075, 0x0073, 0x0065, 0x0020, 0x0079, 0x006f, 0x0075, 0x0072, 
+    0x0020, 0x0064, 0x0065, 0x0076, 0x0069, 0x0063, 0x0065, 0x0020, 0x0074, 
+    0x006f, 0x0020, 0x0074, 0x0072, 0x0075, 0x0073, 0x0074, 0x0020, 0x0064, 
+    0x0069, 0x0067, 0x0069, 0x0074, 0x0061, 0x006c, 0x0020, 0x0063, 0x0065, 
+    0x0072, 0x0074, 0x0069, 0x0066, 0x0069, 0x0063, 0x0061, 0x0074, 0x0065, 
+    0x0073, 0x0020, 0x0066, 0x0072, 0x006f, 0x006d, 0x0020, 0x0074, 0x0068, 
+    0x0065, 0x0020, 0x003c, 0x0061, 0x0020, 0x0068, 0x0072, 0x0065, 0x0066, 
+    0x003d, 0x0027, 0x0063, 0x006d, 0x0064, 0x003a, 0x0031, 0x0030, 0x0030, 
+    0x0031, 0x0027, 0x003e, 0x0072, 0x0065, 0x0071, 0x0075, 0x0065, 0x0073, 
+    0x0074, 0x0065, 0x0072, 0x003c, 0x002f, 0x0061, 0x003e, 0x002e, 0x0020, 
+    0x004d, 0x0061, 0x006c, 0x0069, 0x0063, 0x0069, 0x006f, 0x0075, 0x0073, 
+    0x0020, 0x0072, 0x0065, 0x0071, 0x0075, 0x0065, 0x0073, 0x0074, 0x0065, 
+    0x0072, 0x0073, 0x0020, 0x006d, 0x0061, 0x0079, 0x0020, 0x0074, 0x0072, 
+    0x0079, 0x0020, 0x0074, 0x006f, 0x0020, 0x006d, 0x0069, 0x0073, 0x006c, 
+    0x0065, 0x0061, 0x0064, 0x0020, 0x0079, 0x006f, 0x0075, 0x0020, 0x0061, 
+    0x0062, 0x006f, 0x0075, 0x0074, 0x0020, 0x0074, 0x0068, 0x0065, 0x0069, 
+    0x0072, 0x0020, 0x0069, 0x0064, 0x0065, 0x006e, 0x0074, 0x0069, 0x0074, 
+    0x0079, 0x002e, 0x003c, 0x0062, 0x0072, 0x003e, 0x0044, 0x006f, 0x0020, 
+    0x0079, 0x006f, 0x0075, 0x0020, 0x0077, 0x0061, 0x006e, 0x0074, 0x0020, 
+    0x0074, 0x006f, 0x0020, 0x0062, 0x006c, 0x006f, 0x0063, 0x006b, 0x0020, 
+    0x0074, 0x0068, 0x0069, 0x0073, 0x0020, 0x0063, 0x0065, 0x0072, 0x0074, 
+    0x0069, 0x0066, 0x0069, 0x0063, 0x0061, 0x0074, 0x0065, 0x003f, 0x003c, 
+    0x0062, 0x0072, 0x003e, 0x003c, 0x002f, 0x0062, 0x006f, 0x0064, 0x0079, 
+    0x003e, 0x003c, 0x002f, 0x0068, 0x0074, 0x006d, 0x006c, 0x003e, 0x0000
+
+END
+
+RCACERTDETAILS.HTM HTML 
+BEGIN
+    0x003c, 0x0068, 0x0074, 0x006d, 0x006c, 0x003e, 0x003c, 0x0062, 0x006f, 
+    0x0064, 0x0079, 0x003e, 0x003c, 0x0062, 0x003e, 0x0054, 0x0068, 0x0075, 
+    0x006d, 0x0062, 0x0070, 0x0072, 0x0069, 0x006e, 0x0074, 0x003a, 0x003c, 
+    0x002f, 0x0062, 0x003e, 0x003c, 0x0064, 0x0069, 0x0076, 0x003e, 0x0025, 
+    0x0031, 0x0021, 0x0073, 0x0021, 0x003c, 0x002f, 0x0064, 0x0069, 0x0076, 
+    0x003e, 0x003c, 0x0062, 0x003e, 0x0049, 0x0073, 0x0073, 0x0075, 0x0065, 
+    0x0064, 0x0020, 0x0054, 0x006f, 0x003a, 0x003c, 0x002f, 0x0062, 0x003e, 
+    0x003c, 0x0064, 0x0069, 0x0076, 0x003e, 0x0025, 0x0032, 0x0021, 0x0073, 
+    0x0021, 0x003c, 0x002f, 0x0064, 0x0069, 0x0076, 0x003e, 0x003c, 0x0062, 
+    0x003e, 0x0049, 0x0073, 0x0073, 0x0075, 0x0065, 0x0064, 0x0020, 0x0042, 
+    0x0079, 0x003a, 0x003c, 0x002f, 0x0062, 0x003e, 0x003c, 0x0064, 0x0069, 
+    0x0076, 0x003e, 0x0025, 0x0033, 0x0021, 0x0073, 0x0021, 0x003c, 0x002f, 
+    0x0064, 0x0069, 0x0076, 0x003e, 0x003c, 0x002f, 0x0062, 0x006f, 0x0064, 
+    0x0079, 0x003e, 0x003c, 0x002f, 0x0068, 0x0074, 0x006d, 0x006c, 0x003e, 
+    0x0000
+END
+
+RENEWAL_PROMPT.HTM HTML 
+BEGIN
+    0x0043, 0x0065, 0x0072, 0x0074, 0x0069, 0x0066, 0x0069, 0x0063, 0x0061, 
+    0x0074, 0x0065, 0x003a, 0x0020, 0x0025, 0x0031, 0x003c, 0x0062, 0x0072, 
+    0x003e, 0x0054, 0x0068, 0x0069, 0x0073, 0x0020, 0x0063, 0x0065, 0x0072, 
+    0x0074, 0x0069, 0x0066, 0x0069, 0x0063, 0x0061, 0x0074, 0x0065, 0x0020, 
+    0x0065, 0x0078, 0x0070, 0x0069, 0x0072, 0x0065, 0x0073, 0x0020, 0x0069, 
+    0x006e, 0x0020, 0x0025, 0x0032, 0x0020, 0x0064, 0x0061, 0x0079, 0x0073, 
+    0x002e, 0x0020, 0x0059, 0x006f, 0x0075, 0x0020, 0x0063, 0x0061, 0x006e, 
+    0x0020, 0x0074, 0x0072, 0x0079, 0x0020, 0x0074, 0x006f, 0x0020, 0x0072, 
+    0x0065, 0x006e, 0x0065, 0x0077, 0x0020, 0x006e, 0x006f, 0x0077, 0x0020, 
+    0x006f, 0x0072, 0x0020, 0x0062, 0x0065, 0x0020, 0x0072, 0x0065, 0x006d, 
+    0x0069, 0x006e, 0x0064, 0x0065, 0x0064, 0x0020, 0x006c, 0x0061, 0x0074, 
+    0x0065, 0x0072, 0x002e, 0x0020, 0x0054, 0x006f, 0x0020, 0x0063, 0x006f, 
+    0x006d, 0x0070, 0x006c, 0x0065, 0x0074, 0x0065, 0x0020, 0x0074, 0x0068, 
+    0x0065, 0x0020, 0x0072, 0x0065, 0x006e, 0x0065, 0x0077, 0x0061, 0x006c, 
+    0x002c, 0x0020, 0x0079, 0x006f, 0x0075, 0x0020, 0x006d, 0x0061, 0x0079, 
+    0x0020, 0x006e, 0x0065, 0x0065, 0x0064, 0x0020, 0x0074, 0x006f, 0x0020, 
+    0x0063, 0x006f, 0x006e, 0x006e, 0x0065, 0x0063, 0x0074, 0x0020, 0x0074, 
+    0x0068, 0x0065, 0x0020, 0x0064, 0x0065, 0x0076, 0x0069, 0x0063, 0x0065, 
+    0x0020, 0x0074, 0x006f, 0x0020, 0x0079, 0x006f, 0x0075, 0x0072, 0x0020, 
+    0x0050, 0x0043, 0x002e, 0x003c, 0x0062, 0x0072, 0x003e, 0x0000
+END
+
+DESKTOP_INITIATED_PROMPT.HTM HTML 
+BEGIN
+    0x0043, 0x0065, 0x0072, 0x0074, 0x0069, 0x0066, 0x0069, 0x0063, 0x0061, 
+    0x0074, 0x0065, 0x003a, 0x0020, 0x0025, 0x0031, 0x003c, 0x0062, 0x0072, 
+    0x003e, 0x0053, 0x0065, 0x0072, 0x0076, 0x0065, 0x0072, 0x003a, 0x0020, 
+    0x0025, 0x0032, 0x003c, 0x0062, 0x0072, 0x003e, 0x0059, 0x006f, 0x0075, 
+    0x0020, 0x0073, 0x0068, 0x006f, 0x0075, 0x006c, 0x0064, 0x0020, 0x0063, 
+    0x006f, 0x006e, 0x0074, 0x0069, 0x006e, 0x0075, 0x0065, 0x0020, 0x006f, 
+    0x006e, 0x006c, 0x0079, 0x0020, 0x0069, 0x0066, 0x0020, 0x0079, 0x006f, 
+    0x0075, 0x0020, 0x0073, 0x0074, 0x0061, 0x0072, 0x0074, 0x0065, 0x0064, 
+    0x0020, 0x0061, 0x0020, 0x0063, 0x0065, 0x0072, 0x0074, 0x0069, 0x0066, 
+    0x0069, 0x0063, 0x0061, 0x0074, 0x0065, 0x0020, 0x0065, 0x006e, 0x0072, 
+    0x006f, 0x006c, 0x006c, 0x006d, 0x0065, 0x006e, 0x0074, 0x0020, 0x0066, 
+    0x0072, 0x006f, 0x006d, 0x0020, 0x0074, 0x0068, 0x0065, 0x0020, 0x0050, 
+    0x0043, 0x0020, 0x0074, 0x0068, 0x0061, 0x0074, 0x0020, 0x0069, 0x0073, 
+    0x0020, 0x0063, 0x006f, 0x006e, 0x006e, 0x0065, 0x0063, 0x0074, 0x0065, 
+    0x0064, 0x0020, 0x0074, 0x006f, 0x0020, 0x0079, 0x006f, 0x0075, 0x0072, 
+    0x0020, 0x0064, 0x0065, 0x0076, 0x0069, 0x0063, 0x0065, 0x002e, 0x003c, 
+    0x0062, 0x0072, 0x003e, 0x0000
+END
+
+DEVICE_INITIATED_PROMPT.HTM HTML 
+BEGIN
+    0x0043, 0x0065, 0x0072, 0x0074, 0x0069, 0x0066, 0x0069, 0x0063, 0x0061, 
+    0x0074, 0x0065, 0x003a, 0x0020, 0x0025, 0x0031, 0x003c, 0x0062, 0x0072, 
+    0x003e, 0x0053, 0x0065, 0x0072, 0x0076, 0x0065, 0x0072, 0x003a, 0x0020, 
+    0x0025, 0x0032, 0x003c, 0x0062, 0x0072, 0x003e, 0x0041, 0x0020, 0x0063, 
+    0x0065, 0x0072, 0x0074, 0x0069, 0x0066, 0x0069, 0x0063, 0x0061, 0x0074, 
+    0x0065, 0x0020, 0x0069, 0x0073, 0x0020, 0x0062, 0x0065, 0x0069, 0x006e, 
+    0x0067, 0x0020, 0x0072, 0x0065, 0x0071, 0x0075, 0x0065, 0x0073, 0x0074, 
+    0x0065, 0x0064, 0x0020, 0x0066, 0x006f, 0x0072, 0x0020, 0x0079, 0x006f, 
+    0x0075, 0x0072, 0x0020, 0x0064, 0x0065, 0x0076, 0x0069, 0x0063, 0x0065, 
+    0x002e, 0x0020, 0x0059, 0x006f, 0x0075, 0x0020, 0x0073, 0x0068, 0x006f, 
+    0x0075, 0x006c, 0x0064, 0x0020, 0x0063, 0x006f, 0x006e, 0x0074, 0x0069, 
+    0x006e, 0x0075, 0x0065, 0x0020, 0x006f, 0x006e, 0x006c, 0x0079, 0x0020, 
+    0x0069, 0x0066, 0x0020, 0x0079, 0x006f, 0x0075, 0x0020, 0x0069, 0x006e, 
+    0x0074, 0x0065, 0x006e, 0x0064, 0x0065, 0x0064, 0x0020, 0x0074, 0x006f, 
+    0x0020, 0x006f, 0x0062, 0x0074, 0x0061, 0x0069, 0x006e, 0x0020, 0x0074, 
+    0x0068, 0x0069, 0x0073, 0x0020, 0x0063, 0x0065, 0x0072, 0x0074, 0x0069, 
+    0x0066, 0x0069, 0x0063, 0x0061, 0x0074, 0x0065, 0x002e, 0x003c, 0x0062, 
+    0x0072, 0x003e, 0x0000
+END
+
+PROCESSING_NOTIFICATION.HTM HTML 
+BEGIN
+    0x0043, 0x0065, 0x0072, 0x0074, 0x0069, 0x0066, 0x0069, 0x0063, 0x0061, 
+    0x0074, 0x0065, 0x003a, 0x0020, 0x0025, 0x0031, 0x003c, 0x0062, 0x0072, 
+    0x003e, 0x0053, 0x0065, 0x0072, 0x0076, 0x0065, 0x0072, 0x003a, 0x0020, 
+    0x0025, 0x0032, 0x003c, 0x0062, 0x0072, 0x003e, 0x0050, 0x0072, 0x006f, 
+    0x0063, 0x0065, 0x0073, 0x0073, 0x0069, 0x006e, 0x0067, 0x0020, 0x0063, 
+    0x0065, 0x0072, 0x0074, 0x0069, 0x0066, 0x0069, 0x0063, 0x0061, 0x0074, 
+    0x0065, 0x0020, 0x0065, 0x006e, 0x0072, 0x006f, 0x006c, 0x006c, 0x006d, 
+    0x0065, 0x006e, 0x0074, 0x0020, 0x0066, 0x006f, 0x0072, 0x0020, 0x0074, 
+    0x0068, 0x0069, 0x0073, 0x0020, 0x0064, 0x0065, 0x0076, 0x0069, 0x0063, 
+    0x0065, 0x002e, 0x003c, 0x0062, 0x0072, 0x003e, 0x0000
+END
+
+PREVIOUS_ENROLLMENT_REMAINING.HTM HTML 
+BEGIN
+    0x0059, 0x006f, 0x0075, 0x0020, 0x0068, 0x0061, 0x0076, 0x0065, 0x0020, 
+    0x006f, 0x006e, 0x0065, 0x0020, 0x006f, 0x0072, 0x0020, 0x006d, 0x006f, 
+    0x0072, 0x0065, 0x0020, 0x0070, 0x0072, 0x0065, 0x0076, 0x0069, 0x006f, 
+    0x0075, 0x0073, 0x0020, 0x0063, 0x0065, 0x0072, 0x0074, 0x0069, 0x0066, 
+    0x0069, 0x0063, 0x0061, 0x0074, 0x0065, 0x0020, 0x0065, 0x006e, 0x0072, 
+    0x006f, 0x006c, 0x006c, 0x006d, 0x0065, 0x006e, 0x0074, 0x0073, 0x0020, 
+    0x0074, 0x0068, 0x0061, 0x0074, 0x0020, 0x0068, 0x0061, 0x0076, 0x0065, 
+    0x0020, 0x006e, 0x006f, 0x0074, 0x0020, 0x0079, 0x0065, 0x0074, 0x0020, 
+    0x0062, 0x0065, 0x0065, 0x006e, 0x0020, 0x0070, 0x0072, 0x006f, 0x0063, 
+    0x0065, 0x0073, 0x0073, 0x0065, 0x0064, 0x0020, 0x0063, 0x006f, 0x006d, 
+    0x0070, 0x006c, 0x0065, 0x0074, 0x0065, 0x006c, 0x0079, 0x002e, 0x0020, 
+    0x0044, 0x006f, 0x0020, 0x0079, 0x006f, 0x0075, 0x0020, 0x0077, 0x0061, 
+    0x006e, 0x0074, 0x0020, 0x0074, 0x006f, 0x0020, 0x0063, 0x006f, 0x006d, 
+    0x0070, 0x006c, 0x0065, 0x0074, 0x0065, 0x0020, 0x0074, 0x0068, 0x0065, 
+    0x0020, 0x0070, 0x0072, 0x0065, 0x0076, 0x0069, 0x006f, 0x0075, 0x0073, 
+    0x0020, 0x0065, 0x006e, 0x0072, 0x006f, 0x006c, 0x006c, 0x006d, 0x0065, 
+    0x006e, 0x0074, 0x0073, 0x0020, 0x006e, 0x006f, 0x0077, 0x003f, 0x003c, 
+    0x0062, 0x0072, 0x003e, 0x0000
+END
+
+RESULT_SUCCESS.HTM HTML 
+BEGIN
+    0x0043, 0x0065, 0x0072, 0x0074, 0x0069, 0x0066, 0x0069, 0x0063, 0x0061, 
+    0x0074, 0x0065, 0x003a, 0x0020, 0x0025, 0x0031, 0x003c, 0x0062, 0x0072, 
+    0x003e, 0x0053, 0x0065, 0x0072, 0x0076, 0x0065, 0x0072, 0x003a, 0x0020, 
+    0x0025, 0x0032, 0x003c, 0x0062, 0x0072, 0x003e, 0x0054, 0x0068, 0x0065, 
+    0x0020, 0x0065, 0x006e, 0x0072, 0x006f, 0x006c, 0x006c, 0x006d, 0x0065, 
+    0x006e, 0x0074, 0x0020, 0x0070, 0x0072, 0x006f, 0x0063, 0x0065, 0x0073, 
+    0x0073, 0x0020, 0x0066, 0x006f, 0x0072, 0x0020, 0x0074, 0x0068, 0x0069, 
+    0x0073, 0x0020, 0x0063, 0x0065, 0x0072, 0x0074, 0x0069, 0x0066, 0x0069, 
+    0x0063, 0x0061, 0x0074, 0x0065, 0x0020, 0x0077, 0x0061, 0x0073, 0x0020, 
+    0x0073, 0x0075, 0x0063, 0x0063, 0x0065, 0x0073, 0x0073, 0x0066, 0x0075, 
+    0x006c, 0x006c, 0x0079, 0x0020, 0x0063, 0x006f, 0x006d, 0x0070, 0x006c, 
+    0x0065, 0x0074, 0x0065, 0x0064, 0x002e, 0x003c, 0x0062, 0x0072, 0x003e, 
+    0x0000
+END
+
+RESULT_GENERIC_ERROR.HTM HTML 
+BEGIN
+    0x0043, 0x0065, 0x0072, 0x0074, 0x0069, 0x0066, 0x0069, 0x0063, 0x0061, 
+    0x0074, 0x0065, 0x003a, 0x0020, 0x0025, 0x0031, 0x003c, 0x0062, 0x0072, 
+    0x003e, 0x0053, 0x0065, 0x0072, 0x0076, 0x0065, 0x0072, 0x003a, 0x0020, 
+    0x0025, 0x0032, 0x003c, 0x0062, 0x0072, 0x003e, 0x0054, 0x0068, 0x0065, 
+    0x0020, 0x0063, 0x0065, 0x0072, 0x0074, 0x0069, 0x0066, 0x0069, 0x0063, 
+    0x0061, 0x0074, 0x0065, 0x0020, 0x0065, 0x006e, 0x0072, 0x006f, 0x006c, 
+    0x006c, 0x006d, 0x0065, 0x006e, 0x0074, 0x0020, 0x0063, 0x0061, 0x006e, 
+    0x006e, 0x006f, 0x0074, 0x0020, 0x0062, 0x0065, 0x0020, 0x0063, 0x006f, 
+    0x006d, 0x0070, 0x006c, 0x0065, 0x0074, 0x0065, 0x0064, 0x002e, 0x0020, 
+    0x0050, 0x006c, 0x0065, 0x0061, 0x0073, 0x0065, 0x0020, 0x0063, 0x006f, 
+    0x006e, 0x0074, 0x0061, 0x0063, 0x0074, 0x0020, 0x0079, 0x006f, 0x0075, 
+    0x0072, 0x0020, 0x0073, 0x0079, 0x0073, 0x0074, 0x0065, 0x006d, 0x0020, 
+    0x0061, 0x0064, 0x006d, 0x0069, 0x006e, 0x0069, 0x0073, 0x0074, 0x0072, 
+    0x0061, 0x0074, 0x006f, 0x0072, 0x002e, 0x003c, 0x0062, 0x0072, 0x003e, 
+    0x0000
+END
+
+RESULT_SERVER_NOT_FOUND_ERROR.HTM HTML 
+BEGIN
+    0x0043, 0x0065, 0x0072, 0x0074, 0x0069, 0x0066, 0x0069, 0x0063, 0x0061, 
+    0x0074, 0x0065, 0x003a, 0x0020, 0x0025, 0x0031, 0x003c, 0x0062, 0x0072, 
+    0x003e, 0x0053, 0x0065, 0x0072, 0x0076, 0x0065, 0x0072, 0x003a, 0x0020, 
+    0x0025, 0x0032, 0x003c, 0x0062, 0x0072, 0x003e, 0x0054, 0x0068, 0x0065, 
+    0x0020, 0x0073, 0x0065, 0x0072, 0x0076, 0x0065, 0x0072, 0x0020, 0x0063, 
+    0x0061, 0x006e, 0x006e, 0x006f, 0x0074, 0x0020, 0x0062, 0x0065, 0x0020, 
+    0x0072, 0x0065, 0x0061, 0x0063, 0x0068, 0x0065, 0x0064, 0x002e, 0x0020, 
+    0x0059, 0x006f, 0x0075, 0x0020, 0x006d, 0x0061, 0x0079, 0x0020, 0x006e, 
+    0x0065, 0x0065, 0x0064, 0x0020, 0x0074, 0x006f, 0x0020, 0x0063, 0x006f, 
+    0x006e, 0x006e, 0x0065, 0x0063, 0x0074, 0x0020, 0x0074, 0x006f, 0x0020, 
+    0x0074, 0x0068, 0x0065, 0x0020, 0x006e, 0x0065, 0x0074, 0x0077, 0x006f, 
+    0x0072, 0x006b, 0x0020, 0x0061, 0x0067, 0x0061, 0x0069, 0x006e, 0x0020, 
+    0x006f, 0x0072, 0x0020, 0x0064, 0x0069, 0x0073, 0x0063, 0x006f, 0x006e, 
+    0x006e, 0x0065, 0x0063, 0x0074, 0x0020, 0x0079, 0x006f, 0x0075, 0x0072, 
+    0x0020, 0x0064, 0x0065, 0x0076, 0x0069, 0x0063, 0x0065, 0x0020, 0x0066, 
+    0x0072, 0x006f, 0x006d, 0x0020, 0x0074, 0x0068, 0x0065, 0x0020, 0x0050, 
+    0x0043, 0x0020, 0x0061, 0x006e, 0x0064, 0x0020, 0x0072, 0x0065, 0x0063, 
+    0x006f, 0x006e, 0x006e, 0x0065, 0x0063, 0x0074, 0x0020, 0x0069, 0x0074, 
+    0x002e, 0x003c, 0x0062, 0x0072, 0x003e, 0x0000
+END
+
+RESULT_SERVER_ERROR.HTM HTML 
+BEGIN
+    0x0043, 0x0065, 0x0072, 0x0074, 0x0069, 0x0066, 0x0069, 0x0063, 0x0061, 
+    0x0074, 0x0065, 0x003a, 0x0020, 0x0025, 0x0031, 0x003c, 0x0062, 0x0072, 
+    0x003e, 0x0053, 0x0065, 0x0072, 0x0076, 0x0065, 0x0072, 0x003a, 0x0020, 
+    0x0025, 0x0032, 0x003c, 0x0062, 0x0072, 0x003e, 0x0054, 0x0068, 0x0065, 
+    0x0020, 0x0063, 0x0065, 0x0072, 0x0074, 0x0069, 0x0066, 0x0069, 0x0063, 
+    0x0061, 0x0074, 0x0065, 0x0020, 0x0065, 0x006e, 0x0072, 0x006f, 0x006c, 
+    0x006c, 0x006d, 0x0065, 0x006e, 0x0074, 0x0020, 0x0063, 0x0061, 0x006e, 
+    0x006e, 0x006f, 0x0074, 0x0020, 0x0062, 0x0065, 0x0020, 0x0063, 0x006f, 
+    0x006d, 0x0070, 0x006c, 0x0065, 0x0074, 0x0065, 0x0064, 0x0020, 0x0062, 
+    0x0065, 0x0063, 0x0061, 0x0075, 0x0073, 0x0065, 0x0020, 0x006f, 0x0066, 
+    0x0020, 0x0061, 0x0020, 0x0073, 0x0065, 0x0072, 0x0076, 0x0065, 0x0072, 
+    0x0020, 0x0070, 0x0072, 0x006f, 0x0062, 0x006c, 0x0065, 0x006d, 0x002e, 
+    0x0020, 0x0050, 0x006c, 0x0065, 0x0061, 0x0073, 0x0065, 0x0020, 0x0063, 
+    0x006f, 0x006e, 0x0074, 0x0061, 0x0063, 0x0074, 0x0020, 0x0079, 0x006f, 
+    0x0075, 0x0072, 0x0020, 0x0073, 0x0079, 0x0073, 0x0074, 0x0065, 0x006d, 
+    0x0020, 0x0061, 0x0064, 0x006d, 0x0069, 0x006e, 0x0069, 0x0073, 0x0074, 
+    0x0072, 0x0061, 0x0074, 0x006f, 0x0072, 0x002e, 0x003c, 0x0062, 0x0072, 
+    0x003e, 0x0000
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    501                     "Done"
+    502                     "Cancel"
+    503                     "Yes"
+    504                     "No"
+    505                     "OK"
+    506                     "Info"
+    507                     "Alert"
+    508                     "Error"
+    509                     "Confirm"
+    510                     "None"
+END
+
+STRINGTABLE 
+BEGIN
+    512                     "Save"
+    513                     "On"
+    514                     "Off"
+    515                     "My Ringtones"
+END
+
+STRINGTABLE 
+BEGIN
+    1300                    "\\Windows\\todaybnr.gif"
+    1301                    "Start"
+    1302                    "Options"
+    1303                    "Today"
+END
+
+STRINGTABLE 
+BEGIN
+    1100                    "Error opening the shortcut or locating the target filename."
+    1101                    "Shortcut Target"
+    1102                    "Printing is not supported at this time."
+    1103                    "Print Error"
+END
+
+STRINGTABLE 
+BEGIN
+    1104                    "Cannot access %s.\nMake sure the file is not in use or try opening it from within an application."
+    1105                    "'%s' is not a valid Windows CE application."
+    1106                    "There is no application associated with\n''%s''. Run the application first and then open this file inside the application."
+    1107                    "Can't find '%s' (or one of its components). Make sure the path and filename are correct and that all the required libraries are available."
+    1108                    "Cannot start '%s'. A critical component is either missing or failing due to low memory."
+    1109                    "Access denied. The program cannot start because it is not digitally signed with a trusted certificate."
+END
+
+STRINGTABLE 
+BEGIN
+    1200                    "Explore"
+    1201                    "Out of memory."
+END
+
+STRINGTABLE 
+BEGIN
+    1400                    "Storage Space"
+    1401                    "Your phone is running low on free storage space. Delete old or unused items to create more space."
+    1402                    "Battery"
+    1403                    "%1. To prevent possible data loss, replace or recharge the battery according to the owner's manual."
+    1404                    "Main Battery low"
+    1405                    "Main Battery very low"
+    1406                    "Backup Battery low"
+    1407                    "Backup Battery very low"
+END
+
+STRINGTABLE 
+BEGIN
+    1408                    "Shutting down..."
+    1409                    "Earpiece volume:"
+    1410                    "Bluetooth headset volume:"
+END
+
+STRINGTABLE 
+BEGIN
+    1700                    "Storage Card"
+    1701                    "Do you want to format this storage card to make it readable? This will permanently delete any files on the card."
+    1702                    "This storage card has been successfully formatted."
+    1703                    "This storage card cannot be formatted. Try reinserting the card, or using a different one."
+END
+
+STRINGTABLE 
+BEGIN
+    16451                   "Call"
+    16452                   "Menu"
+    16453                   "Save Number to Contacts"
+    16458                   "No SIM"
+    16459                   "Invalid SIM"
+    16460                   "SIM Blocked"
+    16461                   "Phone off"
+    16462                   "Searching..."
+    16463                   "Home Service"
+END
+
+STRINGTABLE 
+BEGIN
+    16192                   "Where are you?"
+    16193                   "Check this out!"
+    16194                   "I'll be right there."
+    16195                   "I'm running late."
+    16196                   "I'll get back to you."
+    16197                   "Urgent! Please reply ASAP."
+    16198                   "Let's catch up soon."
+    16203                   "No Help provided."
+END
+
+STRINGTABLE 
+BEGIN
+    1                       "New"
+    2                       "Edit"
+    3                       "Tools"
+    4                       "View"
+    5                       "File"
+    6                       "Go"
+    7                       "Favorites"
+    8                       "Open"
+    9                       "Menu"
+END
+
+STRINGTABLE 
+BEGIN
+    16400                   "Cannot load image."
+    16401                   "0x00000409"
+    16410                   "Voicemail"
+    16411                   "Device locked"
+    16412                   "Device unlocked"
+    16413                   "Emergency"
+END
+
+STRINGTABLE 
+BEGIN
+    16173                   "Insert My Text"
+END
+
+STRINGTABLE 
+BEGIN
+    16176                   "Insert"
+    16190                   "What are you up to?"
+    16191                   "Just checking in..."
+END
+
+STRINGTABLE 
+BEGIN
+    16306                   "Dial %1?"
+    16307                   "Phone"
+    16309                   "The phone is currently off. Would you like to turn on the phone?"
+    16312                   "A wireless radio must be attached to use the phone."
+    16314                   "The phone is not ready. Wait 15 seconds and try again."
+    16315                   "Press the ""%1!c!"" key to unlock the phone."
+    16317                   "the phone"
+    16318                   "Wireless"
+    16319                   "To unlock the device, tap ""Unlock"""
+END
+
+STRINGTABLE 
+BEGIN
+    16420                   "Main memory"
+    16425                   "This file is read-only. Please use Save As with a different file name."
+    16426                   "This file already exists. Do you want to replace it?"
+    16427                   "The file name cannot be used. It contains one or more of the following disallowed characters: \\/:*?""<>|."
+END
+
+STRINGTABLE 
+BEGIN
+    16464                   "Roaming Service"
+    16465                   "No Service"
+    16466                   "No Service"
+    16467                   "Searching..."
+    16468                   "Flight Mode"
+    16469                   "Available"
+    16470                   "Not Available"
+    16471                   "Selected"
+    16472                   "Disabled"
+    16473                   "Service Blocked"
+    16474                   "Internet Calling"
+    16475                   "Emergency Only"
+    16476                   "No SIM, Emergency Only"
+    16477                   "No SIM, No Service"
+END
+
+STRINGTABLE 
+BEGIN
+    16480                   "This is your last attempt. Do you want to continue?"
+    16481                   "Warning"
+    16482                   "No more attempts are available.  Please contact your system administrator."
+    16483                   "Unable to reset password.  Password Reset is not supported on this device."
+    16484                   "An application is trying to use the Password Reset service, but does not have permission to do so."
+    16485                   "The Password Reset service is already in use."
+    16486                   "The process timed out. Please try again."
+    16487                   "Password Reset has been cancelled by the user."
+    16488                   "The system is out of memory"
+    16489                   "An unknown system failure has occurred."
+END
+
+STRINGTABLE 
+BEGIN
+    16210                   "OK"
+    16211                   "Cancel"
+    16212                   "Retry"
+    16213                   "Yes"
+    16214                   "No"
+    16215                   "Accept"
+    16216                   "Reject"
+    16217                   "Open"
+    16218                   "Dismiss"
+    16219                   "Hide"
+    16220                   "Save"
+END
+
+STRINGTABLE 
+BEGIN
+    16299                   "The password is not valid. Please wait..."
+    16300                   "Unlock"
+    16301                   "The password is not valid. Enter the correct password and try again."
+END
+
+STRINGTABLE 
+BEGIN
+    16320                   "Tap ""Unlock"" or press ""%1!c!"""
+    16321                   "Press ""Cancel"" then press ""Unlock""."
+    16331                   "Training Voice Tag"
+    16332                   "After the audio prompt, please speak the new word."
+    16333                   "After the audio prompt, please speak the new word again."
+    16334                   "A similar sounding word already exists on the system. Try again?"
+    16335                   "The system cannot process your voice command. Be sure to speak clearly and reduce the surrounding noise if possible. Try again?"
+END
+
+STRINGTABLE 
+BEGIN
+    16336                   "The voice tag was successfully trained."
+    16337                   "Recognizing Voice Tag"
+    16338                   "Please speak after the audio prompt."
+    16339                   "Cannot recognize the word. Try again?"
+END
+
+STRINGTABLE 
+BEGIN
+    13000                   "Microsoft Windows CE"
+    13001                   "Version %1!u!.%2!u! (Build %3!u!)"
+    13002                   "Windows Mobile?6.1 Professional"
+    13003                   "CE OS %1!u!.%2!u!.%3!u! (Build %4!u!%6)%5"
+    13004                   "?2008 Microsoft Corporation."
+    13005                   "All rights reserved."
+    13006                   "Processor: %1!s!"
+    13007                   "Total Memory: %1!u!.%2!02.2u! MB"
+END
+
+STRINGTABLE 
+BEGIN
+    13008                   "Available Memory: %1!u!.%2!02.2u! MB"
+    13009                   "This computer program is protected by U.S. and international copyright laws."
+    13010                   "Portions of this software are based on NCSA Mosaic."
+    13011                   "Contains security software licensed from RSA Data Security, Inc."
+    13012                   "Portions of this software are based in part on the work of the Independent JPEG Group."
+    13013                   "Other product and company names mentioned herein may be the trademarks of their respective owners."
+    13014                   "NCSA Mosaic(TM) was developed by the National Center for Supercomputing Applications at the University of Illinois at Urbana-Champaign. Distributed under a licensing agreement with Spyglass, Inc."
+    13015                   "Total Storage: %1!u!.%2!02.2u! MB"
+    13016                   "Available Storage: %1!u!.%2!02.2u! MB"
+    13017                   "Portions of IPSec and related services jointly developed by Microsoft Corporation and Cisco Systems, Inc."
+    13018                   "To help Microsoft improve the products you use, your device can collect information on software operation for later reporting in the event of a serious error. Reporting information when errors occur is completely voluntary and confidential."
+    13019                   " "
+END
+
+STRINGTABLE 
+BEGIN
+    13184                   "More"
+    13186                   "Back"
+    13187                   "Off"
+    13188                   "Voicemail"
+    13189                   "Custom"
+    13190                   "Your Device uses this information to identify itself to other computers. Enter a Name that starts with a letter and contains the characters: _, A-Z, 0-9"
+    13191                   "%1!u!.%2!02.2u!"
+    13192                   "Windows Mobile?6.1 Classic"
+END
+
+STRINGTABLE 
+BEGIN
+    13040                   "Intel 386"
+    13041                   "Intel 486"
+    13042                   "Intel Pentium"
+    13043                   "Intel Pentium Pro"
+    13044                   "ARM SA1100"
+    13045                   "ARM Thumb720"
+    13046                   "Unknown"
+    13047                   "ARM Thumb820"
+    13048                   "ARM Thumb920"
+    13050                   "A conflict occurs when an item has changed on the device and on the server."
+    13051                   "Synchronize every:"
+    13052                   "When not connected to my PC, synchronize with the server every:"
+    13053                   "Ring tone:"
+    13054                   "Ring tone for line 1:"
+    13055                   "Voice mail number:"
+END
+
+STRINGTABLE 
+BEGIN
+    13072                   "Tu"
+    13073                   "W"
+    13074                   "Th"
+    13075                   "F"
+    13076                   "Sa"
+    13077                   "None"
+    13078                   ", "
+    13079                   "To turn on Bluetooth, select On. To make your device visible to other devices, select Visible."
+    13080                   "ARM SA1110"
+    13081                   "No Bluetooth hardware is installed on this device."
+    13082                   "To set the calling network for your next call, select %1 on the Today screen."
+END
+
+STRINGTABLE 
+BEGIN
+    13056                   "Voice mail number (L1):"
+    13057                   "Select the days and times when you receive the most e-mail (for example, during working hours)."
+    13058                   "Sync during"
+    13060                   "Vibrate"
+    13062                   "Select the PC to which you want to sync remotely."
+    13063                   "Select how frequently to sync to your server when connected to a PC."
+    13064                   "Phone number:"
+    13065                   "Phone number (L1):"
+    13066                   "Unavailable"
+    13070                   "Su"
+    13071                   "M"
+END
+
+STRINGTABLE 
+BEGIN
+    13091                   "The Automatic profile switches between the Normal profile and the Vibrate profile when the calendar indicates that the current time is busy."
+    13092                   "Set how quickly calls are automatically answered during hands-free operation. These settings do not apply when the ring type is Silent."
+END
+
+STRINGTABLE 
+BEGIN
+    13136                   "RIL Version %1"
+    13150                   "SMTP Address"
+    13151                   "Service Provider"
+END
+
+STRINGTABLE 
+BEGIN
+    13160                   "Every 5 minutes"
+    13161                   "Every 10 minutes"
+    13162                   "Every 15 minutes"
+    13163                   "Every 30 minutes"
+    13164                   "Every 60 minutes"
+    13165                   "Every 2 hours"
+    13166                   "Every 4 hours"
+    13167                   "Manually"
+END
+
+STRINGTABLE 
+BEGIN
+    13168                   "When new items arrive"
+    13169                   "Allows your phone to receive data beamed from other devices."
+    13170                   "%1 (%2)"
+    13171                   " ("
+    13172                   "%1(GSM)"
+    13173                   "%1(3G)"
+    13174                   "To connect to a device, click Menu and then Devices."
+    13175                   "Encrypted files can be read only by this device. WARNING: Encrypted files cannot be recovered after hard reset or clearing storage. To help prevent data loss, back up data from storage cards to another location."
+    13176                   "This setting is not available due to the security policy on your corporate network."
+    13177                   "Block"
+    13178                   "Install"
+    13182                   "Certificate Installation"
+END
+
+STRINGTABLE 
+BEGIN
+    13130                   "Default"
+    13132                   "€?$"
+    13133                   "Radio Version %1"
+    13134                   "CE ROM update versions:"
+    13135                   "%1 %2!u!.%3!u!.%4!u!.%5!u!"
+END
+
+STRINGTABLE 
+BEGIN
+    15000                   "Automatic"
+    15001                   "None Available"
+END
+
+STRINGTABLE 
+BEGIN
+    37392                   "[via Proxy]"
+END
+
+STRINGTABLE 
+BEGIN
+    37379                   "Network Card"
+    37380                   "PC connection"
+    37381                   "Wi-Fi"
+    37382                   "Connected"
+    37383                   "%2 (%1)"
+    37384                   "Connect GPRS"
+    37385                   "Connect VPN"
+    37386                   "GPRS"
+    37387                   "Dial-up"
+    37388                   "VPN"
+    37389                   "%2 (%1)"
+    37390                   "In Call"
+END
+
+STRINGTABLE 
+BEGIN
+    20001                   "Receiving Data"
+    20002                   "You are receiving data. To stop receiving, press Cancel."
+    20003                   "Cannot Receive Data"
+    20004                   "The data cannot be downloaded. It requires more memory than is available on your device. You can delete files from the device to free some memory."
+END
+
+STRINGTABLE 
+BEGIN
+    10256                   "Do you wish to call %1?"
+    10258                   "The SIM Application wishes to send touch-tones %1. OK?"
+    10259                   "unspecified address"
+    10260                   "Select"
+    10261                   "The SIM Application wishes to open a browser. OK?"
+    10262                   "The SIM Application wishes to open a browser to %1. OK?"
+    10263                   "The SIM Application wishes to open a network connection. OK?"
+    10264                   "The SIM Application wishes to open a network connection to %1. OK?"
+    10265                   "The SIM Application wishes to send touch-tones through the phone. OK?"
+END
+
+STRINGTABLE 
+BEGIN
+    10250                   "Help"
+    10251                   "Yes"
+    10252                   "No"
+    10254                   "OK"
+END
+
+STRINGTABLE 
+BEGIN
+    10290                   "SAT CSD"
+    10291                   "SAT GPRS"
+    10292                   "SAT Proxy"
+    10293                   "SAT Network"
+    10294                   "SAT Gateway"
+END
+
+STRINGTABLE 
+BEGIN
+    18433                   "Yes"
+    18434                   "No"
+    18435                   "Dismiss"
+    18436                   "View"
+    18437                   "Get Certificates"
+END
+
+STRINGTABLE 
+BEGIN
+    18450                   "Continue"
+    18451                   "Cancel"
+END
+
+STRINGTABLE 
+BEGIN
+    1603                    "Restart"
+    1604                    "Recent changes to your device require a restart. During this process you cannot make or receive phone calls, including emergency calls. Restart your device now?"
+    1605                    "Now"
+    1606                    "Later"
+    1607                    "Recent changes to your device require a restart. Restart your device now?"
+END
+
+STRINGTABLE 
+BEGIN
+    23001                   "Device %s is asking for your contacts.\r\n\r\nDo you want to allow access?"
+END
+
+STRINGTABLE 
+BEGIN
+    9000                    "The answering modem has disconnected. To check your connection settings and change them if needed, tap Settings."
+    9001                    "No modem at above number. To check your connection settings and change them if needed, tap Settings."
+    9002                    "No dial tone. Make sure your modem is properly connected and try again. To check your connection settings and change them if needed, tap Settings."
+    9003                    "No modem detected. Make sure your modem is properly connected and try again. To check your connection settings and change them if needed, tap Settings."
+    9004                    "The modem at the above number is busy. To check your connection settings and change them if needed, tap Settings."
+    9005                    "There is no answer at the above number.  To check your connection settings and change them if needed, tap Settings."
+    9007                    "Cannot Connect"
+END
+
+STRINGTABLE 
+BEGIN
+    9008                    "Cannot connect for an unknown reason. To check your connection settings and change them if needed, tap Settings. If the problem continues, reset your mobile device according to your manufacturer's documentation and try again."
+    9009                    "Your username or password is wrong. To check your connection settings and change them if needed, tap Settings. If the problem continues, turn the device off and try again."
+    9010                    "The phone number dialed is incomplete. To check your connection settings and change them if needed, tap Settings."
+    9011                    "Dialed"
+    9012                    "Dialed from: %s"
+    9013                    "VPN"
+    9014                    "Cannot connect. Make sure your phone is turned on, or tap Settings to check your connection settings."
+END
+
+STRINGTABLE 
+BEGIN
+    9071                    "VPN server problems. Verify your username and password, and try again. If the problem continues, turn the device off and try again."
+END
+
+STRINGTABLE 
+BEGIN
+    9031                    "The connection has been ended. To change your connection settings, tap Settings."
+    9032                    "Connecting..."
+    9033                    "Ending connection..."
+    9034                    "Connected."
+    9035                    "Disconnecting..."
+    9036                    "Connection failed and cannot be reestablished. To change your connection settings, tap Settings."
+    9037                    "Cannot connect with current connection settings. To change your connection settings, tap Settings."
+    9038                    "You have ended the connection."
+    9039                    "Cannot connect for an unknown reason. To change your connection settings, tap Settings."
+END
+
+STRINGTABLE 
+BEGIN
+    9041                    "Cannot locate the proxy server. To change proxy servers, tap Settings."
+    9042                    "Access to the proxy server was denied, because the username and password for the Socks 5 proxy server is not valid. To change your proxy server settings, tap Settings."
+    9043                    "Cannot connect to the proxy server, because the type of logon required is not supported by your mobile device. To change proxy servers, tap Settings."
+    9044                    "Cannot locate the proxy server. To change proxy servers, tap Settings."
+    9045                    "Cannot connect to the proxy server for an unknown reason. To change proxy servers, tap Settings."
+    9046                    "Cannot connect. End the current phone call, and try again."
+    9052                    "The current connection cannot be used for your request.  Please end the current connection and try again."
+    9053                    "Cannot connect. Ensure that your phone is correctly configured, service is available, and that flight mode is turned off before trying again."
+    9054                    "The remote party has ended this connection."
+    9055                    "Cannot connect. Please check your user name, password, or other credentials and try again."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_WZC_FILTER_ALL_AVAILABLE "All Available"
+    IDS_WZC_FILTER_NON_ADHOC "Only access points"
+    IDS_WZC_FILTER_ADHOC    "Only computer-to-computer"
+    12299                   "%1!s!: %2!s!"
+    12300                   "Add New..."
+    12301                   "[No SSID]"
+    12303                   "Wireless"
+END
+
+STRINGTABLE 
+BEGIN
+    12308                   "Wireless"
+    12309                   "A network name is required. Please enter a valid network name."
+    12310                   "The network name you've chosen is already in use. Please enter a new name for the network."
+    12311                   "The network key you entered is not correct. Please try again."
+    12312                   "The network name is not valid. Please enter a valid network name."
+    12315                   "Connected"
+    12316                   "Available"
+    12317                   "Unavailable"
+    12318                   "Connecting"
+    12319                   "Search for Networks"
+END
+
+STRINGTABLE 
+BEGIN
+    12355                   "Cannot log on to the wireless network. This network requires a personal certificate to positively identify you."
+    12356                   "Choose a certificate to log on the network."
+    12357                   "Connect"
+    12358                   "Dismiss"
+    12366                   "(Self Issued)"
+END
+
+STRINGTABLE 
+BEGIN
+    12380                   "Cannot connect to the network.  Check your network and service provider settings and try again."
+    12381                   "All Purposes"
+END
+
+STRINGTABLE 
+BEGIN
+    12500                   "Open"
+    12501                   "Shared"
+    12502                   "WPA"
+    12503                   "WPA-PSK"
+    12504                   "WPA-None"
+    12505                   "Disabled"
+    12506                   "WEP"
+    12507                   "TKIP"
+    12508                   "AES"
+    12509                   "WPA2"
+    12510                   "WPA2-PSK"
+END
+
+STRINGTABLE 
+BEGIN
+    12002                   "IP Address Not Valid"
+    12003                   "%d is not a valid entry. Specify a value between %d and %d for this field."
+    12004                   "Port Settings"
+    12005                   "Call Options"
+    12006                   "Device Properties"
+    12007                   "None"
+    12008                   "Odd"
+    12009                   "Even"
+    12010                   "Mark"
+    12011                   "Space"
+    12012                   "Software"
+    12013                   "Hardware"
+    12014                   "Logon to Server"
+    12015                   "Pocket PC Networking"
+END
+
+STRINGTABLE 
+BEGIN
+    12158                   "Resource:  %s"
+END
+
+STRINGTABLE 
+BEGIN
+    12016                   "IP Address"
+    12017                   "Name Servers"
+    12018                   "Settings"
+    12019                   "No IP address was specified. An IP address is required to identify this workstation on the TCP/IP network."
+    12020                   "Multi-Function"
+    12021                   "Memory"
+    12022                   "Serial"
+    12023                   "Parallel"
+    12024                   "Storage"
+    12025                   "Video"
+    12026                   "Network"
+    12027                   "Storage"
+    12028                   "SCSI"
+    12029                   "Unknown"
+    12030                   "%1!s! card in Socket %2!d!"
+    12031                   "Unidentified USB Device"
+END
+
+STRINGTABLE 
+BEGIN
+    12257                   "The new settings will be applied the next time the adapter is used.\r\nIf the adapter is currently in the device, remove and re-insert the adapter to apply the settings."
+    12258                   "Adapters"
+    IDS_WZC_SETTING_TITLE   "Settings"
+END
+
+STRINGTABLE 
+BEGIN
+    12173                   "Logon failed"
+    12174                   "Save password"
+    12175                   "Proxy:"
+END
+
+STRINGTABLE 
+BEGIN
+    12176                   "Site:"
+    12187                   "Proxy Name"
+    12188                   "Site Name"
+    12189                   "Details"
+    12190                   "Menu"
+END
+
+STRINGTABLE 
+BEGIN
+    12200                   "`Desktop @ 19200`"
+    12201                   "There are currently files open on %1!s! (connected to %2!s!). \nDo you want to disconnect anyway?"
+    12202                   "Resource name %1!s! is not valid."
+    12203                   "Error connecting to resource: %1!d!"
+    12204                   "A device with the same name is already on the network. Tap Start > Settings > System tab > About > Device ID tab, change your device name, and try again."
+    12205                   "A device with the same name is already on the network. Tap Start > Settings > System tab > About > Device ID tab, change your device name, and try again."
+    12206                   "Error disconnecting resource: %1!d!"
+    12207                   "Save Password?"
+END
+
+STRINGTABLE 
+BEGIN
+    12208                   "%s on %s"
+    12209                   "Cannot obtain a server-assigned IP address. Try again later or enter an IP address in Network settings."
+    12210                   "Your IP address lease has expired. DHCP cannot renew your lease."
+    12211                   "A DHCP Server could not be contacted. Using cached lease information."
+    12212                   "Print job %1!u! on queue \\\\%2!S!\\%3!S! has finished printing.\nSize of job is %4!u! bytes."
+    12213                   "Status for print job %1!u! on queue \\\\%2!S!\\%3!S!:\n%4!s!"
+    12214                   "The printer is offline"
+    12215                   "The printer is out of paper"
+    12216                   "Unrecognized printer error"
+    12217                   "Network error occurred. Will not receive further notifications for this job."
+    12218                   "Error installing USB driver %1!s!"
+END
+
+STRINGTABLE 
+BEGIN
+    12032                   "Enter the name of the device driver for this device. For information, see the device manufacturer's documentation."
+    12033                   "Not connected"
+END
+
+STRINGTABLE 
+BEGIN
+    12134                   "Warning"
+END
+
+STRINGTABLE 
+BEGIN
+    12272                   "New Network Detected"
+    12274                   "Multiple Networks Detected"
+    12275                   "%1 (or work via a VPN)"
+    12281                   "The selected configuration is not valid. Please check your settings."
+END
+
+STRINGTABLE 
+BEGIN
+    12600                   "Network Key Required"
+    12601                   "Network Key"
+    12602                   "Incorrect Network Key"
+    12605                   "To connect to %1, enter the network key."
+    12606                   "Enter a network key and tap Connect. If a key is not required, just tap Connect."
+    12607                   "The network key is incorrect. It must be at least 8 characters. Enter the correct key and tap Connect."
+END
+
+STRINGTABLE 
+BEGIN
+    12608                   "The network key is incorrect. It must be 5, 10, 13, or 26 characters in length. Enter the correct key and tap Connect."
+    12609                   "The network key is incorrect. Enter the correct key and tap Connect."
+END
+
+STRINGTABLE 
+BEGIN
+    12666                   "%1 [Security-enabled]"
+    12667                   "%1 [Unsecured]"
+END
+
+STRINGTABLE 
+BEGIN
+    12321                   "General"
+    12331                   "Network Key"
+END
+
+STRINGTABLE 
+BEGIN
+    12343                   "802.1x"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_WZC_WIFI_POWERON    "Turn On Wi-Fi"
+    IDS_WZC_WIFI_POWEROFF   "Turn Off Wi-Fi"
+    12678                   "No visible networks detected. Windows Mobile will continue to search for networks periodically."
+END
+
+STRINGTABLE 
+BEGIN
+    12390                   "Establishing Connection"
+    12391                   "Network Card"
+END
+
+STRINGTABLE 
+BEGIN
+    12400                   "Server Validation Error"
+    12401                   "The server certificate is issued by an unknown authority."
+    12402                   "The server certificate has expired or your system date is incorrect."
+    12403                   "The server certificate is not valid."
+    12404                   "Unknown certificate error."
+    12410                   "Never"
+    12411                   "30 seconds"
+    12412                   "1 minute"
+    12413                   "5 minutes"
+    12414                   "10 minutes"
+    12415                   "30 minutes"
+END
+
+STRINGTABLE 
+BEGIN
+    12424                   "The certificate date is valid."
+    12425                   "The certificate is from a trusted certifying authority."
+    12426                   "The certificate has a valid name matching the name of the page you are trying to view."
+END
+
+STRINGTABLE 
+BEGIN
+    7210                    "1"
+    7211                    "2abc"
+    7212                    "3def"
+    7213                    "4ghi"
+    7214                    "5jkl"
+    7215                    "6mno"
+END
+
+STRINGTABLE 
+BEGIN
+    7216                    "7pqrs"
+    7217                    "8tuv"
+    7218                    "9wxyz"
+    7219                    " "
+    7220                    "0+"
+    7221                    " "
+    7222                    "Clear"
+    7223                    "Cancel"
+    7224                    " "
+    7225                    "Enter"
+    7230                    "Talk"
+    7231                    "End"
+END
+
+STRINGTABLE 
+BEGIN
+    7240                    "*"
+    7241                    "#"
+END
+
+STRINGTABLE 
+BEGIN
+    7100                    "Enter PIN."
+    7101                    "The SIM card is missing."
+    7102                    "SIM card blocked.  Please enter the PUK."
+    7103                    "Enter new PIN. PIN must be between 4 and 8 digits in length."
+END
+
+STRINGTABLE 
+BEGIN
+    7104                    "Reenter new PIN for confirmation."
+    7105                    "Enter PIN."
+    7106                    "The SIM card is not valid."
+    7108                    "Unsupported PIN."
+    7109                    "Reenter your PIN."
+    7110                    "The wireless radio is not present."
+    7111                    "The phone is off. Turn it on and try again."
+    7112                    "Enter old PIN."
+    7113                    "PIN security must be activated to change your PIN. Select the Require PIN when phone is in use check box."
+    7114                    "Unknown SIM status."
+    7115                    "Waiting..."
+END
+
+STRINGTABLE 
+BEGIN
+    7120                    "Enter PIN2."
+    7123                    "Enter new PIN2. PIN must be between 4 and 8 digits in length."
+    7124                    "Reenter new PIN2 for confirmation."
+    7125                    "Enter PIN2."
+    7126                    "Enter old PIN2."
+    7127                    "Unsupported PIN2."
+END
+
+STRINGTABLE 
+BEGIN
+    7150                    "New PIN does not match. Reenter new PIN for confirmation."
+    7151                    "Incorrect PIN. Reenter PIN for confirmation."
+END
+
+STRINGTABLE 
+BEGIN
+    7153                    "The unblock code is not valid. Contact your service provider for assistance."
+    7154                    "Incorrect old PIN. Reenter old PIN for confirmation."
+    7155                    "The new PIN is not valid. The PIN must be between 4 and 8 digits long."
+    7156                    "The PIN is not valid. The PIN must be between 4 and 8 digits long."
+    7157                    "Unknown SIM error."
+END
+
+STRINGTABLE 
+BEGIN
+    7184                    "PIN disabled."
+    7185                    "PIN enabled."
+    7186                    "Only emergency calls can be made without a PIN."
+    7187                    "Settings"
+    7188                    "You can still make emergency calls if your service provider supports it."
+    7189                    "Emergency call"
+    7191                    "PIN2 accepted."
+    7192                    "PIN2 changed."
+    7193                    "PIN2 disabled."
+    7194                    "PIN2 enabled."
+END
+
+STRINGTABLE 
+BEGIN
+    7181                    "SIM unblocked and PIN accepted."
+    7182                    "PIN accepted."
+    7183                    "PIN changed."
+END
+
+STRINGTABLE 
+BEGIN
+    7265                    "%1 %2!u! attempt remaining."
+    7266                    "%1 %2!u! attempts remaining."
+END
+
+#endif    // ¿µ¾î(¹Ì±¹) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

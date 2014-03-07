@@ -1,0 +1,146 @@
+//
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+//
+//
+// Use of this source code is subject to the terms of the Microsoft
+// premium shared source license agreement under which you licensed
+// this source code. If you did not accept the terms of the license
+// agreement, you are not authorized to use this source code.
+// For the terms of the license, please see the license agreement
+// signed by you and Microsoft.
+// THE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES OR INDEMNITIES.
+//
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_HTTPS_TO_HTTP_ZONE_CROSSING DIALOG  0, 0, 138, 121
+STYLE WS_POPUP | WS_VISIBLE
+CAPTION "Security Alert"
+BEGIN
+
+    ICON            IDI_SECURITY2,-1,6,6,21,20
+    LTEXT           "You are about to leave a secure Internet connection.  It will be possible for others to view information you send.",
+                    -1,32,6,95,36
+    LTEXT           "Do you want to continue?",-1,32,48,95,8
+    CONTROL         "&In the future, do not show this warning",
+                    IDC_DONT_WANT_WARNING,"Button",BS_AUTOCHECKBOX | 
+                    BS_MULTILINE | WS_TABSTOP,28,64,100,21
+END
+
+IDD_SEC_CERT_ERRORS DIALOG  0, 0, 142, 160
+STYLE WS_POPUP | WS_VISIBLE
+CAPTION "Security Alert"
+BEGIN
+    ICON            IDI_SECURITY2,-1,5,5,20,20
+    LTEXT           "Information you exchange with this site cannot be viewed or changed by others. However, there is a problem with the site's security certificate.",
+                    -1,28,5,104,41
+    LTEXT           "The certificate was issued by a company you have not chosen to trust.",
+                    IDC_CERT_TRUST_TEXT,40,48,92,26
+    LTEXT           "The certificate has expired or is not yet valid.",
+                    IDC_CERT_DATE_TEXT,40,74,92,20
+    LTEXT           "The name on the certificate is not valid or does not match the name of the site."
+                    IDC_CERT_NAME_TEXT,40,94,92,33
+    ICON            "",IDC_CERT_TRUST_ICON,28,49,20,20
+    ICON            "",IDC_CERT_DATE_ICON,28,75,20,20
+    ICON            "",IDC_CERT_NAME_ICON,28,95,20,20
+    LTEXT           "Do you want to proceed?",-1,28,127,104,8
+END
+
+
+IDD_HTTP_POST_REDIRECT DIALOG  0, 0, 140, 140
+STYLE WS_POPUP | WS_VISIBLE
+CAPTION "Internet Redirection"
+BEGIN
+    ICON            IDI_SECURITY1,-1,6,6,21,20
+    LTEXT           "You are about to be redirected to a new internet site.",
+                    -1,32,6,102,20
+    LTEXT           "Any information you exchanged with the current site could be retransmitted to the new internet site you are about to connect with.  Do you wish to continue?",
+                    -1,32,28,102,60
+    CONTROL         "&In the future, do not show this warning",
+                    IDC_DONT_WANT_WARNING,"Button",BS_AUTOCHECKBOX | 
+                    BS_MULTILINE | WS_TABSTOP,28,85,100,21
+END
+
+IDD_WARN_ON_POST DIALOG  0, 0, 140, 140
+STYLE WS_POPUP | WS_VISIBLE
+CAPTION "Security Alert"
+BEGIN
+    ICON            IDI_SECURITY3,-1,6,6,21,20
+    LTEXT           "You are about to send information over the Internet. It might be possible for other people to see what you are sending.",
+                    -1,32,6,99,50
+    CONTROL         "&In the future, do not show this warning",
+                    IDC_DONT_WANT_WARNING,"Button",BS_AUTOCHECKBOX | 
+                    BS_MULTILINE | WS_TABSTOP,28,68,100,21
+END
+
+IDD_HTTPS_TO_HTTP_SUBMIT_REDIRECT DIALOG  0, 0, 140, 140
+STYLE WS_POPUP | WS_VISIBLE
+CAPTION "Security Alert"
+BEGIN
+    ICON            IDI_SECURITY2,-1,7,8,21,20
+    LTEXT           "You are about to be redirected to a connection that is not secure.",
+                    -1,34,8,99,40
+    LTEXT           "The information you are sending to the current site might be retransmitted to a nonsecure site. Do you wish to continue?",
+                    -1,34,50,99,50
+END
+
+IDD_MIXED_SECURITY DIALOG  0, 0, 140, 140
+STYLE WS_POPUP | WS_VISIBLE
+CAPTION "Security Information"
+BEGIN
+    ICON            IDI_SECURITY2,-1,7,8,21,20
+    LTEXT           "This page contains both secure and nonsecure items.",
+                    -1,34,8,99,40
+    LTEXT           "Do you want to continue?",
+                    -1,34,50,99,50
+END
+
+
+IDD_REVOCATION_PROBLEM DIALOG  0, 0, 140, 140
+STYLE WS_POPUP | WS_VISIBLE
+CAPTION "Security Alert"
+BEGIN
+    ICON            IDI_SECURITY2,-1,6,6,21,20
+    LTEXT           "Revocation information for the security certificate for this site is not available. Do you want to proceed?",
+                    -1,32,8,102,40
+END
+
+IDD_URLMON DIALOG  0, 0, 140, 140
+STYLE WS_POPUP | WS_VISIBLE
+CAPTION "Security Alert"
+BEGIN
+    ICON            IDI_SECURITY3,-1,6,6,21,20
+    LTEXT           "",
+                    IDC_URLMON_ALERT_TEXT,32,6,99,50
+    CONTROL         "&In the future, do not show this message",
+                    IDC_DONT_WANT_WARNING,"Button",BS_AUTOCHECKBOX | 
+                    BS_MULTILINE | WS_TABSTOP,28,68,100,21
+END
+
+// our softkeys
+IDR_INETUI_DIALOGYESNO RCDATA DISCARDABLE
+BEGIN
+    0,     // No menu
+    2,     // Count of buttons
+    I_IMAGENONE, IDOK,TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE, IDS_YES, 0, NOMENU,
+    I_IMAGENONE, IDCANCEL, TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE, IDS_NO, 0, NOMENU,
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_CERT_TRUST          "The certificate is from a trusted certifying authority."
+    IDS_CERT_DATE           "The certificate date is valid."
+    IDS_CERT_NAME           "The certificate has a valid name matching the name of the page you are trying to view."
+END

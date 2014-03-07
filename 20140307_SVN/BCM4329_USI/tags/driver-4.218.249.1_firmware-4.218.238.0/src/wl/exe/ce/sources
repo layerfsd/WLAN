@@ -1,0 +1,26 @@
+#
+# Internal sources file (do not release)
+#
+# Copyright (C) 2001 Broadcom Corporation
+#
+# $Id: sources,v 1.6.102.2.8.3 2009/08/07 17:41:40 Exp $
+#
+
+TARGETNAME=wl
+
+include sources.common
+
+C_DEFINES +=  -DWIN32 -DRWL_DONGLE -DRWL_SOCKET -DRWL_WIFI -DRWLASD
+C_DEFINES +=-D_MD
+C_DEFINES +=-D_REENTRANT
+C_DEFINES +=-D_CONSOLE
+#C_DEFINES +=-DWFA_WMM_EXT 
+#C_DEFINES +=-DWFA_WMM_PS_EXT 
+#C_DEFINES +=-DWFA_WMM_VOICE
+C_DEFINES +=-DRWL
+C_DEFINES +=-DBCMSUP_LEAP
+
+SOURCES=wlu.c wlu_ndis.c wlu_client_shared.c wlu_cmd.c wlu_iov.c ir_ce.c bcmutils.c bcmwifi.c  bcmstdlib.c wlu_pipe.c wlu_pipe_win32.c miniopt.c
+
+OTHER_SOURCES=sources.ttcp sources.serial sources.socket sources.wifi
+

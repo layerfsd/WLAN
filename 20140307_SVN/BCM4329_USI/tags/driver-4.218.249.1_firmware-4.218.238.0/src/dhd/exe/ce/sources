@@ -1,0 +1,14 @@
+#
+# Internal sources file (do not release)
+#
+# Copyright (C) 2001 Broadcom Corporation
+#
+# $Id: sources,v 1.5.158.1 2008/11/20 00:20:32 Exp $
+#
+
+TARGETNAME=dhd
+
+include sources.common
+
+SOURCES=dhdu.c bcmutils.c dhdu_ndis.c ir_ce.c bcmstdlib.c miniopt.c
+

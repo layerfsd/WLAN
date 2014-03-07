@@ -1,0 +1,106 @@
+; WifiMgr.def : DLL에 대한 모듈 매개 변수를 정의합니다.
+
+LIBRARY      "WifiMgr"
+
+EXPORTS
+    ; 명시적 내보내기를 여기에 사용할 수 있습니다.
+	RegisterIPClass                  @1
+	UnregisterIPClass                @2
+	GetIPAddress                     @3
+	GetUsernamePassword              @4
+	LineConfigEdit                   @5
+	LineTranslateDialog              @6
+	GetNetString                     @7
+
+
+	ConnectionDialog                 @8
+	DisconnectDialog                 @9
+
+
+	NetMsgBox                        @10
+	GetResourcePassword              @11
+	AdapterIPProperties              @12
+	GetDriverName                    @13
+	AddNetUISystrayIcon              @14
+	RemoveNetUISystrayIcon           @15
+	ClosePropSheetDialog             @16
+	ClosePropSheetDialogIfReady      @17
+	IsPropSheetDialogMessage         @18
+	UpdateConnectionStatus           @19
+
+	ShowCertificate                  @20
+	PickCertificate                  @21
+
+	RasEapInvokeConfigUI             @22
+	RasEapFreeMemory                 @23
+	RasEapInvokeInteractiveUI        @24 
+	RasEapGetIdentity		 @25
+
+    GetUsernamePasswordEx            @26
+    CloseUsernamePasswordDialog      @27
+
+    ; wzcshell (NO ORDINAL DEPENDENCIES)
+    SHWZCCreateCallback              @28
+    SHWZCDestroyCallback             @29
+    SHWZCApplyChanges                @30
+    SHWZCGetState                    @31
+    SHWZCSetState                    @32
+    SHWZCRescanNetworks              @33
+    SHWZCGetAllNetworks              @34
+    SHWZCGetNetwork                  @35
+    SHWZCSetNetwork                  @36
+    SHWZCGetDestinationGUID          @37
+    SHWZCSetDestinationGUID          @38
+    SHWZCEnumDestinations            @39
+    SHWZCEnumAuthenticationTypes     @40
+    SHWZCEnumEncryptionTypes         @41
+    SHWZCConfigureEAPData            @42
+    SHWZCCreateDefaultNetwork        @43
+    SHWZCCopySettings                @44
+    SHWZCDeleteNetwork               @45
+    SHWZCDeleteAllNetworks           @46
+    SHWZCGetDisplayFlags             @47
+    SHWZCValidateKey                 @48
+    SHWZCGetHardwareFlags            @49
+    SHWZCValidateNetworkName         @50
+    SHWZCIsDuplicateName             @51
+
+    ShowCertificateFromHash          @52
+
+    ; wininet
+    LaunchWininetDialog              @53
+    LaunchUrlmonDialog               @54
+
+    ; more wzcshell (NO ORDINAL DEPENDENCIES)
+    SHWZCCreateEAPList               @55
+    SHWZCDestroyEAPList              @56
+    SHWZCSetEAPData                  @57
+    SHWZCGetEAPData                  @58
+    SHWZCConnectNetwork              @59
+    SHWZCGetSignalStrength           @60
+    SHWZCIsPermanentNetwork          @61
+
+    SHWZCSetPowerState               @62
+    SHWZCGetPowerState               @63
+
+    ; Helper function for use by both PPC and TPC WiFi UI
+    SHWZCGetWiFiStatusString         @64
+
+    SHWZCSetNotificationState        @65
+    SHWZCGetNotificationState        @66
+
+    SHWZCSetWifiTimeoutPeriod        @67
+    SHWZCGetWifiTimeoutPeriod        @68
+
+    SHWZCIsEAPExtensionValid         @69
+    SHWZCValidateSecurityConfig      @70
+    
+
+	NetCardsSettingDialog            @100 NONAME   ; imported by ordinal from cplmain.cpl
+
+
+
+
+    ; Necessary for the today screen plugin.
+    InitializeCustomItem             @240           ; This ordinal must NOT change
+

@@ -1,0 +1,18 @@
+#
+# Internal sources file (do not release)
+#
+# Copyright (C) 2001 Broadcom Corporation
+#
+# $Id: sources.wlm,v 1.1.4.1 2009/06/03 00:04:20 Exp $
+#
+
+TARGETTYPE=PROGRAM
+TARGETNAME=wlm
+
+include sources.common
+
+C_DEFINES +=-DRWLASD -DRWL_DONGLE -DRWL_SOCKET -DRWL_WIFI -DRWL_SERIAL -DWLMSO
+
+SOURCES += wlm.c
+
+TARGETPATH=obj/$(TARGETNAME)/$(WINCEVER)/$(PROCESSOR)

@@ -1,0 +1,32 @@
+
+TARGETNAME=athdrvlogview
+TARGETTYPE=PROGRAM
+
+EXEENTRY=WinMainCRTStartup
+
+AR6K_PROJ_ROOT=..\..\..\..
+
+!INCLUDE $(AR6K_PROJ_ROOT)\sources.inc
+
+TARGETLIBS=  \
+			$(_SYSGENSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib  \
+             $(_SYSGENSDKROOT)\lib\$(_CPUINDPATH)\commctrl.lib 
+
+!IF (("$(_TGTPROJ)" == "wpc") || ("$(_TGTPROJ)" == "smartfon"))
+TARGETLIBS=$(TARGETLIBS) \
+			$(_SYSGENSDKROOT)\lib\$(_CPUINDPATH)\aygshell.lib
+!ENDIF
+
+
+RELEASETYPE=PLATFORM
+
+WINCEOEM=1
+
+INCLUDES=$(INCLUDES) \
+         $(_SYSGENOAKROOT)\inc; \
+         $(_SYSGENDDKROOT)\inc; \
+         $(_WINCEROOT)\PUBLIC\$(_TGTPROJ)\cesysgen\sdk\inc; \
+         inc;       \
+
+SOURCES=main.c \
+        appresource.rc

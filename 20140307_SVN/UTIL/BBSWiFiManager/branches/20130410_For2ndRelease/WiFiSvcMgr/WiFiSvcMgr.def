@@ -1,0 +1,10 @@
+LIBRARY	"WiFiSvcMgr"
+
+EXPORTS
+	WSM_Init
+	WSM_Deinit
+	WSM_Open
+	WSM_Close
+	WSM_Read
+	WSM_Write
+	WSM_IOControl

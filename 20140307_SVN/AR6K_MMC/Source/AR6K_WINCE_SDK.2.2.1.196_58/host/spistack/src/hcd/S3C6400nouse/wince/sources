@@ -1,0 +1,38 @@
+TARGETNAME=athspi_s3c6400
+TARGETTYPE=DYNLINK
+DEFFILE=ath_spi_s3c6400.def
+DLLENTRY=DllEntry
+
+CDEFINES=$(CDEFINES)
+         
+TARGETLIBS=                                                          \
+    $(_SYSGENSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib                 \
+    $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\athspi_buslib.lib          \
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\athspi_buscore.lib         \
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\athspi_hcd_common.lib      \
+	$(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\ceddk.lib	\
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\DriverLib.lib
+	
+CDEFINES=$(CDEFINES)
+
+AR6K_SPI_ROOT=..\..\..\..\
+
+INCLUDES=$(INCLUDES) \
+         $(_SYSGENSDKROOT)\inc; \
+         $(_SYSGENOAKROOT)\inc; \
+         $(_SYSGENDDKROOT)\inc; \
+         $(AR6K_SPI_ROOT)\src\include; \
+         $(AR6K_SPI_ROOT)\src\hcd\athspi_common; \
+         $(AR6K_SPI_ROOT)\src\hcd\athspi_common\wince; \
+         $(_TARGETPLATROOT)\src\drivers\DMA\s3c6400_dma_lib; \
+         $(_TARGETPLATROOT)\src\inc
+         
+
+SOURCELIBS=\
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\s3c6400_dma_lib.lib	\
+	
+RELEASETYPE=PLATFORM
+WINCEOEM=1
+
+SOURCES= ath_spi_hw_drv.c \
+         ath_spi_stream.c

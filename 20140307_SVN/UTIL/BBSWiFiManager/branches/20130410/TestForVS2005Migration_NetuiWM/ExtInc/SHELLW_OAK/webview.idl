@@ -1,0 +1,825 @@
+//
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+//
+//
+// Use of this source code is subject to the terms of the Microsoft
+// premium shared source license agreement under which you licensed
+// this source code. If you did not accept the terms of the license
+// agreement, you are not authorized to use this source code.
+// For the terms of the license, please see the license agreement
+// signed by you and Microsoft.
+// THE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES OR INDEMNITIES.
+//
+/////////////////////////////////////////////////////////////////////////////
+//
+//  WEBVIEW.IDL
+//
+//  Description:
+//      IDL source for private interfaces in webview.dll
+//
+//
+/////////////////////////////////////////////////////////////////////////////
+#include <wvdispid.h>
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "urlmon.idl";
+import "webvw.idl";
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// !!!!! IMPORTANT !!!!!
+//
+// Please note that the IBrowser, IBrowser2, and IBrowser3 interfaces are
+// deprecated, and will be completely removed in subsequent versions of
+// Pocket IE. Please refer to PIEDOCVW.IDL, PIEDOCVW.H, and the Pocket PC
+// or Smartphone SDK for more information on replacement interfaces
+// for this functionality.
+//
+// !!!!! IMPORTANT !!!!!
+//
+/////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////
+// IBrowser
+/////////////////////////////////////////////////////////////////////////////
+[
+    object,
+    uuid(698E3FC9-70C3-11D0-81E8-00A0C90AD20A),
+    dual,
+    pointer_default(unique)
+]
+interface IBrowser : IDispatch
+{
+    // Methods
+    [id(DISPID_BROWSERNAVIGATE)]
+    HRESULT navigate([in] BSTR bstrURL, [in] long dwFlags, [in] BSTR bstrTargetFrameName, [in] BSTR bstrPostData);
+
+    [id(DISPID_BROWSERREFRESH)]
+    HRESULT Refresh();
+
+    [id(DISPID_BROWSERSTOP)]
+    HRESULT Stop();
+
+    // Properties
+    [propget, id(DISPID_BROWSERBUSY)]
+    HRESULT Busy([out, retval] BOOL *pVal);
+
+    [propget, id(DISPID_BROWSERTITLE)]
+    HRESULT title([out, retval] BSTR *pVal);
+
+    [propget, id(DISPID_BROWSERLOCATION)]
+    HRESULT LocationURL([out, retval] BSTR *pVal);
+
+    [propget, id(DISPID_BROWSERISFRAME)]
+    HRESULT IsFrame([out, retval] VARIANT_BOOL * pvbIsFrame);
+    [propput, id(DISPID_BROWSERISFRAME)]
+    HRESULT IsFrame([in] VARIANT_BOOL vbIsFrame);
+
+    [propget, id(DISPID_BROWSERSCROLLSTYLE)]
+    HRESULT ScrollStyle([out, retval] long *pVal);
+    [propput, id(DISPID_BROWSERSCROLLSTYLE)]
+    HRESULT ScrollStyle([in] long newVal);
+
+    [propget, id(DISPID_BROWSERMARGINWIDTH)]
+    HRESULT MarginWidth([out, retval] long *pVal);
+    [propput, id(DISPID_BROWSERMARGINWIDTH)]
+    HRESULT MarginWidth([in] long newVal);
+
+    [propget, id(DISPID_BROWSERMARGINHEIGHT)]
+    HRESULT MarginHeight([out, retval] long *pVal);
+    [propput, id(DISPID_BROWSERMARGINHEIGHT)]
+    HRESULT MarginHeight([in] long newVal);
+
+    [id(DISPID_BROWSERFRAMENAVIGATE)]
+    HRESULT FrameNavigate(BSTR bstrURL, BSTR bstrTarget, BSTR bstrSource, BSTR bstrPostData, BOOL *Cancel);
+
+    [propget, id(DISPID_BROWSERSELECTEDCODEPAGE)]
+    HRESULT SelectedCodepage([out, retval] long *pVal);
+    [propput, id(DISPID_BROWSERSELECTEDCODEPAGE)]
+    HRESULT SelectedCodepage([in] long newVal);
+
+    [propget, id(DISPID_BROWSERPOINTER)]
+    HRESULT CBrowserPointer([out, retval] long *pVal);
+};
+    
+/////////////////////////////////////////////////////////////////////////////
+// IBrowser2
+/////////////////////////////////////////////////////////////////////////////
+[
+    object,
+    uuid(698E3FFF-70C3-11D0-81E8-00A0C90AD20A),
+    dual,
+    pointer_default(unique)
+]
+interface IBrowser2 : IBrowser
+{
+    // Properties
+    [propget, id(DISPID_BROWSERLAYOUTWIDTH)]
+    HRESULT LayoutWidth([out, retval] int * piLayoutWidth);
+
+    [propget, id(DISPID_BROWSERLAYOUTHEIGHT)]
+    HRESULT LayoutHeight([out, retval] int * piLayoutHeight);
+
+    [propget, id(DISPID_BROWSERLOCATIONBASEURL)]
+    HRESULT LocationBaseURL([out, retval] BSTR * bstrBaseLocationURL);
+    [propput, id(DISPID_BROWSERLOCATIONBASEURL)]
+    HRESULT LocationBaseURL([in] BSTR bstrBaseLocationURL);
+
+    [propget, id(DISPID_BROWSERCLEARTYPEENABLED)]
+    HRESULT ClearTypeEnabled([out, retval] VARIANT_BOOL * pbClearTypeEnabled);
+    [propput, id(DISPID_BROWSERCLEARTYPEENABLED)]
+    HRESULT ClearTypeEnabled([in] VARIANT_BOOL bClearTypeEnabled);
+
+    [propget, id(DISPID_BROWSERSCRIPTINGENABLED)]
+    HRESULT ScriptingEnabled([out, retval] VARIANT_BOOL * pbScriptingEnabled);
+    [propput, id(DISPID_BROWSERSCRIPTINGENABLED)]
+    HRESULT ScriptingEnabled([in] VARIANT_BOOL bScriptingEnabled);
+
+    [propget, id(DISPID_BROWSERFITTOWINDOW)]
+    HRESULT FitToWindow([out, retval] VARIANT_BOOL * pbFitToWindow);
+    [propput, id(DISPID_BROWSERFITTOWINDOW)]
+    HRESULT FitToWindow([in] VARIANT_BOOL bFitToWindow);
+
+    [propget, id(DISPID_BROWSERSHOWIMAGES)]
+    HRESULT ShowImages([out, retval] VARIANT_BOOL * pbShowImages);
+    [propput, id(DISPID_BROWSERSHOWIMAGES)]
+    HRESULT ShowImages([in] VARIANT_BOOL bShowImages);
+
+    [propget, id(DISPID_BROWSERPLAYSOUNDS)]
+    HRESULT PlaySounds([out, retval] VARIANT_BOOL * pbPlaySounds);
+    [propput, id(DISPID_BROWSERPLAYSOUNDS)]
+    HRESULT PlaySounds([in] VARIANT_BOOL bPlaySounds);
+
+    [propget, id(DISPID_BROWSERZOOMLEVEL)]
+    HRESULT ZoomLevel([out, retval] DWORD * pdwZoomLevel);
+    [propput, id(DISPID_BROWSERZOOMLEVEL)]
+    HRESULT ZoomLevel([in] DWORD dwZoomLevel);
+
+}
+
+/////////////////////////////////////////////////////////////////////////////
+// IBrowser3
+/////////////////////////////////////////////////////////////////////////////
+[
+    object,
+    uuid(698E3FFE-70C3-11D0-81E8-00A0C90AD20A),
+    dual,
+    pointer_default(unique)
+]
+interface IBrowser3 : IBrowser2
+{
+    // Properties
+    [propget, id(DISPID_BROWSERDOCUMENT)]
+    HRESULT document([out, retval] IDispatch ** ppDisp);
+
+    [propget, id(DISPID_BROWSERSCRIPT)]
+    HRESULT script([out, retval] IDispatch ** ppDisp);
+
+    [propget, id(DISPID_BROWSERINTEGRALPAGING)]
+    HRESULT IntegralPaging([out, retval] VARIANT_BOOL * pvbIntegralPaging);
+    [propput, id(DISPID_BROWSERINTEGRALPAGING)]
+    HRESULT IntegralPaging([in] VARIANT_BOOL pvbIntegralPaging);
+
+    [propget, id(DISPID_BROWSERCONTEXTMENU)]
+    HRESULT ContextMenuEnabled([out, retval] VARIANT_BOOL * pvbContextMenu);
+    [propput, id(DISPID_BROWSERCONTEXTMENU)]
+    HRESULT ContextMenuEnabled([in] VARIANT_BOOL pvbContextMenu);
+
+    [propget, id(DISPID_BROWSERACTIVEXENABLED)]
+    HRESULT ActiveXEnabled([out, retval] VARIANT_BOOL * pvbActiveXEnabled);
+    [propput, id(DISPID_BROWSERACTIVEXENABLED)]
+    HRESULT ActiveXEnabled([in] VARIANT_BOOL vbActiveXEnabled);
+
+    [propget, id(DISPID_BROWSERSELECTIONENABLED)]
+    HRESULT SelectionEnabled([out, retval] VARIANT_BOOL * pvbSelectionEnabled);
+    [propput, id(DISPID_BROWSERSELECTIONENABLED)]
+    HRESULT SelectionEnabled([in] VARIANT_BOOL vbSelectionEnabled);
+
+    [propget, id(DISPID_BROWSERCANCOPY)]
+    HRESULT CanCopy([out, retval] VARIANT_BOOL * pvbCanCopy);
+
+    [propget, id(DISPID_BROWSERFOCUSRECTENABLED)]
+    HRESULT FocusRectEnabled([out, retval] VARIANT_BOOL * pvbFocusRectEnabled);
+    [propput, id(DISPID_BROWSERFOCUSRECTENABLED)]
+    HRESULT FocusRectEnabled([in] VARIANT_BOOL bFocusRectEnabled);
+
+    [propget]
+    HRESULT SuperFitToWindow([out, retval] VARIANT_BOOL * pbSuperFitToWindow);
+    [propput]
+    HRESULT SuperFitToWindow([in] VARIANT_BOOL bSuperFitToWindow);
+    
+    [propget]
+    HRESULT FourWayNav([out, retval] VARIANT_BOOL * pbFourWayNav);
+    [propput]
+    HRESULT FourWayNav([in] VARIANT_BOOL bFourWayNav);
+
+    // Methods
+    HRESULT addStyle([in] BSTR bstrStyle);
+};
+
+// Service ID for the above IBrowser* interfaces
+cpp_quote("#define SID_SWebViewBrowser     IID_IBrowser")
+cpp_quote("")
+
+// WebView command target group ID.
+// {004B5D09-FD9B-4ce3-A4DB-2E965434FCD7}
+cpp_quote("DEFINE_GUID(CGID_WebView,0x4b5d09, 0xfd9b, 0x4ce3, 0xa4, 0xdb, 0x2e, 0x96, 0x54, 0x34, 0xfc, 0xd7);")
+
+//
+// IOleCmdTarget IDs for WEBVIEW.
+//
+typedef enum WEBVWCMDID {
+
+   WEBVWCMDID_BATCHMODE                 = 1,
+   WEBVWCMDID_FASTMODE                  = 2,
+   WEBVWCMDID_ROUNDED_DPI_SCALING       = 3,
+   WEBVWCMDID_GET_DOCUMENT              = 4,
+   WEBVWCMDID_GET_FITTOWINDOW           = 5,
+   WEBVWCMDID_PUT_FITTOWINDOW           = 6,
+   WEBVWCMDID_GET_SUPERFITTOWINDOW      = 7,
+   WEBVWCMDID_PUT_SUPERFITTOWINDOW      = 8,
+   WEBVWCMDID_GET_ZOOMLEVEL             = 9,
+   WEBVWCMDID_PUT_ZOOMLEVEL             = 10,
+   WEBVWCMDID_GET_LAYOUTHEIGHT          = 11,
+   WEBVWCMDID_GET_LAYOUTWIDTH           = 12,
+   WEBVWCMDID_PUT_IFRAMEENABLED         = 13,
+   WEBVWCMDID_PUT_ZOOMSCALES            = 14,
+   WEBVWCMDID_GET_2WAYNAVMODE           = 15,
+   WEBVWCMDID_PUT_2WAYNAVMODE           = 16,
+   WEBVWCMDID_PUT_PUMPMESSAGESENABLED   = 17,
+   WEBVWCMDID_PUT_SHOWIMAGES            = 18,
+   WEBVWCMDID_GET_VIEWER_STATE          = 19,
+   WEBVWCMDID_COPYSELECTIONTONEWISTREAM = 20,
+   WEBVWCMDID_ADDSTYLE                  = 21,
+   WEBVWCMDID_GET_LOCATIONBASEURL       = 22,
+   WEBVWCMDID_ADDUSERSTYLE              = 23,
+   WEBVWCMDID_PUT_SELECTEDCODEPAGE      = 24,
+   WEBVWCMDID_GET_SELECTEDCODEPAGE      = 25,
+   WEBVWCMDID_GET_DOCUMENTCODEPAGE      = 26,
+   WEBVWCMDID_PUT_ANIMATIONENABLED      = 27,
+   WEBVWCMDID_FITTOWINDOWVIEW           = 28,
+   WEBVWCMDID_DESKTOPVIEW               = 29,
+   WEBVWCMDID_PUT_IFRAMEDEPTH           = 30,
+   WEBVWCMDID_PUT_ACTIVEXENABLED        = 31,
+   WEBVWCMDID_SETSELECTIONMODE          = 32,
+   WEBVWCMDID_SELECTALLSPECIAL          = 33,
+   WEBVWCMDID_SELECTALLABOVEVIEW        = 34,
+   WEBVWCMDID_SELECTALLINVIEWANDBELOW   = 35,
+   WEBVWCMDID_GET_FOCUSEDELEMENTISTEXTCONTROL = 36,
+   WEBVWCMDID_FORM_CUT                  = 37,
+   WEBVWCMDID_FORM_COPY                 = 38,
+   WEBVWCMDID_FORM_PASTE                = 39,
+   WEBVWCMDID_FORM_SELECTALL            = 40,
+   WEBVWCMDID_FORM_GET_SELECTION        = 41,
+   WEBVWCMDID_OPEN_CLIPBOARDAPP         = 42,
+   WEBVWCMDID_FOCUSEDTEXTCONTROLISEMPTY = 43,
+   WEBVWCMDID_PAGEOVERVIEW_ZOOMOUT      = 44,
+   WEBVWCMDID_PAGEOVERVIEW_ZOOMIN       = 45,
+   WEBVWCMDID_PAGEOVERVIEW_CANCEL       = 46,
+   WEBVWCMDID_HASTEXT                   = 47,
+   WEBVWCMDID_GET_FOCUSEDELEMENTISPASSWORDCONTROL = 48,
+
+} WEBVWCMDID;
+
+//
+// Flags for changing view with WEBVWCMDID_FITTOWINDOWVIEW 
+// or WEBVWCMDID_DESKTOPVIEW.
+//
+typedef enum VIEWCHANGE_RELAYOUT {
+    RELAYOUT_NORMAL                     = 0,
+    RELAYOUT_MINIMAL                    = 1
+} VIEWCHANGE_RELAYOUT;
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// ILegacyHtml
+/////////////////////////////////////////////////////////////////////////////
+[
+    object,
+    local,
+    uuid(698E3FCB-70C3-11D0-81E8-00A0C90AD20A),
+    pointer_default(unique)
+]
+interface ILegacyHtml : IUnknown
+{
+    // Properties
+    [propput]
+    HRESULT NotificationHwnd([in] HWND newVal);
+
+    [propput]
+    HRESULT Redraw([in] BOOL newVal);
+
+    // Methods
+    HRESULT AddText([in] LPSTR szText, [in] BOOL bPlainText);
+    HRESULT AddTextW([in] LPWSTR szText, [in] BOOL bPlainText);
+    HRESULT JumpToAnchor([in] LPSTR szAnchor);
+    HRESULT JumpToAnchorW([in] LPWSTR szAnchor);
+    HRESULT EndOfSource();
+    HRESULT ImageFail([in] DWORD dwCookie, [in] BOOL bForced);
+    HRESULT SetImage([in] DWORD pIII);
+    HRESULT Clear();
+    HRESULT SelectAll();
+    HRESULT CopySelectionToNewIStream([out, retval] IStream** ppStream);
+
+    // These were added after Merlin ship.  Consider ILegacyHtml2
+    HRESULT AppendTextW([in] LPWSTR szText);
+    HRESULT SetText([in] const void * pvText, [in] UINT cbText, [in] LPCSTR pszEncoding);
+
+    [propput]
+    HRESULT PumpMessagesEnabled([in] VARIANT_BOOL vbPumpMessagesEnabled);
+
+#ifndef SHIP_BUILD
+    HRESULT Dump(LPCWSTR pszFileName);
+#endif  // !SHIP_BUILD
+    HRESULT GetCollectionXML(UINT uCollectionType, WCHAR * pwcBuf, UINT * pchBuf);
+    HRESULT GetViewportOrg(POINT * pptViewportOrg);
+    HRESULT SetCollectionFocus(UINT uCollectionType, UINT uIndex);
+    HRESULT SetImageIStream([in] DWORD dwCookie, [in] IStream* pStream);
+};
+
+/////////////////////////////////////////////////////////////////////////////
+// IHTMLHistoryEntry
+/////////////////////////////////////////////////////////////////////////////
+[
+    object,
+    uuid(698E3FCD-70C3-11D0-81E8-00A0C90AD20A),
+    pointer_default(unique)
+]
+interface IHTMLHistoryEntry : IUnknown
+{
+    // Methods
+    HRESULT Clone(IHTMLHistoryEntry ** ppCloned);
+};
+
+/////////////////////////////////////////////////////////////////////////////
+// IHTMLBackDoor
+/////////////////////////////////////////////////////////////////////////////
+[
+    object,
+    uuid(698E3FCC-70C3-11D0-81E8-00A0C90AD20A),
+    pointer_default(unique)
+]
+interface IHTMLBackDoor : IUnknown
+{
+    // Methods
+    HRESULT Open();
+    HRESULT AddFavorite([in] BSTR bstrURL, [in] BSTR bstrTitle);
+    HRESULT Redirect();
+    HRESULT SetHTMLHistoryData([in] IHTMLHistoryEntry *pHTMLHistory);
+    HRESULT GetHTMLHistoryData([out, retval] IHTMLHistoryEntry **pHTMLHistory);
+    HRESULT GetPendingHTMLHistoryData([out, retval] IHTMLHistoryEntry **pHTMLHistory);
+    HRESULT FakeNavigateComplete([in] BOOL bResetHistoryState);
+    HRESULT Back();
+    HRESULT Forward();
+    HRESULT Refresh();
+    HRESULT get_HistoryLength([out, retval] long *plHistoryLength);    
+};
+
+/////////////////////////////////////////////////////////////////////////////
+// IViewerState
+/////////////////////////////////////////////////////////////////////////////
+[
+    object,
+    uuid(E4CA7C27-6EC1-4137-8652-20665B668C4A),
+    pointer_default(unique)
+]
+interface IViewerState : IUnknown
+{
+    HRESULT Save(); 
+    HRESULT OnNavigateComplete();
+    HRESULT Load();
+}
+
+// forward declaration
+interface IDownloadRequestSink;
+interface IInetConn;
+
+/////////////////////////////////////////////////////////////////////////////
+// IRequestManager
+/////////////////////////////////////////////////////////////////////////////
+
+// Flags to pass to the request when it is created.
+enum _CREATE_FLAGS
+{
+    eCREATE_TOPLEVEL            = 0x01L,
+    eCREATE_HIDESTATUSPROGRESS  = 0x02L,
+    eCREATE_DEPENDENT           = 0x04L,
+    eCREATE_FILEDOWNLOAD        = 0x08L
+};
+
+typedef enum _CREATE_FLAGS CREATE_FLAGS;
+
+[
+    object,
+    local,
+    uuid(3A4F8F5F-62CE-47e7-815F-4451D414695F),
+    pointer_default(unique)
+]
+interface IRequestManager : IUnknown
+{
+    // Methods
+    HRESULT Initialize([in] IInetConn * pConnMgr, [in] HWND hwnd);
+    HRESULT OnSettingChange([in] DWORD dwSettingInfo);
+    HRESULT StopRequests([in] DWORD dwID);
+    HRESULT CreateRequest(  [in] DWORD dwID, 
+                            [in] IStream * pPostData,
+                            [in] LPCTSTR pszReferrerUrl,
+                            [in] IDownloadRequestSink * pSink, 
+                            [in] DWORD dwFlags,
+                            [in, defaultvalue(NULL)] HANDLE hDone
+                         );
+};
+
+// manually managed CLSID
+cpp_quote("EXTERN_C const CLSID CLSID_CRequestManager;")
+
+/////////////////////////////////////////////////////////////////////////////
+// IDownloadRequestProvider
+/////////////////////////////////////////////////////////////////////////////
+
+enum _REQUEST_STATE
+{
+    eSTATE_UNKNOWN,
+    eSTATE_NOTSTARTED,
+    eSTATE_STARTED,
+    eSTATE_STARTBINDING,
+    eSTATE_ONPROGRESS,
+    eSTATE_READINGDATA,
+    eSTATE_ONSTOPBINDING,
+    eSTATE_NEEDSCOMPLETION,
+    eSTATE_COMPLETING,
+    eSTATE_COMPLETED,
+};
+
+typedef enum _REQUEST_STATE REQUEST_STATE;
+
+[
+    object,
+    local,
+    uuid(B0DEB0F7-4971-4e9b-B519-3176CDB5233E),
+    pointer_default(unique)
+]
+interface IDownloadRequestProvider : IUnknown
+{
+    // Methods
+    HRESULT Abort();
+    HRESULT Attach([in] IDownloadRequestSink * pSink);
+    HRESULT Detach();
+    HRESULT IsBindComplete([out] BOOL * pbCompleted);
+    HRESULT IsAborted([out] BOOL * pbAborted);
+    HRESULT Complete();
+
+    HRESULT GetState([out] REQUEST_STATE * pState);
+    HRESULT GetContentLength([out] DWORD * pdwcbContentLength);
+    HRESULT GetContentType([out] LPWSTR * ppszContentType);
+    HRESULT GetContentEncoding([out] LPWSTR * ppszContentEncoding);
+    HRESULT GetCacheFileName([out] LPWSTR * ppszCacheFile);
+    HRESULT GetPostData([out] IStream ** ppPostData);
+    HRESULT GetRedirectedUrl([out] LPWSTR * ppszRedirectedUrl);
+    HRESULT GetDataStream([out] IStream ** ppstm);
+    HRESULT GetReferrerUrl([out] LPWSTR * ppszReferrerUrl);
+    HRESULT GetActualLength([out] DWORD * pdwcbActualLength);
+};
+
+
+/////////////////////////////////////////////////////////////////////////////
+// IDownloadRequestSink
+/////////////////////////////////////////////////////////////////////////////
+[
+    object,
+    uuid(8136A912-B1CA-4670-A390-205A2F8200E2),
+    pointer_default(unique)
+]
+interface IDownloadRequestSink : IUnknown
+{
+    // Methods
+    HRESULT Start([in] IDownloadRequestProvider * pProvider, [in] DWORD * pBindFlags);
+    HRESULT SetUrl([in] LPCWSTR pszUrl);
+    HRESULT GetUrl(LPWSTR * ppszUrl);
+    HRESULT SetAdditionalHeaders([in] LPCWSTR pwszCurrentHeaders, [in, out] LPWSTR * ppwszAdditionalHeaders);
+    HRESULT OnDataStart([in] IBinding * pBinding);
+    HRESULT OnData([in] IStream * pstm);
+    HRESULT Complete([in] HRESULT hrBindResult);
+    HRESULT ClearRequestFlags([in] DWORD dwfFlags);
+    HRESULT OnPolicyCheck([in] DWORD dwUrlAction);
+};
+
+/////////////////////////////////////////////////////////////////////////////
+// IInetConn
+/////////////////////////////////////////////////////////////////////////////
+enum _INET_STATUS
+{
+    INET_DISCONNECTED      = 0x00,
+    INET_CONNECTED         = 0x10,
+    INET_CANCONNECT        = 0x20
+};
+
+typedef enum _INET_STATUS INET_STATUS;
+
+struct _URL_INFO
+{
+    LPTSTR  m_pszUrl;
+    LPSTR   m_pszPostData;
+    DWORD   m_dwContentType;
+    DWORD   m_dwCookie;
+    DWORD   m_dwFlags;
+    DWORD_PTR m_dwExtra;
+};
+
+typedef struct _URL_INFO URL_INFO;
+
+
+[
+    object,
+    uuid(F459AD1E-98E5-42a4-91B9-793630A483A9),
+    helpstring("IInetConn Interface"),
+    pointer_default(unique)
+]
+interface IInetConn : IUnknown
+{
+    // Methods
+    HRESULT Init([defaultvalue(NULL)] HWND hwnd);
+    HRESULT GetConnectStatus(LPCTSTR pszURL, INET_STATUS *pInetStatus);
+    HRESULT ReadPathSettings();
+    HRESULT StopConn(HWND hwnd);
+    HRESULT StopConnByID(DWORD dwID);
+    HRESULT EstablishConn(HWND hwnd, BOOL bHwndIsThreadId, const URL_INFO * pUrlInfo, [defaultvalue(NULL)] LPDWORD pdwID);
+    HRESULT IsPendingURLSet(HWND hwnd);
+    HRESULT GetPendingURL(DWORD dwID, URL_INFO** ppUrlInfo);
+    HRESULT GetProxyConfig(LPCTSTR pszUrl, BOOL bGetCredentials, BYTE * pbProxyConfig, ULONG * pcbProxyConfig);
+};
+
+/////////////////////////////////////////////////////////////////////////////
+// IPIEViewerHost
+/////////////////////////////////////////////////////////////////////////////
+[
+    object,
+    local,
+    uuid(D1F845F1-B819-499e-9E7A-47F5975D6E45),
+    pointer_default(unique)
+]
+interface IPIEViewerHost : IUnknown
+{
+    // Methods
+    HRESULT HandleUnknownProtocol([in] HWND hwnd, [in] LPCWSTR pwszUrl);
+    HRESULT DismissModalDialogs([in, out] void ** ppCookie);
+    int ShowErrorMessage(LPCWSTR pwszError, UINT uMBFlags, [defaultvalue(0)] HRESULT hr);
+
+};
+
+/////////////////////////////////////////////////////////////////////////
+// IPIEElement
+/////////////////////////////////////////////////////////////////////////
+[
+    object,
+    local,
+    uuid(F5222498-8AEB-4F72-B378-7CDE845EF881),
+    pointer_default(unique)
+]
+interface IPIEElement : IUnknown
+{
+};
+
+/////////////////////////////////////////////////////////////////////////
+// IFrameHandler
+/////////////////////////////////////////////////////////////////////////
+[
+    object,
+    local,
+    uuid(18FB9B22-3CF3-4853-A790-697B8AF1DA77),
+    pointer_default(unique)
+]
+interface IFrameHandler : IUnknown
+{
+    HRESULT SetParentBrowser(void * pParentBrowser);
+    void *  GetParentBrowser();
+    void *  GetTopBrowser();
+    void *  GetFramesetElement();
+    void *  GetFrame(void * pFrameBrowser);
+    BOOL    IsBusy();
+    BOOL    IsFrameset();
+    HRESULT Stop();
+    HRESULT Refresh(void * pBrowser, UINT uFlags);
+    HRESULT Reset(void * pBrowser, BOOL bFlagsOnly);
+    HRESULT ProcessFrameset(void * pRootElem);
+    HRESULT ResizeFrameset(LPCRECT prcWindow);
+    HRESULT SetElementSize(void * pElement);
+    void    FrameLoaded();
+    void    FrameDestroyed(void * pBrowser);
+    BOOL    SizeFrames( void * pHTMLControlBase,
+                        int xPos,
+                        int yPos);
+    void    NotifyFrames(   DWORD dwSetting,
+                            DWORD dwValue);
+    HRESULT FrameNavigate(  void * pSourceBrowser,
+                            LPWSTR pwszUrl,
+                            LPCWSTR pwszTarget,
+                            IStream * pPostData,
+                            LPCWSTR pwszHeaders,
+                            long lFlags,
+                            BOOL * pbHandled);
+
+    HRESULT NavigateToHistoryEntry(void * pBrowser);
+    HRESULT HistoryNavigate(    void * pBrowser, 
+                                IHTMLBackDoor * pBackDoor, 
+                                UINT uFlags);
+    HRESULT BeforeNavigate( void * pBrowser, 
+                            BSTR bstrUrl, 
+                            IStream * pPostData, 
+                            BSTR bstrHeaders, 
+                            UINT uFlags);                           
+    HRESULT NavigateComplete(void * pBrowser, BSTR bstrUrl);                           
+    HRESULT DocumentComplete(void * pBrowser, HRESULT hrBindResult);
+
+    HRESULT SetMarginWidth(long lWidth);
+    HRESULT GetMarginWidth(long * plWidth);
+    HRESULT SetMarginHeight(long lHeight);
+    HRESULT GetMarginHeight(long * plHeight);
+
+    HRESULT SetNextFocus(DWORD dwUpDown, DWORD dwFrontBack);
+
+    HRESULT DoCrossFrameNavCheck( void * pTgtDoc,
+                                  void * pSrcDoc,
+                                  void * pSrcBrowser);
+    
+
+    HRESULT PerformCrossFramePolicyCheck( LPCWSTR pwszTargetFrameDomain,
+                                          LPCWSTR pwszSourceFrameDomain,
+                                          LPCWSTR pwszSourceFrameUrl,
+                                          void *pSrcBrowser);    
+        
+};
+
+/////////////////////////////////////////////////////////////////////////
+// IXMLHandler
+/////////////////////////////////////////////////////////////////////////
+[
+    object,
+    local,
+    uuid(C67B6DCE-BB98-44b4-8B4F-185B683CE4B2),
+    pointer_default(unique)
+]
+interface IXMLHandler : IUnknown
+{
+    // Properties
+    [propget]
+    HRESULT XMLDocument([out, retval] IXMLDOMDocument ** ppXMLDocument);
+
+    // Methods
+    void * Initialize([in] void * pBrowser, [in] BOOL bLoadStylesheet);
+};
+
+/////////////////////////////////////////////////////////////////////////////
+// START BEHAVIORS PUBLIC INTERFACES 
+/////////////////////////////////////////////////////////////////////////////
+
+typedef enum _BEHAVIOR_EVENT
+{
+    BEHAVIOREVENT_FIRST = 0,
+    BEHAVIOREVENT_CONTENTREADY = 0,
+    BEHAVIOREVENT_DOCUMENTREADY = 1,
+    BEHAVIOREVENT_APPLYSTYLE = 2,
+    BEHAVIOREVENT_DOCUMENTCONTEXTCHANGE = 3,
+    BEHAVIOREVENT_CONTENTSAVE = 4,
+    BEHAVIOREVENT_LAST = 4,
+    BEHAVIOR_EVENT_Max = 2147483647L
+} BEHAVIOR_EVENT;
+
+/////////////////////////////////////////////////////////////////////////////
+// IElementNamespace
+/////////////////////////////////////////////////////////////////////////////
+[
+    object,
+    uuid(3050f671-98b5-11cf-bb82-00aa00bdce0b),
+    pointer_default(unique)
+]
+interface IElementNamespace : IUnknown
+{
+    // Methods
+    HRESULT AddTag([in] BSTR bstrTagName, [in] LONG lFlags);
+};
+
+/////////////////////////////////////////////////////////////////////////////
+// IElementNamespaceFactory
+/////////////////////////////////////////////////////////////////////////////
+[
+    object,
+    uuid(3050f672-98b5-11cf-bb82-00aa00bdce0b),
+    pointer_default(unique)
+]
+interface IElementNamespaceFactory : IUnknown
+{
+    // Methods
+    HRESULT Create([in] IElementNamespace *pNamespace);
+};
+
+interface IPIEHTMLElement;
+
+/////////////////////////////////////////////////////////////////////////////
+// IElementBehaviorSite
+/////////////////////////////////////////////////////////////////////////////
+[
+    object,
+    pointer_default(unique),
+    uuid(3050f427-98b5-11cf-bb82-00aa00bdce0b)
+]
+interface IElementBehaviorSite : IUnknown
+{
+    HRESULT GetElement([out, retval] IPIEHTMLElement** ppElement);
+};
+
+/////////////////////////////////////////////////////////////////////////////
+// IElementBehavior
+/////////////////////////////////////////////////////////////////////////////
+[
+    object,
+    uuid(3050f425-98b5-11cf-bb82-00aa00bdce0b),
+    pointer_default(unique)
+]
+interface IElementBehavior : IUnknown
+{
+   // Methods
+   HRESULT Init([in] IElementBehaviorSite* pBehaviorSite);
+   HRESULT Notify([in] LONG lEvent,[in, out] VARIANT* pVar);
+   HRESULT Detach();
+};
+
+/////////////////////////////////////////////////////////////////////////////
+// IElementBehaviorFactory
+/////////////////////////////////////////////////////////////////////////////
+[
+    object,
+    pointer_default(unique),
+    uuid(3050f429-98b5-11cf-bb82-00aa00bdce0b)
+]
+interface IElementBehaviorFactory : IUnknown
+{
+    HRESULT FindBehavior([in] BSTR bstrBehavior,[in] BSTR bstrBehaviorUrl,[in] IElementBehaviorSite* pSite,[out, retval] IElementBehavior** ppBehavior);
+};
+/////////////////////////////////////////////////////////////////////////////
+// END BEHAVIORS PUBLIC INTERFACES 
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// WebView object
+/////////////////////////////////////////////////////////////////////////////
+[
+    uuid(698E3FBD-70C3-11D0-81E8-00A0C90AD20B),
+    version(1.0)
+]
+library WEBVWLib
+{
+    /////////////////////////////////////////////////////////////////////////
+    // CInetConn class
+    /////////////////////////////////////////////////////////////////////////
+    [
+        uuid(43F14462-EBC1-421b-8F98-2DB81293AA77),
+        helpstring("CInetConn Class")
+    ]
+    coclass CInetConn
+    {
+        [default] interface IInetConn;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // CFrameHandler class
+    /////////////////////////////////////////////////////////////////////////
+    [
+        uuid(870C7D98-D943-4cf5-A297-5C4C2E63CB5E),
+        helpstring("Frame Handler Class")
+    ]
+    coclass CFrameHandler
+    {
+        [default] interface IFrameHandler;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // CXMLHandler class
+    /////////////////////////////////////////////////////////////////////////
+    [
+        uuid(182D0A92-2F8E-410a-A8CA-2B23AAAD4893),
+        helpstring("XML Viewing Helper Class")
+    ]
+    coclass CXMLHandler
+    {
+        [default] interface IXMLHandler;
+    };
+
+    /////////////////////////////////////////////////////////////////////////
+    // PIE HTML Control Class
+    /////////////////////////////////////////////////////////////////////////
+    [
+        uuid(698E3FCA-70C3-11D0-81E8-00A0C90AD21A), // CLSID_PIEHTML
+        version(2.0)
+    ]
+    coclass PIEHTML
+    {
+        [default] interface IBrowser;
+        interface IBrowser2;
+        interface IBrowser3;
+    };
+};
+

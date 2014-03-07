@@ -1,0 +1,191 @@
+ srptest
+
+ Timestamp is 511c9987 (Thu Feb 14 17:00:07 2013)
+
+ Preferred load address is 00010000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00001294H .text                   CODE
+ 0002:00000000 0000011eH .rdata                  DATA
+ 0002:00000120 00000014H .xdata                  DATA
+ 0002:00000134 00000028H .idata$2                DATA
+ 0002:0000015c 00000014H .idata$3                DATA
+ 0002:00000170 000000d4H .idata$4                DATA
+ 0002:00000244 0000001aH .idata$6                DATA
+ 0002:0000025e 00000000H .edata                  DATA
+ 0003:00000000 000000d4H .idata$5                DATA
+ 0003:000000d4 00000004H .CRT$XCA                DATA
+ 0003:000000d8 00000004H .CRT$XCZ                DATA
+ 0003:000000dc 00000004H .CRT$XIA                DATA
+ 0003:000000e0 00000004H .CRT$XIZ                DATA
+ 0003:000000e4 00000004H .CRT$XPA                DATA
+ 0003:000000e8 00000004H .CRT$XPZ                DATA
+ 0003:000000ec 00000004H .CRT$XTA                DATA
+ 0003:000000f0 00000004H .CRT$XTZ                DATA
+ 0003:000000f4 00000009H .bss                    DATA
+ 0004:00000000 00000078H .pdata                  DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0001:0000034c       main                       0001134c f   srptest.obj
+ 0001:00000444       BN_print_fp                00011444 f   libeay32:LIBEAY32.dll
+ 0001:00000454       BN_free                    00011454 f   libeay32:LIBEAY32.dll
+ 0001:00000464       BN_clear_free              00011464 f   libeay32:LIBEAY32.dll
+ 0001:00000474       BN_cmp                     00011474 f   libeay32:LIBEAY32.dll
+ 0001:00000484       SRP_Calc_server_key        00011484 f   libeay32:LIBEAY32.dll
+ 0001:00000494       SRP_Calc_client_key        00011494 f   libeay32:LIBEAY32.dll
+ 0001:000004a4       SRP_Calc_x                 000114a4 f   libeay32:LIBEAY32.dll
+ 0001:000004b4       SRP_Calc_u                 000114b4 f   libeay32:LIBEAY32.dll
+ 0001:000004c4       SRP_Verify_A_mod_N         000114c4 f   libeay32:LIBEAY32.dll
+ 0001:000004d4       SRP_Calc_A                 000114d4 f   libeay32:LIBEAY32.dll
+ 0001:000004e4       SRP_Verify_B_mod_N         000114e4 f   libeay32:LIBEAY32.dll
+ 0001:000004f4       SRP_Calc_B                 000114f4 f   libeay32:LIBEAY32.dll
+ 0001:00000504       BN_bin2bn                  00011504 f   libeay32:LIBEAY32.dll
+ 0001:00000514       RAND_pseudo_bytes          00011514 f   libeay32:LIBEAY32.dll
+ 0001:00000524       SRP_create_verifier_BN     00011524 f   libeay32:LIBEAY32.dll
+ 0001:00000534       SRP_get_default_gN         00011534 f   libeay32:LIBEAY32.dll
+ 0001:00000544       CRYPTO_mem_leaks           00011544 f   libeay32:LIBEAY32.dll
+ 0001:00000554       ERR_free_strings           00011554 f   libeay32:LIBEAY32.dll
+ 0001:00000564       ERR_remove_thread_state    00011564 f   libeay32:LIBEAY32.dll
+ 0001:00000574       CRYPTO_cleanup_all_ex_data 00011574 f   libeay32:LIBEAY32.dll
+ 0001:00000584       ERR_load_crypto_strings    00011584 f   libeay32:LIBEAY32.dll
+ 0001:00000594       CRYPTO_mem_ctrl            00011594 f   libeay32:LIBEAY32.dll
+ 0001:000005a4       CRYPTO_set_mem_debug_functions 000115a4 f   libeay32:LIBEAY32.dll
+ 0001:000005b4       CRYPTO_dbg_malloc          000115b4 f   libeay32:LIBEAY32.dll
+ 0001:000005c4       CRYPTO_dbg_realloc         000115c4 f   libeay32:LIBEAY32.dll
+ 0001:000005d4       CRYPTO_dbg_free            000115d4 f   libeay32:LIBEAY32.dll
+ 0001:000005e4       CRYPTO_dbg_set_options     000115e4 f   libeay32:LIBEAY32.dll
+ 0001:000005f4       CRYPTO_dbg_get_options     000115f4 f   libeay32:LIBEAY32.dll
+ 0001:00000604       BIO_new_fp                 00011604 f   libeay32:LIBEAY32.dll
+ 0001:00000614       fputc                      00011614 f   coredll:COREDLL.dll
+ 0001:00000624       fputs                      00011624 f   coredll:COREDLL.dll
+ 0001:00000634       _getstdfilex               00011634 f   coredll:COREDLL.dll
+ 0001:00000644       fprintf                    00011644 f   coredll:COREDLL.dll
+ 0001:0000065c       WinMainCRTStartup          0001165c f   corelibc:pegwmain.obj
+ 0001:000006d0       _cinit                     000116d0 f   corelibc:crt0dat.obj
+ 0001:00000840       exit                       00011840 f   corelibc:crt0dat.obj
+ 0001:00000858       WinMain                    00011858 f   wcecompatex:winmain.obj
+ 0001:00000bb4       ?processCmdLine@@YAHPA_WPAPAPAD@Z 00011bb4 f   wcecompatex:args.obj
+ 0001:00000ff0       ?unicode2ascii@@YAXPB_WPAD@Z 00011ff0 f   wcecompatex:ts_string.obj
+ 0001:00001044       ?ascii2unicode@@YAXPBDPA_WH@Z 00012044 f   wcecompatex:ts_string.obj
+ 0001:000010e4       ?unicode2ascii@@YAXPB_WPADH@Z 000120e4 f   wcecompatex:ts_string.obj
+ 0001:00001174       _XcptFilter                00012174 f   coredll:COREDLL.dll
+ 0001:00001184       __C_specific_handler       00012184 f   coredll:COREDLL.dll
+ 0001:00001194       LocalFree                  00012194 f   coredll:COREDLL.dll
+ 0001:000011a4       _isctype                   000121a4 f   coredll:COREDLL.dll
+ 0001:000011b4       malloc                     000121b4 f   coredll:COREDLL.dll
+ 0001:000011c4       FindFirstFileW             000121c4 f   coredll:COREDLL.dll
+ 0001:000011d4       FindClose                  000121d4 f   coredll:COREDLL.dll
+ 0001:000011e4       FindNextFileW              000121e4 f   coredll:COREDLL.dll
+ 0001:000011f4       _stricmp                   000121f4 f   coredll:COREDLL.dll
+ 0001:00001204       free                       00012204 f   coredll:COREDLL.dll
+ 0001:00001214       qsort                      00012214 f   coredll:COREDLL.dll
+ 0001:00001224       strrchr                    00012224 f   coredll:COREDLL.dll
+ 0001:00001234       strchr                     00012234 f   coredll:COREDLL.dll
+ 0001:00001244       realloc                    00012244 f   coredll:COREDLL.dll
+ 0001:00001254       GetModuleFileNameW         00012254 f   coredll:COREDLL.dll
+ 0001:00001264       strncpy                    00012264 f   coredll:COREDLL.dll
+ 0001:00001274       strcpy                     00012274 f   coredll:COREDLL.dll
+ 0001:00001284       strlen                     00012284 f   coredll:COREDLL.dll
+ 0002:00000000       ??_C@_03MHLONNLM@?5?$DN?5?$AA@ 00013000     srptest.obj
+ 0002:00000004       ??_C@_0P@JKFBNJAG@Keys?5mismatch?6?$AA@ 00013004     srptest.obj
+ 0002:00000014       ??_C@_0N@GHNDCLEL@Client?8s?5key?$AA@ 00013014     srptest.obj
+ 0002:00000024       ??_C@_0N@ELAJFJDO@Server?8s?5key?$AA@ 00013024     srptest.obj
+ 0002:00000034       ??_C@_0L@ENHBEOAN@Invalid?5A?6?$AA@ 00013034     srptest.obj
+ 0002:00000040       ??_C@_01MCMALHOG@a?$AA@    00013040     srptest.obj
+ 0002:00000044       ??_C@_01FHEEJDEE@A?$AA@    00013044     srptest.obj
+ 0002:00000048       ??_C@_0L@EPDHPAFE@Invalid?5B?6?$AA@ 00013048     srptest.obj
+ 0002:00000054       ??_C@_01NANMIPIL@N?$AA@    00013054     srptest.obj
+ 0002:00000058       ??_C@_01JEJKBAGA@g?$AA@    00013058     srptest.obj
+ 0002:0000005c       ??_C@_04MPGKKDCJ@Salt?$AA@ 0001305c     srptest.obj
+ 0002:00000064       ??_C@_08NHPAMKDJ@Verifier?$AA@ 00013064     srptest.obj
+ 0002:00000070       ??_C@_01OJONOECF@b?$AA@    00013070     srptest.obj
+ 0002:00000074       ??_C@_01HMGJMAIH@B?$AA@    00013074     srptest.obj
+ 0002:00000078       ??_C@_0BP@FCJLBNGB@Failed?5to?5create?5SRP?5verifier?6?$AA@ 00013078     srptest.obj
+ 0002:00000098       ??_C@_0BO@NGBEKJID@Failed?5to?5get?5SRP?5parameters?6?$AA@ 00013098     srptest.obj
+ 0002:000000b8       ??_C@_04MJHCKDHM@1024?$AA@ 000130b8     srptest.obj
+ 0002:000000c0       ??_C@_0BG@OHDBDOPH@Plain?5SRP?5run?5failed?6?$AA@ 000130c0     srptest.obj
+ 0002:000000d8       ??_C@_08NLHBPEGP@password?$AA@ 000130d8     srptest.obj
+ 0002:000000e4       ??_C@_0BL@EJOPECBK@Mismatched?5SRP?5run?5failed?6?$AA@ 000130e4     srptest.obj
+ 0002:00000100       ??_C@_09DAKGFJEM@password2?$AA@ 00013100     srptest.obj
+ 0002:0000010c       ??_C@_09BLILAKIP@password1?$AA@ 0001310c     srptest.obj
+ 0002:00000118       ??_C@_05MFGCEKPN@alice?$AA@ 00013118     srptest.obj
+ 0002:00000134       __IMPORT_DESCRIPTOR_LIBEAY32 00013134     libeay32:LIBEAY32.dll
+ 0002:00000148       __IMPORT_DESCRIPTOR_COREDLL 00013148     coredll:COREDLL.dll
+ 0002:0000015c       __NULL_IMPORT_DESCRIPTOR   0001315c     libeay32:LIBEAY32.dll
+ 0003:00000000       __imp_strlen               00014000     coredll:COREDLL.dll
+ 0003:00000004       __imp_strcpy               00014004     coredll:COREDLL.dll
+ 0003:00000008       __imp_strncpy              00014008     coredll:COREDLL.dll
+ 0003:0000000c       __imp_GetModuleFileNameW   0001400c     coredll:COREDLL.dll
+ 0003:00000010       __imp_realloc              00014010     coredll:COREDLL.dll
+ 0003:00000014       __imp_strchr               00014014     coredll:COREDLL.dll
+ 0003:00000018       __imp_strrchr              00014018     coredll:COREDLL.dll
+ 0003:0000001c       __imp_qsort                0001401c     coredll:COREDLL.dll
+ 0003:00000020       __imp_free                 00014020     coredll:COREDLL.dll
+ 0003:00000024       __imp__stricmp             00014024     coredll:COREDLL.dll
+ 0003:00000028       __imp_FindNextFileW        00014028     coredll:COREDLL.dll
+ 0003:0000002c       __imp_FindClose            0001402c     coredll:COREDLL.dll
+ 0003:00000030       __imp_FindFirstFileW       00014030     coredll:COREDLL.dll
+ 0003:00000034       __imp_malloc               00014034     coredll:COREDLL.dll
+ 0003:00000038       __imp__isctype             00014038     coredll:COREDLL.dll
+ 0003:0000003c       __imp_LocalFree            0001403c     coredll:COREDLL.dll
+ 0003:00000040       __imp___C_specific_handler 00014040     coredll:COREDLL.dll
+ 0003:00000044       __imp__XcptFilter          00014044     coredll:COREDLL.dll
+ 0003:00000048       __imp_fprintf              00014048     coredll:COREDLL.dll
+ 0003:0000004c       __imp__getstdfilex         0001404c     coredll:COREDLL.dll
+ 0003:00000050       __imp_fputs                00014050     coredll:COREDLL.dll
+ 0003:00000054       __imp_fputc                00014054     coredll:COREDLL.dll
+ 0003:00000058       \177COREDLL_NULL_THUNK_DATA 00014058     coredll:COREDLL.dll
+ 0003:0000005c       __imp_CRYPTO_dbg_free      0001405c     libeay32:LIBEAY32.dll
+ 0003:00000060       __imp_CRYPTO_dbg_set_options 00014060     libeay32:LIBEAY32.dll
+ 0003:00000064       __imp_CRYPTO_dbg_realloc   00014064     libeay32:LIBEAY32.dll
+ 0003:00000068       __imp_BIO_new_fp           00014068     libeay32:LIBEAY32.dll
+ 0003:0000006c       __imp_CRYPTO_dbg_malloc    0001406c     libeay32:LIBEAY32.dll
+ 0003:00000070       __imp_CRYPTO_set_mem_debug_functions 00014070     libeay32:LIBEAY32.dll
+ 0003:00000074       __imp_CRYPTO_mem_ctrl      00014074     libeay32:LIBEAY32.dll
+ 0003:00000078       __imp_ERR_load_crypto_strings 00014078     libeay32:LIBEAY32.dll
+ 0003:0000007c       __imp_CRYPTO_cleanup_all_ex_data 0001407c     libeay32:LIBEAY32.dll
+ 0003:00000080       __imp_ERR_remove_thread_state 00014080     libeay32:LIBEAY32.dll
+ 0003:00000084       __imp_ERR_free_strings     00014084     libeay32:LIBEAY32.dll
+ 0003:00000088       __imp_CRYPTO_mem_leaks     00014088     libeay32:LIBEAY32.dll
+ 0003:0000008c       __imp_SRP_get_default_gN   0001408c     libeay32:LIBEAY32.dll
+ 0003:00000090       __imp_SRP_create_verifier_BN 00014090     libeay32:LIBEAY32.dll
+ 0003:00000094       __imp_RAND_pseudo_bytes    00014094     libeay32:LIBEAY32.dll
+ 0003:00000098       __imp_BN_bin2bn            00014098     libeay32:LIBEAY32.dll
+ 0003:0000009c       __imp_SRP_Calc_B           0001409c     libeay32:LIBEAY32.dll
+ 0003:000000a0       __imp_SRP_Verify_B_mod_N   000140a0     libeay32:LIBEAY32.dll
+ 0003:000000a4       __imp_SRP_Calc_A           000140a4     libeay32:LIBEAY32.dll
+ 0003:000000a8       __imp_SRP_Verify_A_mod_N   000140a8     libeay32:LIBEAY32.dll
+ 0003:000000ac       __imp_SRP_Calc_u           000140ac     libeay32:LIBEAY32.dll
+ 0003:000000b0       __imp_SRP_Calc_x           000140b0     libeay32:LIBEAY32.dll
+ 0003:000000b4       __imp_SRP_Calc_client_key  000140b4     libeay32:LIBEAY32.dll
+ 0003:000000b8       __imp_SRP_Calc_server_key  000140b8     libeay32:LIBEAY32.dll
+ 0003:000000bc       __imp_BN_cmp               000140bc     libeay32:LIBEAY32.dll
+ 0003:000000c0       __imp_BN_clear_free        000140c0     libeay32:LIBEAY32.dll
+ 0003:000000c4       __imp_BN_free              000140c4     libeay32:LIBEAY32.dll
+ 0003:000000c8       __imp_CRYPTO_dbg_get_options 000140c8     libeay32:LIBEAY32.dll
+ 0003:000000cc       __imp_BN_print_fp          000140cc     libeay32:LIBEAY32.dll
+ 0003:000000d0       \177LIBEAY32_NULL_THUNK_DATA 000140d0     libeay32:LIBEAY32.dll
+ 0003:000000d4       __xc_a                     000140d4     corelibc:crt0init.obj
+ 0003:000000d8       __xc_z                     000140d8     corelibc:crt0init.obj
+ 0003:000000dc       __xi_a                     000140dc     corelibc:crt0init.obj
+ 0003:000000e0       __xi_z                     000140e0     corelibc:crt0init.obj
+ 0003:000000e4       __xp_a                     000140e4     corelibc:crt0init.obj
+ 0003:000000e8       __xp_z                     000140e8     corelibc:crt0init.obj
+ 0003:000000ec       __xt_a                     000140ec     corelibc:crt0init.obj
+ 0003:000000f0       __xt_z                     000140f0     corelibc:crt0init.obj
+ 0003:000000f4       __onexitend                000140f4     <common>
+ 0003:000000f8       __onexitbegin              000140f8     <common>
+ 0003:000000fc       _exitflag                  000140fc     <common>
+
+ entry point at        0001:0000065c
+
+ Static symbols
+
+ 0001:00000000       showbn                     00011000 f   srptest.obj
+ 0001:00000064       run_srp                    00011064 f   srptest.obj
+ 0001:0000073c       doexit                     0001173c f   corelibc:crt0dat.obj
+ 0001:0000087c       ?getCmdLineArg@@YA?AW4ArgType@@PAPA_WPA_WHPAURedirArg@@PA_N@Z 0001187c f   wcecompatex:args.obj
+ 0001:00000ba8       ?qsort_stricmp@@YAHPBX0@Z  00011ba8 f   wcecompatex:args.obj

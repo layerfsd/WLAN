@@ -1,0 +1,26 @@
+TARGETNAME=ar6k_mte_bootlib
+RELEASETYPE=PLATFORM
+
+TARGETTYPE=LIBRARY
+
+SOURCES=bootldr.c \
+        sdbus.c
+          
+AR6K_PROJ_ROOT=..\..\..\..\..
+
+!INCLUDE $(AR6K_PROJ_ROOT)\sources.inc
+CDEFINES = $(CDEFINES)
+
+SOURCELIBS= \
+      $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_mte_core.lib \
+      
+INCLUDES= \
+  ..\inc\;                        \
+  $(AR6K_PROJ_ROOT)\host\include; \
+  $(_SYSGENSDKROOT)\inc\; \
+  $(_SYSGENOAKROOT)\inc\; \
+  $(_SYSGENDDKROOT)\inc\; \
+    
+       
+
+    

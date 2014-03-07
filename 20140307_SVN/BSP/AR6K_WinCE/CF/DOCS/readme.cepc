@@ -1,0 +1,35 @@
+Use this README for building Atheros AR6000 (SDIO or CF interface) WLAN device driver for CEPC platform.
+
+1. When the release package is extracted, it would have created the package inder AR6K_DRV directory.
+
+2. FOR SDIO, create a directory  <WINCE_ROOT>\PRIVATE\AR6K_SDIO.  FOR CF, create a directory  <WINCE_ROOT>\PRIVATE\AR6K_CF
+
+3. In this document <BUSTYPE> refers to either CF or SDIO.
+
+4. Copy AR6K_DRV\{host, include, dirs} to <WINCE_ROOT>\PRIVATE\AR6K_<BUSTYPE>.
+
+5. Copy AR6K_DRV\host\os\wince\<BUSTYPE>\{*.bib, *.reg, sources.cmn} to <WINCE_ROOT>\PRIVATE\AR6K_<BUSTYPE>.
+
+6. Rename or copy the file <WINCE_ROOT>\PRIVATE\AR6K_<BUSTYPE>\host\hif\dirs.<BUSTYPE> as <WINCE_ROOT>\PRIVATE\AR6K_<BUSTYPE>\host\hif\dirs
+
+
+7. For CF, refer the section "SOFTWARE SETUP" in  AR6kSophiaCF-quick-start-guide.doc. Apply the patch mentioned in "step 6.C for file C:\WINCE500\PUBLIC\COMMON\OAK\DRIVERS\PCCARD\MDD\pcmtuple.cpp" and "step 6.d for file C:\WINCE500\PUBLIC\COMMON\OAK\DRIVERS\PCCARD\MDD\pcmciaen.cpp"
+
+8. Open platform builder and create a new platform. 
+  
+9. Set up the following ENV variables. Go to the Platform--->Settings menu. In the dialog box that appears, choose the environment tab and add the following ENV variables.
+
+	Var_Name	Var_Value
+	---------	---------
+	BSP_SDHC_ELLEN	1   // Add this entry only for ELLEN SDIO host controller
+
+10. Do "Build OS"->"Build & Sysgen".
+	[Make sure that "Clean before building", "Copy Files to Release dir after build" and "Make RunTimeImage after build" are checked]
+
+11. Choose "Project->Insert->Existing Project".  In the file types choose sources/dirs. Select D:\WINCE500\PRIVATE\AR6K_<BUSTYPE>\dirs
+
+12. In the workspace window, choose "File view". Build AR6K_<BUSTYPE> project by doing a right click on AR6K_<BUSTYPE> in the file view.  [Make sure that "Clean before building" and "Make RunTimeImage after build" are checked]. This will build the AR6K_NDIS_<BUSTYPE>.dll into NK.BIN.
+
+13. For the list of oids supported and AR6000 driver registry configurable parameters, refer to the WinCEAppendix.doc 
+
+14. For building AR6000 applications and for upgrading the AR6000 firmware, use the AR6kSophiaApps-quick-start-guide.doc as a guideline.

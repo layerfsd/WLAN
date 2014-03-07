@@ -1,0 +1,37 @@
+# Copyright (c) 2007 Atheros Communications Inc.
+# All rights reserved.
+
+
+TARGETNAME=athbtfilter_ldr
+TARGETTYPE=LIBRARY
+
+SOURCES= \
+	btfilter_wince_ldr.c
+    
+AR6K_PROJ_ROOT=..\..\..\..\..\
+
+!IF "$(ATH_BTFILT_DYN)"=="1"
+
+# BT Service/Filter as DLL, loaded dynamically by this library stub
+
+CDEFINES=$(CDEFINES) -DATH_USE_DLL
+
+!ELSE
+
+# BT Service/Filter statically linked into one library
+
+SOURCELIBS= \
+      $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\athbtfilter_static.lib \
+      
+!ENDIF
+
+!INCLUDE $(AR6K_PROJ_ROOT)\sources.inc
+
+INCLUDES= \
+	$(AR6K_PROJ_ROOT)\host\include; \
+    $(AR6K_PROJ_ROOT)\host\os\wince\include; \
+    $(AR6K_PROJ_ROOT)\include; \
+    $(_SYSGENSDKROOT)\inc; \
+    $(_SYSGENOAKROOT)\inc; \
+    $(_SYSGENDDKROOT)\inc;
+      

@@ -1,0 +1,35 @@
+/*
+ * Copyright (C) 2010, Broadcom Corporation
+ * All Rights Reserved.
+ *
+ * THIS SOFTWARE IS OFFERED "AS IS", AND BROADCOM GRANTS NO WARRANTIES OF ANY
+ * KIND, EXPRESS OR IMPLIED, BY STATUTE, COMMUNICATION OR OTHERWISE. BROADCOM
+ * SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A SPECIFIC PURPOSE OR NONINFRINGEMENT CONCERNING THIS SOFTWARE.
+ *
+ * $Id: epivers.h.in,v 13.25 2005/10/28 18:35:33 Exp $
+ *
+*/
+
+#ifndef _epivers_h_
+#define _epivers_h_
+
+#define	EPI_MAJOR_VERSION	4
+
+#define	EPI_MINOR_VERSION	218
+
+#define	EPI_RC_NUMBER		249
+
+#define	EPI_INCREMENTAL_NUMBER	1
+
+#define EPI_BUILD_NUMBER	1
+
+#define	EPI_VERSION		4, 218, 249, 1
+
+#define	EPI_VERSION_NUM		0x04daf901
+
+/* Driver Version String, ASCII, 32 chars max */
+#define	EPI_VERSION_STR		"4.218.249.1"
+#define	EPI_ROUTER_VERSION_STR	"4.219.249.1"
+
+#endif /* _epivers_h_ */

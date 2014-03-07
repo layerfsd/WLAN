@@ -1,0 +1,9 @@
+!if 0
+Copyright (c) 2007 Atheros Communications Inc.
+All rights reserved.
+!endif
+
+DIRS= \
+	wince_dll \
+	wince_ldr \
+	wince_hci_samples

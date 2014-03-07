@@ -1,0 +1,158 @@
+#
+# Internal sources file (do not release)
+#
+# Copyright (C) 2006 Broadcom Corporation
+#
+# $Id: sources.common,v 1.16.4.6.2.7.6.32 2010/04/20 05:33:28 Exp $
+#
+
+OEM             := bcm
+TARGETNAME      := bcmsddhd
+TARGETTYPE      := DYNLINK
+RELEASETYPE     := LOCAL
+HOSTOS          := wince
+PROCESSOR       ?= X86
+WINCEVER        := 600
+ifdef WM7
+LIB_PATH		?= $(SRCBASE)/tools/bin/WIN700/Lib
+else
+LIB_PATH        ?= $(SRCBASE)/tools/bin/WINCE/$(WINCEVER)/Lib
+endif
+ifdef WLTEST
+  # This needs to be fixed by eSTA developers, tell which dongle image
+  # is needed for TOT mfgtest builds
+  # Remotewl: To enable dongle uart transport -rwl to be added in image
+  # -rwl enables polling mode in driver,enable dongle and wifi transport,
+  # disables all the debug support as it purely supports remotewl
+  DNGL_IMAGE_NAME ?= 4329b1/sdio-g-cdc-11n-mfgtest-roml-ndis
+else  # non-mfgtest
+ifdef WM7
+  DNGL_IMAGE_NAME ?= 4329b1/sdio-g-cdc-11n-reclaim-ndis-vista-medioctl-nopool-aoe-pktfilter
+else
+  DNGL_IMAGE_NAME ?= 4329b1/sdio-g-cdc-full11n-reclaim-roml-ndis-wme
+endif
+endif # BCM_MFGTEST
+DNGL_IMAGE_PATH  = $(SRCBASE)/dongle/rte/wl/builds/$(DNGL_IMAGE_NAME)
+
+## If CE SDK redistributables are releases separately, they can be installed
+## at any of following locations. If so, uncomment following line
+#LIB_PATH       ?= $(strip $(firstword $(wildcard C:/tools/msdev/WinCE-Redist/$(WINCEVER)/Lib D:/tools/msdev/WinCE-Redist/$(WINCEVER)/Lib Z:/projects/hnd/tools/win/msdev/WinCE-Redist/$(WINCEVER)/Lib)))
+
+vpath %.c $(SRCBASE)/wl/sys $(SRCBASE)/shared $(SRCBASE)/bcmcrypto $(SRCBASE)/dhd/sys $(SRCBASE)/bcmsdio/sys
+
+TARGETPATH=obj/sta/$(WINCEVER)/$(PROCESSOR)
+
+C_DEFINES += -DNDIS -DNDIS_MINIPORT_DRIVER -DNDIS_WDM -DWDM
+C_DEFINES += -DUNDER_CE -DBCMWL -DBCMDRIVER
+C_DEFINES += -DBDC -DBCMSDIO -DBCMDONGLEHOST -DBCMDBG
+C_DEFINES += -DEMBEDDED_PLATFORM -DARP_OFFLOAD_SUPPORT -DPKT_FILTER_SUPPORT
+C_DEFINES += -DSTA -DBCMSUP_PSK -DBCMWPA2 -DWL_IW_USE_ISCAN
+
+#ifdef HOST_OID
+ifdef HOST_OID
+C_DEFINES += -DDHD_NDIS_OID -DWL_OIDS
+SOURCES += wl_oidcmn.c wl_oideml.c
+endif
+#endif
+
+
+#ifdef WLBTAMP
+ifdef WLBTAMP
+SOURCES += dhd_bta.c
+C_DEFINES += -DWLBTAMP
+endif
+ifdef WLBTCEAMP11
+SOURCES += btceamp11.c
+C_DEFINES += -DWLBTCEAMP11
+endif
+#endif
+
+#ifef BCMWAPI_WPI
+ifdef BCMWAPI_WPI
+C_DEFINES += -DBCMWAPI_WPI
+endif
+#endif
+
+
+ifdef WM7
+C_DEFINES += -DNDIS60_MINIPORT -DNDIS60 -DEXT_STA -DWL_OIDS -DWL_ASSOC_RECREATE
+else
+C_DEFINES += -DNDIS51_MINIPORT -DNDIS51 -DWINVER=0x0500
+endif
+
+ifneq ($(findstring $(TTYPE), "DBG"), )
+C_DEFINES += -DBCMDBG_MEM -DSHOW_EVENTS 
+endif
+
+ifeq ($(WINCEVER),600)
+C_DEFINES +=  -D_CRT_SECURE_NO_DEPRECATE
+endif
+
+# 4307 reversed
+C_DEFINES += -DMEMORY_TAG="'7034'"
+
+ifneq ($(findstring $(TTYPE), "DBG"), )
+DHDFLAGS = -DDHD_DEBUG
+endif
+
+ifneq ($(DNGL_IMAGE_NAME),)
+DHDFLAGS += -DBCMEMBEDIMAGE="\"$(DNGL_IMAGE_PATH)/rtecdc.h\""
+$(OUTDIR_$(TTYPE))/dhd_sdio.obj: $(DNGL_IMAGE_PATH)/rtecdc.h
+endif
+
+C_DEFINES += $(DHDFLAGS)
+
+ifeq ($(WINCEVER),420)
+SDBUS_LIB=sdbusdriver.lib
+else
+SDBUS_LIB=sdbus.lib
+endif
+
+#
+ifeq ($(PROCESSOR),ARM)
+SDK_LIB_PATH := "$(LIB_PATH)/ARMV4I"
+endif
+
+ifeq ($(PROCESSOR),X86)
+SDK_LIB_PATH := "$(LIB_PATH)/x86"
+endif
+
+ifneq ($(PROCESSOR),ARM)
+ifneq ($(PROCESSOR),X86)
+$(error NEW PROCESSOR is defined, needs modification to this file)
+endif
+endif
+
+TARGETLIBS= $(SDK_LIB_PATH)/coredll.lib \
+	$(SDK_LIB_PATH)/ndis.lib \
+	$(SDK_LIB_PATH)/corelibc.lib \
+	$(SDK_LIB_PATH)/ceddk.lib \
+	$(SDK_LIB_PATH)/sdcardlib.lib \
+	$(SDK_LIB_PATH)/$(SDBUS_LIB)
+
+ifeq ($(WINCEFASTCAP),1)
+ifneq ($(PROCESSOR,X86)
+TARGETLIBS += $(SDK_LIB_PATH)/cecap.lib
+endif
+endif
+
+ifeq ($(WINCECALLCAP),1)
+ifneq ($(PROCESSOR),X86)
+TARGETLIBS += $(SDK_LIB_PATH)/cecap.lib
+endif
+endif
+
+INCLUDES=$(_WINCEROOT)/include;$(SRCBASE);$(SRCBASE)/include;$(_WINCEROOT)/public/common/oak/inc;$(_WINCEROOT)/public/common/ddk/inc;$(_WINCEROOT)/public/common/sdk/inc;$(SRCBASE)/wl/sys;$(SRCBASE)/dongle;$(SRCBASE)/dhd/sys;$(SRCBASE)/dhd/ce
+
+SOURCES += ndiserrmap.c bcmutils.c bcmstdlib.c hndpmu.c siutils.c sbutils.c aiutils.c dhd_cdc.c dhd_sdio.c dhd_ndis.c dhd_common.c sdnow.c ndshared.c wl_ndis.c wl_ndconfig.c ndis_osl.c bcmwifi.c bcmsdh_ndis.c MsgQueueUtil.c
+
+#debuginfo:
+#	@echo "TARGETLIBS = $(TARGETLIBS)"
+
+ifdef SHOWINFO
+show_dongle_image_name:
+	@echo "$(DNGL_IMAGE_NAME)"
+endif # SHOWINFO
+
+$(TARGETPATH)/NUL:
+	mkdir -p $(@D)

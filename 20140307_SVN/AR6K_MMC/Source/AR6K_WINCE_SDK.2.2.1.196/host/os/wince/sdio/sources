@@ -1,0 +1,70 @@
+!if 0
+------------------------------------------------------------------------------
+ <copyright file="sources" company="Atheros">
+    Copyright (c) 2005-2009 Atheros Corporation.  All rights reserved.
+ 
+  The software source and binaries included in this development package are
+  licensed, not sold. You, or your company, received the package under one
+  or more license agreements. The rights granted to you are specifically
+  listed in these license agreement(s). All other rights remain with Atheros
+  Communications, Inc., its subsidiaries, or the respective owner including
+  those listed on the included copyright notices.  Distribution of any
+  portion of this package must be in strict compliance with the license
+  agreement(s) terms.
+  </copyright>
+  
+  <summary>
+  	Wifi driver for AR6002
+  </summary>
+ 
+------------------------------------------------------------------------------
+==============================================================================
+ Author(s): ="Atheros"
+==============================================================================
+!endif
+
+TARGETDEFNAME=AR6K_NDIS_SDIO
+
+TARGETLIBS= \
+  $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\coredll.lib \
+  $(_PROJECTROOT)\cesysgen\oak\lib\$(_CPUINDPATH)\ceosutil.lib \
+  $(_PROJECTROOT)\cesysgen\oak\lib\$(_CPUINDPATH)\ceddk.lib \
+  $(_PROJECTROOT)\cesysgen\oak\lib\$(_CPUINDPATH)\sdbus.lib \
+  $(_PROJECTROOT)\cesysgen\oak\lib\$(_CPUINDPATH)\sdcardlib.lib \
+  $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\ndis.lib \
+  $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\mmtimer.lib \
+  $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\ws2.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_bmi.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_htc.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_hif_sdio.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_wlan.lib \
+  .\ar6k_crypto_l.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_ndis_l.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_stream_l.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_wince_common_l.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_wince_apps_l.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_wince_utils.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_wmi.lib \
+  $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\ar6k_misc.lib   
+
+!IF (("$(_TGTPROJ)" == "wpc") || ("$(_TGTPROJ)" == "smartfon"))
+TARGETLIBS= $(TARGETLIBS) \
+  $(_PROJECTROOT)\cesysgen\oak\lib\$(_CPUINDPATH)\ossvcs.lib \
+!ENDIF
+
+#ifdef PYXIS_ADHOC
+!IF ("$(_TGTPROJ)" == "pyxis")
+TARGETLIBS= $(TARGETLIBS) \
+  $(_PUBLICROOT)\COMMON\oak\lib\$(_CPUINDPATH)\rsa32.lib \
+!ENDIF
+#endif
+
+DEFFILE=$(TARGETDEFNAME).def
+TARGETNAME=$(TARGETDEFNAME)
+TARGETTYPE=DYNLINK
+
+RELEASETYPE=PLATFORM
+
+SOURCES= \
+
+DLLENTRY=DllEntry

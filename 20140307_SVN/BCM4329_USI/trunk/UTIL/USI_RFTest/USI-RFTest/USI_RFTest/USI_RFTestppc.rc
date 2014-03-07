@@ -1,0 +1,238 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resourceppc.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 한국어 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resourceppc.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#include ""res\\USI_RFTestppc.rc2""  // Microsoft Visual C++ 이외의 다른 도구에서 편집한 리소스입니다.\r\n"
+    "#include ""afxres.rc""     // 표준 구성 요소입니다.\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\USI_RFTest.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_USI_RFTEST_DIALOG DIALOG  0, 0, 161, 165
+STYLE DS_SETFONT | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW | 0x80000000L
+CAPTION "USI_RFTest"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "",IDC_TAB_MAIN,"SysTabControl32",0x0,7,3,147,150
+    RTEXT           "",IDC_STATIC_VERSION,89,154,63,8
+END
+
+IDD_USI_RFTEST_DIALOG_WIDE DIALOG  0, 0, 210, 129
+STYLE DS_SETFONT | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW | 0x80000000L
+CAPTION "USI_RFTest"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    LTEXT           "TODO: 여기에 대화 상자 컨트롤을 배치합니다.",IDC_STATIC_1,57,49,112,23
+END
+
+IDD_FORMVIEW_WIRELESS DIALOG  0, 0, 130, 131
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif, 굴림"
+BEGIN
+    CONTROL         "Modulation",IDC_RADIO_MODULATION,"Button",BS_AUTORADIOBUTTON,26,14,51,10
+    CONTROL         "Non-modulation",IDC_RADIO_NON_MODULATION,"Button",BS_AUTORADIOBUTTON,26,28,66,10
+    GROUPBOX        "Modulation",IDC_STATIC,4,3,120,41
+    LTEXT           "Channel",IDC_STATIC_CHANNEL,4,49,27,8
+    EDITTEXT        IDC_EDIT_CHANNEL,41,47,71,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_CHANNEL,"msctls_updown32",UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,111,47,9,14
+    COMBOBOX        IDC_COMBO_MODE,41,64,79,55,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Mode",IDC_STATIC_MODE,4,66,18,8
+    LTEXT           "Rate",IDC_STATIC_RATE,4,81,16,8
+    EDITTEXT        IDC_EDIT_RATE,49,79,51,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Mbps",IDC_STATIC_RATE_MBPS,101,81,23,8
+    LTEXT           "Power\n(68-80)",IDC_STATIC_POWER,4,94,45,16
+    EDITTEXT        IDC_EDIT_POWER,49,95,51,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "qdbm",IDC_STATIC_POWER_QDBM,101,97,23,8
+    PUSHBUTTON      "TX",IDC_BUTTON_WLAN_TX,7,112,50,14
+    PUSHBUTTON      "RX",IDC_BUTTON_WLAN_RX,70,112,50,14
+END
+
+IDD_FORMVIEW_BLUETOOTH DIALOG  0, 0, 130, 134
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif, 굴림"
+BEGIN
+    COMBOBOX        IDC_COMBO_MODE,41,38,79,73,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Mode",IDC_STATIC,7,40,18,8
+    COMBOBOX        IDC_COMBO_TYPE,41,61,79,44,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Type",IDC_STATIC,7,63,17,8
+    LTEXT           "Channel",IDC_STATIC,7,17,27,8
+    EDITTEXT        IDC_EDIT_CHANNEL,41,15,71,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_CHANNEL,"msctls_updown32",UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,111,15,9,14
+    PUSHBUTTON      "TX",IDC_BUTTON_TX,7,86,50,14
+    PUSHBUTTON      "RX",IDC_BUTTON_RX,70,86,50,14
+    PUSHBUTTON      "Reset",IDC_BUTTON_RESET,7,107,50,14
+    PUSHBUTTON      "Hopping",IDC_BUTTON_HOPPING,70,107,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,3,0
+ PRODUCTVERSION 1,0,3,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041203b5"
+        BEGIN
+            VALUE "CompanyName", "BlueBirdSoft"
+            VALUE "FileDescription", "USI_RFTest"
+            VALUE "FileVersion", "1, 0, 3, 0"
+            VALUE "InternalName", "USI_RFTest.exe"
+            VALUE "LegalCopyright", "(c) BlueBirdSoft.  All rights reserved."
+            VALUE "OriginalFilename", "USI_RFTest.exe"
+            VALUE "ProductName", "USI_RFTest"
+            VALUE "ProductVersion", "1, 0, 3, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 949
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_USI_RFTEST_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 154
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_USI_RFTEST_DIALOG_WIDE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 203
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+
+    IDD_FORMVIEW_WIRELESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 124
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 126
+    END
+
+    IDD_FORMVIEW_BLUETOOTH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 120
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 126
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // 한국어 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE 18, 1
+#pragma code_page(949)
+#include "res\USI_RFTestppc.rc2"  // Microsoft Visual C++ 이외의 다른 도구에서 편집한 리소스입니다.
+#include "afxres.rc"     // 표준 구성 요소입니다.
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

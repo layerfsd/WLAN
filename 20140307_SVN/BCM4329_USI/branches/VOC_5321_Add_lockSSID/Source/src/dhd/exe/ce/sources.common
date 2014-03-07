@@ -1,0 +1,55 @@
+#
+# Internal sources file (do not release)
+#
+# Copyright (C) 2001 Broadcom Corporation
+#
+# $Id: sources.common,v 1.5.66.1.20.2 2009/06/12 00:18:35 Exp $
+#
+
+TARGETTYPE      := PROGRAM
+EXEENTRY        := main /SUBSYSTEM:CONSOLE
+PROCESSOR       := X86
+HOSTOS          := wince
+REQUIRE_WDM2600 := 0
+WINCEVER        := 600
+
+LIB_PATH        ?= $(SRCBASE)/tools/bin/WINCE/$(WINCEVER)/Lib
+
+## If CE SDK redistributables are releases separately, they can be installed
+## at any of following locations. If so, uncomment following line
+#LIB_PATH       ?= $(strip $(firstword $(wildcard C:/tools/msdev/WinCE-Redist/$(WINCEVER)/Lib D:/tools/msdev/WinCE-Redist/$(WINCEVER)/Lib Z:/projects/hnd/tools/win/msdev/WinCE-Redist/$(WINCEVER)/Lib)))
+
+vpath %.c $(SRCBASE)/dhd/exe $(SRCBASE)/shared $(SRCBASE)/tools/epictrl $(SRCBASE)/tools/misc
+
+TARGETPATH=obj/$(WINCEVER)/$(PROCESSOR)
+
+
+
+#ifdef WLBTAMP
+  C_DEFINES += -DWLBTAMP
+#endif
+
+ifeq ($(WINCEVER),600)
+  C_DEFINES +=  -D_CRT_SECURE_NO_DEPRECATE
+endif
+
+INCLUDES=$(SRCBASE)/wl/sys;$(SRCBASE)/tools/epictrl;$(_WINCEROOT)/public/common/oak/inc;$(_WINCEROOT)/public/common/ddk/inc;$(_WINCEROOT)/public/common/sdk/inc;$(_COMMONSDKROOT)/inc;$(SRCBASE)/include;
+
+ifeq ($(PROCESSOR),ARM)
+  SDK_LIB_PATH := "$(LIB_PATH)/ARMV4I"
+  INCLUDES     += $(_WINCEROOT)/Include/Armv4i
+endif
+
+ifeq ($(PROCESSOR),X86)
+  SDK_LIB_PATH := "$(LIB_PATH)/x86"
+  INCLUDES     += $(_WINCEROOT)/Include/$(PROCESSOR)
+endif
+
+ifneq ($(PROCESSOR),ARM)
+ifneq ($(PROCESSOR),X86)
+  $(error NEW PROCESSOR is defined, needs modification to this file)
+endif
+endif
+
+TARGETLIBS= $(SDK_LIB_PATH)/coredll.lib \
+            $(SDK_LIB_PATH)/corelibc.lib

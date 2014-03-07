@@ -1,0 +1,142 @@
+ sha512t
+
+ Timestamp is 511c997d (Thu Feb 14 16:59:57 2013)
+
+ Preferred load address is 00010000
+
+ Start         Length     Name                   Class
+ 0001:00000000 0000107cH .text                   CODE
+ 0002:00000000 00000264H .rdata                  DATA
+ 0002:00000264 00000014H .xdata                  DATA
+ 0002:00000278 00000028H .idata$2                DATA
+ 0002:000002a0 00000014H .idata$3                DATA
+ 0002:000002b4 00000080H .idata$4                DATA
+ 0002:00000334 0000001aH .idata$6                DATA
+ 0002:0000034e 00000000H .edata                  DATA
+ 0003:00000000 00000080H .idata$5                DATA
+ 0003:00000080 00000004H .CRT$XCA                DATA
+ 0003:00000084 00000004H .CRT$XCZ                DATA
+ 0003:00000088 00000004H .CRT$XIA                DATA
+ 0003:0000008c 00000004H .CRT$XIZ                DATA
+ 0003:00000090 00000004H .CRT$XPA                DATA
+ 0003:00000094 00000004H .CRT$XPZ                DATA
+ 0003:00000098 00000004H .CRT$XTA                DATA
+ 0003:0000009c 00000004H .CRT$XTZ                DATA
+ 0003:000000a0 00000150H .data                   DATA
+ 0003:000001f0 00000009H .bss                    DATA
+ 0004:00000000 00000068H .pdata                  DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0001:00000000       main                       00011000 f   sha512t.obj
+ 0001:0000037c       EVP_sha384                 0001137c f   libeay32:LIBEAY32.dll
+ 0001:0000038c       EVP_MD_CTX_cleanup         0001138c f   libeay32:LIBEAY32.dll
+ 0001:0000039c       EVP_DigestFinal_ex         0001139c f   libeay32:LIBEAY32.dll
+ 0001:000003ac       EVP_DigestUpdate           000113ac f   libeay32:LIBEAY32.dll
+ 0001:000003bc       EVP_DigestInit_ex          000113bc f   libeay32:LIBEAY32.dll
+ 0001:000003cc       EVP_MD_CTX_init            000113cc f   libeay32:LIBEAY32.dll
+ 0001:000003dc       EVP_Digest                 000113dc f   libeay32:LIBEAY32.dll
+ 0001:000003ec       EVP_sha512                 000113ec f   libeay32:LIBEAY32.dll
+ 0001:000003fc       fflush                     000113fc f   coredll:COREDLL.dll
+ 0001:0000040c       fprintf                    0001140c f   coredll:COREDLL.dll
+ 0001:0000041c       _getstdfilex               0001141c f   coredll:COREDLL.dll
+ 0001:0000042c       memcmp                     0001142c f   coredll:COREDLL.dll
+ 0001:00000444       WinMainCRTStartup          00011444 f   corelibc:pegwmain.obj
+ 0001:000004b8       _cinit                     000114b8 f   corelibc:crt0dat.obj
+ 0001:00000628       exit                       00011628 f   corelibc:crt0dat.obj
+ 0001:00000640       WinMain                    00011640 f   wcecompatex:winmain.obj
+ 0001:0000099c       ?processCmdLine@@YAHPA_WPAPAPAD@Z 0001199c f   wcecompatex:args.obj
+ 0001:00000dd8       ?unicode2ascii@@YAXPB_WPAD@Z 00011dd8 f   wcecompatex:ts_string.obj
+ 0001:00000e2c       ?ascii2unicode@@YAXPBDPA_WH@Z 00011e2c f   wcecompatex:ts_string.obj
+ 0001:00000ecc       ?unicode2ascii@@YAXPB_WPADH@Z 00011ecc f   wcecompatex:ts_string.obj
+ 0001:00000f5c       _XcptFilter                00011f5c f   coredll:COREDLL.dll
+ 0001:00000f6c       __C_specific_handler       00011f6c f   coredll:COREDLL.dll
+ 0001:00000f7c       LocalFree                  00011f7c f   coredll:COREDLL.dll
+ 0001:00000f8c       _isctype                   00011f8c f   coredll:COREDLL.dll
+ 0001:00000f9c       malloc                     00011f9c f   coredll:COREDLL.dll
+ 0001:00000fac       FindFirstFileW             00011fac f   coredll:COREDLL.dll
+ 0001:00000fbc       FindClose                  00011fbc f   coredll:COREDLL.dll
+ 0001:00000fcc       FindNextFileW              00011fcc f   coredll:COREDLL.dll
+ 0001:00000fdc       _stricmp                   00011fdc f   coredll:COREDLL.dll
+ 0001:00000fec       free                       00011fec f   coredll:COREDLL.dll
+ 0001:00000ffc       qsort                      00011ffc f   coredll:COREDLL.dll
+ 0001:0000100c       strrchr                    0001200c f   coredll:COREDLL.dll
+ 0001:0000101c       strchr                     0001201c f   coredll:COREDLL.dll
+ 0001:0000102c       realloc                    0001202c f   coredll:COREDLL.dll
+ 0001:0000103c       GetModuleFileNameW         0001203c f   coredll:COREDLL.dll
+ 0001:0000104c       strncpy                    0001204c f   coredll:COREDLL.dll
+ 0001:0000105c       strcpy                     0001205c f   coredll:COREDLL.dll
+ 0001:0000106c       strlen                     0001206c f   coredll:COREDLL.dll
+ 0002:00000000       ??_C@_0EB@DGHFABGM@aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@ 00013000     sha512t.obj
+ 0002:00000044       ??_C@_09MCFGFJHJ@?5passed?4?6?$AA@ 00013044     sha512t.obj
+ 0002:00000050       ??_C@_0BB@FLFDFBON@Testing?5SHA?9384?5?$AA@ 00013050     sha512t.obj
+ 0002:00000064       ??_C@_0BG@ICFGJDMM@?6TEST?53?5of?53?5failed?4?6?$AA@ 00013064     sha512t.obj
+ 0002:00000080       ??_C@_0BCB@NLPKPNBG@aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@ 00013080     sha512t.obj
+ 0002:000001a4       ??_C@_0BG@CMDOACFN@?6TEST?52?5of?53?5failed?4?6?$AA@ 000131a4     sha512t.obj
+ 0002:000001bc       ??_C@_01LFCBOECM@?4?$AA@   000131bc     sha512t.obj
+ 0002:000001c0       ??_C@_0HB@CCOEPGHF@abcdefghbcdefghicdefghijdefghijk@ 000131c0     sha512t.obj
+ 0002:00000234       ??_C@_0BG@FPGLGKP@?6TEST?51?5of?53?5failed?4?6?$AA@ 00013234     sha512t.obj
+ 0002:0000024c       ??_C@_0BB@KNJGJHHF@Testing?5SHA?9512?5?$AA@ 0001324c     sha512t.obj
+ 0002:00000260       ??_C@_03FIKCJHKP@abc?$AA@  00013260     sha512t.obj
+ 0002:00000278       __IMPORT_DESCRIPTOR_LIBEAY32 00013278     libeay32:LIBEAY32.dll
+ 0002:0000028c       __IMPORT_DESCRIPTOR_COREDLL 0001328c     coredll:COREDLL.dll
+ 0002:000002a0       __NULL_IMPORT_DESCRIPTOR   000132a0     libeay32:LIBEAY32.dll
+ 0003:00000000       __imp__isctype             00014000     coredll:COREDLL.dll
+ 0003:00000004       __imp_strlen               00014004     coredll:COREDLL.dll
+ 0003:00000008       __imp_strcpy               00014008     coredll:COREDLL.dll
+ 0003:0000000c       __imp_strncpy              0001400c     coredll:COREDLL.dll
+ 0003:00000010       __imp_GetModuleFileNameW   00014010     coredll:COREDLL.dll
+ 0003:00000014       __imp_realloc              00014014     coredll:COREDLL.dll
+ 0003:00000018       __imp_strchr               00014018     coredll:COREDLL.dll
+ 0003:0000001c       __imp_strrchr              0001401c     coredll:COREDLL.dll
+ 0003:00000020       __imp_fflush               00014020     coredll:COREDLL.dll
+ 0003:00000024       __imp_fprintf              00014024     coredll:COREDLL.dll
+ 0003:00000028       __imp__getstdfilex         00014028     coredll:COREDLL.dll
+ 0003:0000002c       __imp_memcmp               0001402c     coredll:COREDLL.dll
+ 0003:00000030       __imp__XcptFilter          00014030     coredll:COREDLL.dll
+ 0003:00000034       __imp___C_specific_handler 00014034     coredll:COREDLL.dll
+ 0003:00000038       __imp_LocalFree            00014038     coredll:COREDLL.dll
+ 0003:0000003c       __imp_malloc               0001403c     coredll:COREDLL.dll
+ 0003:00000040       __imp_FindFirstFileW       00014040     coredll:COREDLL.dll
+ 0003:00000044       __imp_FindClose            00014044     coredll:COREDLL.dll
+ 0003:00000048       __imp_FindNextFileW        00014048     coredll:COREDLL.dll
+ 0003:0000004c       __imp__stricmp             0001404c     coredll:COREDLL.dll
+ 0003:00000050       __imp_free                 00014050     coredll:COREDLL.dll
+ 0003:00000054       __imp_qsort                00014054     coredll:COREDLL.dll
+ 0003:00000058       \177COREDLL_NULL_THUNK_DATA 00014058     coredll:COREDLL.dll
+ 0003:0000005c       __imp_EVP_sha512           0001405c     libeay32:LIBEAY32.dll
+ 0003:00000060       __imp_EVP_Digest           00014060     libeay32:LIBEAY32.dll
+ 0003:00000064       __imp_EVP_MD_CTX_init      00014064     libeay32:LIBEAY32.dll
+ 0003:00000068       __imp_EVP_DigestInit_ex    00014068     libeay32:LIBEAY32.dll
+ 0003:0000006c       __imp_EVP_DigestUpdate     0001406c     libeay32:LIBEAY32.dll
+ 0003:00000070       __imp_EVP_DigestFinal_ex   00014070     libeay32:LIBEAY32.dll
+ 0003:00000074       __imp_EVP_MD_CTX_cleanup   00014074     libeay32:LIBEAY32.dll
+ 0003:00000078       __imp_EVP_sha384           00014078     libeay32:LIBEAY32.dll
+ 0003:0000007c       \177LIBEAY32_NULL_THUNK_DATA 0001407c     libeay32:LIBEAY32.dll
+ 0003:00000080       __xc_a                     00014080     corelibc:crt0init.obj
+ 0003:00000084       __xc_z                     00014084     corelibc:crt0init.obj
+ 0003:00000088       __xi_a                     00014088     corelibc:crt0init.obj
+ 0003:0000008c       __xi_z                     0001408c     corelibc:crt0init.obj
+ 0003:00000090       __xp_a                     00014090     corelibc:crt0init.obj
+ 0003:00000094       __xp_z                     00014094     corelibc:crt0init.obj
+ 0003:00000098       __xt_a                     00014098     corelibc:crt0init.obj
+ 0003:0000009c       __xt_z                     0001409c     corelibc:crt0init.obj
+ 0003:000000a0       app_d3                     000140a0     sha512t.obj
+ 0003:000000d0       app_d2                     000140d0     sha512t.obj
+ 0003:00000100       app_d1                     00014100     sha512t.obj
+ 0003:00000130       app_c3                     00014130     sha512t.obj
+ 0003:00000170       app_c2                     00014170     sha512t.obj
+ 0003:000001b0       app_c1                     000141b0     sha512t.obj
+ 0003:000001f0       __onexitend                000141f0     <common>
+ 0003:000001f4       __onexitbegin              000141f4     <common>
+ 0003:000001f8       _exitflag                  000141f8     <common>
+
+ entry point at        0001:00000444
+
+ Static symbols
+
+ 0001:00000524       doexit                     00011524 f   corelibc:crt0dat.obj
+ 0001:00000664       ?getCmdLineArg@@YA?AW4ArgType@@PAPA_WPA_WHPAURedirArg@@PA_N@Z 00011664 f   wcecompatex:args.obj
+ 0001:00000990       ?qsort_stricmp@@YAHPBX0@Z  00011990 f   wcecompatex:args.obj

@@ -1,0 +1,13 @@
+;
+; Copyright (c) Atheros LLC.  All rights reserved.
+;
+;
+LIBRARY         ATHSRVC
+
+EXPORTS
+	ATH_Init
+	ATH_Deinit
+	ATH_Open
+	ATH_Close
+	ATH_Seek
+	ATH_IOControl

@@ -1,0 +1,99 @@
+# 
+# Internal sources file (do not release)
+#
+# Copyright (C) 2006 Broadcom Corporation
+#
+# $Id: sources.common,v 1.16.4.6.2.7.6.32 2010/04/20 05:33:28 Exp $
+#
+
+WINCEVER 			= 500
+SRCBASE				= src
+WARNISERROR   = 0
+WARNLEVEL     = 2
+RELEASETYPE   = LOCAL
+#RELEASETYPE   = PLATFORM
+TARGETTYPE    = DYNLINK
+
+WINCEINCLUDE	= $(_PUBLICROOT)/common/oak/inc;$(_PUBLICROOT)/common/ddk/inc;$(_PUBLICROOT)/common/sdk/inc;
+INCLUDES			= $(WINCEINCLUDE);$(SRCBASE);$(SRCBASE)/include;$(SRCBASE)/shared;$(SRCBASE)/wl/sys;$(SRCBASE)/dongle;$(SRCBASE)/dhd/sys;$(SRCBASE)/dhd/ce
+
+SDK_LIB_PATH 	= $(SRCBASE)/tools/bin/WINCE/$(WINCEVER)/Lib/ARMV4I
+
+!IF "$(WINCEVER)" == "420"
+SDBUS_LIB=sdbusdriver.lib
+!ELSE
+SDBUS_LIB=sdbus.lib
+!ENDIF
+TARGETLIBS			=	$(SDK_LIB_PATH)/coredll.lib	\
+									$(SDK_LIB_PATH)/ndis.lib	\
+									$(SDK_LIB_PATH)/corelibc.lib	\
+									$(SDK_LIB_PATH)/ceddk.lib	\
+									$(SDK_LIB_PATH)/sdcardlib.lib \
+									$(SDK_LIB_PATH)/$(SDBUS_LIB)
+									
+TARGETNAME      = bcmsddhd
+
+DHD_C_DEFINES   = -DSHOW_EVENTS -DBCMWL -DBCMDRIVER -DBDC -DBCMSDIO	\
+									-DSTA	-DBCMSUP_PSK -DBCMWPA2 -DBCMDONGLEHOST -DEMBEDDED_PLATFORM	\
+									-DARP_OFFLOAD_SUPPORT -DPKT_FILTER_SUPPORT	\
+									-DCONFIG_IFACE_NAME=\"$(IFACE_NAME)\" -DCUSTOMER_HW_PT	\
+									-DOOB_INTR_ONLY	\
+									-DBCMDBG -DDHD_DEBUG \
+									-D__BBSOFT__
+
+!IF "$(PRJCOD)" == "ZELOS"
+DHD_C_DEFINES	= $(DHD_C_DEFINES) -D__ZELOS__
+
+INCLUDES=$(INCLUDES);$(_TARGETPLATROOT)\src\inc
+INCLUDES=$(INCLUDES);$(_TARGETPLATROOT)\sdk\inc
+INCLUDES=$(INCLUDES);$(_PUBLICROOT)\common\oak\inc
+INCLUDES=$(INCLUDES);$(_PUBLICROOT)\common\sdk\inc
+INCLUDES=$(INCLUDES);$(_PLATFORMROOT)\common\src\inc
+
+TARGETLIBS	= $(TARGETLIBS) \
+			$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\drvlib_mem.lib    \
+			$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\drvlib.lib \
+			$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\PlatformLibrary.lib
+
+!ENDIF
+
+EXTRA_C_DEFINES = -DNDIS -DNDIS_MINIPORT_DRIVER -DNDIS_WDM -DWDM -DUNDER_CE -DWL_IW_USE_ISCAN
+#-DSOFTAP -DWL11N -DSIMPLE_ISCAN
+
+!IF "$(WINCEDEBUG)" == "debug"
+CDEFINES        = $(DHD_C_DEFINES) $(EXTRA_C_DEFINES) $(MS_C_DEFINES)
+CDEFINES        = -QRimplicit-import- $(CDEFINES) -DDHD_DEBUG -DBCMPERFSTATS -DBCMSLTGT -DBCMQT -DBCMSDIOH_STD -DTESTDONGLE -DBCMDBG_ASSERT -DBCMDBG_MEM -DSDTEST
+!ELSE
+CDEFINES        = $(DHD_C_DEFINES) $(EXTRA_C_DEFINES) $(MS_C_DEFINES)
+!ENDIF
+
+#CDEFINES        = $(CDEFINES) -DBCMSTDLIB_WIN32_APP
+#CDEFINES				= $(CDEFINES) -DBCMPERFSTATS -DBCMSLTGT -DBCMQT -DBCMSDIOH_STD -DTESTDONGLE -DBCMDBG_ASSERT -DBCMDBG_MEM -DSDTEST
+
+!IF "$(WINCEVER)" == "WM7"
+CDEFINES				= $(CDEFINES) -DNDIS60_MINIPORT -DNDIS60 -DEXT_STA -DWL_OIDS -DWL_ASSOC_RECREATE
+!ELSE
+CDEFINES 				= $(CDEFINES) -DNDIS51_MINIPORT -DNDIS51 -DWINVER=0x0500
+!ENDIF
+
+SOURCES					= ndiserrmap.c	\
+									bcmutils.c	\
+									bcmstdlib.c	\
+									hndpmu.c	\
+									siutils.c	\
+									sbutils.c	\
+									aiutils.c	\
+									dhd_cdc.c	\
+									dhd_sdio.c	\
+									dhd_ndis.c	\
+									dhd_common.c	\
+									sdnow.c	\
+									ndshared.c	\
+									wl_ndis.c	\
+									wl_ndconfig.c	\
+									ndis_osl.c	\
+									bcmwifi.c	\
+									bcmsdh_ndis.c	\
+									MsgQueueUtil.c	\
+
+# End of  sources file		

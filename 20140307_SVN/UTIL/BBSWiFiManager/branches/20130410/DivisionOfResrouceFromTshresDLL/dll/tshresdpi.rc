@@ -1,0 +1,60 @@
+//
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+//
+//
+// Use of this source code is subject to the terms of the Microsoft
+// premium shared source license agreement under which you licensed
+// this source code. If you did not accept the terms of the license
+// agreement, you are not authorized to use this source code.
+// For the terms of the license, please see the license agreement
+// signed by you and Microsoft.
+// THE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES OR INDEMNITIES.
+//
+//
+// DPI sensitive resources
+//
+
+// Macros to help us map dpi-specific resource directories into our paths
+#define MAKESTR(a) #a
+#define ADDPATH(dir, name) MAKESTR(resource/dir/name)
+//#define RESFILE(name) ADDPATH(DPIRESDIR, name)
+
+#define RESFILE(name) resource/res96/name
+
+#include "resource.h"
+//#include "..\..\..\..\ossvcs\cellcore\comm\connmgr\cspnet\resource.h"
+#include "cellcoreResource.h"
+
+// netui
+IDB_WZC_STATE            BITMAP     RESFILE(wzcui.bmp)
+IDB_WIRELESS_BARS_1      BITMAP     RESFILE(WIRELESS1.BMP)
+IDB_WIRELESS_BARS_2      BITMAP     RESFILE(WIRELESS2.BMP)
+IDB_WIRELESS_BARS_3      BITMAP     RESFILE(WIRELESS3.BMP)
+IDB_WIRELESS_BARS_4      BITMAP     RESFILE(WIRELESS4.BMP)
+IDB_NETUI_HELPICON       BITMAP     RESFILE(wizardhelp.bmp)
+
+
+
+// wpcshell
+IDB_DOTTED               BITMAP     RESFILE(dotted.bmp)
+
+
+// wrlsshell
+IDB_BLUETOOTH_ON         BITMAP     RESFILE(bthon.bmp)
+IDB_BLUETOOTH_DISCOV     BITMAP     RESFILE(bthdiscv.bmp)
+//IDB_BLUETOOTH_A2DP       BITMAP     RESFILE(btha2dp.bmp)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icons
+//
+IDI_WZC_CONNECTION_BUBBLE ICON RESFILE(wzcbubble.ico)
+
+IDI_BUBBLE_ARROW_LEFT ICON RESFILE(left_arrow.ico)
+IDI_BUBBLE_ARROW_RIGHT ICON RESFILE(right_arrow.ico)
+
+IDI_LOCK_ICON     ICON    RESFILE(lock.ico)
+IDI_UNLOCK_ICON   ICON    RESFILE(unlock.ico)
+IDI_WC            ICON    RESFILE(wc.ico)
+
+//IDI_TODAY_RADIO   ICON RESFILE(radio_plugin.ico)

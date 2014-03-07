@@ -1,0 +1,23 @@
+TARGETNAME=athspi_buscore
+TARGETTYPE=LIBRARY
+
+CDEFINES=$(CDEFINES)
+
+AR6K_SPI_ROOT=..\..\..\
+
+INCLUDES=$(INCLUDES) \
+         $(_SYSGENSDKROOT)\inc; \
+         $(_SYSGENOAKROOT)\inc; \
+         $(_SYSGENDDKROOT)\inc; \
+         $(AR6K_SPI_ROOT)\src\include;
+
+RELEASETYPE=PLATFORM
+WINCEOEM=1
+
+SOURCES=sdio_bus_os.c         \
+        ..\sdio_bus_events.c  \
+        ..\sdio_function.c    \
+        ..\sdio_bus_misc.c    \
+        ..\sdio_bus.c         \
+
+ 

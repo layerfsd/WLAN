@@ -1,0 +1,61 @@
+;------------------------------------------------------------------------------
+; <copyright file="AR6K_CF.reg" company="Atheros">
+;    Copyright (c) 2006 Microsoft Corporation.  All rights reserved.
+;    Copyright (c) 2006 Atheros Corporation.  All rights reserved.
+;
+;    The use and distribution terms for this software are covered by the
+;    Microsoft Limited Permissive License (Ms-LPL) 
+;    http://www.microsoft.com/resources/sharedsource/licensingbasics/limitedpermissivelicense.mspx 
+;    which can be found in the file MS-LPL.txt at the root of this distribution.
+;    By using this software in any fashion, you are agreeing to be bound by
+;    the terms of this license.
+;
+;    You must not remove this notice, or any other, from this software.
+; </copyright>
+; 
+; <summary>
+;    Windows CE Wifi Driver for AR-6000
+; </summary>
+;------------------------------------------------------------------------------
+;==============================================================================
+; AR6000 CF reg file
+;
+; Author(s): ="Atheros"
+;==============================================================================
+[HKEY_LOCAL_MACHINE\DRIVERS\PCCARD\PCMCIA\PNP\UNKNOWN_MANUFACTURER-2A62]
+	"Dll"="ndis.dll"
+	"Prefix"="NDS"
+	"Miniport"="AR6K_CF"
+
+[HKEY_LOCAL_MACHINE\DRIVERS\PCCARD\PCMCIA\PNP\UNKNOWN_MANUFACTURER-6E2C]
+	"Dll"="ndis.dll"
+	"Prefix"="NDS"
+	"Miniport"="AR6K_CF"
+
+[HKEY_LOCAL_MACHINE\DRIVERS\PCCARD\PCMCIA\PNP\ATHR-AR6K-A417]
+	"Dll"="ndis.dll"
+	"Prefix"="NDS"
+	"Miniport"="AR6K_CF"
+
+[HKEY_LOCAL_MACHINE\DRIVERS\PCCARD\PCMCIA\PNP\ATHR-AR6K-4C0A]
+	"Dll"="ndis.dll"
+	"Prefix"="NDS"
+	"Miniport"="AR6K_CF"
+
+[HKEY_LOCAL_MACHINE\DRIVERS\PCCARD\PCMCIA\PNP\ATHR-AR6K-0C3F]
+	"Dll"="ndis.dll"
+	"Prefix"="NDS"
+	"Miniport"="AR6K_CF"
+
+[HKEY_LOCAL_MACHINE\Comm\AR6K_CF]
+    "DisplayName"="AR6000 WLAN Adapter"
+    "Group"="NDIS"
+    "ImagePath"="ar6k_ndis_cf.dll"
+
+[HKEY_LOCAL_MACHINE\Comm\AR6K_CF\Linkage]
+    "Route"=multi_sz:"AR6K_CF1"
+
+[HKEY_LOCAL_MACHINE\Comm\AR6K_CF1]
+    "DisplayName"="AR6000 WLAN Adapter"
+    "Group"="NDIS"
+    "ImagePath"="ar6k_ndis_cf.dll"

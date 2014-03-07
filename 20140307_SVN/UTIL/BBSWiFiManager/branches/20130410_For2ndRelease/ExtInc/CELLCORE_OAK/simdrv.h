@@ -1,0 +1,338 @@
+//
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+//
+//
+// Use of this sample source code is subject to the terms of the Microsoft
+// license agreement under which you licensed this sample source code. If
+// you did not accept the terms of the license agreement, you are not
+// authorized to use this sample source code. For the terms of the license,
+// please see the license agreement between you and Microsoft or, if applicable,
+// see the LICENSE.RTF on your install media or the root of your tools installation.
+// THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES OR INDEMNITIES.
+//
+/*++
+THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+PARTICULAR PURPOSE.
+Copyright (c) 1995-1999  Microsoft Corporation
+
+Module Name:
+
+simdrv.h
+
+Abstract:
+
+
+Notes:
+
+
+--*/
+
+#ifndef _SIMDRV_H_
+#define _SIMDRV_H_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+// For events
+#define SIMEVENTTEMPLATE                            TEXT("SimNot_Evt%x")
+
+// Maximum length any SIM record can be
+#define MAX_RECORD_LENGTH                           0xff
+
+// Maximum length of IMSI
+#define MAX_IMSI_LENGTH                             0xff
+
+// Maximum size of a notification
+#define MAX_NOTIFY_SIZE                             (sizeof(SIMFILEREFRESH))
+
+// SIM IO-control codes
+#define FILE_DEVICE_SIM                             0x500
+
+// In:  none
+// Out: DWORD*
+#define IOCTL_SIM_INITNOTIFICATIONS                 CTL_CODE(FILE_DEVICE_SIM, 1, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  DWORD*
+// Out: SIMCAPS_RESULT*
+#define IOCTL_SIM_GETDEVCAPS                        CTL_CODE(FILE_DEVICE_SIM, 2, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  DWORD*
+// Out: SIMSTATUS_RESULT*
+#define IOCTL_SIM_GETPHONEBOOKSTATUS                CTL_CODE(FILE_DEVICE_SIM, 3, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  SIMPHONEBOOK_PARAMS*
+// Out: SIMPHONEBOOK_RESULT*
+#define IOCTL_SIM_READPHONEBOOKENTRY                CTL_CODE(FILE_DEVICE_SIM, 4, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  SIMWRITEPHONEBOOKENTRY_PARAMS*
+// Out: HRESULT*
+#define IOCTL_SIM_WRITEPHONEBOOKENTRY               CTL_CODE(FILE_DEVICE_SIM, 5, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  SIMPHONEBOOK_PARAMS*
+// Out: HRESULT*
+#define IOCTL_SIM_DELETEPHONEBOOKENTRY              CTL_CODE(FILE_DEVICE_SIM, 6, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  DWORD*
+// Out: SIMSTATUS_RESULT*
+#define IOCTL_SIM_GETSMSSTORAGESTATUS               CTL_CODE(FILE_DEVICE_SIM, 7, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  SIMMESSAGE_PARAMS*
+// Out: SIMREADMESSAGE_RESULT*
+#define IOCTL_SIM_READMESSAGE                       CTL_CODE(FILE_DEVICE_SIM, 8, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  SIMWRITEMESSAGE_PARAMS*
+// Out: SIMWRITEMESSAGE_RESULT*
+#define IOCTL_SIM_WRITEMESSAGE                      CTL_CODE(FILE_DEVICE_SIM, 9, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  SIMMESSAGE_PARAMS*
+// Out: HRESULT*
+#define IOCTL_SIM_DELETEMESSAGE                     CTL_CODE(FILE_DEVICE_SIM, 10, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  SIMMESSAGE_PARAMS*
+// Out: SIMREADRILMESSAGE_RESULT*
+#define IOCTL_SIM_READRILMESSAGE                    CTL_CODE(FILE_DEVICE_SIM, 11, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  none
+// Out: SIMGETPHONELOCKEDSTATE_RESULT*
+#define IOCTL_SIM_GETPHONELOCKEDSTATE               CTL_CODE(FILE_DEVICE_SIM, 12, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  SIMUNLOCKPHONE_PARAMS*
+// Out: HRESULT*
+#define IOCTL_SIM_UNLOCKPHONE                       CTL_CODE(FILE_DEVICE_SIM, 13, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  SIMGETLOCKINGSTATUS_PARAMS*
+// Out: SIMGETLOCKINGSTATUS_RESULT*
+#define IOCTL_SIM_GETLOCKINGSTATUS                  CTL_CODE(FILE_DEVICE_SIM, 14, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  SIMSETLOCKINGSTATUS_PARAMS*
+// Out: HRESULT*
+#define IOCTL_SIM_SETLOCKINGSTATUS                  CTL_CODE(FILE_DEVICE_SIM, 15, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  SIMCHANGELOCKINGPASSWORD_PARAMS*
+// Out: HRESULT*
+#define IOCTL_SIM_CHANGELOCKINGPASSWORD             CTL_CODE(FILE_DEVICE_SIM, 16, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  SIMREADRECORD_PARAMS*
+// Out: SIMREADRECORD_RESULT*
+#define IOCTL_SIM_READRECORD                        CTL_CODE(FILE_DEVICE_SIM, 17, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  SIMWRITERECORD_PARAMS*
+// Out: HRESULT*
+#define IOCTL_SIM_WRITERECORD                       CTL_CODE(FILE_DEVICE_SIM, 18, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  DWORD*
+// Out: SIMGETRECORDINFO_RESULT*
+#define IOCTL_SIM_GETRECORDINFO                     CTL_CODE(FILE_DEVICE_SIM, 19, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  None
+// Out: GETNOTIFICATION_RESULT*
+#define IOCTL_SIM_GETNOTIFICATION                   CTL_CODE(FILE_DEVICE_SIM, 20, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  LPBYTE
+// Out: None
+#define IOCTL_SIM_FILEREFRESH                       CTL_CODE(FILE_DEVICE_SIM, 21, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  None
+// Out: GETIMSI_RESULT*
+#define IOCTL_SIM_GETIMSI                           CTL_CODE(FILE_DEVICE_SIM, 22, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  DWORD*
+// Out: SIMPHONEBOOKCAPS_RESULT*
+#define IOCTL_SIM_GETPHONEBOOKCAPS                  CTL_CODE(FILE_DEVICE_SIM, 23, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  SIMREADPHONEBOOKTAG_PARAMS*
+// Out: HRESULT*
+#define IOCTL_SIM_READPHONEBOOKTAG                  CTL_CODE(FILE_DEVICE_SIM, 24, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  SIMWRITEPHONEBOOKTAG_PARAMS*
+// Out: HRESULT*
+#define IOCTL_SIM_WRITEPHONEBOOKTAG                 CTL_CODE(FILE_DEVICE_SIM, 25, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  SIMWRITEPHONEBOOKENTRYEX_PARAMS*
+// Out: HRESULT*
+#define IOCTL_SIM_WRITEPHONEBOOKENTRYEX             CTL_CODE(FILE_DEVICE_SIM, 26, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// In:  SIMREADPHONEBOOKENTRIES_PARAMS*
+// Out: SIMREADPHONEBOOKENTRIES_RESULT*
+#define IOCTL_SIM_READPHONEBOOKENTRIES              CTL_CODE(FILE_DEVICE_SIM, 27, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// Parameter structures (passed into the driver)
+typedef struct tagSIMPHONEBOOK_PARAMS {
+    DWORD dwLocation;
+    DWORD dwIndex;
+} SIMPHONEBOOK_PARAMS;
+
+typedef struct tagSIMREADPHONEBOOKENTRIES_PARAMS {
+    DWORD dwLocation;
+    DWORD dwStartIndex;
+    DWORD dwCount;
+    DWORD dwBufferSize;
+    LPSIMPHONEBOOKENTRYEX lpEntries;
+} SIMREADPHONEBOOKENTRIES_PARAMS;
+
+typedef struct tagSIMWRITEPHONEBOOKENTRY_PARAMS {
+    DWORD dwLocation;
+    DWORD dwIndex;
+    SIMPHONEBOOKENTRY spbe;
+} SIMWRITEPHONEBOOKENTRY_PARAMS;
+
+typedef struct tagSIMWRITEPHONEBOOKENTRYEX_PARAMS {
+    DWORD dwLocation;
+    DWORD dwIndex;
+    LPSIMPHONEBOOKENTRYEX lpPhonebookEntry;
+} SIMWRITEPHONEBOOKENTRYEX_PARAMS;
+
+typedef struct tagSIMMESSAGE_PARAMS {
+    DWORD dwStorage;
+    DWORD dwIndex;
+} SIMMESSAGE_PARAMS;
+
+typedef struct tagSIMWRITEMESSAGE_PARAMS {
+    DWORD dwStorage;
+    SIMMESSAGE sm;
+} SIMWRITEMESSAGE_PARAMS;
+
+typedef struct tagSIMUNLOCKPHONE_PARAMS {
+    BOOL fIgnorePassword;
+    TCHAR rgszPassword[MAXLENGTH_PASSWORD];
+    BOOL fIgnoreNewPin;
+    TCHAR rgszNewPin[MAXLENGTH_PASSWORD];
+} SIMUNLOCKPHONE_PARAMS;
+
+typedef struct tagSIMGETLOCKINGSTATUS_PARAMS {
+    DWORD dwLockingFacility;
+    BOOL fIgnorePassword;
+    TCHAR rgszPassword[MAXLENGTH_PASSWORD];
+} SIMGETLOCKINGSTATUS_PARAMS;
+
+typedef struct tagSIMSETLOCKINGSTATUS_PARAMS {
+    DWORD dwLockingFacility;
+    BOOL fIgnorePassword;
+    TCHAR rgszPassword[MAXLENGTH_PASSWORD];
+    BOOL fEnabled;
+} SIMSETLOCKINGSTATUS_PARAMS;
+
+typedef struct tagSIMCHANGELOCKINGPASSWORD_PARAMS {
+    DWORD dwLockingFacility;
+    BOOL fIgnoreOldPassword;
+    TCHAR rgszOldPassword[MAXLENGTH_PASSWORD];
+    BOOL fIgnoreNewPassword;
+    TCHAR rgszNewPassword[MAXLENGTH_PASSWORD];
+} SIMCHANGELOCKINGPASSWORD_PARAMS;
+
+typedef struct tagSIMREADRECORD_PARAMS {
+    DWORD dwAddress;
+    DWORD dwRecordType;
+    DWORD dwIndex;
+    DWORD dwBufferSize;
+} SIMREADRECORD_PARAMS;
+
+typedef struct tagSIMWRITERECORD_PARAMS {
+    DWORD dwAddress;
+    DWORD dwRecordType;
+    DWORD dwIndex;
+    BYTE rgbRecord[MAX_RECORD_LENGTH];
+    DWORD dwByteCount;
+} SIMWRITERECORD_PARAMS;
+
+typedef struct tagSIMREADPHONEBOOKTAG_PARAMS {
+    DWORD dwTag;
+    DWORD dwIndex;
+    LPTSTR szName;
+    DWORD cchNameSize;
+} SIMREADPHONEBOOKTAG_PARAMS;
+
+typedef struct tagSIMWRITEPHONEBOOKTAG_PARAMS {
+    DWORD dwTag;
+    DWORD dwIndex;
+    LPTSTR szName;
+    DWORD cchNameSize;
+} SIMWRITEPHONEBOOKTAG_PARAMS;
+
+
+// Result structures (returned from the driver)
+typedef struct tagSIMCAPS_RESULT {
+    HRESULT hrResult;
+    SIMCAPS sc;
+} SIMCAPS_RESULT;
+
+typedef struct tagSIMSTATUS_RESULT {
+    HRESULT hrResult;
+    DWORD dwUsed;
+    DWORD dwTotal;
+} SIMSTATUS_RESULT;
+
+typedef struct tagSIMPHONEBOOK_RESULT {
+    HRESULT hrResult;
+    SIMPHONEBOOKENTRY spbe;
+} SIMPHONEBOOK_RESULT;
+
+typedef struct tagSIMREADPHONEBOOKENTRIES_RESULT {
+    HRESULT hrResult;
+    DWORD dwCount;
+    DWORD dwBufferSize;
+} SIMREADPHONEBOOKENTRIES_RESULT;
+
+typedef struct tagSIMREADMESSAGE_RESULT {
+    HRESULT hrResult;
+    SIMMESSAGE sm;
+} SIMREADMESSAGE_RESULT;
+
+typedef struct tagSIMWRITEMESSAGE_RESULT {
+    HRESULT hrResult;
+    DWORD dwIndex;
+} SIMWRITEMESSAGE_RESULT;
+
+typedef struct tagSIMREADRILMESSAGE_RESULT {
+    HRESULT hrResult;
+    RILMESSAGEINFO rmi;
+} SIMREADRILMESSAGE_RESULT;
+
+typedef struct tagSIMGETPHONELOCKEDSTATE_RESULT {
+    HRESULT hrResult;
+    DWORD dwLockedState;
+} SIMGETPHONELOCKEDSTATE_RESULT;
+
+typedef struct tagSIMGETLOCKINGSTATUS_RESULT {
+    HRESULT hrResult;
+    BOOL fEnabled;
+} SIMGETLOCKINGSTATUS_RESULT;
+
+typedef struct tagSIMREADRECORD_RESULT {
+    HRESULT hrResult;
+    BYTE rgbRecord[MAX_RECORD_LENGTH];
+    DWORD dwBytesRead;
+} SIMREADRECORD_RESULT;
+
+typedef struct tagSIMGETRECORDINFO_RESULT {
+    HRESULT hrResult;
+    SIMRECORDINFO sri;
+} SIMGETRECORDINFO_RESULT;
+
+typedef struct tagSIMGETNOTIFICATION_RESULT
+{
+    DWORD dwNotifyCode;
+    BYTE rgbData[MAX_NOTIFY_SIZE];
+    DWORD dwDataSize;
+} SIMGETNOTIFICATION_RESULT, *PSIMGETNOTIFICATION_RESULT;
+
+typedef struct tagSIMGETIMSI_RESULT
+{
+    HRESULT hrResult;
+    TCHAR rgszIMSI[MAX_IMSI_LENGTH];
+} SIMGETIMSI_RESULT, *PSIMGETIMSI_RESULT;
+
+typedef struct tagSIMPHONEBOOKCAPS_RESULT {
+    HRESULT hrResult;
+    SIMPHONEBOOKCAPS spbc;
+} SIMPHONEBOOKCAPS_RESULT;
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif
+

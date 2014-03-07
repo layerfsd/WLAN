@@ -1,0 +1,8 @@
+!if 0
+Copyright (c) 2007 Atheros Communications Inc.
+All rights reserved.
+!endif
+
+DIRS= \
+	BT_UNIV_WM6 \
+	BT_UART

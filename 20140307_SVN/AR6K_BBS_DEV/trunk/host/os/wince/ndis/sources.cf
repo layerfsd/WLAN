@@ -1,0 +1,65 @@
+!if 0
+------------------------------------------------------------------------------
+ <copyright file="sources" company="Atheros and Microsoft">
+    Copyright (c) 2006 Microsoft Corporation.  All rights reserved.
+    Copyright (c) 2006 Atheros Corporation.  All rights reserved.
+
+    The use and distribution terms for this software are covered by the
+    Microsoft Limited Permissive License (Ms-LPL) 
+    http://www.microsoft.com/resources/sharedsource/licensingbasics/limitedpermissivelicense.mspx 
+    which can be found in the file MS-LPL.txt at the root of this distribution.
+    By using this software in any fashion, you are agreeing to be bound by
+    the terms of this license.
+
+    You must not remove this notice, or any other, from this software.
+ </copyright>
+ 
+ <summary>
+    Windows CE Wifi Driver for AR-6000
+ </summary>
+------------------------------------------------------------------------------
+==============================================================================
+ Windows CE Wifi Driver for AR-6000
+
+ Author(s): ="Atheros and Microsoft"
+==============================================================================
+!endif
+
+!IF ("$(AR6K_BUS_TYPE)" == "SDIO")
+TARGETNAME=ar6k_ndis_sdio_l
+!ELSE
+TARGETNAME=ar6k_ndis_cf_l
+!ENDIF
+
+TARGETTYPE=LIBRARY
+SOURCES= \
+  car6k.cpp \
+  car6koid.cpp \
+  car6krx.cpp \
+  car6ktx.cpp \
+  cmini.cpp \
+  c802_3mini.cpp \
+  c802_11mini.cpp \
+  miniport.cpp \
+  netbuf.c \
+  wmicallback.cpp \
+  RegParse.cpp \
+  platform.c
+
+AR6K_PROJ_ROOT=..\..\..\..
+
+!INCLUDE $(AR6K_PROJ_ROOT)\sources.inc
+
+INCLUDES= \
+  .; \
+  $(AR6K_PROJ_ROOT)\host\include; \
+  $(AR6K_PROJ_ROOT)\host\htc\AR6000\include; \
+  $(AR6K_PROJ_ROOT)\host\wlan\include; \
+  $(AR6K_PROJ_ROOT)\host\os\wince\include; \
+  $(AR6K_PROJ_ROOT)\include; \
+  $(_WINCEROOT)\PUBLIC\COMMON\SDK\INC; \
+  $(_WINCEROOT)\PUBLIC\COMMON\DDK\INC; \
+  $(_WINCEROOT)\PUBLIC\COMMON\OAK\INC
+
+
+    

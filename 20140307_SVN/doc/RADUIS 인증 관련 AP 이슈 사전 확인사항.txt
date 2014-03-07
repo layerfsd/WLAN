@@ -1,0 +1,69 @@
+
+* RADIUS 서버 관련 AP 접속 이슈 사전확인 사항
+
+최종작성일 : 2013-01-18
+
+
+
+1. 고객사가 사용하는 AP에 접속시 로그인 창이 계속 팝업되거나, 인증이 되지 않을 때
+  고객이 "AP명"과 "ID / PASS" 값이 올바르게 입력을 하였고, 그 값이 정상적으로 저장이 되었는지 확인하는 방법.
+
+  ex) 개발에서 구성한 RADUIS 서버 인증 및 AP 명, "0_HM_RADUIS" <-- AP 이름.
+ 
+	[HKEY_CURRENT_USER\Comm\EAPOL\Config\0_HM_RADUIS]
+	"LastAuthSuccessful"=dword:00000001
+	"Password"=hex:\
+		  02,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,20,\
+		  1E,00,00,00,45,00,41,00,50,00,4F,00,4C,00,20,00,50,00,61,00,73,00,73,00,\
+		  77,00,6F,00,72,00,64,00,00,00,0E,66,00,00,10,00,00,00,10,00,00,00,18,AB,\
+		  FC,4F,A5,4F,8B,8C,71,F3,F4,9D,03,49,97,62,00,00,00,00,04,80,00,00,10,00,\
+		  00,00,10,00,00,00,F4,ED,56,F6,68,21,80,32,13,7E,40,75,58,AB,37,F7,10,00,\
+		  00,00,CE,98,DF,05,D3,E9,41,EB,0B,4F,BA,AD,21,4D,05,FF,14,00,00,00,E7,42,\
+		  F1,7A,7B,95,98,B6,4A,8B,2C,79,BB,51,1B,1D,26,06,20,99
+	"Identity"="guest1"
+	"EapTypeId"=dword:00000019
+	"Enable8021x"=dword:00000001
+
+  위와 같이 값이 있어야 정상적으로 사용이 접속이 가능한 상태입니다.
+
+
+2. EAP Authentication Protocols 설정 상태 확인 (WM 에서는 4가지의 프로토콜을 지원)
+
+  WM_PEAP_Patch.cab 을 설치하게 되면, "ValidateServerCert"=dword:00000000 이 값이 들어 있으면 정상.
+
+	[HKEY_LOCAL_MACHINE\Comm\EAP]
+
+	[HKEY_LOCAL_MACHINE\Comm\EAP\Extension]
+
+	; Challenge-Handshake Authentication Protocol (CHAP) 
+	[HKEY_LOCAL_MACHINE\Comm\EAP\Extension\4]
+	"ValidateServerCert"=dword:00000000
+
+	; Microsoft Challenge-Handshake Authentication Protocol 2.0 (MS CHAP V2) 
+	[HKEY_LOCAL_MACHINE\Comm\EAP\Extension\26]
+	"ValidateServerCert"=dword:00000000
+	"InteractiveUIPath"="eapchap.dll"
+	"Path"="eapchap.dll"
+	"InvokeUserNameDialog"=dword:00000001
+	"InvokePasswordDialog"=dword:00000001
+	"FriendlyName"="MSV2-Challenge"
+	
+	; Transport Level Security (TLS) 
+	[HKEY_LOCAL_MACHINE\Comm\EAP\Extension\13]
+	"ValidateServerCert"=dword:00000000
+	"FriendlyName"="Smart Card or Certificate"
+	"IdentityPath"="netui.dll"
+	"ConfigUIPath"="netui.dll"
+	"InteractiveUIPath"="netui.dll"
+	"Path"="eaptls.dll"
+
+	; Protected Extensible Authentication Protocol (PEAP) 
+	[HKEY_LOCAL_MACHINE\Comm\EAP\Extension\25]
+	"ValidateServerCert"=dword:00000000
+	"EAPMSCHAPv2Only"=dword:00000001
+	"InteractiveUIPath"="eaptls.dll"
+	"Path"="eaptls.dll"
+	"ConfigUIPath"="eaptls.dll"
+	"InvokePasswordDialog"=dword:00000001
+	"InvokeUserNameDialog"=dword:00000001
+	"FriendlyName"="PEAP"

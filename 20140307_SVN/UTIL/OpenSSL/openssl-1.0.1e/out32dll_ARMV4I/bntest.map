@@ -1,0 +1,371 @@
+ bntest
+
+ Timestamp is 511c9981 (Thu Feb 14 17:00:01 2013)
+
+ Preferred load address is 00010000
+
+ Start         Length     Name                   Class
+ 0001:00000000 000051dcH .text                   CODE
+ 0002:00000000 000006f2H .rdata                  DATA
+ 0002:000006f4 00000014H .xdata                  DATA
+ 0002:00000708 00000028H .idata$2                DATA
+ 0002:00000730 00000014H .idata$3                DATA
+ 0002:00000744 00000178H .idata$4                DATA
+ 0002:000008bc 0000001aH .idata$6                DATA
+ 0002:000008d6 00000000H .edata                  DATA
+ 0003:00000000 00000178H .idata$5                DATA
+ 0003:00000178 00000004H .CRT$XCA                DATA
+ 0003:0000017c 00000004H .CRT$XCZ                DATA
+ 0003:00000180 00000004H .CRT$XIA                DATA
+ 0003:00000184 00000004H .CRT$XIZ                DATA
+ 0003:00000188 00000004H .CRT$XPA                DATA
+ 0003:0000018c 00000004H .CRT$XPZ                DATA
+ 0003:00000190 00000004H .CRT$XTA                DATA
+ 0003:00000194 00000004H .CRT$XTZ                DATA
+ 0003:00000198 0000003cH .data                   DATA
+ 0003:000001d4 00000015H .bss                    DATA
+ 0004:00000000 00000160H .pdata                  DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0001:00000058       test_div_word              00011058 f   bntest.obj
+ 0001:00000220       test_mont                  00011220 f   bntest.obj
+ 0001:00000494       test_mod_exp               00011494 f   bntest.obj
+ 0001:00000670       test_mod_exp_mont_consttime 00011670 f   bntest.obj
+ 0001:00000854       test_exp                   00011854 f   bntest.obj
+ 0001:00000a24       test_gf2m_mod              00011a24 f   bntest.obj
+ 0001:00000bac       test_gf2m_mod_mul          00011bac f   bntest.obj
+ 0001:00000de4       test_gf2m_mod_sqr          00011de4 f   bntest.obj
+ 0001:00000f78       test_gf2m_mod_inv          00011f78 f   bntest.obj
+ 0001:0000110c       test_gf2m_mod_div          0001210c f   bntest.obj
+ 0001:000012fc       test_gf2m_mod_exp          000122fc f   bntest.obj
+ 0001:00001520       test_gf2m_mod_sqrt         00012520 f   bntest.obj
+ 0001:000016d8       test_gf2m_mod_solve_quad   000126d8 f   bntest.obj
+ 0001:00001938       test_add                   00012938 f   bntest.obj
+ 0001:00001ae8       test_sub                   00012ae8 f   bntest.obj
+ 0001:00001c98       test_div                   00012c98 f   bntest.obj
+ 0001:00001ee8       test_div_recp              00012ee8 f   bntest.obj
+ 0001:000021b0       test_mul                   000131b0 f   bntest.obj
+ 0001:0000238c       test_sqr                   0001338c f   bntest.obj
+ 0001:00002514       test_mod                   00013514 f   bntest.obj
+ 0001:000026e8       test_mod_mul               000136e8 f   bntest.obj
+ 0001:000029c0       test_gf2m_add              000139c0 f   bntest.obj
+ 0001:00002b2c       test_kron                  00013b2c f   bntest.obj
+ 0001:00002e4c       test_sqrt                  00013e4c f   bntest.obj
+ 0001:00003234       test_lshift                00014234 f   bntest.obj
+ 0001:00003464       test_lshift1               00014464 f   bntest.obj
+ 0001:000035b4       test_rshift                000145b4 f   bntest.obj
+ 0001:00003758       test_rshift1               00014758 f   bntest.obj
+ 0001:000038c0       main                       000148c0 f   bntest.obj
+ 0001:0000409c       BIO_puts                   0001509c f   libeay32:LIBEAY32.dll
+ 0001:000040ac       BIO_printf                 000150ac f   libeay32:LIBEAY32.dll
+ 0001:000040bc       BN_free                    000150bc f   libeay32:LIBEAY32.dll
+ 0001:000040cc       BN_sub                     000150cc f   libeay32:LIBEAY32.dll
+ 0001:000040dc       BN_add_word                000150dc f   libeay32:LIBEAY32.dll
+ 0001:000040ec       BN_mul_word                000150ec f   libeay32:LIBEAY32.dll
+ 0001:000040fc       BN_print                   000150fc f   libeay32:LIBEAY32.dll
+ 0001:0000410c       BN_div_word                0001510c f   libeay32:LIBEAY32.dll
+ 0001:0000411c       BN_copy                    0001511c f   libeay32:LIBEAY32.dll
+ 0001:0000412c       BN_bntest_rand             0001512c f   libeay32:LIBEAY32.dll
+ 0001:0000413c       BN_init                    0001513c f   libeay32:LIBEAY32.dll
+ 0001:0000414c       BN_MONT_CTX_free           0001514c f   libeay32:LIBEAY32.dll
+ 0001:0000415c       BN_mod_mul                 0001515c f   libeay32:LIBEAY32.dll
+ 0001:0000416c       BN_from_montgomery         0001516c f   libeay32:LIBEAY32.dll
+ 0001:0000417c       BN_mod_mul_montgomery      0001517c f   libeay32:LIBEAY32.dll
+ 0001:0000418c       BN_nnmod                   0001518c f   libeay32:LIBEAY32.dll
+ 0001:0000419c       BN_MONT_CTX_set            0001519c f   libeay32:LIBEAY32.dll
+ 0001:000041ac       BN_MONT_CTX_new            000151ac f   libeay32:LIBEAY32.dll
+ 0001:000041bc       BN_div                     000151bc f   libeay32:LIBEAY32.dll
+ 0001:000041cc       BN_exp                     000151cc f   libeay32:LIBEAY32.dll
+ 0001:000041dc       BN_mod_exp                 000151dc f   libeay32:LIBEAY32.dll
+ 0001:000041ec       BN_new                     000151ec f   libeay32:LIBEAY32.dll
+ 0001:000041fc       BN_mod_exp_mont_consttime  000151fc f   libeay32:LIBEAY32.dll
+ 0001:0000420c       BN_mul                     0001520c f   libeay32:LIBEAY32.dll
+ 0001:0000421c       BN_set_word                0001521c f   libeay32:LIBEAY32.dll
+ 0001:0000422c       BN_GF2m_add                0001522c f   libeay32:LIBEAY32.dll
+ 0001:0000423c       BN_GF2m_mod                0001523c f   libeay32:LIBEAY32.dll
+ 0001:0000424c       BN_GF2m_arr2poly           0001524c f   libeay32:LIBEAY32.dll
+ 0001:0000425c       BN_GF2m_mod_mul            0001525c f   libeay32:LIBEAY32.dll
+ 0001:0000426c       BN_GF2m_mod_sqr            0001526c f   libeay32:LIBEAY32.dll
+ 0001:0000427c       BN_GF2m_mod_inv            0001527c f   libeay32:LIBEAY32.dll
+ 0001:0000428c       BN_GF2m_mod_div            0001528c f   libeay32:LIBEAY32.dll
+ 0001:0000429c       BN_add                     0001529c f   libeay32:LIBEAY32.dll
+ 0001:000042ac       BN_GF2m_mod_exp            000152ac f   libeay32:LIBEAY32.dll
+ 0001:000042bc       BN_GF2m_mod_sqrt           000152bc f   libeay32:LIBEAY32.dll
+ 0001:000042cc       BN_GF2m_mod_solve_quad     000152cc f   libeay32:LIBEAY32.dll
+ 0001:000042dc       BN_set_bit                 000152dc f   libeay32:LIBEAY32.dll
+ 0001:000042ec       BN_lshift                  000152ec f   libeay32:LIBEAY32.dll
+ 0001:000042fc       BN_print_fp                000152fc f   libeay32:LIBEAY32.dll
+ 0001:0000430c       BN_RECP_CTX_free           0001530c f   libeay32:LIBEAY32.dll
+ 0001:0000431c       BN_div_recp                0001531c f   libeay32:LIBEAY32.dll
+ 0001:0000432c       BN_RECP_CTX_set            0001532c f   libeay32:LIBEAY32.dll
+ 0001:0000433c       BN_RECP_CTX_init           0001533c f   libeay32:LIBEAY32.dll
+ 0001:0000434c       BN_CTX_free                0001534c f   libeay32:LIBEAY32.dll
+ 0001:0000435c       BN_CTX_new                 0001535c f   libeay32:LIBEAY32.dll
+ 0001:0000436c       BN_sqr                     0001536c f   libeay32:LIBEAY32.dll
+ 0001:0000437c       ERR_print_errors_fp        0001537c f   libeay32:LIBEAY32.dll
+ 0001:0000438c       ERR_error_string           0001538c f   libeay32:LIBEAY32.dll
+ 0001:0000439c       ERR_get_error              0001539c f   libeay32:LIBEAY32.dll
+ 0001:000043ac       BN_value_one               000153ac f   libeay32:LIBEAY32.dll
+ 0001:000043bc       BN_rand                    000153bc f   libeay32:LIBEAY32.dll
+ 0001:000043cc       BN_kronecker               000153cc f   libeay32:LIBEAY32.dll
+ 0001:000043dc       BN_ucmp                    000153dc f   libeay32:LIBEAY32.dll
+ 0001:000043ec       BN_mod_exp_recp            000153ec f   libeay32:LIBEAY32.dll
+ 0001:000043fc       BN_rshift1                 000153fc f   libeay32:LIBEAY32.dll
+ 0001:0000440c       BN_sub_word                0001540c f   libeay32:LIBEAY32.dll
+ 0001:0000441c       BN_generate_prime_ex       0001541c f   libeay32:LIBEAY32.dll
+ 0001:0000442c       BN_cmp                     0001542c f   libeay32:LIBEAY32.dll
+ 0001:0000443c       BN_mod_sqrt                0001543c f   libeay32:LIBEAY32.dll
+ 0001:0000444c       BN_mod_sqr                 0001544c f   libeay32:LIBEAY32.dll
+ 0001:0000445c       BN_lshift1                 0001545c f   libeay32:LIBEAY32.dll
+ 0001:0000446c       BN_rshift                  0001546c f   libeay32:LIBEAY32.dll
+ 0001:0000447c       ERR_load_crypto_strings    0001547c f   libeay32:LIBEAY32.dll
+ 0001:0000448c       BIO_free                   0001548c f   libeay32:LIBEAY32.dll
+ 0001:0000449c       BN_bin2bn                  0001549c f   libeay32:LIBEAY32.dll
+ 0001:000044ac       BIO_ctrl                   000154ac f   libeay32:LIBEAY32.dll
+ 0001:000044bc       BIO_new                    000154bc f   libeay32:LIBEAY32.dll
+ 0001:000044cc       BIO_s_file                 000154cc f   libeay32:LIBEAY32.dll
+ 0001:000044dc       RAND_seed                  000154dc f   libeay32:LIBEAY32.dll
+ 0001:000044ec       perror                     000154ec f   wcecompatex:stdio_extras.obj
+ 0001:0000454c       fprintf                    0001554c f   coredll:COREDLL.dll
+ 0001:0000455c       _getstdfilex               0001555c f   coredll:COREDLL.dll
+ 0001:0000456c       fflush                     0001556c f   coredll:COREDLL.dll
+ 0001:0000457c       fputc                      0001557c f   coredll:COREDLL.dll
+ 0001:0000458c       strcmp                     0001558c f   coredll:COREDLL.dll
+ 0001:0000459c       _cinit                     0001559c f   corelibc:crt0dat.obj
+ 0001:0000470c       exit                       0001570c f   corelibc:crt0dat.obj
+ 0001:0000472c       WinMainCRTStartup          0001572c f   corelibc:pegwmain.obj
+ 0001:000047a0       WinMain                    000157a0 f   wcecompatex:winmain.obj
+ 0001:00004afc       ?processCmdLine@@YAHPA_WPAPAPAD@Z 00015afc f   wcecompatex:args.obj
+ 0001:00004f38       ?unicode2ascii@@YAXPB_WPAD@Z 00015f38 f   wcecompatex:ts_string.obj
+ 0001:00004f8c       ?ascii2unicode@@YAXPBDPA_WH@Z 00015f8c f   wcecompatex:ts_string.obj
+ 0001:0000502c       ?unicode2ascii@@YAXPB_WPADH@Z 0001602c f   wcecompatex:ts_string.obj
+ 0001:000050bc       LocalFree                  000160bc f   coredll:COREDLL.dll
+ 0001:000050cc       _XcptFilter                000160cc f   coredll:COREDLL.dll
+ 0001:000050dc       __C_specific_handler       000160dc f   coredll:COREDLL.dll
+ 0001:000050ec       _isctype                   000160ec f   coredll:COREDLL.dll
+ 0001:000050fc       malloc                     000160fc f   coredll:COREDLL.dll
+ 0001:0000510c       FindFirstFileW             0001610c f   coredll:COREDLL.dll
+ 0001:0000511c       FindClose                  0001611c f   coredll:COREDLL.dll
+ 0001:0000512c       FindNextFileW              0001612c f   coredll:COREDLL.dll
+ 0001:0000513c       _stricmp                   0001613c f   coredll:COREDLL.dll
+ 0001:0000514c       free                       0001614c f   coredll:COREDLL.dll
+ 0001:0000515c       qsort                      0001615c f   coredll:COREDLL.dll
+ 0001:0000516c       strrchr                    0001616c f   coredll:COREDLL.dll
+ 0001:0000517c       strchr                     0001617c f   coredll:COREDLL.dll
+ 0001:0000518c       realloc                    0001618c f   coredll:COREDLL.dll
+ 0001:0000519c       GetModuleFileNameW         0001619c f   coredll:COREDLL.dll
+ 0001:000051ac       strncpy                    000161ac f   coredll:COREDLL.dll
+ 0001:000051bc       strcpy                     000161bc f   coredll:COREDLL.dll
+ 0001:000051cc       strlen                     000161cc f   coredll:COREDLL.dll
+ 0002:00000000       num2                       00017000     bntest.obj
+ 0002:00000004       num1                       00017004     bntest.obj
+ 0002:00000008       num0                       00017008     bntest.obj
+ 0002:00000050       ??_C@_08JLPEBMLN@test?5?$CFs?6?$AA@ 00017050     bntest.obj
+ 0002:0000005c       ??_C@_0N@BEDFMCGA@print?5?$CCtest?5?$AA@ 0001705c     bntest.obj
+ 0002:0000006c       ??_C@_04NOOBNABM@?2n?$CC?6?$AA@ 0001706c     bntest.obj
+ 0002:00000074       ??_C@_02EMFKHFLK@?$CFX?$AA@ 00017074     bntest.obj
+ 0002:00000078       ??_C@_0BO@LIMFHPNC@Division?5?$CIword?$CJ?5test?5failed?$CB?6?$AA@ 00017078     bntest.obj
+ 0002:00000098       ??_C@_03NFILCPHE@?5?$CF?5?$AA@ 00017098     bntest.obj
+ 0002:0000009c       ??_C@_01EEMJAFIK@?6?$AA@   0001709c     bntest.obj
+ 0002:000000a0       ??_C@_03NIBMKKKC@?5?1?5?$AA@ 000170a0     bntest.obj
+ 0002:000000a4       ??_C@_03NLJIHOMM@?5?9?5?$AA@ 000170a4     bntest.obj
+ 0002:000000a8       ??_C@_0CI@KDBAFBGD@Montgomery?5multiplication?5test?5f@ 000170a8     bntest.obj
+ 0002:000000d0       ??_C@_03NONHGIEJ@?5?$CK?5?$AA@ 000170d0     bntest.obj
+ 0002:000000d4       ??_C@_0CE@OBIADEDE@Modulo?5exponentiation?5test?5faile@ 000170d4     bntest.obj
+ 0002:000000f8       ??_C@_03INCPKIMF@?5?$FO?5?$AA@ 000170f8     bntest.obj
+ 0002:000000fc       ??_C@_0BN@KDGPLOPH@Exponentiation?5test?5failed?$CB?6?$AA@ 000170fc     bntest.obj
+ 0002:0000011c       ??_C@_0BN@CJFKNKMI@GF?$CI2?$FOm?$CJ?5modulo?5test?5failed?$CB?6?$AA@ 0001711c     bntest.obj
+ 0002:0000013c       ??_C@_0CN@EFNDDEAF@GF?$CI2?$FOm?$CJ?5modular?5multiplication?5t@ 0001713c     bntest.obj
+ 0002:0000016c       ??_C@_0CH@OJGONEIC@GF?$CI2?$FOm?$CJ?5modular?5squaring?5test?5fa@ 0001716c     bntest.obj
+ 0002:00000194       ??_C@_0CI@BFGLEPBL@GF?$CI2?$FOm?$CJ?5modular?5inversion?5test?5f@ 00017194     bntest.obj
+ 0002:000001bc       ??_C@_0CH@OFOLLHLF@GF?$CI2?$FOm?$CJ?5modular?5division?5test?5fa@ 000171bc     bntest.obj
+ 0002:000001e4       ??_C@_0CN@DPNMKFAO@GF?$CI2?$FOm?$CJ?5modular?5exponentiation?5t@ 000171e4     bntest.obj
+ 0002:00000214       ??_C@_0CK@IEIKOPFA@GF?$CI2?$FOm?$CJ?5modular?5square?5root?5test@ 00017214     bntest.obj
+ 0002:00000240       ??_C@_0EH@OMEFNDG@All?5?$CFi?5tests?5of?5GF?$CI2?$FOm?$CJ?5modular?5@ 00017240     bntest.obj
+ 0002:00000288       ??_C@_0DI@NKPDGFDH@this?5is?5very?5unlikely?5and?5probab@ 00017288     bntest.obj
+ 0002:000002c0       ??_C@_0CO@NJAPFKHH@GF?$CI2?$FOm?$CJ?5modular?5solve?5quadratic?5@ 000172c0     bntest.obj
+ 0002:000002f0       ??_C@_0BC@GONIJPPC@Add?5test?5failed?$CB?6?$AA@ 000172f0     bntest.obj
+ 0002:00000304       ??_C@_03NPBFACHO@?5?$CL?5?$AA@ 00017304     bntest.obj
+ 0002:00000308       ??_C@_0BH@DINKFKCI@Subtract?5test?5failed?$CB?6?$AA@ 00017308     bntest.obj
+ 0002:00000320       ??_C@_0BH@ELLBMCOD@Division?5test?5failed?$CB?6?$AA@ 00017320     bntest.obj
+ 0002:00000338       ??_C@_0CC@DLNAGMJK@Reciprocal?5division?5test?5failed?$CB@ 00017338     bntest.obj
+ 0002:0000035c       ??_C@_02CDEDMPEE@a?$DN?$AA@ 0001735c     bntest.obj
+ 0002:00000360       ??_C@_03JALNJHHH@?6b?$DN?$AA@ 00017360     bntest.obj
+ 0002:00000364       ??_C@_0BN@NJGACPPM@Multiplication?5test?5failed?$CB?6?$AA@ 00017364     bntest.obj
+ 0002:00000384       ??_C@_0BF@CDHGADOM@Square?5test?5failed?$CB?6?$AA@ 00017384     bntest.obj
+ 0002:0000039c       ??_C@_0BF@BAOBGHJ@Modulo?5test?5failed?$CB?6?$AA@ 0001739c     bntest.obj
+ 0002:000003b4       ??_C@_0BO@OALOLLJL@Modulo?5multiply?5test?5failed?$CB?6?$AA@ 000173b4     bntest.obj
+ 0002:000003d4       ??_C@_09MGBKLOC@ERROR?3?$CFs?6?$AA@ 000173d4     bntest.obj
+ 0002:000003e0       ??_C@_0CD@HKBMPME@GF?$CI2?$FOm?$CJ?5addition?5test?5?$CIa?$CJ?5failed@ 000173e0     bntest.obj
+ 0002:00000404       ??_C@_0CD@HADPBNDE@GF?$CI2?$FOm?$CJ?5addition?5test?5?$CIb?$CJ?5failed@ 00017404     bntest.obj
+ 0002:00000428       ??_C@_0BM@HAMJNDLC@legendre?5?$CB?$DN?5kronecker?$DL?5a?5?$DN?5?$AA@ 00017428     bntest.obj
+ 0002:00000444       ??_C@_06JHNFKPCN@?0?5b?5?$DN?5?$AA@ 00017444     bntest.obj
+ 0002:0000044c       ??_C@_0CE@OIGHHGKE@Legendre?5symbol?5computation?5fail@ 0001744c     bntest.obj
+ 0002:00000470       ??_C@_0BJ@DIFEADOC@BN_mod_sqrt?5failed?3?5a?5?$DN?5?$AA@ 00017470     bntest.obj
+ 0002:0000048c       ??_C@_06PHDFDIKP@?0?5r?5?$DN?5?$AA@ 0001748c     bntest.obj
+ 0002:00000494       ??_C@_06INPFGLMP@?0?5p?5?$DN?5?$AA@ 00017494     bntest.obj
+ 0002:0000049c       ??_C@_0BJ@MFOOAFD@Left?5shift?5test?5failed?$CB?6?$AA@ 0001749c     bntest.obj
+ 0002:000004b8       ??_C@_03JBHPPNEA@?6c?$DN?$AA@ 000174b8     bntest.obj
+ 0002:000004bc       ??_C@_03JEDAOLMF@?6d?$DN?$AA@ 000174bc     bntest.obj
+ 0002:000004c0       ??_C@_0BN@PGABCNFP@Left?5shift?5one?5test?5failed?$CB?6?$AA@ 000174c0     bntest.obj
+ 0002:000004e0       ??_C@_04OCKOHKCN@?5?$CK?52?$AA@ 000174e0     bntest.obj
+ 0002:000004e8       ??_C@_0BK@OLOPEOKA@Right?5shift?5test?5failed?$CB?6?$AA@ 000174e8     bntest.obj
+ 0002:00000504       ??_C@_0BO@HCIEAMFO@Right?5shift?5one?5test?5failed?$CB?6?$AA@ 00017504     bntest.obj
+ 0002:00000524       ??_C@_04NFHAIKBP@?5?1?52?$AA@ 00017524     bntest.obj
+ 0002:0000052c       ??_C@_02NPPIEBMA@1?6?$AA@  0001752c     bntest.obj
+ 0002:00000530       ??_C@_0BH@EFEHBMGJ@BN_GF2m_mod_solve_quad?$AA@ 00017530     bntest.obj
+ 0002:00000548       ??_C@_0BB@COMHDKLD@BN_GF2m_mod_sqrt?$AA@ 00017548     bntest.obj
+ 0002:0000055c       ??_C@_0BA@GMMKNGBG@BN_GF2m_mod_exp?$AA@ 0001755c     bntest.obj
+ 0002:0000056c       ??_C@_0BA@JPMINPLC@BN_GF2m_mod_div?$AA@ 0001756c     bntest.obj
+ 0002:0000057c       ??_C@_0BA@GIONBBOK@BN_GF2m_mod_inv?$AA@ 0001757c     bntest.obj
+ 0002:0000058c       ??_C@_0BA@CEFPIHFI@BN_GF2m_mod_sqr?$AA@ 0001758c     bntest.obj
+ 0002:0000059c       ??_C@_0BA@EHNBDAPH@BN_GF2m_mod_mul?$AA@ 0001759c     bntest.obj
+ 0002:000005ac       ??_C@_0M@HLNBKHPC@BN_GF2m_mod?$AA@ 000175ac     bntest.obj
+ 0002:000005b8       ??_C@_0M@DNFCPHKL@BN_GF2m_add?$AA@ 000175b8     bntest.obj
+ 0002:000005c4       ??_C@_0M@MDECKEMJ@BN_mod_sqrt?$AA@ 000175c4     bntest.obj
+ 0002:000005d0       ??_C@_0N@DMHLACD@BN_kronecker?$AA@ 000175d0     bntest.obj
+ 0002:000005e0       ??_C@_06EHDDDAPI@BN_exp?$AA@ 000175e0     bntest.obj
+ 0002:000005e8       ??_C@_0BK@MLKANOIE@BN_mod_exp_mont_consttime?$AA@ 000175e8     bntest.obj
+ 0002:00000604       ??_C@_0L@FBNHIMJG@BN_mod_exp?$AA@ 00017604     bntest.obj
+ 0002:00000610       ??_C@_07BDHEFPHB@BN_mont?$AA@ 00017610     bntest.obj
+ 0002:00000618       ??_C@_0L@HKMMGKHH@BN_mod_mul?$AA@ 00017618     bntest.obj
+ 0002:00000624       ??_C@_06LFEAHKLH@BN_mod?$AA@ 00017624     bntest.obj
+ 0002:0000062c       ??_C@_0M@MCFMHDMJ@BN_div_recp?$AA@ 0001762c     bntest.obj
+ 0002:00000638       ??_C@_0M@FGELACMP@BN_div_word?$AA@ 00017638     bntest.obj
+ 0002:00000644       ??_C@_06LEDBDJFM@BN_div?$AA@ 00017644     bntest.obj
+ 0002:0000064c       ??_C@_06GMCINGBJ@BN_mul?$AA@ 0001764c     bntest.obj
+ 0002:00000654       ??_C@_06PKGGBLG@BN_sqr?$AA@ 00017654     bntest.obj
+ 0002:0000065c       ??_C@_09CEIEIOD@BN_rshift?$AA@ 0001765c     bntest.obj
+ 0002:00000668       ??_C@_0L@PPFMPMDI@BN_rshift1?$AA@ 00017668     bntest.obj
+ 0002:00000674       ??_C@_09DFKJKPHA@BN_lshift?$AA@ 00017674     bntest.obj
+ 0002:00000680       ??_C@_0BC@OLFMMJOC@BN_lshift?5?$CIfixed?$CJ?$AA@ 00017680     bntest.obj
+ 0002:00000694       ??_C@_0L@JGGNNPCB@BN_lshift1?$AA@ 00017694     bntest.obj
+ 0002:000006a0       ??_C@_06ECGNNLDL@BN_sub?$AA@ 000176a0     bntest.obj
+ 0002:000006a8       ??_C@_06PDMDCKOO@BN_add?$AA@ 000176a8     bntest.obj
+ 0002:000006b0       ??_C@_0BD@EOGHNCOD@obase?$DN16?6ibase?$DN16?6?$AA@ 000176b0     bntest.obj
+ 0002:000006c4       ??_C@_04HKKABCEL@?9out?$AA@ 000176c4     bntest.obj
+ 0002:000006cc       ??_C@_08MHCNMJNI@?9results?$AA@ 000176cc     bntest.obj
+ 0002:000006d8       ??_C@_09ECNMAHHJ@errno?$DN?$CFd?6?$AA@ 000176d8     wcecompatex:stdio_extras.obj
+ 0002:000006e4       ??_C@_0O@EGJGEBIF@?$CFs?3?5errno?$DN?$CFd?6?$AA@ 000176e4     wcecompatex:stdio_extras.obj
+ 0002:00000708       __IMPORT_DESCRIPTOR_LIBEAY32 00017708     libeay32:LIBEAY32.dll
+ 0002:0000071c       __IMPORT_DESCRIPTOR_COREDLL 0001771c     coredll:COREDLL.dll
+ 0002:00000730       __NULL_IMPORT_DESCRIPTOR   00017730     libeay32:LIBEAY32.dll
+ 0003:00000000       __imp_strlen               00018000     coredll:COREDLL.dll
+ 0003:00000004       __imp_strcpy               00018004     coredll:COREDLL.dll
+ 0003:00000008       __imp_strncpy              00018008     coredll:COREDLL.dll
+ 0003:0000000c       __imp_GetModuleFileNameW   0001800c     coredll:COREDLL.dll
+ 0003:00000010       __imp_realloc              00018010     coredll:COREDLL.dll
+ 0003:00000014       __imp_strchr               00018014     coredll:COREDLL.dll
+ 0003:00000018       __imp_strrchr              00018018     coredll:COREDLL.dll
+ 0003:0000001c       __imp_qsort                0001801c     coredll:COREDLL.dll
+ 0003:00000020       __imp_free                 00018020     coredll:COREDLL.dll
+ 0003:00000024       __imp__stricmp             00018024     coredll:COREDLL.dll
+ 0003:00000028       __imp_FindNextFileW        00018028     coredll:COREDLL.dll
+ 0003:0000002c       __imp_FindClose            0001802c     coredll:COREDLL.dll
+ 0003:00000030       __imp_FindFirstFileW       00018030     coredll:COREDLL.dll
+ 0003:00000034       __imp_malloc               00018034     coredll:COREDLL.dll
+ 0003:00000038       __imp__isctype             00018038     coredll:COREDLL.dll
+ 0003:0000003c       __imp___C_specific_handler 0001803c     coredll:COREDLL.dll
+ 0003:00000040       __imp__XcptFilter          00018040     coredll:COREDLL.dll
+ 0003:00000044       __imp_LocalFree            00018044     coredll:COREDLL.dll
+ 0003:00000048       __imp_strcmp               00018048     coredll:COREDLL.dll
+ 0003:0000004c       __imp_fputc                0001804c     coredll:COREDLL.dll
+ 0003:00000050       __imp_fflush               00018050     coredll:COREDLL.dll
+ 0003:00000054       __imp__getstdfilex         00018054     coredll:COREDLL.dll
+ 0003:00000058       __imp_fprintf              00018058     coredll:COREDLL.dll
+ 0003:0000005c       \177COREDLL_NULL_THUNK_DATA 0001805c     coredll:COREDLL.dll
+ 0003:00000060       __imp_BN_GF2m_mod          00018060     libeay32:LIBEAY32.dll
+ 0003:00000064       __imp_BN_GF2m_arr2poly     00018064     libeay32:LIBEAY32.dll
+ 0003:00000068       __imp_BN_GF2m_mod_mul      00018068     libeay32:LIBEAY32.dll
+ 0003:0000006c       __imp_BN_GF2m_mod_sqr      0001806c     libeay32:LIBEAY32.dll
+ 0003:00000070       __imp_BN_GF2m_mod_inv      00018070     libeay32:LIBEAY32.dll
+ 0003:00000074       __imp_BN_GF2m_mod_div      00018074     libeay32:LIBEAY32.dll
+ 0003:00000078       __imp_BN_add               00018078     libeay32:LIBEAY32.dll
+ 0003:0000007c       __imp_BN_GF2m_mod_exp      0001807c     libeay32:LIBEAY32.dll
+ 0003:00000080       __imp_BN_GF2m_mod_sqrt     00018080     libeay32:LIBEAY32.dll
+ 0003:00000084       __imp_BN_GF2m_mod_solve_quad 00018084     libeay32:LIBEAY32.dll
+ 0003:00000088       __imp_BN_set_bit           00018088     libeay32:LIBEAY32.dll
+ 0003:0000008c       __imp_BN_lshift            0001808c     libeay32:LIBEAY32.dll
+ 0003:00000090       __imp_BN_print_fp          00018090     libeay32:LIBEAY32.dll
+ 0003:00000094       __imp_BN_RECP_CTX_free     00018094     libeay32:LIBEAY32.dll
+ 0003:00000098       __imp_BN_div_recp          00018098     libeay32:LIBEAY32.dll
+ 0003:0000009c       __imp_BN_RECP_CTX_set      0001809c     libeay32:LIBEAY32.dll
+ 0003:000000a0       __imp_BN_RECP_CTX_init     000180a0     libeay32:LIBEAY32.dll
+ 0003:000000a4       __imp_BN_CTX_free          000180a4     libeay32:LIBEAY32.dll
+ 0003:000000a8       __imp_BN_CTX_new           000180a8     libeay32:LIBEAY32.dll
+ 0003:000000ac       __imp_BN_sqr               000180ac     libeay32:LIBEAY32.dll
+ 0003:000000b0       __imp_ERR_print_errors_fp  000180b0     libeay32:LIBEAY32.dll
+ 0003:000000b4       __imp_BN_GF2m_add          000180b4     libeay32:LIBEAY32.dll
+ 0003:000000b8       __imp_ERR_get_error        000180b8     libeay32:LIBEAY32.dll
+ 0003:000000bc       __imp_BN_value_one         000180bc     libeay32:LIBEAY32.dll
+ 0003:000000c0       __imp_BN_rand              000180c0     libeay32:LIBEAY32.dll
+ 0003:000000c4       __imp_BN_kronecker         000180c4     libeay32:LIBEAY32.dll
+ 0003:000000c8       __imp_BN_ucmp              000180c8     libeay32:LIBEAY32.dll
+ 0003:000000cc       __imp_BN_mod_exp_recp      000180cc     libeay32:LIBEAY32.dll
+ 0003:000000d0       __imp_BN_rshift1           000180d0     libeay32:LIBEAY32.dll
+ 0003:000000d4       __imp_BN_sub_word          000180d4     libeay32:LIBEAY32.dll
+ 0003:000000d8       __imp_BN_generate_prime_ex 000180d8     libeay32:LIBEAY32.dll
+ 0003:000000dc       __imp_BN_cmp               000180dc     libeay32:LIBEAY32.dll
+ 0003:000000e0       __imp_BN_mod_sqrt          000180e0     libeay32:LIBEAY32.dll
+ 0003:000000e4       __imp_BN_mod_sqr           000180e4     libeay32:LIBEAY32.dll
+ 0003:000000e8       __imp_BN_lshift1           000180e8     libeay32:LIBEAY32.dll
+ 0003:000000ec       __imp_BN_rshift            000180ec     libeay32:LIBEAY32.dll
+ 0003:000000f0       __imp_ERR_load_crypto_strings 000180f0     libeay32:LIBEAY32.dll
+ 0003:000000f4       __imp_BIO_free             000180f4     libeay32:LIBEAY32.dll
+ 0003:000000f8       __imp_BN_bin2bn            000180f8     libeay32:LIBEAY32.dll
+ 0003:000000fc       __imp_BIO_ctrl             000180fc     libeay32:LIBEAY32.dll
+ 0003:00000100       __imp_BIO_new              00018100     libeay32:LIBEAY32.dll
+ 0003:00000104       __imp_BIO_s_file           00018104     libeay32:LIBEAY32.dll
+ 0003:00000108       __imp_RAND_seed            00018108     libeay32:LIBEAY32.dll
+ 0003:0000010c       __imp_BN_set_word          0001810c     libeay32:LIBEAY32.dll
+ 0003:00000110       __imp_BN_mul               00018110     libeay32:LIBEAY32.dll
+ 0003:00000114       __imp_BN_mod_exp_mont_consttime 00018114     libeay32:LIBEAY32.dll
+ 0003:00000118       __imp_BN_new               00018118     libeay32:LIBEAY32.dll
+ 0003:0000011c       __imp_BN_mod_exp           0001811c     libeay32:LIBEAY32.dll
+ 0003:00000120       __imp_BN_exp               00018120     libeay32:LIBEAY32.dll
+ 0003:00000124       __imp_BN_div               00018124     libeay32:LIBEAY32.dll
+ 0003:00000128       __imp_BN_MONT_CTX_new      00018128     libeay32:LIBEAY32.dll
+ 0003:0000012c       __imp_BN_MONT_CTX_set      0001812c     libeay32:LIBEAY32.dll
+ 0003:00000130       __imp_BN_nnmod             00018130     libeay32:LIBEAY32.dll
+ 0003:00000134       __imp_BN_mod_mul_montgomery 00018134     libeay32:LIBEAY32.dll
+ 0003:00000138       __imp_BN_from_montgomery   00018138     libeay32:LIBEAY32.dll
+ 0003:0000013c       __imp_BN_mod_mul           0001813c     libeay32:LIBEAY32.dll
+ 0003:00000140       __imp_BN_MONT_CTX_free     00018140     libeay32:LIBEAY32.dll
+ 0003:00000144       __imp_BN_init              00018144     libeay32:LIBEAY32.dll
+ 0003:00000148       __imp_BN_bntest_rand       00018148     libeay32:LIBEAY32.dll
+ 0003:0000014c       __imp_BN_copy              0001814c     libeay32:LIBEAY32.dll
+ 0003:00000150       __imp_BN_div_word          00018150     libeay32:LIBEAY32.dll
+ 0003:00000154       __imp_BN_print             00018154     libeay32:LIBEAY32.dll
+ 0003:00000158       __imp_BN_mul_word          00018158     libeay32:LIBEAY32.dll
+ 0003:0000015c       __imp_BN_add_word          0001815c     libeay32:LIBEAY32.dll
+ 0003:00000160       __imp_BN_sub               00018160     libeay32:LIBEAY32.dll
+ 0003:00000164       __imp_BN_free              00018164     libeay32:LIBEAY32.dll
+ 0003:00000168       __imp_BIO_printf           00018168     libeay32:LIBEAY32.dll
+ 0003:0000016c       __imp_ERR_error_string     0001816c     libeay32:LIBEAY32.dll
+ 0003:00000170       __imp_BIO_puts             00018170     libeay32:LIBEAY32.dll
+ 0003:00000174       \177LIBEAY32_NULL_THUNK_DATA 00018174     libeay32:LIBEAY32.dll
+ 0003:00000178       __xc_a                     00018178     corelibc:crt0init.obj
+ 0003:0000017c       __xc_z                     0001817c     corelibc:crt0init.obj
+ 0003:00000180       __xi_a                     00018180     corelibc:crt0init.obj
+ 0003:00000184       __xi_z                     00018184     corelibc:crt0init.obj
+ 0003:00000188       __xp_a                     00018188     corelibc:crt0init.obj
+ 0003:0000018c       __xp_z                     0001818c     corelibc:crt0init.obj
+ 0003:00000190       __xt_a                     00018190     corelibc:crt0init.obj
+ 0003:00000194       __xt_z                     00018194     corelibc:crt0init.obj
+ 0003:000001dc       errno                      000181dc     wcecompatex:errno.obj
+ 0003:000001e0       __onexitend                000181e0     <common>
+ 0003:000001e4       __onexitbegin              000181e4     <common>
+ 0003:000001e8       _exitflag                  000181e8     <common>
+
+ entry point at        0001:0000472c
+
+ Static symbols
+
+ 0001:00000000       message                    00011000 f   bntest.obj
+ 0001:000018e4       genprime_cb                000128e4 f   bntest.obj
+ 0001:00004608       doexit                     00015608 f   corelibc:crt0dat.obj
+ 0001:000047c4       ?getCmdLineArg@@YA?AW4ArgType@@PAPA_WPA_WHPAURedirArg@@PA_N@Z 000157c4 f   wcecompatex:args.obj
+ 0001:00004af0       ?qsort_stricmp@@YAHPBX0@Z  00015af0 f   wcecompatex:args.obj

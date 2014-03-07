@@ -1,0 +1,45 @@
+
+Instructions for using the MAC Updater tool
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+o Load the AR6K driver by inserting the card in the slot. 
+o Go to Tools->Remote Registry Editor in the Platform Builder Menu
+  and add the following registry entry.
+
+  HKLM\Comm\PCCARD\ATHR-AR6K-<pnp-id>\Parms\defaultApp   0 // for CF cards
+  HKLM\Comm\AR6K_SD1\Parms\defaultApp   0 // for SD cards
+  defaultApp is a DWORD type registry key.
+
+o Now unload & load the driver again by removing and inserting the card for the
+registry entry to take effect.
+
+o In case the AR6K chip is on board and cannot be removed & inserted from the
+slot, we need to change the default value of this Registry key from 1 to 0 in
+the source files & recompile the driver and load it.
+  Open the file Regparse.cpp in the AR6K_DRV\host\os\wince\ndis dir and
+search for defaultApp. In the CONFIG_PARAM paramTable[], change the default
+value of the defaultApp registry key to 0.
+
+o After loading the AR6K driver, from the Target-->Run Programs Menu, run the
+MacUpdater.exe tool.
+
+o Running the tool without any arguments will print the Usage.
+
+o MacUpdater.exe takes 3 or 4 or 5 arguments.
+  MacUpdater <AdapterName> <MacAddr> [eeprom | flash | eeprom flash]
+
+  The first 3 arguments are necessary arguments. By default the tool updates
+  the MAC addr in the eeprom only, if the last argument is not given.
+  If you want to update ONLY in the flash, then you must specify the 4th 
+  argument as 'flash'. If you want to update both in the eeprom and flash 
+  then you need to specify the 4th & 5th arguments as ' eeprom flash'
+
+o e.g
+  For AR6K SD cards,
+  MacUpdater.exe AR6K_SD1 00:03:7f:01:e0:27 flash
+
+  For AR6K CF cards,
+  MacUpdater.exe PCCARD\\<pnp-id-of-card> 00:03:7f:01:e0:27 flash eeprom
+
+  The AdapterName of the cards can be got by running the ndisconfig tool in the
+  platform builder Target-->Run Programs menu.

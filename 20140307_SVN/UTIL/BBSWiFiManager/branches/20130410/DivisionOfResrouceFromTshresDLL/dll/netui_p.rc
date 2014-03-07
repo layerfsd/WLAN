@@ -1,0 +1,845 @@
+//
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+//
+//
+// Use of this source code is subject to the terms of the Microsoft
+// premium shared source license agreement under which you licensed
+// this source code. If you did not accept the terms of the license
+// agreement, you are not authorized to use this source code.
+// For the terms of the license, please see the license agreement
+// signed by you and Microsoft.
+// THE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES OR INDEMNITIES.
+//
+#include <windows.h>
+#include <netui.h>
+#include <resource.h>
+#include <shmenus.h>
+#include <commctrl.h>
+#include <aygshell.h>
+
+
+rcinclude tshresdpi.rc
+rcinclude inetui_p.rc
+rcinclude inetui.rc
+//rcinclude tshres_wpc.rc
+
+//
+// Private flag telling us to use pixels, not dialog coordinates, when laying out dialogs
+//
+
+#define DS_USEPIXELS        0x8000L
+
+// Marked this. Leave the font issue to RCML.
+// #if defined(JAPAN) || defined(CHS) || defined(CHT)
+//#define _FONT
+// #else
+ #define _FONT FONT 8, "Tahoma"
+// #endif
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Strings
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    // Used by GetIPAddress
+    IDS_NETUI_ERR_TITLE                           "IP Address Not Valid"
+
+    // Used by the IPAddress Control
+    IDS_NETUI_IPBAD_FIELD_VALUE   "%d is not a valid entry. Specify a value between %d and %d for this field."
+
+    // config.c strings
+    IDS_NETUI_PORT_SETTINGS           "Port Settings"
+    IDS_NETUI_CALL_OPTIONS            "Call Options"
+    IDS_NETUI_DEVICE_PROPERTIES       "Device Properties"
+    IDS_NETUI_PARAMETER_NONE          "None"
+    IDS_NETUI_PARAMETER_ODD           "Odd"
+    IDS_NETUI_PARAMETER_EVEN          "Even"
+    IDS_NETUI_PARAMETER_MARK          "Mark"
+    IDS_NETUI_PARAMETER_SPACE         "Space"
+    IDS_NETUI_PARAMETER_SOFTWARE      "Software"
+    IDS_NETUI_PARAMETER_HARDWARE      "Hardware"
+
+    // Strings used by the redir and WNet APIs
+    IDS_NETUI_SRVLOGON_TITLE          "Logon to Server"
+    IDS_NETUI_RESFMT_STR              "Resource:  %s"
+    IDS_NETUI_NETMSGBOX_TITLE         "Pocket PC Networking"
+
+    // Strings used by the network dialogs
+    IDS_NETUI_NETWORK_IPADDR              "IP Address"
+    IDS_NETUI_NETWORK_NAMESERV            "Name Servers"
+    IDS_NETUI_NETWORK_ERR_BADIP           "No IP address was specified. An IP address is required to identify this workstation on the TCP/IP network."
+    IDS_NETUI_NETWORK_IP_TITLE            "Settings"
+
+    IDS_NETUI_NETCARDS_SETTING_TITLE      "Settings"
+    IDS_NETUI_ADAPTERS_PAGE_TITLE         "Network Adapters"
+    IDS_NETUI_ADAPTERCHG                  "The new settings will be applied the next time the adapter is used.\r\nIf the adapter is currently in the device, remove and re-insert the adapter to apply the settings."
+    IDS_NETUI_ADAPTERS                    "Adapters"
+
+    // Strings used by the redir and WNet APIs
+    IDS_NETUI_SRVLOGON_AUTH_FAIL_TITLE    "Logon failed"
+    IDS_NETUI_WININET_SITE                "Site:"
+    IDS_NETUI_WININET_PROXY               "Proxy:"
+    IDS_NETUI_WININET_SITE_NAME           "Site Name"
+    IDS_NETUI_WININET_PROXY_NAME          "Proxy Name"
+    IDS_NETUI_DETAILS                     "Details"
+    IDS_NETUI_SRVLOGON_CHK_STR            "Save password"
+    IDS_NETUI_MENU                        "Menu"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WZC_AUTHENTICATION_OPEN                   "Open"
+    IDS_WZC_AUTHENTICATION_SHARED                   "Shared"
+    IDS_WZC_AUTHENTICATION_WPA                   "WPA"
+    IDS_WZC_AUTHENTICATION_WPA_PSK                   "WPA-PSK"
+    IDS_WZC_AUTHENTICATION_WPA_NONE                   "WPA-None"
+    IDS_WZC_ENCRYPTION_DISABLED                   "Disabled"
+    IDS_WZC_ENCRYPTION_WEP                   "WEP"
+    IDS_WZC_ENCRYPTION_TKIP                   "TKIP"
+    IDS_WZC_ENCRYPTION_AES                   "AES"
+    IDS_WZC_AUTHENTICATION_WPA2                   "WPA2"
+    IDS_WZC_AUTHENTICATION_WPA2_PSK                   "WPA2-PSK"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_NETUI_GETNETSTR_DIRECT_NAME           "`Desktop @ 19200`"
+    IDS_NETUI_GETNETSTR_DFLT_LOCALNAME        "%s on %s"
+
+        // The following strings are for NetMsgBox, which uses FormatMessage
+    IDS_NETUI_GETNETSTR_OPEN_FILE_CONF        "There are currently files open on %1!s! (connected to %2!s!). \nDo you want to disconnect anyway?"
+    IDS_NETUI_GETNETSTR_BAD_RES_NAME          "Resource name %1!s! is not valid."
+    IDS_NETUI_GETNETSTR_ERR_ADDCONNECT        "Error connecting to resource: %1!d!"
+    IDS_NETUI_GETNETSTR_ERR_INV_COMPNAME      "A device with the same name is already on the network. Tap Start > Settings > System tab > About > Device ID tab, change your device name, and try again."
+    IDS_NETUI_GETNETSTR_ERR_ADDNAME           "A device with the same name is already on the network. Tap Start > Settings > System tab > About > Device ID tab, change your device name, and try again."
+            //"Error registering name on network (may be duplicate).\nChange in communications control panel and try again."
+    IDS_NETUI_GETNETSTR_DISCON_ERROR          "Error disconnecting resource: %1!d!"
+    IDS_NETUI_GETNETSTR_SAVE_PWD              "Save Password?"
+    IDS_NETUI_GETNETSTR_NO_IPADDR             "Cannot obtain a server-assigned IP address. Try again later or enter an IP address in Network settings."
+    IDS_NETUI_GETNETSTR_LEASE_EXPIRED         "Your IP address lease has expired. DHCP cannot renew your lease."
+    IDS_NETUI_GETNETSTR_CACHED_LEASE          "A DHCP Server could not be contacted. Using cached lease information."
+    IDS_NETUI_GETNETSTR_PRINT_COMPLETE        "Print job %1!u! on queue \\\\%2!S!\\%3!S! has finished printing.\nSize of job is %4!u! bytes."
+    IDS_NETUI_GETNETSTR_PRINT_STATUS          "Status for print job %1!u! on queue \\\\%2!S!\\%3!S!:\n%4!s!"
+    IDS_NETUI_GETNETSTR_PRINT_STATUS_OFFLINE  "The printer is offline"
+    IDS_NETUI_GETNETSTR_PRINT_STATUS_PAPER    "The printer is out of paper"
+    IDS_NETUI_GETNETSTR_PRINT_STATUS_OTHER    "Unrecognized printer error"
+    IDS_NETUI_GETNETSTR_PRINT_STATUS_NETERR   "Network error occurred. Will not receive further notifications for this job."
+    IDS_NETUI_GETNETSTR_USB_INSTALL_FAILURE   "Error installing USB driver %1!s!"
+END
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_NETUI_PCCARD_TYPE_MFC                 "Multi-Function"
+    IDS_NETUI_PCCARD_TYPE_MEMORY              "Memory"
+    IDS_NETUI_PCCARD_TYPE_SERIAL              "Serial"
+    IDS_NETUI_PCCARD_TYPE_PARALLEL            "Parallel"
+    IDS_NETUI_PCCARD_TYPE_DISK                "Storage"
+    IDS_NETUI_PCCARD_TYPE_VIDEO               "Video"
+    IDS_NETUI_PCCARD_TYPE_NETWORK             "Network"
+    IDS_NETUI_PCCARD_TYPE_AIMS                "Storage"
+    IDS_NETUI_PCCARD_TYPE_SCSI                "SCSI"
+    IDS_NETUI_PCCARD_TYPE_UNKNOWN             "Unknown"
+    IDS_NETUI_PCCARD_SOCKET                   "%1!s! card in Socket %2!d!"
+    IDS_NETUI_USB_CAPTION                     "Unidentified USB Device"
+    IDS_NETUI_USB_CMDTEXT                     "Enter the name of the device driver for this device. For information, see the device manufacturer's documentation."
+    IDS_NETUI_NOT_CONNECTED                   "Not connected"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_NETUI_WRN_TITLE_WARNING   "Warning"
+END
+
+
+// Wireless zero configure
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_WZC_CONNECTION_BUBBLE_SINGLENET_TITLE      "New Network Detected"
+    IDS_WZC_CONNECTION_BUBBLE_MULTIPLENET_TITLE    "Multiple Networks Detected"
+    IDS_WZC_CONNECTION_BUBBLE_VPN                  "%1 (or work via a VPN)"
+
+    IDS_WZC_NETKEY_BUBBLE_WPA_TITLE                "Network Key Required"
+    IDS_WZC_NETKEY_BUBBLE_WEP_TITLE                "Network Key"
+    IDS_WZC_NETKEY_BUBBLE_RETRY_TITLE              "Incorrect Network Key"
+    IDS_WZC_NETKEY_BUBBLE_WPA                      "To connect to %1, enter the network key."
+    IDS_WZC_NETKEY_BUBBLE_WEP                      "Enter a network key and tap Connect. If a key is not required, just tap Connect."
+    IDS_WZC_NETKEY_BUBBLE_WPAPSK_ERR               "The network key is incorrect. It must be at least 8 characters. Enter the correct key and tap Connect."
+    IDS_WZC_NETKEY_BUBBLE_WEP_ERR                  "The network key is incorrect. It must be 5, 10, 13, or 26 characters in length. Enter the correct key and tap Connect."
+    IDS_WZC_NETKEY_BUBBLE_RETRY                    "The network key is incorrect. Enter the correct key and tap Connect."
+
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_WZC_ACTIVE                             "Connected"
+	IDS_WZC_AIRING								"Available"
+	IDS_WZC_SILENT	 							"Unavailable"
+	IDS_WZC_CONNECTING							"Connecting"
+    IDS_WZC_ADD_NEW_SETTINGS                   "Add New..."
+    IDS_WZC_FILTER_ALL_AVAILABLE               "All Available"
+    IDS_WZC_FILTER_NON_ADHOC                   "Only access points"
+    IDS_WZC_FILTER_ADHOC                       "Only computer-to-computer"
+	IDS_WZC_WIFI_STATUS_FORMAT					"%1!s!: %2!s!"
+	IDS_WZC_BLANK_SSID							"[No SSID]"
+    IDS_WZC_NETSEL_FORMAT_SECURE_NETWORK       "%1 [Security-enabled]"
+    IDS_WZC_NETSEL_FORMAT_OPEN_NETWORK         "%1 [Unsecured]"
+    IDS_WZC_WLAN_NETWORK_PAGE_TITLE            "Wireless"
+    IDS_WZC_WLAN_GENERAL_PROP_PAGE_TITLE       "General"
+    IDS_WZC_WLAN_AUTHENTICATION_PAGE_TITLE     "Network Key"
+    IDS_WZC_WLAN_8021X_PAGE_TITLE              "802.1x"
+    IDS_WZC_SETTING_TITLE                      "Settings"
+    IDS_WZC_MSG_TITLE                          "Wireless"
+    IDS_WZC_NULL_SSID                          "A network name is required. Please enter a valid network name."
+    IDS_WZC_DUP_SSID                           "The network name you've chosen is already in use. Please enter a new name for the network."
+    IDS_WZC_INCORRECT_WEP_KEY                  "The network key you entered is not correct. Please try again."
+    IDS_WZC_INVALID_NAME                       "The network name is not valid. Please enter a valid network name."
+    IDS_WZC_INVALID_CONFIG                     "The selected configuration is not valid. Please check your settings."
+    IDS_NETUI_SELFISSUED                       "(Self Issued)"
+    IDS_WZC_SEARCH_NETWORKS                    "Search for Networks"
+    IDS_WZC_WIFI_POWERON                       "Turn On Wi-Fi1"
+    IDS_WZC_WIFI_POWEROFF                      "Turn Off Wi-Fi1"
+    IDS_WZC_WIFI_SEARCH_ERROR                  "No visible networks detected. Windows Mobile will continue to search for networks periodically."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_NETUI_EAPTLS_NO_CERT                   "Cannot log on to the wireless network. This network requires a personal certificate to positively identify you."
+    IDS_NETUI_EAPTLS_DESC                   "Choose a certificate to log on the network."
+    IDS_WZC_CONNECTION_BUBBLE_CONNECT_BUTTON                   "Connect"
+    IDS_WZC_CONNECTION_BUBBLE_DISMISS_BUTTON                   "Dismiss"
+END
+
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_NIC_INSERTION_TITLE                    "Establishing Connection"
+    IDS_NIC_DESCRIPTION                        "Network Card"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_WZC_DHCP_WARNING	"Cannot connect to the network.  Check your network and service provider settings and try again."
+    IDS_ALL_PURPOSES        "All Purposes"    
+END
+
+// EAPTLS UI
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_NETUI_SERVER_VALIDATION_ERROR "Server Validation Error"
+    IDS_NETUI_UNKNOWN_ROOT_ERROR      "The server certificate is issued by an unknown authority."
+    IDS_NETUI_CERT_EXPIRED_ERROR      "The server certificate has expired or your system date is incorrect."
+    IDS_NETUI_UNKNOWN_CERT_ERROR      "The server certificate is not valid."
+    IDS_NETUI_GENERIC_CERT_ERROR      "Unknown certificate error."
+END
+
+// W-Fi Advanced Settings
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_WZC_AUTO_OFF_NEVER  "Never"
+    IDS_WZC_AUTO_OFF_30SEC  "30 seconds"
+    IDS_WZC_AUTO_OFF_01MIN  "1 minute"
+    IDS_WZC_AUTO_OFF_05MIN  "5 minutes"
+    IDS_WZC_AUTO_OFF_10MIN  "10 minutes"
+    IDS_WZC_AUTO_OFF_30MIN  "30 minutes"
+END
+
+IDR_WZC_MENU_NETWORK MENU DISCARDABLE
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Connect",         IDM_WZC_NETWORK_CONNECT
+        MENUITEM "Add New...",      IDS_WZC_ADD_NEW_SETTINGS
+        MENUITEM "Remove Settings", IDM_WZC_NETWORK_REMOVE
+        MENUITEM "Edit", IDM_WZC_NETWORK_PROPERTIES
+    END
+END
+
+IDR_WZC_SKBAR_NETWORK MENU DISCARDABLE
+BEGIN
+    MENUITEM "Connect", IDM_WZC_NETWORK_CONNECT
+    POPUP "Menu"
+    BEGIN
+        MENUITEM "Add New...",      IDS_WZC_ADD_NEW_SETTINGS
+        MENUITEM "Remove Settings", IDM_WZC_NETWORK_REMOVE
+        MENUITEM "Edit", IDM_WZC_NETWORK_PROPERTIES
+        MENUITEM SEPARATOR
+        MENUITEM "Advanced", IDM_WZC_ADVANCED
+	    MENUITEM SEPARATOR
+    END
+END
+
+IDR_WZC_SKBAR_EDIT MENU DISCARDABLE
+BEGIN
+    MENUITEM "Edit", IDM_WZC_EDIT
+END
+
+IDR_WZC_SINGLE_NEWNET_NOTIFICATION_MENU MENU DISCARDABLE
+BEGIN
+    MENUITEM "Connect"  IDM_WZC_BUBBLE_CONNECT
+    POPUP "Menu"
+    BEGIN
+        MENUITEM "Dismiss",         IDM_WZC_NEWNET_DISMISS
+        MENUITEM "Don’t show this message again", IDM_WZC_NEWNET_STOP_NOTIFICATIONS
+    END
+END
+
+IDR_WZC_MULTI_NEWNET_NOTIFICATION_MENU MENU DISCARDABLE
+BEGIN
+    MENUITEM "OK"  IDM_WZC_BUBBLE_SELECT
+    POPUP "Menu"
+    BEGIN
+        MENUITEM "Dismiss",         IDM_WZC_NEWNET_DISMISS
+        MENUITEM "Don’t show this message again", IDM_WZC_NEWNET_STOP_NOTIFICATIONS
+    END
+END
+
+IDR_NETUI_BAR_DIALOGOKCANCEL RCDATA DISCARDABLE
+BEGIN
+    0,     // No menu
+    2,     // Count of buttons
+    I_IMAGENONE, IDC_NETUI_OK_PSWD,     TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE, IDS_OK,     0, NOMENU,
+    I_IMAGENONE, IDC_NETUI_CANCEL_PSWD, TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE, IDS_CANCEL, 0, NOMENU,
+END
+
+IDR_NETUI_DETAILS_MENU  MENU DISCARDABLE
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Details", IDM_NETUI_DETAILS
+        MENUITEM "Cancel",  IDC_NETUI_CANCEL_PSWD
+    END
+END
+
+IDR_NETUI_DETAILS_BAR RCDATA DISCARDABLE
+BEGIN
+    IDR_NETUI_DETAILS_MENU,
+    2,     // # of elements in one layout 
+    I_IMAGENONE, IDC_NETUI_OK_PSWD, TBSTATE_ENABLED, TBSTYLE_BUTTON   | TBSTYLE_AUTOSIZE, IDS_OK,         0, NOMENU,
+    I_IMAGENONE, 0,                 TBSTATE_ENABLED, TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE, IDS_NETUI_MENU, 0, 0,
+END
+
+IDR_NETUI_DONE_BAR RCDATA DISCARDABLE
+BEGIN
+    0,     // No menu
+    1,     // Count of buttons
+    I_IMAGENONE, IDM_DONE, TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE, IDS_DONE, 0, NOMENU,
+END
+
+IDR_NETUI_CANCEL_BAR RCDATA DISCARDABLE
+BEGIN
+    0,     // No menu
+    1,     // Count of buttons
+    I_IMAGENONE, IDCANCEL, TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE, IDS_CANCEL, 0, NOMENU,
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialogs
+//
+
+
+// For GetUsernamePassword
+// NOTE: This dialog is used only for Landscape mode
+// Max width should be 130
+IDD_NETUI_USERPWD DIALOG DISCARDABLE  0, 0, 130, 95
+STYLE DS_CENTER | DS_SETFOREGROUND | WS_POPUP
+CAPTION "User Logon"
+BEGIN
+    LTEXT           "Network Log On",IDC_NETUI_PWD_DLGTITLE,4,3,126,8 , SS_NOPREFIX
+    LTEXT           "Enter network information to log on.",
+                    IDC_NETUI_CMDTEXT,4,17,152,8,SS_NOPREFIX
+    RTEXT           "User name:",IDC_NETUI_USER_STATIC,4,32,34,8
+    EDITTEXT        IDC_NETUI_USERNAME,39,30,72,12,ES_AUTOHSCROLL
+    RTEXT           "Password:",IDC_NETUI_PASSWRD_STATIC,4,47,34,8
+    CONTROL         "",IDC_NETUI_PASSWORD,WC_SBEDIT,ES_PASSWORD | ES_AUTOHSCROLL |
+                    ES_LEFT | WS_BORDER | WS_TABSTOP,39,45,72,12
+    RTEXT           "Domain:",IDC_NETUI_DOMAIN_STATIC,4,62,34,8
+    CONTROL         "",IDC_NETUI_DOMAIN,WC_SBEDIT,ES_AUTOHSCROLL |
+                    ES_LEFT | WS_BORDER | WS_TABSTOP,39,60,72,12
+    CONTROL         "Save password",IDC_NETUI_SAVEPASSWORD,WC_TBUTTON,
+                    BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,
+                    39,75,72,12
+    CONTROL         "",-1,WC_SIPPREF, NOT WS_VISIBLE,-10,-10,5,5
+END
+
+IDD_NETUI_NTLM_AUTH DIALOG DISCARDABLE  0, 0, 130, 95
+STYLE DS_CENTER | DS_SETFOREGROUND | WS_POPUP
+CAPTION "Enter Network Password"
+BEGIN
+    LTEXT           "Network Log On",IDC_NETUI_PWD_DLGTITLE,4, 3,126,8 , SS_NOPREFIX
+    LTEXT           "",IDC_NETUI_SITE_OR_FIREWALL,                    4,17,34, 8
+    LTEXT           "",IDC_NETUI_SERVER_OR_PROXY,                    39,17,72, 8
+    RTEXT           "User name:",IDC_NETUI_USER_STATIC,               4,32,34, 8
+    EDITTEXT        IDC_NETUI_USERNAME,                              39,30,72,12,ES_AUTOHSCROLL
+    RTEXT           "Password:",IDC_NETUI_PASSWRD_STATIC,             4,47,34, 8
+    CONTROL         "",IDC_NETUI_PASSWORD,WC_SBEDIT,ES_PASSWORD | ES_AUTOHSCROLL |
+                    ES_LEFT | WS_BORDER | WS_TABSTOP,                39,45,72,12
+    RTEXT           "Domain:",IDC_NETUI_DOMAIN_STATIC,                4,62,34, 8
+    CONTROL         "",IDC_NETUI_DOMAIN,WC_SBEDIT,ES_AUTOHSCROLL |
+                    ES_LEFT | WS_BORDER | WS_TABSTOP,                39,60,72,12
+    CONTROL         "Save password",IDC_NETUI_SAVEPASSWORD,WC_TBUTTON,
+                    BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,
+                    30,75,100,12    
+    CONTROL         "",-1,WC_SIPPREF, NOT WS_VISIBLE,-10,-10,5,5
+END
+
+IDD_NETUI_REALM_AUTH DIALOG 0, 0, 264, 95
+STYLE DS_CENTER | DS_SETFOREGROUND | WS_POPUP
+CAPTION "Enter Network Password"
+BEGIN
+    LTEXT           "Network Log On",IDC_NETUI_PWD_DLGTITLE,4, 3,126,8 , SS_NOPREFIX
+    LTEXT           "Please type your user name and password.",IDC_NETUI_CMDTEXT,4,17,152,8
+    LTEXT           "",IDC_NETUI_SITE_OR_FIREWALL,                    4,25,34, 8
+    LTEXT           "",IDC_NETUI_SERVER_OR_PROXY,                    39,25,90, 8
+    LTEXT           "Realm:",IDC_NETUI_REALM_TAG,                     4,35,34, 8
+    LTEXT           "__Realm__",IDC_NETUI_REALM_FIELD,               39,35,90, 8, SS_LEFTNOWORDWRAP
+    LTEXT           "User Name:",IDC_NETUI_USER_STATIC,               4,49,34, 8
+    EDITTEXT        IDC_NETUI_USERNAME,                              39,47,72,12,ES_AUTOHSCROLL
+    LTEXT           "Password:",IDC_NETUI_PASSWRD_STATIC,             4,64,34, 8
+    EDITTEXT        IDC_NETUI_PASSWORD,                              39,62,72,12,ES_PASSWORD | ES_AUTOHSCROLL
+    CONTROL         "Save password",IDC_NETUI_SAVEPASSWORD,WC_TBUTTON,
+                    BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,
+                    39,77,72,12
+    CONTROL         "",-1,WC_SIPPREF, NOT WS_VISIBLE,-10,-10,5,5
+END
+
+IDD_NETUI_DETAILS DIALOG 0, 0, 130, 95
+STYLE DS_CENTER | DS_SETFOREGROUND | WS_POPUP
+CAPTION "Details"
+BEGIN
+    LTEXT           "",IDC_NETUI_PWD_DLGTITLE, 4, 3, 126, 8 , SS_NOPREFIX
+    CONTROL         "",IDC_NETUI_SERVER_OR_PROXY, "static", SS_LEFT | SS_NOPREFIX | SS_EDITCONTROL, 4, 25, 126, 60 
+END
+
+
+IDD_NETUI_USERNAME DIALOG DISCARDABLE  0, 0, 130, 95
+STYLE DS_CENTER | DS_SETFOREGROUND | WS_POPUP
+CAPTION "User Logon"
+BEGIN
+    LTEXT           "Network Log On",IDC_NETUI_PWD_DLGTITLE,4,3,126,8 , SS_NOPREFIX
+    LTEXT           "Enter network information to log on.",
+                    IDC_NETUI_CMDTEXT,4,17,152,8
+    RTEXT           "User name:",IDC_NETUI_USER_STATIC,4,32,34,8
+    EDITTEXT        IDC_NETUI_USERNAME,39,30,72,12,ES_AUTOHSCROLL
+    RTEXT           "Domain:",IDC_NETUI_DOMAIN_STATIC,4,47,34,8
+    CONTROL         "",IDC_NETUI_DOMAIN,WC_SBEDIT,ES_AUTOHSCROLL |
+                    ES_LEFT | WS_BORDER | WS_TABSTOP,39,45,72,12
+    CONTROL         "",-1,WC_SIPPREF, NOT WS_VISIBLE,-10,-10,5,5
+END
+
+// For GetResourcePassword
+IDD_NETUI_RESPWD DIALOG DISCARDABLE  0, 0, 130, 63
+STYLE DS_CENTER | DS_SETFOREGROUND | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_CAPTIONOKBTN
+CAPTION "Enter Network Password"
+BEGIN
+    LTEXT           "Resource: ",IDC_NETUI_CMDTEXT,6,7,112,8
+    LTEXT           "Password:",IDC_STATIC,6,27,37,8
+    EDITTEXT        IDC_NETUI_PASSWORD,56,25,70,12,ES_PASSWORD | ES_AUTOHSCROLL
+    PUSHBUTTON      "Cancel", IDCANCEL, 80, 42, 37, 16
+    CONTROL         "",-1,WC_SIPPREF, NOT WS_VISIBLE,-10,-10,5,5
+END
+
+// For GetIPAddress
+IDD_NETUI_IPADDR DIALOG DISCARDABLE 0, 0, 130, 45
+STYLE DS_CENTER | DS_SETFOREGROUND | WS_POPUP | WS_CAPTION
+CAPTION "IP Address"
+BEGIN
+    LTEXT           "IP address:", IDC_NETUI_IPADDRLABEL,4,6,35,8
+    CONTROL         "", IDC_NETUI_IP_ADDR, "RNA_IPAddress", WS_TABSTOP | 0x4,
+                    40, 5, 75, 12
+    PUSHBUTTON      "OK", IDOK, 27, 25, 35, 12
+    PUSHBUTTON      "Cancel", IDCANCEL, 67, 25, 35, 12
+END
+
+// For Rapier LineConfigDialog
+IDD_NETUI_PORT_SETTINGS2 DIALOG DISCARDABLE  0, 0, 130, 136
+STYLE WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | DS_CONTROL
+BEGIN
+    LTEXT           "Connection Properties",IDC_NETUI_CONNPROP_PP1TITLE,4,3,126,8
+    RTEXT           "Baud rate:",IDC_NETUI_STATIC_BAUD,4,20,38,8
+    COMBOBOX        IDC_NETUI_BAUD_RATE,43,19,43,75,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+    RTEXT           "Data bits:",IDC_NETUI_STATIC_BITS,4,34,38,8
+    COMBOBOX        IDC_NETUI_DATA_BITS,43,33,43,65,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+    RTEXT           "Parity:",IDC_NETUI_STATIC_PARITY,4,48,38,8
+    COMBOBOX        IDC_NETUI_PARITY,43,47,43,85,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+    RTEXT           "Stop bits:",IDC_NETUI_STATIC_STOP,4,62,38,8
+    COMBOBOX        IDC_NETUI_STOP_BITS,43,61,43,40,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+    CONTROL         "Flow control:",IDC_NETUI_STATIC_FLOW,WC_TSTATIC,SS_RIGHT,4,76,38,8
+    COMBOBOX        IDC_NETUI_FLOW_CONTROL,43,75,43,65,CBS_DROPDOWNLIST |
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Use terminal window before dialing~~Displays the dialing process.",
+                    IDC_NETUI_CHK_PREDIAL,WC_TBUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,
+                    4,93,130,10
+    CONTROL         "Use terminal window after dialing~~Opens the window after connecting.",
+                    IDC_NETUI_CHK_POSTDIAL,WC_TBUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,
+                    4,105,130,10
+    CONTROL         "Enter dialing commands manually~~Lets you enter dialing commands manually.",
+                    IDC_NETUI_CHK_MANUAL,WC_TBUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,
+                    4,117,130,10
+END
+
+// For Rapier LineConfigDialog
+IDD_NETUI_DIALING_SETTINGS2 DIALOG DISCARDABLE  0, 0, 130, 136
+STYLE WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | DS_CONTROL
+BEGIN
+    LTEXT           "Connection Properties",IDC_NETUI_CONNPROP_PP2TITLE,4,3,126,8
+    CONTROL         "Cancel call if not connected within",
+                    IDC_NETUI_CHK_TIMEOUT,WC_TBUTTON,BS_AUTOCHECKBOX | BS_TOP |
+                    WS_TABSTOP,4,17,125,10
+    EDITTEXT        IDC_NETUI_EDIT_TIMEOUT,16,27,20,12,ES_AUTOHSCROLL
+    LTEXT           "seconds",IDC_NETUI_TEXT_SECONDS,39,29,50,8
+    CONTROL         "Wait for dial tone before dialing~~Prevents dialing until modem receives a dial tone.",
+                    IDC_NETUI_CHK_BLIND_DIAL,WC_TBUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,
+                    4,41,119,10
+    LTEXT           "Wait for credit card tone",IDC_NETUI_CARD_STATIC,4,54,70,8
+    EDITTEXT        IDC_NETUI_EDIT_WAITBONG,75,52,20,12,ES_AUTOHSCROLL
+    LTEXT           "seconds",IDC_NETUI_SEC_STATIC,96,54,42,8
+//    LTEXT           "Extra dial-string modem commands:~~Enter modem connection information.",
+    LTEXT           "Extra dial-string modem commands:",
+                    IDC_NETUI_EXTRA_STATIC,4,66,120,10
+    EDITTEXT        IDC_NETUI_EXTRA,4,76,127,12,ES_AUTOHSCROLL
+END
+
+
+// For Rapier ConnectionDialog - API WNetConnectionDialog1
+IDD_NETUI_ADD_CONNECTION DIALOG DISCARDABLE 0, 0, 130, 60
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Map Network Connection"
+BEGIN
+    RTEXT           "Remote path:",IDC_NETUI_REMOTE_STATIC,4,7,39,8
+    EDITTEXT        IDC_NETUI_REMOTENAME,45,5,81,12,ES_AUTOHSCROLL
+    RTEXT           "Local name:",IDC_NETUI_LOCAL_STATIC,4,22,39,8
+    EDITTEXT        IDC_NETUI_LOCALNAME,45,20,81,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,25,40,35,12
+    PUSHBUTTON      "Cancel",IDCANCEL,68,40,35,12
+    CONTROL         "",-1,WC_SIPPREF, NOT WS_VISIBLE,-10,-10,5,5
+END
+
+// For Rapier DisconnectDialog - For
+IDD_NETUI_REMOVE_CONNECTION DIALOG DISCARDABLE  0, 0, 130, 96
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Disconnect Network Connection"
+BEGIN
+    LTEXT           "Network connection:",IDC_NETUI_NETCONN_STATIC,4,5,80,8
+    LISTBOX         IDC_NETUI_DISCONLIST,4,14,122,62,LBS_SORT | LBS_USETABSTOPS |
+                    LBS_DISABLENOSCROLL | WS_VSCROLL | WS_HSCROLL |
+                    WS_TABSTOP
+    PUSHBUTTON      "Cancel",IDCANCEL,20,75,35,12
+    PUSHBUTTON      "Disconnect",IDOK,60,75,50,12
+END
+
+
+// For network dialogs
+
+IDD_NETUI_NETWORK_IP2 DIALOG DISCARDABLE 0, 0, 130, 136
+STYLE WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS
+BEGIN
+    LTEXT       "",IDC_NETUI_NETADAPT_PP1TITLE,4,3,126,8 , SS_NOPREFIX
+    CONTROL     "Use server-assigned IP address",IDC_NETUI_USEDHCP,
+                WC_TBUTTON, BS_AUTORADIOBUTTON,5,20,140,10
+    CONTROL     "Use specific IP address",IDC_NETUI_DONTUSEDHCP,
+                WC_TBUTTON, BS_AUTORADIOBUTTON,5,34,140,10
+
+    RTEXT       "IP address:",IDC_NETUI_IPADDRLABEL,4,48,55,10
+    CONTROL     "",IDC_NETUI_IP_ADDR,"RNA_IPAddress", WS_TABSTOP | 0x4,
+                60,47,64,11
+    EDITTEXT    IDC_NETUI_IP_ADDR_CUR,60,47,64,11,NOT WS_VISIBLE | ES_READONLY
+    RTEXT       "Subnet mask:",IDC_NETUI_SUBNETLABEL,4,62,55,10
+    CONTROL     "",IDC_NETUI_SUBNET_MASK,"RNA_IPAddress", WS_TABSTOP | 0x4,
+                60,61,64,11
+    RTEXT       "Default gateway:",IDC_NETUI_GATEWAYLABEL,4,76,55,10
+    CONTROL     "",IDC_NETUI_GATEWAY,"RNA_IPAddress", WS_TABSTOP | 0x4,
+                60,75,64,11
+END
+
+
+IDD_NETUI_NETWORK_NAMESERV2 DIALOG DISCARDABLE 0, 0, 130, 136
+STYLE WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | WS_TABSTOP
+BEGIN
+    LTEXT       "",IDC_NETUI_NETADAPT_PP2TITLE,4,3,126,8 , SS_NOPREFIX
+    LTEXT       "Name server addresses may be automatically assigned if DHCP is enabled on this adapter.",
+                IDC_NETUI_AUTOMSG_STATIC,5,19,132,16
+    RTEXT       "DNS:",IDC_NETUI_DNS_LABEL,4,40,40,8
+    CONTROL     "",IDC_NETUI_DNS_ADDR,"RNA_IPAddress", WS_TABSTOP | 0x4,
+                45,39,64,11
+    RTEXT       "Alt DNS:",IDC_NETUI_DNS_ALTLABEL,4,54,40,8
+    CONTROL     "",IDC_NETUI_DNS_ALTADDR,"RNA_IPAddress", WS_TABSTOP | 0x4,
+                45,53,64,11
+    RTEXT       "WINS:",IDC_NETUI_WINS_LABEL,4,68,40,8
+    CONTROL     "",IDC_NETUI_WINS_ADDR,"RNA_IPAddress", WS_TABSTOP | 0x4,
+                45,67,64,11
+    RTEXT       "Alt WINS:",IDC_NETUI_WINS_ALTLABEL,4,82,40,8
+    CONTROL     "",IDC_NETUI_WINS_ALTADDR,"RNA_IPAddress", WS_TABSTOP | 0x4,
+                45,81,64,11
+END
+
+// Rapier dialog for GetDriverName
+IDD_NETUI_DRIVERNAME DIALOG DISCARDABLE  0, 0, 120, 75
+STYLE DS_CENTER | DS_SETFOREGROUND | WS_POPUP | WS_CAPTION
+CAPTION "Unrecognized Card"
+BEGIN
+    LTEXT           "Enter the name of the device driver for this card. For information, see the card manufacturer's documentation.", IDC_NETUI_CMDTEXT,4,4,110,32
+    EDITTEXT        IDC_NETUI_DRIVERNAME,4,40,110,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "OK",IDOK,20,58,35,12
+    PUSHBUTTON      "Cancel",IDCANCEL,60,58,35,12
+    CONTROL         "",-1,WC_SIPPREF, NOT WS_VISIBLE,-10,-10,5,5
+END
+
+
+IDD_NETUI_ADAPTERS DIALOG DISCARDABLE 0, 0, 240, 245
+//STYLE DS_ABSALIGN | WS_POPUP | WS_VISIBLE | DS_USEPIXELS
+STYLE WS_POPUP | WS_VISIBLE | DS_USEPIXELS
+_FONT
+CAPTION "Configure Network Adapters"
+BEGIN
+    LTEXT           "My network card connects to:",IDC_NETUI_STATIC_NETCARD_CONNECT_TO, 8,30,226,16
+    COMBOBOX        IDC_NETUI_COMBO_ADAPTER_FILTER,8,48,224,88,CBS_DROPDOWNLIST | WS_TABSTOP
+
+    LTEXT           "Tap an adapter to modify settings:" IDC_NETUI_STATIC_ADAPTERS, 8, 72, 226, 16  
+    CONTROL         "", IDC_NETUI_NETCPL0_ADAPTERLIST, "SysListView32", WS_BORDER | WS_TABSTOP
+                    | LVS_REPORT | LVS_NOCOLUMNHEADER | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_VSCROLL,
+                    8,88,224,120
+END
+
+// Wireless zero configure
+IDD_WZCNOTIF DIALOG DISCARDABLE 0,0, 1, 1
+STYLE 0
+BEGIN
+END
+
+IDD_WZC_WLAN_NETWORK DIALOG DISCARDABLE 0, 0, 240, 245
+//STYLE DS_ABSALIGN | WS_POPUP | WS_VISIBLE | DS_USEPIXELS
+STYLE WS_POPUP | WS_VISIBLE | DS_USEPIXELS
+_FONT
+CAPTION "Configure Wireless Networks"
+BEGIN
+    LTEXT           "",IDC_WZC_HEADING, 8,5,224,18 , SS_NOPREFIX
+
+    CONTROL         "",IDC_WZC_LIST_NETWORKS,"SysListView32",WS_BORDER | WS_TABSTOP
+                    | LVS_REPORT | LVS_NOCOLUMNHEADER | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_VSCROLL ,
+                    8,31,224,130
+
+    LTEXT           "To configure your wireless network, please enable your wireless network card.", 
+                    IDC_WZC_STATIC_NO_WIRELESS_CARD_PRESEND, 8,49,224, 90, WS_BORDER
+                    
+    LTEXT           "Networks to access:", IDC_WZC_STATIC_NETWORK_TO_ACCESS, 8,167, 226, 16
+    COMBOBOX        IDC_WZC_COMBO_FILTER, 8,185,224,88,CBS_DROPDOWNLIST |  WS_TABSTOP
+
+END
+
+IDD_WZC_WLAN_GENERAL_PROP_PAGE DIALOG DISCARDABLE 0, 0, 240, 245
+//STYLE DS_ABSALIGN | WS_POPUP | WS_VISIBLE | DS_USEPIXELS
+STYLE WS_POPUP | WS_VISIBLE | DS_USEPIXELS | WS_NONAVDONEBUTTON
+_FONT
+CAPTION "Configure Wireless Network"
+BEGIN
+    LTEXT           "Network name:", IDC_WZC_STATIC_NETWORK_NAME, 8, 32, 80, 16
+    EDITTEXT        IDC_WZC_EDIT_SSID, 90,30,122,20, ES_AUTOHSCROLL | WS_TABSTOP
+
+    LTEXT           "Connects to:", IDC_WZC_STATIC_CONNECT_TO, 8, 58, 80, 16
+    COMBOBOX        IDC_WZC_COMBO_CONNECT_TO, 90,56,122,88,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+
+    CONTROL         "This is a hidden network",
+                    IDC_WZC_CHECK_HIDDEN , WC_TBUTTON, BS_AUTOCHECKBOX | BS_TOP |
+                    WS_TABSTOP, 8, 84, 204, 20  
+
+    CONTROL         "This is a device-to-device (ad-hoc) connection",
+                    IDC_WZC_CHECK_ADHOC , WC_TBUTTON, BS_AUTOCHECKBOX | BS_TOP | BS_MULTILINE |
+                    WS_TABSTOP, 8, 110, 204, 40
+END
+
+IDD_WZC_WLAN_AUTHENTICATION_PAGE DIALOG DISCARDABLE 0, 0, 240, 245
+//STYLE DS_ABSALIGN | WS_POPUP | WS_VISIBLE | DS_USEPIXELS
+STYLE WS_POPUP | WS_VISIBLE | DS_USEPIXELS | WS_NONAVDONEBUTTON
+_FONT
+CAPTION "Configure Network Authentication"
+BEGIN
+    LTEXT           "Authentication:", IDC_STATIC_AUTHENTICATION, 8, 30,100, 16
+    COMBOBOX        IDC_WZC_COMBO_AUTHENTICATION, 110,30,102,180,CBS_DROPDOWNLIST  | WS_VSCROLL | WS_TABSTOP
+
+    LTEXT           "Data Encryption:", IDC_STATIC_DATA_ENCRYPTION, 8, 55,100, 16
+    COMBOBOX        IDC_WZC_COMBO_DATA_ENCRYPTION, 110,55,102,88,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    
+    CONTROL         "The key is automatically provided",
+                    IDC_WZC_CHECK_KEY_PROVIDED_AUTOMATICALLY , WC_TBUTTON, BS_AUTOCHECKBOX | BS_TOP |
+                    WS_TABSTOP, 8, 80,204,20 
+                    
+    LTEXT           "Network key:", IDC_STATIC_EDIT_WEP, 16, 105, 70, 16
+    EDITTEXT        IDC_WZC_EDIT_WEP, 90,105,122,20, ES_AUTOHSCROLL | WS_TABSTOP
+
+    LTEXT           "Key index:", IDC_STATIC_WEP_INDEX, 16, 130,70, 16
+    COMBOBOX        IDC_WZC_COMBO_WEP_INDEX, 90,130,50,88,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_WZC_WLAN_8021X_PAGE DIALOG DISCARDABLE 0, 0, 240, 245
+STYLE WS_POPUP | WS_VISIBLE | DS_USEPIXELS | WS_NONAVDONEBUTTON
+_FONT
+CAPTION "Configure Network Authentication"
+BEGIN
+    CONTROL         "Use IEEE 802.1x network access control",
+                    IDC_WZC_CHECK_ENABLE8021X , WC_TBUTTON, BS_AUTOCHECKBOX | BS_TOP | BS_MULTILINE |
+                    WS_TABSTOP, 8,30,224,16 
+
+    LTEXT           "EAP type:",IDC_WZC_STATIC_ENABLE8021X, 10, 52, 58, 16
+
+    COMBOBOX        IDC_WZC_COMBO_EAP_TYPE, 70,49,162,88,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+
+    PUSHBUTTON      "Properties", IDC_WZC_BUTTON_EAP_PROPERTIES, 150, 74, 82,20
+END
+
+IDD_WZC_WLAN_ADVANCED DIALOG DISCARDABLE 0, 0, 240, 245
+STYLE WS_POPUP | WS_VISIBLE | DS_USEPIXELS
+_FONT
+CAPTION "Wi-Fi Advanced Settings"
+BEGIN
+    LTEXT           "",IDC_WZC_HEADING, 8,5,224,18 , SS_NOPREFIX
+    CONTROL         "Turn on available network notification",
+                    IDC_WZC_CHECK_NOTIFICATION, WC_TBUTTON, BS_AUTOCHECKBOX | BS_TOP | BS_MULTILINE |
+                    WS_TABSTOP, 8,30,224,16
+    LTEXT           "Turn off Wi-Fi if not connected in:", IDC_WZC_STATIC_AUTO_OFF, 8, 52, 220, 16
+    COMBOBOX        IDC_WZC_COMBO_AUTO_OFF, 8, 72, 220, 90, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+// Cert picker dialog.
+IDD_PICKCERT DIALOG DISCARDABLE 0, 0, 138, 140
+STYLE WS_POPUP | WS_VISIBLE | DS_CONTROL | WS_CAPTION
+CAPTION "Client Authentication"
+BEGIN
+    ICON        IDI_SECURITY3,-1,4,5,21,20
+    LTEXT       "The Web site you want to view requests identification. Select the certificate to use when connecting.",
+                -1,30,5,97,34,SS_NOPREFIX
+    CONTROL     "List1",IDC_CERTLISTVIEW,"SysListView32",LVS_REPORT | LVS_NOCOLUMNHEADER |
+                LVS_SINGLESEL | LVS_SHOWSELALWAYS |WS_BORDER | WS_TABSTOP,30,42,97,60
+END
+
+// Softkeys for cert picker dialog.
+IDR_NETUI_CERT_DIALOGOKCANCEL RCDATA DISCARDABLE
+BEGIN
+    0,     // No menu
+    2,     // Count of buttons
+    I_IMAGENONE, IDOK,     TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE, IDS_OK,     0, NOMENU,
+    I_IMAGENONE, IDCANCEL, TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE, IDS_CANCEL, 0, NOMENU,
+END
+
+// Do not change the order of controls in this dialog unless you also change
+// the code in LayoutCertDetails (private\shellw\os\netui2\ppc\certui_p.cpp)
+IDD_CERTDETAILS DIALOG DISCARDABLE   0, 0, 240, 245
+STYLE WS_POPUP | WS_VISIBLE | DS_USEPIXELS | DS_SETFOREGROUND
+CAPTION "Certificate Details"
+BEGIN
+    LTEXT       "Issued to:", IDC_STATIC_CERTS_ISSUEDTO, 8,28,126,16
+    LTEXT       "", IDC_CERTS_ISSUEDTO, 8,49,210,16
+    LTEXT       "Issued by:", IDC_STATIC_CERTS_ISSUEDBY, 8,74,126,16
+    LTEXT       "", IDC_CERTS_ISSUEDBY, 8,95,210,16
+    LTEXT       "Valid from:", IDC_STATIC_CERTS_VALIDFROM, 8,120,126,16
+    LTEXT       "", IDC_CERTS_VALIDFROM, 8,141,60,16
+    LTEXT       "to", IDC_STATIC_CERTS_VALIDTO, 70,141,20,16
+    LTEXT       "", IDC_CERTS_VALIDTO, 96,141,60,16
+    LTEXT       "Intended Purpose(s):", IDC_STATIC_CERTS_USAGE, 8,166,126,16
+    LTEXT       "", IDC_CERTS_USAGE, 8,187,210,48
+END
+
+
+////////////////////////////////////////////////////////////////////////////////////
+//
+//  Softkey bars for wizards, settings dialogs etc
+//  Used by rcmldlgproc in aygshell
+//
+
+
+IDM_WIZARD_FIRST MENU DISCARDABLE
+BEGIN
+  MENUITEM "Cancel"   ID_CANCEL
+  MENUITEM "Next"     ID_NEXT
+END
+
+IDM_WIZARD_MID MENU DISCARDABLE
+BEGIN
+  MENUITEM "Back"     ID_BACK
+  MENUITEM "Next"     ID_NEXT
+END
+
+IDM_WIZARD_LAST MENU DISCARDABLE
+BEGIN
+  MENUITEM "Back"       ID_BACK
+  MENUITEM "Finish"     ID_FINISH
+END
+
+IDM_CANCEL_RETRY MENU DISCARDABLE
+BEGIN
+  MENUITEM "Cancel"       ID_CANCEL
+  MENUITEM "Retry"        ID_NEXT
+END
+
+IDM_CANCEL_SAVE MENU DISCARDABLE
+BEGIN
+  MENUITEM "Cancel"       ID_CANCEL
+  MENUITEM "Save"        IDOK
+END
+
+WZC_HTML_HEADER.HTM     HTML    DISCARDABLE
+BEGIN
+    L"<html><body><style>INPUT[type='radio'] { vertical-align: middle }</style><form style='margin:0' method='get' action='%1'><table width=100%% cellspacing=0 cellpadding='2em'>\0"
+END
+
+WZC_HTML_MULTIPART_HEADER.HTM     HTML    DISCARDABLE
+BEGIN
+    L"<html><body><style>INPUT[type='radio'] { vertical-align: middle }</style><form style='margin:0' enctype='multipart/form-data' method='post' action='%1'><table width=100%% cellspacing=0 cellpadding='2em'>\0"
+END
+
+WZC_HTML_TAIL.HTM     HTML    DISCARDABLE
+BEGIN
+    L"</table></form></body></html>\0"
+END
+
+WZC_CONNECTION_BUBBLE_SINGLENET.HTM           HTML    DISCARDABLE
+BEGIN
+    L"<tr><td><input type='radio' value='0' id='Net0' checked name='MetaNetwork'><label for='Net0'>%1</label><br><input type='radio' value='1' id='Net1' name='MetaNetwork'><label for='Net1'>%2</label></td></tr><tr><td><a href='cmd:12288'>Settings</a></td></tr>\0"
+END
+
+WZC_CONNECTION_BUBBLE_WIRED.HTM               HTML    DISCARDABLE
+BEGIN
+    L"<tr><td>This network card connects me to:</td></tr>\0"
+END
+
+WZC_CONNECTION_BUBBLE_WIRELESS.HTM            HTML    DISCARDABLE
+BEGIN
+    L"<tr><td>&quot;%1&quot; network connects me to:</td></tr>\0"
+END
+
+WZC_CONNECTION_BUBBLE_MULTIPLENET.HTM         HTML    DISCARDABLE
+BEGIN
+    L"<tr><td>Select a network to connect to:</td></tr><tr><td>%1</td></tr>\0"
+END
+
+WZC_CONNECTION_BUBBLE_MULTIPLENET_OVER.HTM    HTML    DISCARDABLE
+BEGIN
+    L"<tr><td><a href='cmd:12288'>Show all networks</a></td></tr>\0"
+END
+
+WZC_SSID_NETWORK_DEFAULT_RADIO_BUTTON.HTM     HTML    DISCARDABLE
+BEGIN
+    L"<input type='radio' name='SSID' id='SSID%1' value='%1' checked><label for='SSID%1'>%2</label>\0"
+END
+
+WZC_SSID_NETWORK_RADIO_BUTTON.HTM             HTML    DISCARDABLE
+BEGIN
+    L"<br><input type='radio' name='SSID' id='SSID%1' value='%1'><label for='SSID%1'>%2</label>\0"
+END
+
+WZC_NETKEY_BUBBLE_HEAD.HTM                    HTML    DISCARDABLE
+BEGIN
+    L"<tr><td>\0"
+END
+
+WZC_NETKEY_BUBBLE_TAIL.HTM                    HTML    DISCARDABLE
+BEGIN
+    L"<br><br>Key: <input type='text' name='WEPKey' size='19' maxlength='64'><br> </td></tr><tr><td><a href='cmd:12288'>Settings</a></td></tr>\0"
+END

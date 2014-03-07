@@ -1,0 +1,39 @@
+;------------------------------------------------------------------------------
+; <copyright file="ar6k_ndis_spi.def" company="Atheros">
+;    Copyright (c) 2008 Atheros Corporation.  All rights reserved.
+; 
+; The software source and binaries included in this development package are
+; licensed, not sold. You, or your company, received the package under one
+; or more license agreements. The rights granted to you are specifically
+; listed in these license agreement(s). All other rights remain with Atheros
+; Communications, Inc., its subsidiaries, or the respective owner including
+; those listed on the included copyright notices.  Distribution of any
+; portion of this package must be in strict compliance with the license
+; agreement(s) terms.
+; </copyright>
+; 
+; <summary>
+; 	Wifi driver for AR6002
+; </summary>
+;
+;------------------------------------------------------------------------------
+;==============================================================================
+; AR6K SPI def file
+;
+; Author(s): ="Atheros"
+;==============================================================================
+NAME AR6K_NDIS_SPI.DLL 
+
+EXPORTS
+    DRG_Deinit
+    DRG_Init
+    DRG_Close
+    DRG_Open
+    DRG_IOControl
+    DllEntry
+    DriverEntry
+
+;SECTIONS
+;    .shared READ WRITE SHARED
+
+

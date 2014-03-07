@@ -1,0 +1,170 @@
+ dsatest
+
+ Timestamp is 511c9982 (Thu Feb 14 17:00:02 2013)
+
+ Preferred load address is 00010000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00001260H .text                   CODE
+ 0002:00000000 00000123H .rdata                  DATA
+ 0002:00000124 00000014H .xdata                  DATA
+ 0002:00000138 00000028H .idata$2                DATA
+ 0002:00000160 00000014H .idata$3                DATA
+ 0002:00000174 000000c4H .idata$4                DATA
+ 0002:00000238 0000001aH .idata$6                DATA
+ 0002:00000252 00000000H .edata                  DATA
+ 0003:00000000 000000c4H .idata$5                DATA
+ 0003:000000c4 00000004H .CRT$XCA                DATA
+ 0003:000000c8 00000004H .CRT$XCZ                DATA
+ 0003:000000cc 00000004H .CRT$XIA                DATA
+ 0003:000000d0 00000004H .CRT$XIZ                DATA
+ 0003:000000d4 00000004H .CRT$XPA                DATA
+ 0003:000000d8 00000004H .CRT$XPZ                DATA
+ 0003:000000dc 00000004H .CRT$XTA                DATA
+ 0003:000000e0 00000004H .CRT$XTZ                DATA
+ 0003:000000e8 000000a8H .data                   DATA
+ 0003:00000190 00000015H .bss                    DATA
+ 0004:00000000 00000070H .pdata                  DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0001:000000d0       main                       000110d0 f   dsatest.obj
+ 0001:00000450       BIO_printf                 00011450 f   libeay32:LIBEAY32.dll
+ 0001:00000460       BIO_ctrl                   00011460 f   libeay32:LIBEAY32.dll
+ 0001:00000470       BIO_write                  00011470 f   libeay32:LIBEAY32.dll
+ 0001:00000480       BIO_free                   00011480 f   libeay32:LIBEAY32.dll
+ 0001:00000490       CRYPTO_mem_leaks           00011490 f   libeay32:LIBEAY32.dll
+ 0001:000004a0       ERR_free_strings           000114a0 f   libeay32:LIBEAY32.dll
+ 0001:000004b0       ERR_remove_thread_state    000114b0 f   libeay32:LIBEAY32.dll
+ 0001:000004c0       CRYPTO_cleanup_all_ex_data 000114c0 f   libeay32:LIBEAY32.dll
+ 0001:000004d0       DSA_free                   000114d0 f   libeay32:LIBEAY32.dll
+ 0001:000004e0       ERR_print_errors           000114e0 f   libeay32:LIBEAY32.dll
+ 0001:000004f0       DSA_verify                 000114f0 f   libeay32:LIBEAY32.dll
+ 0001:00000500       DSA_sign                   00011500 f   libeay32:LIBEAY32.dll
+ 0001:00000510       DSA_generate_key           00011510 f   libeay32:LIBEAY32.dll
+ 0001:00000520       BN_bn2bin                  00011520 f   libeay32:LIBEAY32.dll
+ 0001:00000530       DSA_print                  00011530 f   libeay32:LIBEAY32.dll
+ 0001:00000540       DSA_generate_parameters_ex 00011540 f   libeay32:LIBEAY32.dll
+ 0001:00000550       DSA_new                    00011550 f   libeay32:LIBEAY32.dll
+ 0001:00000560       RAND_seed                  00011560 f   libeay32:LIBEAY32.dll
+ 0001:00000570       ERR_load_crypto_strings    00011570 f   libeay32:LIBEAY32.dll
+ 0001:00000580       CRYPTO_mem_ctrl            00011580 f   libeay32:LIBEAY32.dll
+ 0001:00000590       CRYPTO_set_mem_debug_functions 00011590 f   libeay32:LIBEAY32.dll
+ 0001:000005a0       CRYPTO_dbg_malloc          000115a0 f   libeay32:LIBEAY32.dll
+ 0001:000005b0       CRYPTO_dbg_realloc         000115b0 f   libeay32:LIBEAY32.dll
+ 0001:000005c0       CRYPTO_dbg_free            000115c0 f   libeay32:LIBEAY32.dll
+ 0001:000005d0       CRYPTO_dbg_set_options     000115d0 f   libeay32:LIBEAY32.dll
+ 0001:000005e0       CRYPTO_dbg_get_options     000115e0 f   libeay32:LIBEAY32.dll
+ 0001:000005f0       BIO_new_fp                 000115f0 f   libeay32:LIBEAY32.dll
+ 0001:00000600       _getstdfilex               00011600 f   coredll:COREDLL.dll
+ 0001:00000610       memcmp                     00011610 f   coredll:COREDLL.dll
+ 0001:00000620       _cinit                     00011620 f   corelibc:crt0dat.obj
+ 0001:00000790       exit                       00011790 f   corelibc:crt0dat.obj
+ 0001:000007b0       WinMainCRTStartup          000117b0 f   corelibc:pegwmain.obj
+ 0001:00000824       WinMain                    00011824 f   wcecompatex:winmain.obj
+ 0001:00000b80       ?processCmdLine@@YAHPA_WPAPAPAD@Z 00011b80 f   wcecompatex:args.obj
+ 0001:00000fbc       ?unicode2ascii@@YAXPB_WPAD@Z 00011fbc f   wcecompatex:ts_string.obj
+ 0001:00001010       ?ascii2unicode@@YAXPBDPA_WH@Z 00012010 f   wcecompatex:ts_string.obj
+ 0001:000010b0       ?unicode2ascii@@YAXPB_WPADH@Z 000120b0 f   wcecompatex:ts_string.obj
+ 0001:00001140       LocalFree                  00012140 f   coredll:COREDLL.dll
+ 0001:00001150       _XcptFilter                00012150 f   coredll:COREDLL.dll
+ 0001:00001160       __C_specific_handler       00012160 f   coredll:COREDLL.dll
+ 0001:00001170       _isctype                   00012170 f   coredll:COREDLL.dll
+ 0001:00001180       malloc                     00012180 f   coredll:COREDLL.dll
+ 0001:00001190       FindFirstFileW             00012190 f   coredll:COREDLL.dll
+ 0001:000011a0       FindClose                  000121a0 f   coredll:COREDLL.dll
+ 0001:000011b0       FindNextFileW              000121b0 f   coredll:COREDLL.dll
+ 0001:000011c0       _stricmp                   000121c0 f   coredll:COREDLL.dll
+ 0001:000011d0       free                       000121d0 f   coredll:COREDLL.dll
+ 0001:000011e0       qsort                      000121e0 f   coredll:COREDLL.dll
+ 0001:000011f0       strrchr                    000121f0 f   coredll:COREDLL.dll
+ 0001:00001200       strchr                     00012200 f   coredll:COREDLL.dll
+ 0001:00001210       realloc                    00012210 f   coredll:COREDLL.dll
+ 0001:00001220       GetModuleFileNameW         00012220 f   coredll:COREDLL.dll
+ 0001:00001230       strncpy                    00012230 f   coredll:COREDLL.dll
+ 0001:00001240       strcpy                     00012240 f   coredll:COREDLL.dll
+ 0001:00001250       strlen                     00012250 f   coredll:COREDLL.dll
+ 0002:00000058       ??_C@_0BC@DKDLJCML@error?5in?5dsatest?6?$AA@ 00013058     dsatest.obj
+ 0002:0000006c       ??_C@_0BC@NFLCIEFL@q?5value?5is?5wrong?6?$AA@ 0001306c     dsatest.obj
+ 0002:00000080       ??_C@_0BC@DKOADCLK@p?5value?5is?5wrong?6?$AA@ 00013080     dsatest.obj
+ 0002:00000094       ??_C@_0BC@PFGNGEMG@g?5value?5is?5wrong?6?$AA@ 00013094     dsatest.obj
+ 0002:000000a8       ??_C@_0P@NKEEOOHB@h?5should?5be?52?6?$AA@ 000130a8     dsatest.obj
+ 0002:000000b8       ??_C@_0BH@BNJKFJN@counter?5should?5be?5105?6?$AA@ 000130b8     dsatest.obj
+ 0002:000000d0       ??_C@_0BD@LNPKCMNF@?6counter?$DN?$CFd?5h?$DN?$CFld?6?$AA@ 000130d0     dsatest.obj
+ 0002:000000e4       ??_C@_0BC@FAANNJKC@?$CF02X?$CF02X?$CF02X?$CF02X?5?$AA@ 000130e4     dsatest.obj
+ 0002:000000f8       ??_C@_05CLJAFFEJ@seed?6?$AA@ 000130f8     dsatest.obj
+ 0002:00000100       ??_C@_0CD@EPONLEAN@test?5generation?5of?5DSA?5parameter@ 00013100     dsatest.obj
+ 0002:00000138       __IMPORT_DESCRIPTOR_LIBEAY32 00013138     libeay32:LIBEAY32.dll
+ 0002:0000014c       __IMPORT_DESCRIPTOR_COREDLL 0001314c     coredll:COREDLL.dll
+ 0002:00000160       __NULL_IMPORT_DESCRIPTOR   00013160     libeay32:LIBEAY32.dll
+ 0003:00000000       __imp_strlen               00014000     coredll:COREDLL.dll
+ 0003:00000004       __imp_strcpy               00014004     coredll:COREDLL.dll
+ 0003:00000008       __imp_strncpy              00014008     coredll:COREDLL.dll
+ 0003:0000000c       __imp_GetModuleFileNameW   0001400c     coredll:COREDLL.dll
+ 0003:00000010       __imp_realloc              00014010     coredll:COREDLL.dll
+ 0003:00000014       __imp_strchr               00014014     coredll:COREDLL.dll
+ 0003:00000018       __imp_strrchr              00014018     coredll:COREDLL.dll
+ 0003:0000001c       __imp_qsort                0001401c     coredll:COREDLL.dll
+ 0003:00000020       __imp_free                 00014020     coredll:COREDLL.dll
+ 0003:00000024       __imp__stricmp             00014024     coredll:COREDLL.dll
+ 0003:00000028       __imp_FindNextFileW        00014028     coredll:COREDLL.dll
+ 0003:0000002c       __imp_FindClose            0001402c     coredll:COREDLL.dll
+ 0003:00000030       __imp_FindFirstFileW       00014030     coredll:COREDLL.dll
+ 0003:00000034       __imp_malloc               00014034     coredll:COREDLL.dll
+ 0003:00000038       __imp__isctype             00014038     coredll:COREDLL.dll
+ 0003:0000003c       __imp___C_specific_handler 0001403c     coredll:COREDLL.dll
+ 0003:00000040       __imp__XcptFilter          00014040     coredll:COREDLL.dll
+ 0003:00000044       __imp_LocalFree            00014044     coredll:COREDLL.dll
+ 0003:00000048       __imp_memcmp               00014048     coredll:COREDLL.dll
+ 0003:0000004c       __imp__getstdfilex         0001404c     coredll:COREDLL.dll
+ 0003:00000050       \177COREDLL_NULL_THUNK_DATA 00014050     coredll:COREDLL.dll
+ 0003:00000054       __imp_CRYPTO_dbg_free      00014054     libeay32:LIBEAY32.dll
+ 0003:00000058       __imp_CRYPTO_dbg_set_options 00014058     libeay32:LIBEAY32.dll
+ 0003:0000005c       __imp_CRYPTO_dbg_realloc   0001405c     libeay32:LIBEAY32.dll
+ 0003:00000060       __imp_BIO_new_fp           00014060     libeay32:LIBEAY32.dll
+ 0003:00000064       __imp_CRYPTO_dbg_malloc    00014064     libeay32:LIBEAY32.dll
+ 0003:00000068       __imp_CRYPTO_set_mem_debug_functions 00014068     libeay32:LIBEAY32.dll
+ 0003:0000006c       __imp_CRYPTO_mem_ctrl      0001406c     libeay32:LIBEAY32.dll
+ 0003:00000070       __imp_ERR_load_crypto_strings 00014070     libeay32:LIBEAY32.dll
+ 0003:00000074       __imp_RAND_seed            00014074     libeay32:LIBEAY32.dll
+ 0003:00000078       __imp_DSA_new              00014078     libeay32:LIBEAY32.dll
+ 0003:0000007c       __imp_DSA_generate_parameters_ex 0001407c     libeay32:LIBEAY32.dll
+ 0003:00000080       __imp_DSA_print            00014080     libeay32:LIBEAY32.dll
+ 0003:00000084       __imp_BN_bn2bin            00014084     libeay32:LIBEAY32.dll
+ 0003:00000088       __imp_DSA_generate_key     00014088     libeay32:LIBEAY32.dll
+ 0003:0000008c       __imp_DSA_sign             0001408c     libeay32:LIBEAY32.dll
+ 0003:00000090       __imp_DSA_verify           00014090     libeay32:LIBEAY32.dll
+ 0003:00000094       __imp_ERR_print_errors     00014094     libeay32:LIBEAY32.dll
+ 0003:00000098       __imp_DSA_free             00014098     libeay32:LIBEAY32.dll
+ 0003:0000009c       __imp_CRYPTO_cleanup_all_ex_data 0001409c     libeay32:LIBEAY32.dll
+ 0003:000000a0       __imp_ERR_remove_thread_state 000140a0     libeay32:LIBEAY32.dll
+ 0003:000000a4       __imp_ERR_free_strings     000140a4     libeay32:LIBEAY32.dll
+ 0003:000000a8       __imp_CRYPTO_mem_leaks     000140a8     libeay32:LIBEAY32.dll
+ 0003:000000ac       __imp_BIO_free             000140ac     libeay32:LIBEAY32.dll
+ 0003:000000b0       __imp_BIO_write            000140b0     libeay32:LIBEAY32.dll
+ 0003:000000b4       __imp_BIO_ctrl             000140b4     libeay32:LIBEAY32.dll
+ 0003:000000b8       __imp_CRYPTO_dbg_get_options 000140b8     libeay32:LIBEAY32.dll
+ 0003:000000bc       __imp_BIO_printf           000140bc     libeay32:LIBEAY32.dll
+ 0003:000000c0       \177LIBEAY32_NULL_THUNK_DATA 000140c0     libeay32:LIBEAY32.dll
+ 0003:000000c4       __xc_a                     000140c4     corelibc:crt0init.obj
+ 0003:000000c8       __xc_z                     000140c8     corelibc:crt0init.obj
+ 0003:000000cc       __xi_a                     000140cc     corelibc:crt0init.obj
+ 0003:000000d0       __xi_z                     000140d0     corelibc:crt0init.obj
+ 0003:000000d4       __xp_a                     000140d4     corelibc:crt0init.obj
+ 0003:000000d8       __xp_z                     000140d8     corelibc:crt0init.obj
+ 0003:000000dc       __xt_a                     000140dc     corelibc:crt0init.obj
+ 0003:000000e0       __xt_z                     000140e0     corelibc:crt0init.obj
+ 0003:0000019c       __onexitend                0001419c     <common>
+ 0003:000001a0       __onexitbegin              000141a0     <common>
+ 0003:000001a4       _exitflag                  000141a4     <common>
+
+ entry point at        0001:000007b0
+
+ Static symbols
+
+ 0001:00000000       dsa_cb                     00011000 f   dsatest.obj
+ 0001:0000068c       doexit                     0001168c f   corelibc:crt0dat.obj
+ 0001:00000848       ?getCmdLineArg@@YA?AW4ArgType@@PAPA_WPA_WHPAURedirArg@@PA_N@Z 00011848 f   wcecompatex:args.obj
+ 0001:00000b74       ?qsort_stricmp@@YAHPBX0@Z  00011b74 f   wcecompatex:args.obj

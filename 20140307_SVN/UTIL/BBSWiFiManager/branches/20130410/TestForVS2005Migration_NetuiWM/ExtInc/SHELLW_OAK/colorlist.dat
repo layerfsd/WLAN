@@ -1,0 +1,229 @@
+/******************************************************************************                                                                             *
+    colorlist.dat
+
+    Table of raw data about system colors.  Other files will modify the
+    definition macros and include this file to generate various tables.
+
+    Although this appears to be a C-style header file, it is not.  Do
+    not attempt to use it at one
+
+****************************************************************************/
+
+// This file gets processed sometimes by a weak perl script.  Don't do
+// anything that you don't already see being done.  (like don't use
+// hex constants in the RGB values)
+
+// If you change any of the shell color info, you need to update the
+// registry.  cd to public\shellw\oak\inc copy the output of "perl
+// colorproc.pl reg colorlist.dat" into project.reg
+
+// The Perl script is really dumb, so don't do anything tricky like
+// modify the #ifdef statements or anything like that.
+
+// THIS IS NOT A REAL HEADER FILE!  DO NOT INCLUDE IT IN ANY SOURCE
+// FILE!
+
+// The color (127,0,127) (purple) indicates that the color is unused
+// for a given product.
+
+#error DO NOT INCLUDE THIS FILE IN A REAL SOURCE FILE.  
+#error IT EXISTS ONLY AS A PRECURSOR TO ANOTHER FILE.
+
+#ifdef TPC
+
+//SmartPhone default colors.
+
+//                 Color name               index   RGB for color devices   RGB for grey devices
+DEFINE_SHELL_COLOR(COLOR_ALERT                , 0,  RGB(255,  0,  0),       RGB(255,  0,  0))
+DEFINE_SHELL_COLOR(COLOR_ACCENTTEXT           , 1,  RGB(  0,  0,  0),       RGB(  0,  0,  0))
+// Obsolete?
+DEFINE_SHELL_COLOR(COLOR_CALOFFHOURS          , 2,  RGB(221,221,221),       RGB(221,221,221))
+// Obsolete?
+DEFINE_SHELL_COLOR(COLOR_CALONHOURS           , 3,  RGB(255,255,204),       RGB(255,255,204))
+// PPC Today Screen text
+DEFINE_SHELL_COLOR(COLOR_TODAYTEXT            , 4,  RGB(255,255,255),       RGB(255,255,255))
+// Left color of PPC NavBar
+DEFINE_SHELL_COLOR(COLOR_STARTICONBACKGROUND  , 5,  RGB( 21,117,188),       RGB( 21,117,188))
+// PPC Today Screen separator line
+DEFINE_SHELL_COLOR(COLOR_TODAYSEPARATOR       , 6,  RGB( 21,117,188),       RGB( 21,117,188))
+// PPC Today Screen menubar background
+DEFINE_SHELL_COLOR(COLOR_TODAYMENU            , 7,  RGB(201,220,233),       RGB(201,220,233))
+// Right color of PPC NavBar
+DEFINE_SHELL_COLOR(COLOR_NAVBAR               , 8,  RGB( 93,174,233),       RGB( 93,174,233))
+// PPC NavBar text
+DEFINE_SHELL_COLOR(COLOR_NAVBARTEXT           , 9,  RGB(255,255,255),       RGB(255,255,255))
+// Obsolete. 
+DEFINE_SHELL_COLOR(COLOR_NAVBARHILITE         ,10,  RGB( 93,174,233),       RGB( 93,174,233))
+// PPC notification tray background
+DEFINE_SHELL_COLOR(COLOR_NOTIFTRAY            ,11,  RGB( 93,174,233),       RGB( 93,174,233))
+// Background of highlighted icon in the PPC notification tray
+DEFINE_SHELL_COLOR(COLOR_NOTIFTRAYHILITE      ,12,  RGB( 93,174,233),       RGB( 93,174,233))
+// Left color of PPC bubble caption background
+DEFINE_SHELL_COLOR(COLOR_BUBBLECAPTION        ,13,  RGB( 21,117,188),       RGB( 21,117,188))
+// Right color of PPC bubble caption background
+DEFINE_SHELL_COLOR(COLOR_GRADIENTBUBBLECAPTION,14,  RGB( 93,174,233),       RGB( 93,174,233))
+// Left and right colors of a gradient listview background, for the "interlaced" rows
+DEFINE_SHELL_COLOR(COLOR_INTGRADLEFT          ,15,  RGB(255,255,255),       RGB(255,255,255))
+DEFINE_SHELL_COLOR(COLOR_INTGRADRIGHT         ,16,  RGB(201,220,233),       RGB(201,220,233))
+// Left and right colors of a selection (highlight) in a SmartPhone listview.  COLOR_HIGHGRADRIGHT is currently not used.
+DEFINE_SHELL_COLOR(COLOR_HIGHGRADLEFT         ,17,  RGB( 55,145,211),       RGB( 55,145,211))
+DEFINE_SHELL_COLOR(COLOR_HIGHGRADRIGHT        ,18,  RGB( 55,145,211),       RGB( 55,145,211))
+// Text color of the text in the Phone dialpad buttons
+DEFINE_SHELL_COLOR(COLOR_PHONEDIALERTEXT      ,19,  RGB(255,255,255),       RGB(255,255,255))
+// Left and right colors of SmartPhone tray
+DEFINE_SHELL_COLOR(COLOR_TRAYGRADLEFT         ,20,  RGB( 21,117,188),       RGB( 21,117,188))
+DEFINE_SHELL_COLOR(COLOR_TRAYGRADRIGHT        ,21,  RGB( 93,174,233),       RGB( 93,174,233))
+// SmartPhone tray text
+DEFINE_SHELL_COLOR(COLOR_TRAYTEXT             ,22,  RGB(255,255,255),       RGB(255,255,255))
+// SmartPhone tray background, if not a gradient
+DEFINE_SHELL_COLOR(COLOR_TRAYBKGND            ,23,  RGB( 21,117,188),       RGB( 21,117,188))
+// Not used?
+DEFINE_SHELL_COLOR(COLOR_DIALPADBKGND         ,24,  RGB(132,132,195),       RGB(132,132,195))
+// Left and right background colors of a "critical" PPC bubble caption
+DEFINE_SHELL_COLOR(COLOR_CRITGRADLEFT         ,25,  RGB( 21,117,188),       RGB( 21,117,188))
+DEFINE_SHELL_COLOR(COLOR_CRITGRADRIGHT        ,26,  RGB( 93,174,233),       RGB( 93,174,233))
+// Text color of a PPC bubble caption.
+DEFINE_SHELL_COLOR(COLOR_BUBBLETITLE          ,27,  RGB(255,255,255),       RGB(255,255,255))
+// Text color of a "critical" PPC bubble caption.
+DEFINE_SHELL_COLOR(COLOR_CRITBUBBLETITLE      ,28,  RGB(255,255,255),       RGB(255,255,255))
+// SmartPhone Alert title text.  (An alert is a full screen message box.)
+DEFINE_SHELL_COLOR(COLOR_ALERTTITLE           ,29,  RGB(  0,  0,  0),       RGB(  0,  0,  0))
+// Background of a listview in a SmartPhone Alert.  Also used for SmartPhone Volume alert slider bar.
+DEFINE_SHELL_COLOR(COLOR_ALERTWINDOW          ,30,  RGB(255,255,255),       RGB(255,255,255))
+// SmartPhone Alert horizontal separator line.  (An alert is a full screen message box.)
+DEFINE_SHELL_COLOR(COLOR_ALERTRULE            ,31,  RGB(  0,  0,  0),       RGB(  0,  0,  0))
+// Smartphone Home Screen text
+DEFINE_SHELL_COLOR(COLOR_HOMETEXT             ,32,  RGB(255,255,255),       RGB(255,255,255))
+// Smartphone Home Screen horizontal separator line
+DEFINE_SHELL_COLOR(COLOR_HOMERULE             ,33,  RGB( 21,117,188),       RGB( 21,117,188))
+// Smartphone Home Screen background color of highlighted text
+DEFINE_SHELL_COLOR(COLOR_HOMEHIGHLIGHT        ,34,  RGB( 55,145,211),       RGB( 55,145,211))
+// Smartphone Home Screen highlighted text
+DEFINE_SHELL_COLOR(COLOR_HOMEHIGHLIGHTTEXT    ,35,  RGB(255,255,255),       RGB(255,255,255))
+// Left and right colors of a gradient listview background, used COLOR_INTGRADLEFT and COLOR_INTGRADRIGHT
+DEFINE_SHELL_COLOR(COLOR_GRADLEFT             ,36,  RGB(255,255,255),       RGB(255,255,255))
+DEFINE_SHELL_COLOR(COLOR_GRADRIGHT            ,37,  RGB(201,220,233),       RGB(201,220,233))
+//PPC Start Menu background (when there is no background bitmap)
+DEFINE_SHELL_COLOR(COLOR_STARTMENU            ,38,  RGB( 93,174,233),       RGB( 93,174,233))
+// Start Menu text
+DEFINE_SHELL_COLOR(COLOR_STARTMENUTEXT        ,39,  RGB(  0,  0,  0),       RGB(  0,  0,  0))
+// PPC Tap and Hold "ring of fire"
+DEFINE_SHELL_COLOR(COLOR_TAPANDHOLD           ,40,  RGB( 93,174,233),       RGB( 93,174,233))
+
+
+#else // TPC
+
+//Pocket PC default colors.
+
+//                 Color name               index   RGB for color devices   RGB for grey devices
+DEFINE_SHELL_COLOR(COLOR_ALERT                , 0,  RGB(255,  0,  0),       RGB(255,  0,  0))
+DEFINE_SHELL_COLOR(COLOR_ACCENTTEXT           , 1,  RGB(  0,  0,  0),       RGB(  0,  0,  0))
+// Obsolete?
+DEFINE_SHELL_COLOR(COLOR_CALOFFHOURS          , 2,  RGB(221,221,221),       RGB(221,221,221))
+// Obsolete?
+DEFINE_SHELL_COLOR(COLOR_CALONHOURS           , 3,  RGB(255,255,204),       RGB(255,255,204))
+// PPC Today Screen text
+DEFINE_SHELL_COLOR(COLOR_TODAYTEXT            , 4,  RGB(255,255,255),       RGB(255,255,255))
+// Left color of PPC NavBar
+DEFINE_SHELL_COLOR(COLOR_STARTICONBACKGROUND  , 5,  RGB( 21,117,188),       RGB( 21,117,188))
+// PPC Today Screen separator line
+DEFINE_SHELL_COLOR(COLOR_TODAYSEPARATOR       , 6,  RGB( 21,117,188),       RGB( 21,117,188))
+// PPC Today Screen menubar background
+DEFINE_SHELL_COLOR(COLOR_TODAYMENU            , 7,  RGB(201,220,233),       RGB(201,220,233))
+// Right color of PPC NavBar
+DEFINE_SHELL_COLOR(COLOR_NAVBAR               , 8,  RGB( 93,174,233),       RGB( 93,174,233))
+// PPC NavBar text
+DEFINE_SHELL_COLOR(COLOR_NAVBARTEXT           , 9,  RGB(255,255,255),       RGB(255,255,255))
+// Obsolete. 
+DEFINE_SHELL_COLOR(COLOR_NAVBARHILITE         ,10,  RGB( 93,174,233),       RGB( 93,174,233))
+// PPC notification tray background
+DEFINE_SHELL_COLOR(COLOR_NOTIFTRAY            ,11,  RGB( 93,174,233),       RGB( 93,174,233))
+// Background of highlighted icon in the PPC notification tray
+DEFINE_SHELL_COLOR(COLOR_NOTIFTRAYHILITE      ,12,  RGB( 93,174,233),       RGB( 93,174,233))
+// Left color of PPC bubble caption background
+DEFINE_SHELL_COLOR(COLOR_BUBBLECAPTION        ,13,  RGB( 21,117,188),       RGB( 21,117,188))
+// Right color of PPC bubble caption background
+DEFINE_SHELL_COLOR(COLOR_GRADIENTBUBBLECAPTION,14,  RGB( 93,174,233),       RGB( 93,174,233))
+// Left and right colors of a gradient listview background, for the "interlaced" rows
+DEFINE_SHELL_COLOR(COLOR_INTGRADLEFT          ,15,  RGB(255,255,255),       RGB(255,255,255))
+DEFINE_SHELL_COLOR(COLOR_INTGRADRIGHT         ,16,  RGB(201,220,233),       RGB(201,220,233))
+// Left and right colors of a selection (highlight) in a SmartPhone listview.  COLOR_HIGHGRADRIGHT is currently not used.
+DEFINE_SHELL_COLOR(COLOR_HIGHGRADLEFT         ,17,  RGB( 55,145,211),       RGB( 55,145,211))
+DEFINE_SHELL_COLOR(COLOR_HIGHGRADRIGHT        ,18,  RGB( 55,145,211),       RGB( 55,145,211))
+// Text color of the text in the Phone dialpad buttons
+DEFINE_SHELL_COLOR(COLOR_PHONEDIALERTEXT      ,19,  RGB(255,255,255),       RGB(255,255,255))
+// Left and right colors of SmartPhone tray
+DEFINE_SHELL_COLOR(COLOR_TRAYGRADLEFT         ,20,  RGB( 21,117,188),       RGB( 21,117,188))
+DEFINE_SHELL_COLOR(COLOR_TRAYGRADRIGHT        ,21,  RGB( 93,174,233),       RGB( 93,174,233))
+// SmartPhone tray text
+DEFINE_SHELL_COLOR(COLOR_TRAYTEXT             ,22,  RGB(255,255,255),       RGB(255,255,255))
+// SmartPhone tray background, if not a gradient
+DEFINE_SHELL_COLOR(COLOR_TRAYBKGND            ,23,  RGB( 21,117,188),       RGB( 21,117,188))
+// Not used?
+DEFINE_SHELL_COLOR(COLOR_DIALPADBKGND         ,24,  RGB(132,132,195),       RGB(132,132,195))
+// Left and right background colors of a "critical" PPC bubble caption
+DEFINE_SHELL_COLOR(COLOR_CRITGRADLEFT         ,25,  RGB( 21,117,188),       RGB( 21,117,188))
+DEFINE_SHELL_COLOR(COLOR_CRITGRADRIGHT        ,26,  RGB( 93,174,233),       RGB( 93,174,233))
+// Text color of a PPC bubble caption.
+DEFINE_SHELL_COLOR(COLOR_BUBBLETITLE          ,27,  RGB(255,255,255),       RGB(255,255,255))
+// Text color of a "critical" PPC bubble caption.
+DEFINE_SHELL_COLOR(COLOR_CRITBUBBLETITLE      ,28,  RGB(255,255,255),       RGB(255,255,255))
+// SmartPhone Alert title text.  (An alert is a full screen message box.)
+DEFINE_SHELL_COLOR(COLOR_ALERTTITLE           ,29,  RGB(  0,  0,  0),       RGB(  0,  0,  0))
+// Background of a listview in a SmartPhone Alert.  Also used for SmartPhone Volume alert slider bar.
+DEFINE_SHELL_COLOR(COLOR_ALERTWINDOW          ,30,  RGB(255,255,255),       RGB(255,255,255))
+// SmartPhone Alert horizontal separator line.  (An alert is a full screen message box.)
+DEFINE_SHELL_COLOR(COLOR_ALERTRULE            ,31,  RGB(  0,  0,  0),       RGB(  0,  0,  0))
+// Smartphone Home Screen text
+DEFINE_SHELL_COLOR(COLOR_HOMETEXT             ,32,  RGB(255,255,255),       RGB(255,255,255))
+// Smartphone Home Screen horizontal separator line
+DEFINE_SHELL_COLOR(COLOR_HOMERULE             ,33,  RGB( 21,117,188),       RGB( 21,117,188))
+// Smartphone Home Screen background color of highlighted text
+DEFINE_SHELL_COLOR(COLOR_HOMEHIGHLIGHT        ,34,  RGB( 55,145,211),       RGB( 55,145,211))
+// Smartphone Home Screen highlighted text
+DEFINE_SHELL_COLOR(COLOR_HOMEHIGHLIGHTTEXT    ,35,  RGB(255,255,255),       RGB(255,255,255))
+// Left and right colors of a gradient listview background, used COLOR_INTGRADLEFT and COLOR_INTGRADRIGHT
+DEFINE_SHELL_COLOR(COLOR_GRADLEFT             ,36,  RGB(255,255,255),       RGB(255,255,255))
+DEFINE_SHELL_COLOR(COLOR_GRADRIGHT            ,37,  RGB(201,220,233),       RGB(201,220,233))
+//PPC Start Menu background (when there is no background bitmap)
+DEFINE_SHELL_COLOR(COLOR_STARTMENU            ,38,  RGB( 93,174,233),       RGB( 93,174,233))
+// Start Menu text
+DEFINE_SHELL_COLOR(COLOR_STARTMENUTEXT        ,39,  RGB(255,255,255),       RGB(255,255,255))
+// PPC Tap and Hold "ring of fire"
+DEFINE_SHELL_COLOR(COLOR_TAPANDHOLD           ,40,  RGB( 93,174,233),       RGB( 93,174,233))
+
+#endif // TPC
+
+// List of colors defined by the system that we also want in a table for various uses
+SYS_COLOR_REFERENCE(COLOR_SCROLLBAR              )
+SYS_COLOR_REFERENCE(COLOR_BACKGROUND             )
+SYS_COLOR_REFERENCE(COLOR_ACTIVECAPTION          )
+SYS_COLOR_REFERENCE(COLOR_INACTIVECAPTION        )
+SYS_COLOR_REFERENCE(COLOR_MENU                   )
+SYS_COLOR_REFERENCE(COLOR_WINDOW                 )
+SYS_COLOR_REFERENCE(COLOR_WINDOWFRAME            )
+SYS_COLOR_REFERENCE(COLOR_MENUTEXT               )
+SYS_COLOR_REFERENCE(COLOR_WINDOWTEXT             )
+SYS_COLOR_REFERENCE(COLOR_CAPTIONTEXT            )
+SYS_COLOR_REFERENCE(COLOR_ACTIVEBORDER           )
+SYS_COLOR_REFERENCE(COLOR_INACTIVEBORDER         )
+SYS_COLOR_REFERENCE(COLOR_APPWORKSPACE           )
+SYS_COLOR_REFERENCE(COLOR_HIGHLIGHT              )
+SYS_COLOR_REFERENCE(COLOR_HIGHLIGHTTEXT          )
+SYS_COLOR_REFERENCE(COLOR_BTNFACE                )
+SYS_COLOR_REFERENCE(COLOR_BTNSHADOW              )
+SYS_COLOR_REFERENCE(COLOR_GRAYTEXT               )
+SYS_COLOR_REFERENCE(COLOR_BTNTEXT                )
+SYS_COLOR_REFERENCE(COLOR_INACTIVECAPTIONTEXT    )
+SYS_COLOR_REFERENCE(COLOR_BTNHIGHLIGHT           )
+SYS_COLOR_REFERENCE(COLOR_3DDKSHADOW             )
+SYS_COLOR_REFERENCE(COLOR_3DLIGHT                )
+SYS_COLOR_REFERENCE(COLOR_INFOTEXT               )
+SYS_COLOR_REFERENCE(COLOR_INFOBK                 )
+SYS_COLOR_REFERENCE(COLOR_STATIC                 )
+SYS_COLOR_REFERENCE(COLOR_STATICTEXT             )
+SYS_COLOR_REFERENCE(COLOR_GRADIENTACTIVECAPTION  )
+SYS_COLOR_REFERENCE(COLOR_GRADIENTINACTIVECAPTION)
+
+
+

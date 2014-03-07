@@ -1,0 +1,25 @@
+#include "SvnInfo.h"
+
+
+1 VERSIONINFO
+ FILEVERSION WINCEOSVER,SVN_REVISION,SVN_TODAY,SVN_HOUR_MIN
+ 
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+			VALUE "Comments", "\0"
+			VALUE "FileDescription", SVN_MIXIED_MODIFIED_STR
+			VALUE "CompanyName", "Bluebird Soft\0"
+			VALUE "FileVersion", " \0"
+			VALUE "ProductName", " \0"
+			VALUE "LegalCopyright", "Copyright (c) BluebirdSoft. All rights reserved. \0"
+			VALUE "ProductVersion", " \0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
